@@ -10,7 +10,6 @@
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
 		F613C7C028756181005CB133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7BF28756181005CB133 /* Assets.xcassets */; };
-		F613C7C328756181005CB133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F613C7C128756181005CB133 /* LaunchScreen.storyboard */; };
 		F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7CE287563E8005CB133 /* Colors.xcassets */; };
 		F613C7D2287563FF005CB133 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7D1287563FF005CB133 /* Images.xcassets */; };
 		F613C7D8287564D2005CB133 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7D7287564D2005CB133 /* Constant.swift */; };
@@ -27,7 +26,6 @@
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F613C7B82875617E005CB133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F613C7BF28756181005CB133 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F613C7C228756181005CB133 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F613C7C428756181005CB133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F613C7CE287563E8005CB133 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F613C7D1287563FF005CB133 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				F613C7CD287563D4005CB133 /* Fonts */,
-				F613C7CC287563B9005CB133 /* Storyboards */,
 				F613C7BF28756181005CB133 /* Assets.xcassets */,
 				F613C7CE287563E8005CB133 /* Colors.xcassets */,
 				F613C7D1287563FF005CB133 /* Images.xcassets */,
@@ -98,14 +95,6 @@
 				F613C7D32875649A005CB133 /* Application */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		F613C7CC287563B9005CB133 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				F613C7C128756181005CB133 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		F613C7CD287563D4005CB133 /* Fonts */ = {
@@ -274,7 +263,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F613C7C328756181005CB133 /* LaunchScreen.storyboard in Resources */,
 				F613C7D2287563FF005CB133 /* Images.xcassets in Resources */,
 				F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */,
 				F613C7C028756181005CB133 /* Assets.xcassets in Resources */,
@@ -297,17 +285,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		F613C7C128756181005CB133 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F613C7C228756181005CB133 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F613C7C528756181005CB133 /* Debug */ = {
