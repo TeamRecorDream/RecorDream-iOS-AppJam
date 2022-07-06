@@ -1,0 +1,41 @@
+{
+  "pins" : [
+    {
+      "identity" : "heekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/EunHee-Jeong/HeeKit.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "53fac4993ba2e573d047b8fc05b5e49cce6d25a9"
+      }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f0fad1d51f9710cbd0ac6d49121d8b7fddd5c7f6"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "then",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/Then.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a"
+      }
+    }
+  ],
+  "version" : 2
+}
