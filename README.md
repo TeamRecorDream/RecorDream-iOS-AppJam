@@ -1,16 +1,16 @@
-# RecorDream<img src="./Asset/로고.png" align=left width=100>
+# RecorDream 💿<img src="./Asset/로고.png" align=left width=100>
 
-> 기상 직후의 꿈 기록과 관리를 돕는 꿈 기록 아카이빙 서비스 💿
+> 기상 직후의 꿈 기록과 관리를 돕는 꿈 기록 아카이빙 서비스 <br>
 
 <br />
 
 ## About
 
-> **무의식의 기억을 놓치고 싶지 않은 당신을 위한 꿈 기록 서비스**
-> **‘레코드림’으로** **쉽고 재밌게 꿈을 기록해보세요 !** 😉
+> 무의식의 기억을 놓치고 싶지 않은 당신을 위한 꿈 기록 서비스 <br>
+> **레코드림**으로 쉽고 재미있게 꿈을 기록해보세요 ! 😉
 
 
-<img width="1363" src="img src="./Asset/브랜딩.png">
+<img width="1363" img src = "./Asset/브랜딩.png">
 
 <br />
 
@@ -19,7 +19,7 @@
 |<img src="./Asset/소진.png" width=200>|<img src="./Asset/은희.jpeg" width=200>|<img src="./Asset/윤휘.jpeg" width=200>|
 |:--:|:--:|:--:|
 |**소진**|**은희**|**윤휘**|
-|[@513sojin(https://github.com/513sojin)|[@EunHee-Jeong](https://github.com/EunHee-Jeong)|[@88yhtserof](https://github.com/88yhtserof)|
+|[@513sojin](https://github.com/513sojin)|[@EunHee-Jeong](https://github.com/EunHee-Jeong)|[@88yhtserof](https://github.com/88yhtserof)|
 
 ---
 
@@ -97,13 +97,13 @@ RecorDream-iOS
  │   │   └── Share
  │   │        └── ViewModels
  │   │        └── ViewControllers
- │   ├── Service
- │   │   └── DTO
- │   │        └── Network
- │   │        └── Result
- │   │   └── Mock
- │   │        └── Parser
- └───└── RecorDreamTests
+ │   └── Service
+ │       ├── DTO
+ │       │    └── Network
+ │       │    └── Result
+ │       └── Mock
+ │           └── Parser
+ └── RecorDreamTests
 HeeKit
  ├── Package.swift
  ├── Sources
