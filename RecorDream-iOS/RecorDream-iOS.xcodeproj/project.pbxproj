@@ -21,6 +21,7 @@
 		F613C7FC28756AB7005CB133 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7FB28756AB7005CB133 /* Then */; };
 		F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7FE2876D336005CB133 /* BaseViewController.swift */; };
 		F613C8012876D356005CB133 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C8002876D356005CB133 /* BaseView.swift */; };
+		F6F11007287BE5A0003F67CF /* RecorDreamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F11006287BE5A0003F67CF /* RecorDreamTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		F613C7E1287565AE005CB133 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
 		F613C7FE2876D336005CB133 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F613C8002876D356005CB133 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F6F11004287BE5A0003F67CF /* RecorDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F11006287BE5A0003F67CF /* RecorDreamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6F11001287BE5A0003F67CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				F613C7B52875617E005CB133 /* RecorDream-iOS */,
+				F6F11005287BE5A0003F67CF /* RecorDreamTests */,
 				F613C7B42875617E005CB133 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				F613C7B32875617E005CB133 /* RecorDream-iOS.app */,
+				F6F11004287BE5A0003F67CF /* RecorDreamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +219,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		F6F11005287BE5A0003F67CF /* RecorDreamTests */ = {
+			isa = PBXGroup;
+			children = (
+				F6F11006287BE5A0003F67CF /* RecorDreamTests.swift */,
+			);
+			path = RecorDreamTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +253,23 @@
 			productReference = F613C7B32875617E005CB133 /* RecorDream-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F6F11003287BE5A0003F67CF /* RecorDreamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6F1100A287BE5A1003F67CF /* Build configuration list for PBXNativeTarget "RecorDreamTests" */;
+			buildPhases = (
+				F6F11000287BE5A0003F67CF /* Sources */,
+				F6F11001287BE5A0003F67CF /* Frameworks */,
+				F6F11002287BE5A0003F67CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecorDreamTests;
+			productName = RecorDreamTests;
+			productReference = F6F11004287BE5A0003F67CF /* RecorDreamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,6 +281,9 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					F613C7B22875617E005CB133 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					F6F11003287BE5A0003F67CF = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
@@ -268,6 +308,7 @@
 			projectRoot = "";
 			targets = (
 				F613C7B22875617E005CB133 /* RecorDream-iOS */,
+				F6F11003287BE5A0003F67CF /* RecorDreamTests */,
 			);
 		};
 /* End PBXProject section */
@@ -284,6 +325,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6F11002287BE5A0003F67CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -297,6 +345,14 @@
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F613C7E2287565AE005CB133 /* SampleViewController.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6F11000287BE5A0003F67CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6F11007287BE5A0003F67CF /* RecorDreamTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +531,40 @@
 			};
 			name = Release;
 		};
+		F6F11008287BE5A0003F67CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RS46GZF8TU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recordream.corp.RecorDreamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F6F11009287BE5A0003F67CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RS46GZF8TU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.recordream.corp.RecorDreamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -492,6 +582,15 @@
 			buildConfigurations = (
 				F613C7C828756181005CB133 /* Debug */,
 				F613C7C928756181005CB133 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6F1100A287BE5A1003F67CF /* Build configuration list for PBXNativeTarget "RecorDreamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6F11008287BE5A0003F67CF /* Debug */,
+				F6F11009287BE5A0003F67CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
