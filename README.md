@@ -1,6 +1,6 @@
 # RecorDream 💿<img src="./Asset/로고.png" align=left width=100>
 
-> 기상 직후의 꿈 기록과 관리를 돕는 꿈 기록 아카이빙 서비스 <br>
+> 기상 직후의 꿈 기록과 관리를 돕는 Dream Archiving Service <br>
 
 <br />
 
@@ -21,35 +21,39 @@
 |**소진**|**은희**|**윤휘**|
 |[@513sojin](https://github.com/513sojin)|[@EunHee-Jeong](https://github.com/EunHee-Jeong)|[@88yhtserof](https://github.com/88yhtserof)|
 
----
+
 
 <br />
 
 ## 🛠 Development Environment
 
-## 📚 Library
+## 📚 Package Dependency
 
-| Name | Tag | |
+| Name | Tag | Management Tool |
 | --- | --- | --- |
 | SnapKit | Layout | SPM |
 | Then | Layout, Sugar API | SPM |
 | IQKeyboardManager | Layout, Keyboard | SPM |
 
+
 <br />
 
 ## 🕹 Convention
 
-`Coding Convention` · `Commit Convention`
+`Coding Convention` · `Git Flow`
 
 <details markdown="1">
-<summary>[Coding Convention]</summary>
+<summary>Coding Convention</summary>
 
-👉 [Wiki 보러가기](https://github.com/TeamRecorDream/RecorDream-iOS/wiki/%08Coding-Convention)
+<br>
+👉 Team Wiki 보러가기 https://github.com/TeamRecorDream/RecorDream-iOS/wiki/%08Coding-Convention
 
 </details>
 
 <details markdown="2">
-<summary>[Git Flow]</summary>
+<summary>Git Flow</summary>
+
+<br>
 
 ```
 1. Issue를 생성한다. // 작업의 단위, 번호 부여
@@ -65,12 +69,13 @@
 6. 다른 팀원들은 merge된 작업물을 pull하고 다시 각자 맡은 작업을 이어나간다.
 ```
 </details>
- 
+
 <br />
 
 ## 🗂 Project Architecture
 
 ```swift
+
 RecorDream-iOS
  ├── Info.plist
  ├── Resource
@@ -98,12 +103,13 @@ RecorDream-iOS
  │   │        └── ViewModels
  │   │        └── ViewControllers
  │   └── Service
- │       ├── DTO
- │       │    └── Network
- │       │    └── Result
+ │       └── DTO
+ │            └── Network
+ │            └── Result
  │       └── Mock
- │           └── Parser
+ │            └── Parser
  └── RecorDreamTests
+ 
 HeeKit
  ├── Package.swift
  ├── Sources
@@ -113,8 +119,3 @@ HeeKit
  ├── Tests
  └──   └── HeeKitTests
 ```
-
-
-</details>
-
-<br />
