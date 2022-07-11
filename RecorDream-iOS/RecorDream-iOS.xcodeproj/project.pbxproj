@@ -19,6 +19,8 @@
 		F613C7F628756A98005CB133 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F528756A98005CB133 /* IQKeyboardManagerSwift */; };
 		F613C7F928756AA8005CB133 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F828756AA8005CB133 /* SnapKit-Dynamic */; };
 		F613C7FC28756AB7005CB133 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7FB28756AB7005CB133 /* Then */; };
+		F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7FE2876D336005CB133 /* BaseViewController.swift */; };
+		F613C8012876D356005CB133 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C8002876D356005CB133 /* BaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F613C7D7287564D2005CB133 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F613C7E0287565AE005CB133 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		F613C7E1287565AE005CB133 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		F613C7FE2876D336005CB133 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F613C8002876D356005CB133 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		F613C7D9287564EC005CB133 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F613C7FD2876D314005CB133 /* Common */,
 				F613C7DD28756582005CB133 /* Create */,
 				F613C7DE28756587005CB133 /* Play */,
 				F613C7DF2875658A005CB133 /* Share */,
@@ -191,6 +196,15 @@
 				F613C7E1287565AE005CB133 /* SampleViewController.xib */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		F613C7FD2876D314005CB133 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F613C7FE2876D336005CB133 /* BaseViewController.swift */,
+				F613C8002876D356005CB133 /* BaseView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +291,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
+				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F613C7E2287565AE005CB133 /* SampleViewController.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
 			);
