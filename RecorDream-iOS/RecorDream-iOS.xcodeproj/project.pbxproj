@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
 		F613C7C028756181005CB133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7BF28756181005CB133 /* Assets.xcassets */; };
 		F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7CE287563E8005CB133 /* Colors.xcassets */; };
 		F613C7D2287563FF005CB133 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7D1287563FF005CB133 /* Images.xcassets */; };
 		F613C7D8287564D2005CB133 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7D7287564D2005CB133 /* Constant.swift */; };
-		F613C7E2287565AE005CB133 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7E0287565AE005CB133 /* SampleViewController.swift */; };
-		F613C7E3287565AE005CB133 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F613C7E1287565AE005CB133 /* SampleViewController.xib */; };
 		F613C7F328756A61005CB133 /* HeeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F228756A61005CB133 /* HeeKit */; };
 		F613C7F628756A98005CB133 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F528756A98005CB133 /* IQKeyboardManagerSwift */; };
 		F613C7F928756AA8005CB133 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F828756AA8005CB133 /* SnapKit-Dynamic */; };
@@ -25,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F613C7B82875617E005CB133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,8 +33,6 @@
 		F613C7CE287563E8005CB133 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F613C7D1287563FF005CB133 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F613C7D7287564D2005CB133 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		F613C7E0287565AE005CB133 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
-		F613C7E1287565AE005CB133 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
 		F613C7FE2876D336005CB133 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F613C8002876D356005CB133 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F6F11004287BE5A0003F67CF /* RecorDreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorDreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +61,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23695C6E287C29E500B479A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				23695C70287C2A2000B479A2 /* ViewControllers */,
+				23695C6F287C2A1800B479A2 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		23695C6F287C2A1800B479A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		23695C70287C2A2000B479A2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				23695C71287C2A3B00B479A2 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F613C7AA2875617E005CB133 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +212,7 @@
 		F613C7DD28756582005CB133 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				23695C6E287C29E500B479A2 /* Home */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -204,8 +227,6 @@
 		F613C7DF2875658A005CB133 /* Share */ = {
 			isa = PBXGroup;
 			children = (
-				F613C7E0287565AE005CB133 /* SampleViewController.swift */,
-				F613C7E1287565AE005CB133 /* SampleViewController.xib */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -321,7 +342,6 @@
 				F613C7D2287563FF005CB133 /* Images.xcassets in Resources */,
 				F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */,
 				F613C7C028756181005CB133 /* Assets.xcassets in Resources */,
-				F613C7E3287565AE005CB133 /* SampleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +363,8 @@
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
-				F613C7E2287565AE005CB133 /* SampleViewController.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
+				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
