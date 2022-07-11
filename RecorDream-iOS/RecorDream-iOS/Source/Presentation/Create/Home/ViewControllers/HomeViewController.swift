@@ -1,20 +1,20 @@
 //
-//  SampleViewController.swift
+//  HomeViewController.swift
 //  RecorDream-iOS
 //
-//  Created by 정은희 on 2022/07/06.
+//  Created by Sojin Lee on 2022/07/11.
 //
 
 import UIKit
 
-class SampleViewController: BaseViewController {
+class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
 
     /*
     // MARK: - Navigation
