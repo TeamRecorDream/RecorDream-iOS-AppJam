@@ -33,6 +33,13 @@ enum ImageList: String, CaseIterable {
     case buttonSaveOff = "recored_btn_save_off"
     case toggleOff = "toggle_off"
     case toggleOn = "toggle_on"
+    case mainCardColorRed = "home_main_card_red"
+    case mainCardColorBlue = "home_main_card_blue"
+    case mainCardColorDark = "home_main_card_dark"
+    case mainCardColorGreen = "home_main_card_green"
+    case mainCardColorOrange = "home_main_card_orange"
+    case mainCardColorPink = "home_main_card_pink"
+    case mainCardColorPurple = "home_main_card_purple"
     
     var name: String {
         return self.rawValue
