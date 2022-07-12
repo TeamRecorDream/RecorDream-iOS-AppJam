@@ -115,16 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				23695C70287C2A2000B479A2 /* ViewControllers */,
-				23695C6F287C2A1800B479A2 /* View */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		23695C6F287C2A1800B479A2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		23695C70287C2A2000B479A2 /* ViewControllers */ = {
