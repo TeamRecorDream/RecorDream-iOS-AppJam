@@ -11,6 +11,8 @@
 		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
 		232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */; };
+		232D0E45287DE3A00063D725 /* HashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E44287DE3A00063D725 /* HashtagCollectionViewCell.swift */; };
+		232D0E49287DEC380063D725 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E48287DEC380063D725 /* HashtagView.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
@@ -65,6 +67,8 @@
 		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
 		232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		232D0E44287DE3A00063D725 /* HashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagCollectionViewCell.swift; sourceTree = "<group>"; };
+		232D0E48287DEC380063D725 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				232D0E38287D86C20063D725 /* HeaderView.swift */,
 				232D0E3A287D88E60063D725 /* UserNameView.swift */,
 				232D0E3C287D893E0063D725 /* RecorDreamView.swift */,
+				232D0E48287DEC380063D725 /* HashtagView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,14 +139,22 @@
 			isa = PBXGroup;
 			children = (
 				232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */,
+				232D0E44287DE3A00063D725 /* HashtagCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		232D0E41287DC4AB0063D725 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		23695C6E287C29E500B479A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				232D0E37287D86850063D725 /* View */,
+				232D0E41287DC4AB0063D725 /* Model */,
 				23695C70287C2A2000B479A2 /* ViewControllers */,
 			);
 			path = Home;
@@ -150,6 +163,7 @@
 		23695C70287C2A2000B479A2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				232D0E37287D86850063D725 /* View */,
 				23695C71287C2A3B00B479A2 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -492,6 +506,7 @@
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
 				232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */,
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
+				232D0E45287DE3A00063D725 /* HashtagCollectionViewCell.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
@@ -506,6 +521,7 @@
 				F6D39477287D6F31004A7DBB /* ColorType+.swift in Sources */,
 				232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */,
 				F6D3947F287D76F2004A7DBB /* ImageList+.swift in Sources */,
+				232D0E49287DEC380063D725 /* HashtagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
