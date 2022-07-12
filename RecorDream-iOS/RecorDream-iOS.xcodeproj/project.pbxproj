@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
+		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
+		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
+		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,9 +117,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		232D0E37287D86850063D725 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				232D0E38287D86C20063D725 /* HeaderView.swift */,
+				232D0E3A287D88E60063D725 /* UserNameView.swift */,
+				232D0E3C287D893E0063D725 /* RecorDreamView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		23695C6E287C29E500B479A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				232D0E37287D86850063D725 /* View */,
 				23695C70287C2A2000B479A2 /* ViewControllers */,
 			);
 			path = Home;
@@ -462,14 +479,17 @@
 			files = (
 				F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
+				232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */,
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
+				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
+				232D0E39287D86C20063D725 /* HeaderView.swift in Sources */,
 				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
 				F6D3946D287D68D4004A7DBB /* ColorType.swift in Sources */,
 				F6D39477287D6F31004A7DBB /* ColorType+.swift in Sources */,
