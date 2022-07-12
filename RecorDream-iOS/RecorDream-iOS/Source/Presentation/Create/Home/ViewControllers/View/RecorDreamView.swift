@@ -37,11 +37,11 @@ class RecorDreamView: BaseView {
         $0.isPagingEnabled = false
         $0.decelerationRate = .fast
         $0.contentInsetAdjustmentBehavior = .never
+        $0.backgroundColor = .clear
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        userNameView.setWelcomLabel()
         setDelegate()
     }
     
@@ -51,7 +51,7 @@ class RecorDreamView: BaseView {
     
     override func setupConstraint() {
         userNameView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(23)
+            make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(11)
         }
         
@@ -79,7 +79,7 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .blue
+//        cell.backgroundView = UIImageView(image: UIImage(named: ImageList.mainCardColorRed.name))
         return cell
     }
     

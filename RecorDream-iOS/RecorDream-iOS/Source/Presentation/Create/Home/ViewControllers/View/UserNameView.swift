@@ -56,7 +56,4 @@ class UserNameView: BaseView {
         userName = name
     }
     
-    func setWelcomLabel() {
-        welcomeLabel.textAlignment = .left
-    }
 }
