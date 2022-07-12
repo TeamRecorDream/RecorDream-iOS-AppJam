@@ -53,7 +53,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCardView(ImageList.mainCardColorGreen.name, ImageList.mainEmojiJoy.name, "2022/07/13(수)", "윤정 시하 사랑해 안녕 지금은 새벽 세시어쩌구 저쩌구 . .졸려 죽을지경임  ~") // TODO: - cell 불러오는 곳에서 수정하기
+        setCardView(ImageList.mainCardColorGreen.name, ImageList.mainEmojiJoy.name, "2022/07/13(수)", "영모야 영모야 모할래 . . 사랑해 잘자~") // TODO: - cell 불러오는 곳에서 수정하기
         setupConstraints()
     }
     
@@ -80,21 +80,21 @@ class CardCollectionViewCell: UICollectionViewCell {
         
         mainEmojiImage.snp.makeConstraints { make in
             make.width.height.equalTo(48)
-            make.leading.equalToSuperview().offset(2)
+            make.leading.equalToSuperview()
             make.top.equalToSuperview()
         }
         
         dateLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(2)
+            make.leading.equalToSuperview()
             make.top.equalTo(mainEmojiImage.snp.bottom).offset(8)
         }
         
         contentLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(2)
+            make.leading.equalToSuperview()
         }
         
         hashtagView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(2)
+            make.leading.equalToSuperview()
             make.height.equalTo(24)
         }
     }
