@@ -3,7 +3,8 @@
 //  RecorDream-iOS
 //
 //  Created by Sojin Lee on 2022/07/12.
-//
+
+//  Home View에 있는 카드에 들어갈 cell
 
 import UIKit
 import SnapKit
@@ -23,6 +24,8 @@ class CardCollectionViewCell: UICollectionViewCell {
     
     let contentLabel = UILabel().then {
         $0.font = TypoStyle.title1.font
+        $0.lineBreakMode = .byWordWrapping
+        $0.numberOfLines = 0
     }
     
     lazy var cardView = UIView().then {
@@ -50,7 +53,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCardView(ImageList.mainCardColorGreen.name, ImageList.mainEmojiJoy.name, "2022/07/13(수)", "윤정 시하 사랑해 ~") // TODO: - cell 불러오는 곳에서 수정하기
+        setCardView(ImageList.mainCardColorGreen.name, ImageList.mainEmojiJoy.name, "2022/07/13(수)", "윤정 시하 사랑해 안녕 지금은 새벽 세시어쩌구 저쩌구 . .졸려 죽을지경임  ~") // TODO: - cell 불러오는 곳에서 수정하기
         setupConstraints()
     }
     
