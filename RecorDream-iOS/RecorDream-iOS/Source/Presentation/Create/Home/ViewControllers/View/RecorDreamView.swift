@@ -38,6 +38,7 @@ class RecorDreamView: BaseView {
         $0.decelerationRate = .fast
         $0.contentInsetAdjustmentBehavior = .never
         $0.backgroundColor = .clear
+        $0.showsHorizontalScrollIndicator = false
     }
     
     override init(frame: CGRect) {
@@ -72,6 +73,7 @@ class RecorDreamView: BaseView {
     }
 }
 
+// MARK: - extension
 extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5 // TODO: - 꿈 기록 카드에 맞게 바꿔두기
