@@ -31,14 +31,15 @@
 
 | Name | Tag | Management Tool |
 | --- | --- | --- |
-| SnapKit | Layout | SPM |
-| Then | Layout, Sugar API | SPM |
-| IQKeyboardManager | Layout, Keyboard | SPM |
+| HeeKit | Global Extension | SPM |
+| IQKeyboardManager | Layout, Keyboard | - |
+| SnapKit | Layout | - |
+| Then | Sugar API | - |
 
 
 <br />
 
-## 🕹 Convention
+## ✔️ Convention
 
 `Coding Convention` · `Git Flow`
 
@@ -80,7 +81,7 @@ RecorDream-iOS
  ├── Info.plist
  ├── Resource
  │   ├── Assets
- │   │   └── AppIcon.xcassets
+ │   │      └── AppIcon.xcassets
  │   ├── Colors
  │   │      └── Colors.xcassets
  │   ├── Images
@@ -90,7 +91,10 @@ RecorDream-iOS
  │   │   └── AppDelegate
  │   │   └── SceneDelegate
  │   ├── Common
- │   │   └── Consts
+ │   │   └── Constants
+ │   │          └── ColorFactory
+ │   │          └── FontFactory
+ │   │          └── ImageFactory
  │   │   └── Protocols
  │   ├── Presentation
  │   │   └── Create
@@ -100,18 +104,18 @@ RecorDream-iOS
  │   │        └── Models
  │   │        └── ViewControllers
  │   │   └── Share
+ │   │        └── Models
+ │   │        └── Views
  │   │        └── ViewModels
- │   │        └── ViewControllers
  │   └── Service
  │       └── DTO
  │            └── Network
- │            └── Result
+ │            └── Foundation
  │       └── Mock
  │            └── Parser
  └── RecorDreamTests
  
 HeeKit
- ├── Package.swift
  ├── Sources
  │     └── HeeKit
  │           └── Protocol
