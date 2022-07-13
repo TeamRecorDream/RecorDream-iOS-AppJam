@@ -39,7 +39,8 @@ class HashtagView: BaseView {
     }
     
     override func setupView() {
-        addSubview(paddingLabel)    }
+        addSubview(paddingLabel)
+    }
     
     override func setupConstraint() {
         paddingLabel.snp.makeConstraints { make in

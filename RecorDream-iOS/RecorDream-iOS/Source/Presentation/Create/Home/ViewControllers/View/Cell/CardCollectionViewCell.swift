@@ -14,7 +14,10 @@ class CardCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     static let identifier = "CardCollectionViewCell"
     
-    var genreType : [Int:String] = [1:"코미디", 2:"로맨스", 3:"액션", 4:"스릴러", 5:"미스터리", 6:"공포", 7:"SF", 8:"판타지", 9:"가족/친구", 10:"기타"] // TODO: - genre 번호와 string 매칭 된건지 물어보기
+    // TODO: - genre 번호 dream_color와 string 매칭 된건지 물어보기
+    var genreType: [Int:String] = [1:"코미디", 2:"로맨스", 3:"액션", 4:"스릴러", 5:"미스터리", 6:"공포", 7:"SF", 8:"판타지", 9:"가족/친구", 10:"기타"]
+    var backgroundColorType: [Int:String] = [1: ImageList.mainCardColorGreen.name, 2: ImageList.mainCardColorDark.name, 3: ImageList.mainCardColorBlue.name, 4: ImageList.mainCardColorOrange.name, 5:ImageList.mainCardColorPurple.name, 6: ImageList.mainCardColorPink.name, 7:ImageList.mainCardColorRed.name]
+    var textColorType: [Int:String] = [1:"sub_green01" ,2:"sub_dark01", 3:"sub_blue01", 4:"sub_orange01", 5:"sub_purple01", 6:"sub_pink01", 7:"sub_red01"]
     
     let backgroundImage = UIImageView()
     let mainEmojiImage = UIImageView()
@@ -54,9 +57,9 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCardView(ImageList.mainCardColorGreen.name, ImageList.mainEmojiJoy.name, "2022/07/13(수)", "나 졸려 나 졸려 레코드림 하러갑니다") // TODO: - cell 불러오는 곳에서 수정하기
+        setCardView(backgroundColorType[7] ?? "ImageList.mainCardColorDark.name", ImageList.mainEmojiJoy.name, "2022/07/13(수)", "나 졸려 나 졸려 레코드림 하러갑니다") // TODO: - cell 불러오는 곳에서 수정하기
         setupConstraints()
-        setHashtagStackView([1,2], "sub_green01")
+        setHashtagStackView([1,3], textColorType[7] ?? "sub_dark01")
     }
     
     func setupView() {
@@ -109,7 +112,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         genre.forEach { index in
             let hashtagView = HashtagView()
             guard let type = genreType[index] else { return }
-            hashtagView.setLabelText("# \(type)", "sub_green01")
+            hashtagView.setLabelText("# \(type)", textColor)
             hashtagStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
