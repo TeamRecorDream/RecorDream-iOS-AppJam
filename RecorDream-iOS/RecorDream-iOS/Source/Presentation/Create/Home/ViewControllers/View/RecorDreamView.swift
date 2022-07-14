@@ -54,7 +54,7 @@ class RecorDreamView: BaseView {
     
     override func setupConstraint() {
         userNameView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(28)
             make.top.equalToSuperview().offset(11)
         }
         

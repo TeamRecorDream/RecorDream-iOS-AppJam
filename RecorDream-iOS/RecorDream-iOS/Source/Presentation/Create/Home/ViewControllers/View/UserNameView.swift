@@ -6,54 +6,40 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class UserNameView: BaseView {
-    var userName: String? {
-        didSet {
-            setBoldLabelText()
-        }
+    let welcomeTopLabel = UILabel().then {
+        $0.font = TypoStyle.head1.font
     }
     
-    lazy var welcomeLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 24, weight: .ultraLight)
-        $0.textAlignment = .center
+    let welcomeBottomLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 24, weight: .ultraLight) //TODO: - typo 추가하기
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setBoldLabelText()
+    lazy var welcomeStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.alignment = .leading
+        $0.spacing = 8
+        $0.addArrangedSubviews(welcomeTopLabel, welcomeBottomLabel)
     }
-    
+
     override func setupView() {
-        addSubview(welcomeLabel)
+        addSubview(welcomeStackView)
     }
     
     override func setupConstraint() {
-        welcomeLabel.snp.makeConstraints { make in
+        welcomeStackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
     
-    func setBoldLabelText() {
-        guard let label = welcomeLabel.text else { return }
-        var userNameCount: Int
-        if let count = userName?.count {
-            userNameCount = 8 + count
-        } else {
-            userNameCount = 8
-        }
-        
-        let attributedStr = NSMutableAttributedString(string: label)
-        attributedStr.addAttribute(.font, value: UIFont.systemFont(ofSize: 24, weight: .heavy), range: NSRange.init(location: 0, length: userNameCount))
-        welcomeLabel.numberOfLines = 0
-        welcomeLabel.attributedText = attributedStr
-    }
-    
     func setUserName(_ name: String, _ isEmpty: Bool ) {
-        welcomeLabel.text = isEmpty
-        ? "반가워요, \(name)님!\n꿈의 기록을 채워주세요."
-        : "반가워요, \(name)님!\n최근에 어떤 꿈을 꾸셨나요?"
-        userName = name
+        welcomeTopLabel.text = "반가워요, \(name)님!"
+        welcomeBottomLabel.text = isEmpty
+        ? "꿈의 기록을 채워주세요."
+        : "최근에 어떤 꿈을 꾸셨나요?"
     }
     
 }
