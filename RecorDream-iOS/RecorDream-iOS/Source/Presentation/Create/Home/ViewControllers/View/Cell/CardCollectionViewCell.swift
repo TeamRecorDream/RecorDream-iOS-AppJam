@@ -112,7 +112,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         genre.forEach { index in
             let hashtagView = HashtagView()
             guard let type = genreType[index] else { return }
-            hashtagView.setLabelText("# \(type)", textColor)
+            hashtagView.setLabelText("# \(type)", textColor, TypoStyle.subtitle3.font)
             hashtagStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
@@ -127,11 +127,28 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func updateCell(){
-        backgroundImage.alpha = 0.3
+    //MARK: - prepare function
+    override func prepareForReuse() {
+      super.prepareForReuse()
+      
+        self.prepare(plusAlpha: true, updateConst: true)
     }
     
-    func resetCell(){
-        backgroundImage.alpha = 1
+    func prepare(plusAlpha: Bool , updateConst: Bool){
+        self.cardView.alpha = plusAlpha ? 0.6 : 1
+    
+        if updateConst {
+            self.mainEmojiImage.snp.updateConstraints { make in
+                make.height.width.equalTo(38)
+            }
+            contentLabel.font = TypoStyle.subtitle1.font
+            dateLabel.font = TypoStyle.subtitle6.font
+        } else {
+            self.mainEmojiImage.snp.updateConstraints { make in
+                make.height.width.equalTo(48)
+            }
+            contentLabel.font = TypoStyle.title1.font
+            dateLabel.font = TypoStyle.subtitle1.font
+        }
     }
 }
