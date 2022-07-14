@@ -35,7 +35,6 @@ class HashtagView: BaseView {
         $0.backgroundColor = .white
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 3
-        $0.font = TypoStyle.subtitle3.font
     }
     
     override func setupView() {
@@ -48,8 +47,9 @@ class HashtagView: BaseView {
         }
     }
     
-    func setLabelText(_ text: String, _ color: String){
+    func setLabelText(_ text: String, _ color: String, _ textTypo: UIFont){
         paddingLabel.text = text
         paddingLabel.textColor = UIColor(named: color)
+        paddingLabel.font = textTypo
     }
 }
