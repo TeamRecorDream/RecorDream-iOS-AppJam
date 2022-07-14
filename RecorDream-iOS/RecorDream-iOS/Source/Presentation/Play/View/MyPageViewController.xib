@@ -22,6 +22,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="hWG-yj-iMS" id="KAS-Uu-mkC"/>
+                <outletCollection property="settingView" destination="0CI-x6-BDp" collectionClass="NSMutableArray" id="gIW-5Z-wdH"/>
+                <outletCollection property="settingView" destination="PPs-UP-qga" collectionClass="NSMutableArray" id="J4P-7R-M3t"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -94,17 +96,19 @@
                                             <color key="textColor" name="white01"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM 06:24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6O-Xp-rvI">
-                                            <rect key="frame" x="276.5" y="22" width="73.5" height="86"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBV-qc-uVm">
+                                            <rect key="frame" x="276" y="22" width="74" height="86"/>
                                             <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
-                                            <color key="textColor" name="white01"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="AM 06:24">
+                                                <color key="titleColor" name="white01"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Xly-3e-DYV" firstAttribute="top" secondItem="udG-Ql-kLM" secondAttribute="top" constant="22" id="7JM-VH-Oaa"/>
-                                        <constraint firstItem="R6O-Xp-rvI" firstAttribute="centerY" secondItem="Xly-3e-DYV" secondAttribute="centerY" id="geZ-TI-pRM"/>
                                         <constraint firstAttribute="bottom" secondItem="Xly-3e-DYV" secondAttribute="bottom" constant="22" id="imC-Rb-gQr"/>
+                                        <constraint firstItem="pBV-qc-uVm" firstAttribute="centerY" secondItem="Xly-3e-DYV" secondAttribute="centerY" id="tNS-Dl-oHH"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
