@@ -95,6 +95,9 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
+        if indexPath.item > 0 {
+            cell.prepare(plusAlpha: true, updateConst: true)
+        }
         return cell
     }
     
@@ -124,6 +127,19 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
                 cellIndex = i
                 carouselCollectionView.performBatchUpdates(nil)
             }
+        }
+        
+        let indexPath = IndexPath(item: Int(cellIndex), section: 0)
+        if let cell = carouselCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell {
+            cell.prepare(plusAlpha: false, updateConst: false)
+        }
+        
+        if Int(cellIndex) != previousIndex {
+            let preIndexPath = IndexPath(item: previousIndex, section: 0)
+            if let preCell = carouselCollectionView.cellForItem(at: preIndexPath) as? CardCollectionViewCell {
+                preCell.prepare(plusAlpha: true, updateConst: false)
+            }
+            previousIndex = indexPath.item
         }
     
     }
