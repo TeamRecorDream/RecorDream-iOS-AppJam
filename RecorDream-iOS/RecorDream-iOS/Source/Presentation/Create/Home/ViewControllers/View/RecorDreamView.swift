@@ -10,7 +10,7 @@ import SnapKit
 import Then
 
 enum TypeConst {
-    static let itemSize = CGSize(width: 264, height: 392)
+    static let itemSize = CGSize(width: 264, height: 392) //기존 사이즈
     static let itemSpacing = 20.0
     
     static var insetX: CGFloat {
@@ -24,6 +24,8 @@ enum TypeConst {
 
 class RecorDreamView: BaseView {
     let userNameView = UserNameView()
+    var previousIndex = 0
+    var cellIndex: Int = 0
     
     let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
@@ -79,17 +81,80 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
         return 5 // TODO: - 꿈 기록 카드에 맞게 바꿔두기
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width = 204.0
+        var height = 314.0
+
+        if indexPath.item == cellIndex {
+            width = TypeConst.itemSize.width
+            height = TypeConst.itemSize.height
+        }
+
+        return CGSize(width: width, height: height)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
-//        cell.backgroundView = UIImageView(image: UIImage(named: ImageList.mainCardColorRed.name))
+//        print(cell)
         return cell
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let cellWidth = TypeConst.itemSize.width + TypeConst.itemSpacing
         let offset = targetContentOffset.pointee.x + TypeConst.insetX
+        print("endDragging: \(offset)")
         let index: CGFloat = round(offset / cellWidth)
-        
+
         targetContentOffset.pointee = CGPoint(x: index * cellWidth - scrollView.contentInset.left, y: scrollView.contentInset.top)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let cellWidth = TypeConst.itemSize.width + TypeConst.itemSpacing
+        let offset = scrollView.contentOffset.x
+        print("didScroll: \(offset)")
+        let index: CGFloat = round(offset / cellWidth)
+        cellIndex = Int(round(index))
+        print("cellIndex: \(cellIndex)")
+        carouselCollectionView.performBatchUpdates(nil) //TODO: -
+        let roundedIndex = round(index)
+        let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
+        
+        if let cell = carouselCollectionView.cellForItem(at:indexPath) as? CardCollectionViewCell {
+            animateZoomforCell(zoomCell: cell)
+            cell.backgroundImage.alpha = 1
+//            cell.updateCell()#imageLiteral(resourceName: "simulator_screenshot_145A8932-7CB6-4A68-8A57-8CED952A9694.png")
+        }
+    
+        if Int(roundedIndex) != previousIndex {
+            let preIndexPath = IndexPath(item: previousIndex, section: 0)
+            if let preCell = collectionView(carouselCollectionView, cellForItemAt: preIndexPath) as? CardCollectionViewCell {
+                animateZoomforCellremove(zoomCell: preCell)
+            }
+            previousIndex = indexPath.item
+        }
+    
+    }
+    
+    func animateZoomforCell(zoomCell: UICollectionViewCell) {
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            options: .curveEaseOut,
+            animations: {
+                zoomCell.transform = .identity
+            },
+            completion: nil)
+    }
+    
+    func animateZoomforCellremove(zoomCell: UICollectionViewCell) {
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            options: .curveEaseOut,
+            animations: {
+                zoomCell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            },
+            completion: nil)
+        
     }
 }

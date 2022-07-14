@@ -33,6 +33,7 @@ enum ImageList: String, CaseIterable {
     case buttonSaveOff = "recored_btn_save_off"
     case toggleOff = "toggle_off"
     case toggleOn = "toggle_on"
+    // MARK: - main card 이미지
     case mainCardColorRed = "home_main_card_red"
     case mainCardColorBlue = "home_main_card_blue"
     case mainCardColorDark = "home_main_card_dark"
@@ -40,6 +41,16 @@ enum ImageList: String, CaseIterable {
     case mainCardColorOrange = "home_main_card_orange"
     case mainCardColorPink = "home_main_card_pink"
     case mainCardColorPurple = "home_main_card_purple"
+    case mainBackground = "main_background"
+    
+    // MARK: - main에 들어갈 icon
+    case mainEmojiShy = "main_imoji_shy"
+    case mainEmojiAngry = "main_imoji_angry"
+    case mainEmojiBlank = "main_imoji_blank"
+    case mainEmojiJoy = "main_imoji_joy"
+    case mainEmojiLove = "main_imoji_love"
+    case mainEmojiSad = "main_imoji_sad"
+    case mainEmojiShocked = "main_imoji_shocked"
     
     var name: String {
         return self.rawValue

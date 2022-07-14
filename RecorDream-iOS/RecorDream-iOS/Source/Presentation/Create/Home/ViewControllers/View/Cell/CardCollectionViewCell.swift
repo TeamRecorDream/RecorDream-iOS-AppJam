@@ -57,7 +57,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCardView(backgroundColorType[7] ?? "ImageList.mainCardColorDark.name", ImageList.mainEmojiJoy.name, "2022/07/13(수)", "나 졸려 나 졸려 레코드림 하러갑니다") // TODO: - cell 불러오는 곳에서 수정하기
+        setCardView(backgroundColorType[7] ?? "ImageList.mainCardColorDark.name", ImageList.mainEmojiJoy.name, "2022/07/13(수)", "살려주세요 업데이트가 안됨") // TODO: - cell 불러오는 곳에서 수정하기
         setupConstraints()
         setHashtagStackView([1,3], textColorType[7] ?? "sub_dark01")
     }
@@ -125,6 +125,13 @@ class CardCollectionViewCell: UICollectionViewCell {
             make.leading.equalToSuperview()
             make.top.equalTo(contentLabel.snp.bottom).offset(12)
         }
-        
+    }
+    
+    func updateCell(){
+        backgroundImage.alpha = 0.3
+    }
+    
+    func resetCell(){
+        backgroundImage.alpha = 1
     }
 }
