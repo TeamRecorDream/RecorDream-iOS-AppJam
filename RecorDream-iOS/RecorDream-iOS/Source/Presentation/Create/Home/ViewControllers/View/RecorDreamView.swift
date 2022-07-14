@@ -99,112 +99,32 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        //MARK: - 드래그 했다가 마우스를 뗄 때 메서드
         scrollView.setContentOffset(CGPoint(x: 204.0 * CGFloat(cellIndex) + 10 * CGFloat(cellIndex), y: scrollView.contentInset.top), animated: true)
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        //영모
-//        let x = scrollView.contentOffset.x
-//        for i in 0..<5 {
-//            let a = CGFloat((i == 0 ? 0 : 55) + (i == 0 ? 0 : 204 / 2) + (i > 1 ? 204 * (i - 1) + 20 * (i - 1) : 0))
-//            let b = a + 264 / 2 + (i == 0 ? 0 : 20)
-//            if x > a && x < b {
-//                scrollView.setContentOffset(CGPoint(x: a, y: scrollView.contentInset.top), animated: true)
-//            }
-//        }
-  
-//        let endX = scrollView.contentOffset.x
-//        let afterX = 180 * ((endX - startX) / (scrollView.contentSize.width / 2))
-//
-//        print("[END] \(startX) : \(endX) : \(afterX)")
-//        scrollView.setContentOffset(CGPoint(x: afterX + scrollView.contentInset.left, y: scrollView.contentInset.top), animated: true)
-//
-        //영모 2트
+        //MARK: - 드래그 끝까지 끌다가 끝냈을 때 호출되는 메서드
 //        0
 //        204 * 1 + 20 / 2
 //        204 * 2 + 20
 //        204 * 3 + 20 + 20 / 2
 //        204 * 4 + 20 + 20
         scrollView.setContentOffset(CGPoint(x: 204.0 * CGFloat(cellIndex) + 10 * CGFloat(cellIndex), y: scrollView.contentInset.top), animated: true)
-//        scrollView.setContentOffset(CGPoint(x: 204 * self.cellIndex + 10 * self.cellIndex , y: scrollView.contentInset.top), animated: true)
-        
-        //소진 1ㅌ
-//        let x = scrollView.contentOffset.x
-//        for i in 0..<5 {
-//            let a = CGFloat(i * (204 + 20))
-//            let b = CGFloat(55 + i * (204 + 20) + 264 + 55)
-//            var xPoint: CGFloat
-//            if x > a && x < b {
-//                if ( x - 55.0 + CGFloat(i) * (204.0 + 20.0) - 55.0) > (264 / 2 + 55.0 ) {
-//                    xPoint = (CGFloat(i) + 1) * (204.0 + 20.0)
-//                } else {
-//                    xPoint = CGFloat(i) * (204.0 + 20.0)
-//                }
-//                scrollView.setContentOffset(CGPoint(x: xPoint, y: scrollView.contentInset.top), animated: true)
-//            }
-//        }
-        
-        // index 구하기
-
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
-        for i in 0..<5 { // TODO: - 카드 갯수에 따라 5에 해당되는 걸 바꾸기
-            let a = CGFloat(55 + 204 * i + 20 * (i > 1 ? i - 1 : 0)) - 102 + 20
-            let b = CGFloat(a + 264 + (i == 0 ? 0 : 20)) + 20
-            print("[D] \(x) \(a) \(b)")
+        for i in 0..<5 { // TODO: - 카드 개수로 맞추기
+//            let a = CGFloat(55 + 204 * i + 20 * (i > 1 ? i - 1 : 0)) - 102 + 20
+//            let b = CGFloat(a + 264 + (i == 0 ? 0 : 20)) + 20
+            let a = CGFloat(55 + 204 * i + 20 * i) - 102
+            let b = CGFloat(Int(a) + 264 + 20) + 102
             if x > a && x < b {
                 cellIndex = i
                 carouselCollectionView.performBatchUpdates(nil)
             }
         }
-//        let cellWidth = TypeConst.itemSize.width + TypeConst.itemSpacing
-//        let offset = scrollView.contentOffset.x
-//        print("didScroll: \(offset)")
-//        let index: CGFloat = round(offset / cellWidth)
-//        cellIndex = Int(round(index))
-//        print("cellIndex: \(cellIndex)")
-//        carouselCollectionView.performBatchUpdates(nil) //TODO: -
-//        let roundedIndex = round(index)
-//        let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
-//
-//        if let cell = carouselCollectionView.cellForItem(at:indexPath) as? CardCollectionViewCell {
-//            animateZoomforCell(zoomCell: cell)
-//            cell.backgroundImage.alpha = 1
-////            cell.updateCell()#imageLiteral(resourceName: "simulator_screenshot_145A8932-7CB6-4A68-8A57-8CED952A9694.png")
-//        }
-//
-//        if Int(roundedIndex) != previousIndex {
-//            let preIndexPath = IndexPath(item: previousIndex, section: 0)
-//            if let preCell = collectionView(carouselCollectionView, cellForItemAt: preIndexPath) as? CardCollectionViewCell {
-//                animateZoomforCellremove(zoomCell: preCell)
-//            }
-//            previousIndex = indexPath.item
-//        }
     
-    }
-    
-    func animateZoomforCell(zoomCell: UICollectionViewCell) {
-        UIView.animate(
-            withDuration: 0.2,
-            delay: 0,
-            options: .curveEaseOut,
-            animations: {
-                zoomCell.transform = .identity
-            },
-            completion: nil)
-    }
-    
-    func animateZoomforCellremove(zoomCell: UICollectionViewCell) {
-        UIView.animate(
-            withDuration: 0.2,
-            delay: 0,
-            options: .curveEaseOut,
-            animations: {
-                zoomCell.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-            },
-            completion: nil)
-        
     }
 }
