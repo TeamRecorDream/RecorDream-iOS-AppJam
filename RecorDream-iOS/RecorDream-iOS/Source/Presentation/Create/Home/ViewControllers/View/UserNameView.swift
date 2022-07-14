@@ -35,11 +35,12 @@ class UserNameView: BaseView {
         }
     }
     
-    func setUserName(_ name: String, _ isEmpty: Bool ) {
+    func setUserNameView(_ name: String, _ isEmpty: Bool ) {
         welcomeTopLabel.text = "반가워요, \(name)님!"
         welcomeBottomLabel.text = isEmpty
         ? "꿈의 기록을 채워주세요."
         : "최근에 어떤 꿈을 꾸셨나요?"
+        welcomeStackView.alignment = isEmpty ? .center : .leading
     }
     
 }

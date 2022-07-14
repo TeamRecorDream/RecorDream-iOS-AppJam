@@ -37,7 +37,7 @@ class HomeViewController: BaseViewController {
             make.centerY.equalToSuperview()
         }
         
-        homeUserNameView.setUserName("소진", true) // TODO: - user name 넣기
+        homeUserNameView.setUserNameView("소진", true) // TODO: - user name 넣기
     }
     
     func setRecorDreamView(){
@@ -48,7 +48,7 @@ class HomeViewController: BaseViewController {
             make.leading.trailing.bottom.equalToSuperview()
         }
         
-        recorDreamView.setUserName("소진 하이", false) // TODO: - user name 넣기
+        recorDreamView.setUserNameView("소진 하이", false) // TODO: - user name 넣기
     }
 }
 

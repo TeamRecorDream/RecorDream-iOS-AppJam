@@ -70,8 +70,8 @@ class RecorDreamView: BaseView {
         carouselCollectionView.dataSource = self
     }
     
-    func setUserName(_ name: String, _ isEmpty: Bool) {
-        userNameView.setUserName(name, isEmpty)
+    func setUserNameView(_ name: String, _ isEmpty: Bool) {
+        userNameView.setUserNameView(name, isEmpty)
     }
 }
 
