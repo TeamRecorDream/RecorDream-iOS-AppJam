@@ -108,6 +108,7 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         //MARK: - 드래그 끝까지 끌다가 끝냈을 때 호출되는 메서드
+// 정규식 도출 과정
 //        0
 //        204 * 1 + 20 / 2
 //        204 * 2 + 20
@@ -119,6 +120,7 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         for i in 0..<5 { // TODO: - 카드 개수로 맞추기
+            //TODO: - 아카이브 용으로 주석을 남겨두긴 했는데 . . 마지막까지 문제가 없다면 삭제하겠습니다
 //            let a = CGFloat(55 + 204 * i + 20 * (i > 1 ? i - 1 : 0)) - 102 + 20
 //            let b = CGFloat(a + 264 + (i == 0 ? 0 : 20)) + 20
             let a = CGFloat(55 + 204 * i + 20 * i) - 102
