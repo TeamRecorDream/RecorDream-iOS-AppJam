@@ -52,13 +52,13 @@
                                     <rect key="frame" x="16" y="0.0" width="350" height="64"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꿈 푸시알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FC-Yz-w3J">
-                                            <rect key="frame" x="0.0" y="24" width="73" height="20"/>
+                                            <rect key="frame" x="0.0" y="22" width="73" height="20"/>
                                             <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                             <color key="textColor" name="white01"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUm-t9-x8o" customClass="CustomSwitchButton" customModule="RecorDream_iOS" customModuleProvider="target">
-                                            <rect key="frame" x="304" y="24" width="46" height="20"/>
+                                            <rect key="frame" x="304" y="22" width="46" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="iN7-Rz-Vv9"/>
                                                 <constraint firstAttribute="width" constant="46" id="zRF-Be-xZC"/>
@@ -68,8 +68,8 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="8FC-Yz-w3J" firstAttribute="top" secondItem="7CO-nR-4UX" secondAttribute="top" constant="24" id="Ips-h5-Joa"/>
-                                        <constraint firstAttribute="bottom" secondItem="8FC-Yz-w3J" secondAttribute="bottom" constant="20" id="eJ6-CZ-EsP"/>
+                                        <constraint firstItem="8FC-Yz-w3J" firstAttribute="top" secondItem="7CO-nR-4UX" secondAttribute="top" constant="22" id="Ips-h5-Joa"/>
+                                        <constraint firstAttribute="bottom" secondItem="8FC-Yz-w3J" secondAttribute="bottom" constant="22" id="eJ6-CZ-EsP"/>
                                         <constraint firstItem="fUm-t9-x8o" firstAttribute="centerY" secondItem="8FC-Yz-w3J" secondAttribute="centerY" id="g8P-JU-Pst"/>
                                     </constraints>
                                 </stackView>
@@ -89,22 +89,22 @@
                                     <rect key="frame" x="16" y="0.0" width="350" height="130"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xly-3e-DYV">
-                                            <rect key="frame" x="0.0" y="24" width="59.5" height="86"/>
+                                            <rect key="frame" x="0.0" y="22" width="59.5" height="86"/>
                                             <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                             <color key="textColor" name="white01"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM 06:24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6O-Xp-rvI">
-                                            <rect key="frame" x="276.5" y="24" width="73.5" height="86"/>
+                                            <rect key="frame" x="276.5" y="22" width="73.5" height="86"/>
                                             <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="16"/>
                                             <color key="textColor" name="white01"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Xly-3e-DYV" firstAttribute="top" secondItem="udG-Ql-kLM" secondAttribute="top" constant="24" id="7JM-VH-Oaa"/>
+                                        <constraint firstItem="Xly-3e-DYV" firstAttribute="top" secondItem="udG-Ql-kLM" secondAttribute="top" constant="22" id="7JM-VH-Oaa"/>
                                         <constraint firstItem="R6O-Xp-rvI" firstAttribute="centerY" secondItem="Xly-3e-DYV" secondAttribute="centerY" id="geZ-TI-pRM"/>
-                                        <constraint firstAttribute="bottom" secondItem="Xly-3e-DYV" secondAttribute="bottom" constant="20" id="imC-Rb-gQr"/>
+                                        <constraint firstAttribute="bottom" secondItem="Xly-3e-DYV" secondAttribute="bottom" constant="22" id="imC-Rb-gQr"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
