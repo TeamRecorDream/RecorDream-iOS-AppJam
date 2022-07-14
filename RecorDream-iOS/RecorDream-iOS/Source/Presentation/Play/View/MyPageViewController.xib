@@ -21,10 +21,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
-<<<<<<< Updated upstream
-=======
-                <outlet property="switchButton" destination="fUm-t9-x8o" id="iVV-ZD-2GE"/>
->>>>>>> Stashed changes
                 <outlet property="view" destination="hWG-yj-iMS" id="KAS-Uu-mkC"/>
             </connections>
         </placeholder>
