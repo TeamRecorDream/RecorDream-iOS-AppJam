@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -31,10 +32,13 @@ class HeaderView: BaseView {
     
     // MARK: - Functions
     override func setupView() {
+        super.setupView()
         addSubviews(logo,iconStackView)
     }
     
     override func setupConstraint() {
+        super.setupConstraint()
+        
         logo.snp.makeConstraints { make in
             make.width.equalTo(130)
             make.height.equalTo(16)

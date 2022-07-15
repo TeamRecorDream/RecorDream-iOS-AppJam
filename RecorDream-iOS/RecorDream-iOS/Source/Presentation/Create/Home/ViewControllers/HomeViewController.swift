@@ -7,10 +7,13 @@
 
 import UIKit
 
+import SnapKit
+import Then
+
 class HomeViewController: BaseViewController {
-    let headerView = HeaderView()
-    let homeUserNameView = UserNameView()
-    let recorDreamView = RecorDreamView()
+    private let headerView = HeaderView()
+    private let homeUserNameView = UserNameView()
+    private let recorDreamView = RecorDreamView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +63,6 @@ extension UIView {
         let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
         imageViewBackground.image = UIImage(named: ImageList.mainBackground.name)
 
-        // you can change the content mode:
         imageViewBackground.contentMode = .topLeft
 
         self.addSubview(imageViewBackground)

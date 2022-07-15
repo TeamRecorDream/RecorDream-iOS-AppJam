@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -38,16 +39,18 @@ class HashtagView: BaseView {
     }
     
     override func setupView() {
+        super.setupView()
         addSubview(paddingLabel)
     }
     
     override func setupConstraint() {
+        super.setupConstraint()
         paddingLabel.snp.makeConstraints { make in
             make.trailing.leading.top.bottom.equalToSuperview()
         }
     }
     
-    func setLabelText(_ text: String, _ color: String, _ textTypo: UIFont){
+    func setLabelText(text: String, color: String, textTypo: UIFont){
         paddingLabel.text = text
         paddingLabel.textColor = UIColor(named: color)
         paddingLabel.font = textTypo

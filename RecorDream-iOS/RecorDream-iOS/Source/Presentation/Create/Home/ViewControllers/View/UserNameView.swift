@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
@@ -26,16 +27,18 @@ class UserNameView: BaseView {
     }
 
     override func setupView() {
+        super.setupView()
         addSubview(welcomeStackView)
     }
     
     override func setupConstraint() {
+        super.setupConstraint()
         welcomeStackView.snp.makeConstraints { make in
             make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
     
-    func setUserNameView(_ name: String, _ isEmpty: Bool ) {
+    func setUserNameView(name: String, isEmpty: Bool ) {
         welcomeTopLabel.text = "반가워요, \(name)님!"
         welcomeBottomLabel.text = isEmpty
         ? "꿈의 기록을 채워주세요."

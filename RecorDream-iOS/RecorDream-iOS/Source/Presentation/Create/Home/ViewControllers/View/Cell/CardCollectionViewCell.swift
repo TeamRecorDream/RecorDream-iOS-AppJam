@@ -7,12 +7,12 @@
 //  Home View에 있는 카드에 들어갈 cell
 
 import UIKit
+
 import SnapKit
 import Then
 
 class CardCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
-    static let identifier = "CardCollectionViewCell"
     
     // TODO: - genre 번호 dream_color와 string 매칭 된건지 물어보기
     var genreType: [Int:String] = [1:"코미디", 2:"로맨스", 3:"액션", 4:"스릴러", 5:"미스터리", 6:"공포", 7:"SF", 8:"판타지", 9:"가족/친구", 10:"기타"]
@@ -57,9 +57,13 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCardView(backgroundColorType[4] ?? "ImageList.mainCardColorDark.name", ImageList.mainEmojiJoy.name, "2022/07/13(수)", "안녕하세요 반가워요 잘있어요 다시 만나요") // TODO: - cell 불러오는 곳에서 수정하기
+        setCardView(
+            imageName: backgroundColorType[4] ?? "ImageList.mainCardColorGreen.name",
+            emojiName: ImageList.mainEmojiJoy.name,
+            date: "2022/07/13(수)",
+            contentText: "안녕하세요 반가워요 잘있어요 다시 만나요")
         setupConstraints()
-        setHashtagStackView([1,3], textColorType[4] ?? "sub_dark01")
+        setHashtagStackView([2,3], textColorType[4] ?? "sub_dark01")
     }
     
     func setupView() {
@@ -100,7 +104,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - 카드뷰의 색상 및 label을 결정짓는 함수
-    func setCardView(_ imageName: String, _ emojiName: String, _ date: String, _ contentText: String) {
+    func setCardView(imageName: String, emojiName: String, date: String, contentText: String) {
         backgroundImage.image = UIImage(named: imageName)
         mainEmojiImage.image = UIImage(named: emojiName)
         dateLabel.text = date
@@ -111,8 +115,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         // MARK: - 장르가 1개 이상인 경우에만 실행될 함수
         genre.forEach { index in
             let hashtagView = HashtagView()
-            guard let type = genreType[index] else { return }
-            hashtagView.setLabelText("# \(type)", textColor, TypoStyle.subtitle3.font)
+            hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", color: textColor, textTypo: TypoStyle.subtitle3.font)
             hashtagStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
@@ -130,10 +133,10 @@ class CardCollectionViewCell: UICollectionViewCell {
     //MARK: - prepare function
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.prepare(plusAlpha: true, updateConst: true)
+        self.update(plusAlpha: true, updateConst: true)
     }
     
-    func prepare(plusAlpha: Bool , updateConst: Bool){
+    func update(plusAlpha: Bool , updateConst: Bool){
         self.cardView.alpha = plusAlpha ? 0.6 : 1
     
         if updateConst {
