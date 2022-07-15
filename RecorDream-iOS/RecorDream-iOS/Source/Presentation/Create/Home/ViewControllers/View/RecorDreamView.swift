@@ -128,7 +128,7 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
             //TODO: - 아카이브 용으로 주석을 남겨두긴 했는데 . . 마지막까지 문제가 없다면 삭제하겠습니다
 //            let a = CGFloat(55 + 204 * i + 20 * (i > 1 ? i - 1 : 0)) - 102 + 20
 //            let b = CGFloat(a + 264 + (i == 0 ? 0 : 20)) + 20
-            let a = CGFloat(Int(TypeConst.insetX) + Int(TypeConst.smallItemSize.width + TypeConst.itemSpacing) * i) - TypeConst.smallItemSize.width / 2
+            let a = CGFloat(55 + 204 * i + 20 * i) - 102
             let b = CGFloat(Int(a) + 264 + 20) + 102
             if x > a && x < b {
                 cellIndex = i
