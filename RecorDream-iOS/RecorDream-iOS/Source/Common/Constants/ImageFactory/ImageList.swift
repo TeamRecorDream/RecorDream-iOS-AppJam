@@ -46,13 +46,21 @@ enum ImageList: String, CaseIterable {
     
     // MARK: - emotion icon
     case emojiShy = "emoji_shy"
+    case emojiShyOff = "emoji_shy_off"
     case emojiAngry = "emoji_angry"
+    case emojiAngryOff = "emoji_angry_off"
     case emojiBlank = "emoji_blank"
+    case emojiBlankOff = "emoji_blank_off"
     case emojiJoy = "emoji_joy"
+    case emojiJoyOff = "emoji_joy_off"
     case emojiLove = "emoji_love"
+    case emojiLoveOff = "emoji_love_off"
     case emojiSad = "emoji_sad"
+    case emojiSadOff = "emoji_sad_off"
     case emojiShocked = "emoji_shocked"
+    case emojiShockedOff = "emoji_shocked_off"
     case emojiAll = "emoji_all"
+    case emojiAllOff = "emoji_all_off"
     
     // MARK: - 상세보기에 들어갈 배경
     case detailCardColorRed = "document_bg_red"

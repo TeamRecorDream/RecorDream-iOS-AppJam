@@ -20,4 +20,21 @@ extension Constant {
             }
         }
     }
+    
+    enum EmotionOff {
+        static let emotionTitles = [
+            ImageList.emojiBlankOff.name, ImageList.emojiJoyOff.name,
+            ImageList.emojiShockedOff.name, ImageList.emojiLoveOff.name, ImageList.emojiShyOff.name, ImageList.emojiLoveOff.name, ImageList.emojiShyOff.name, ImageList.emojiSadOff.name, ImageList.emojiAngryOff.name
+        ]
+        
+        case IntType(Int)
+        
+        var title: String {
+            switch self {
+            case .IntType(let i):
+                return EmotionOff.emotionTitles[i < EmotionOff.emotionTitles.count ? i : 0
+                ]
+            }
+        }
+    }
 }
