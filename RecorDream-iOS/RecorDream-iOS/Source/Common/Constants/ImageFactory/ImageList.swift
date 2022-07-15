@@ -44,13 +44,14 @@ enum ImageList: String, CaseIterable {
     case mainBackground = "main_background"
     
     // MARK: - main에 들어갈 icon
-    case mainEmojiShy = "main_imoji_shy"
-    case mainEmojiAngry = "main_imoji_angry"
-    case mainEmojiBlank = "main_imoji_blank"
-    case mainEmojiJoy = "main_imoji_joy"
-    case mainEmojiLove = "main_imoji_love"
-    case mainEmojiSad = "main_imoji_sad"
-    case mainEmojiShocked = "main_imoji_shocked"
+    case emojiShy = "emoji_shy"
+    case emojiAngry = "emoji_angry"
+    case emojiBlank = "emoji_blank"
+    case emojiJoy = "emoji_joy"
+    case emojiLove = "emoji_love"
+    case emojiSad = "emoji_sad"
+    case emojiShocked = "emoji_shocked"
+    case emojiAll = "emoji_all"
     
     var name: String {
         return self.rawValue

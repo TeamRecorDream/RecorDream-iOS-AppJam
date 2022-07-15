@@ -59,7 +59,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         setupView()
         setCardView(
             imageName: backgroundColorType[4] ?? "ImageList.mainCardColorGreen.name",
-            emojiName: ImageList.mainEmojiJoy.name,
+            emojiName: ImageList.emojiJoy.name,
             date: "2022/07/13(수)",
             contentText: "안녕하세요 반가워요 잘있어요 다시 만나요")
         setupConstraints()
