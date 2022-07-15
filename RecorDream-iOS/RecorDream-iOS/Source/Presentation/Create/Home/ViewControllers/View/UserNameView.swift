@@ -16,7 +16,7 @@ class UserNameView: BaseView {
     }
     
     let welcomeBottomLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 24, weight: .ultraLight) //TODO: - typo 추가하기
+        $0.font = TypoStyle.head2.font
     }
     
     lazy var welcomeStackView = UIStackView().then {
