@@ -14,6 +14,9 @@ class HomeViewController: BaseViewController {
     private let headerView = HeaderView()
     private let homeUserNameView = UserNameView()
     private let recorDreamView = RecorDreamView()
+    private let backgroundImage = UIImageView().then {
+        $0.image = UIImage(named: ImageList.mainBackground.name)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +25,14 @@ class HomeViewController: BaseViewController {
     }
     
     override func setHierarchy() {
-        view.addSubview(headerView)
+        view.addSubviews(backgroundImage, headerView)
     }
     
     private func setupConstraints() {
+        backgroundImage.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
+        }
+        
         headerView.snp.makeConstraints { make in
             make.height.equalTo(72)
             make.leading.trailing.top.equalTo(view.safeAreaLayoutGuide)
@@ -52,20 +59,5 @@ class HomeViewController: BaseViewController {
         }
         
         recorDreamView.setUserNameView(name: "소진 하이", isEmpty:false) // TODO: - user name 넣기
-    }
-}
-
-extension UIView {
-    func addBackground() {
-        let width = UIScreen.main.bounds.size.width
-        let height = UIScreen.main.bounds.size.height
-
-        let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        imageViewBackground.image = UIImage(named: ImageList.mainBackground.name)
-
-        imageViewBackground.contentMode = .topLeft
-
-        self.addSubview(imageViewBackground)
-        self.sendSubviewToBack(imageViewBackground)
     }
 }
