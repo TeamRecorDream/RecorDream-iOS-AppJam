@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2322D07428813D5F00DC5553 /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07328813D5F00DC5553 /* GenreType.swift */; };
+		2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07528814A9000DC5553 /* RecorDreamColorType.swift */; };
 		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
 		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		2322D07328813D5F00DC5553 /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
+		2322D07528814A9000DC5553 /* RecorDreamColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamColorType.swift; sourceTree = "<group>"; };
 		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				F6D39475287D69DE004A7DBB /* FontFactory */,
 				F613C7D7287564D2005CB133 /* Constant.swift */,
 				2322D07328813D5F00DC5553 /* GenreType.swift */,
+				2322D07528814A9000DC5553 /* RecorDreamColorType.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
+				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
