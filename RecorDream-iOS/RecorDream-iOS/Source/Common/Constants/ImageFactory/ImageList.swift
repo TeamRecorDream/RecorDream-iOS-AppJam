@@ -33,6 +33,7 @@ enum ImageList: String, CaseIterable {
     case buttonSaveOff = "recored_btn_save_off"
     case toggleOff = "toggle_off"
     case toggleOn = "toggle_on"
+    
     // MARK: - main card 이미지
     case mainCardColorRed = "home_main_card_red"
     case mainCardColorBlue = "home_main_card_blue"
@@ -43,7 +44,7 @@ enum ImageList: String, CaseIterable {
     case mainCardColorPurple = "home_main_card_purple"
     case mainBackground = "main_background"
     
-    // MARK: - main에 들어갈 icon
+    // MARK: - emotion icon
     case emojiShy = "emoji_shy"
     case emojiAngry = "emoji_angry"
     case emojiBlank = "emoji_blank"
@@ -52,6 +53,23 @@ enum ImageList: String, CaseIterable {
     case emojiSad = "emoji_sad"
     case emojiShocked = "emoji_shocked"
     case emojiAll = "emoji_all"
+    
+    // MARK: - 상세보기에 들어갈 배경
+    case detailCardColorRed = "document_bg_red"
+    case detailCardColorBlue = "document_bg_blue"
+    case detailCardColorDark = "document_bg_dark"
+    case detailCardColorGreen = "document_bg_green"
+    case detailCardColorOrange = "document_bg_orange"
+    case detailCardColorPink = "document_bg_pink"
+    case detailCardColorPurple = "document_bg_purple"
+    
+    // MARK: - 기록하기 뷰에 들어갈 컬러셋
+    case colorChipColorRed = "colorchip_red_on"
+    case colorChipColorBlue = "colorchip_blue_on"
+    case colorChipColorGreen = "colorchip_green_on"
+    case colorChipColorOrange = "colorchip_orange_on"
+    case colorChipColorPink = "colorchip_pink_on"
+    case colorChipColorPurple = "colorchip_purple_on"
     
     var name: String {
         return self.rawValue
