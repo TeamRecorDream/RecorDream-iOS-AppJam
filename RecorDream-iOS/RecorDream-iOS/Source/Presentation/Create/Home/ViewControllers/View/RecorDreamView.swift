@@ -6,11 +6,13 @@
 //
 
 import UIKit
+
 import SnapKit
 import Then
 
 enum TypeConst {
-    static let itemSize = CGSize(width: 264, height: 392) //기존 사이즈
+    static let itemSize = CGSize(width: 264, height: 392)
+    static let smallItemSize = CGSize(width: 204, height: 314)
     static let itemSpacing = 20.0
     
     static var insetX: CGFloat {
@@ -23,8 +25,8 @@ enum TypeConst {
 }
 
 class RecorDreamView: BaseView {
-    let userNameView = UserNameView()
-    var previousIndex = 0
+    private let userNameView = UserNameView()
+    private var previousIndex = 0
     var cellIndex: Int = 0
     
     let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
@@ -35,7 +37,7 @@ class RecorDreamView: BaseView {
     }
     
     lazy var carouselCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
-        $0.register(CardCollectionViewCell.self, forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
+        $0.register(CardCollectionViewCell.self, forCellWithReuseIdentifier: CardCollectionViewCell.reuseIdentifier)
         $0.isPagingEnabled = false
         $0.decelerationRate = .fast
         $0.contentInsetAdjustmentBehavior = .never
@@ -49,10 +51,13 @@ class RecorDreamView: BaseView {
     }
     
     override func setupView() {
+        super.setupView()
         addSubviews(userNameView, carouselCollectionView)
     }
     
     override func setupConstraint() {
+        super.setupConstraint()
+        
         userNameView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(28)
             make.top.equalToSuperview().offset(11)
@@ -70,8 +75,8 @@ class RecorDreamView: BaseView {
         carouselCollectionView.dataSource = self
     }
     
-    func setUserNameView(_ name: String, _ isEmpty: Bool) {
-        userNameView.setUserNameView(name, isEmpty)
+    func setUserNameView(name: String, isEmpty: Bool) {
+        userNameView.setUserNameView(name: name, isEmpty: isEmpty)
     }
 }
 
@@ -82,8 +87,8 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = 204.0
-        var height = 314.0
+        var width = TypeConst.smallItemSize.width
+        var height = TypeConst.smallItemSize.height
 
         if indexPath.item == cellIndex {
             width = TypeConst.itemSize.width
@@ -94,9 +99,9 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         if indexPath.item > 0 {
-            cell.prepare(plusAlpha: true, updateConst: true)
+            cell.update(plusAlpha: true, updateConst: true)
         }
         return cell
     }
@@ -123,7 +128,7 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
             //TODO: - 아카이브 용으로 주석을 남겨두긴 했는데 . . 마지막까지 문제가 없다면 삭제하겠습니다
 //            let a = CGFloat(55 + 204 * i + 20 * (i > 1 ? i - 1 : 0)) - 102 + 20
 //            let b = CGFloat(a + 264 + (i == 0 ? 0 : 20)) + 20
-            let a = CGFloat(55 + 204 * i + 20 * i) - 102
+            let a = CGFloat(Int(TypeConst.insetX) + Int(TypeConst.smallItemSize.width + TypeConst.itemSpacing) * i) - TypeConst.smallItemSize.width / 2
             let b = CGFloat(Int(a) + 264 + 20) + 102
             if x > a && x < b {
                 cellIndex = i
@@ -133,13 +138,13 @@ extension RecorDreamView: UICollectionViewDataSource, UICollectionViewDelegateFl
         
         let indexPath = IndexPath(item: Int(cellIndex), section: 0)
         if let cell = carouselCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell {
-            cell.prepare(plusAlpha: false, updateConst: false)
+            cell.update(plusAlpha: false, updateConst: false)
         }
         
         if Int(cellIndex) != previousIndex {
             let preIndexPath = IndexPath(item: previousIndex, section: 0)
             if let preCell = carouselCollectionView.cellForItem(at: preIndexPath) as? CardCollectionViewCell {
-                preCell.prepare(plusAlpha: true, updateConst: false)
+                preCell.update(plusAlpha: true, updateConst: false)
             }
             previousIndex = indexPath.item
         }

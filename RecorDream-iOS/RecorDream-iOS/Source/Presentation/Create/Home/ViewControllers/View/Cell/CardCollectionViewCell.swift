@@ -13,20 +13,14 @@ import Then
 
 class CardCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
+    private let backgroundImage = UIImageView()
+    private let mainEmojiImage = UIImageView()
     
-    // TODO: - genre 번호 dream_color와 string 매칭 된건지 물어보기
-    var genreType: [Int:String] = [1:"코미디", 2:"로맨스", 3:"액션", 4:"스릴러", 5:"미스터리", 6:"공포", 7:"SF", 8:"판타지", 9:"가족/친구", 10:"기타"]
-    var backgroundColorType: [Int:String] = [1: ImageList.mainCardColorGreen.name, 2: ImageList.mainCardColorDark.name, 3: ImageList.mainCardColorBlue.name, 4: ImageList.mainCardColorOrange.name, 5:ImageList.mainCardColorPurple.name, 6: ImageList.mainCardColorPink.name, 7:ImageList.mainCardColorRed.name]
-    var textColorType: [Int:String] = [1:"sub_green01" ,2:"sub_dark01", 3:"sub_blue01", 4:"sub_orange01", 5:"sub_purple01", 6:"sub_pink01", 7:"sub_red01"]
-    
-    let backgroundImage = UIImageView()
-    let mainEmojiImage = UIImageView()
-    
-    let dateLabel = UILabel().then {
+    private let dateLabel = UILabel().then {
         $0.font = TypoStyle.subtitle1.font
     }
     
-    let contentLabel = UILabel().then {
+    private let contentLabel = UILabel().then {
         $0.font = TypoStyle.title1.font
         $0.lineBreakMode = .byWordWrapping
         $0.numberOfLines = 0
@@ -58,12 +52,12 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupView()
         setCardView(
-            imageName: backgroundColorType[4] ?? "ImageList.mainCardColorGreen.name",
-            emojiName: ImageList.emojiJoy.name,
+            imageName: Constant.BackgroundColor.IntType(3).title,
+            emojiName: Constant.Emotion.IntType(1).title,
             date: "2022/07/13(수)",
             contentText: "안녕하세요 반가워요 잘있어요 다시 만나요")
         setupConstraints()
-        setHashtagStackView([2,3], textColorType[4] ?? "sub_dark01")
+        setHashtagStackView([2,3], Constant.TextColor.IntType(3).title)
     }
     
     func setupView() {
