@@ -28,9 +28,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-qD-WiB">
                     <rect key="frame" x="0.0" y="626" width="414" height="270"/>
                     <subviews>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="6tt-NX-jn4">
-                            <rect key="frame" x="10" y="10" width="394" height="250"/>
-                        </datePicker>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-VY-5dG">
                             <rect key="frame" x="20" y="28" width="374" height="29"/>
                             <subviews>
@@ -58,21 +55,20 @@
                                 <constraint firstAttribute="width" constant="52" id="Gtd-9s-bqU"/>
                             </constraints>
                         </view>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfw-Dl-NK2" customClass="CustomTimeSettingPickerView" customModule="RecorDream_iOS" customModuleProvider="target">
+                            <rect key="frame" x="47" y="27" width="320" height="216"/>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" name="dark_blue02"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="270" id="DZR-ts-YvN"/>
                         <constraint firstItem="wWr-B0-6aM" firstAttribute="top" secondItem="j2i-qD-WiB" secondAttribute="top" constant="18" id="FM8-07-4wI"/>
-                        <constraint firstAttribute="trailing" secondItem="6tt-NX-jn4" secondAttribute="trailing" constant="10" id="FaJ-zr-FSo"/>
-                        <constraint firstItem="6tt-NX-jn4" firstAttribute="leading" secondItem="j2i-qD-WiB" secondAttribute="leading" constant="10" id="Faa-AW-qkf"/>
                         <constraint firstItem="JfW-VY-5dG" firstAttribute="leading" secondItem="j2i-qD-WiB" secondAttribute="leading" constant="20" id="Ksg-sF-k3k"/>
                         <constraint firstItem="wWr-B0-6aM" firstAttribute="centerX" secondItem="j2i-qD-WiB" secondAttribute="centerX" id="QSm-dM-4zC"/>
-                        <constraint firstItem="6tt-NX-jn4" firstAttribute="top" secondItem="j2i-qD-WiB" secondAttribute="top" constant="10" id="X90-hs-8ZL"/>
                         <constraint firstAttribute="trailing" secondItem="JfW-VY-5dG" secondAttribute="trailing" constant="20" id="b3p-R0-2qq"/>
-                        <constraint firstAttribute="bottom" secondItem="6tt-NX-jn4" secondAttribute="bottom" constant="10" id="gwd-kS-vUD"/>
+                        <constraint firstItem="Nfw-Dl-NK2" firstAttribute="centerX" secondItem="j2i-qD-WiB" secondAttribute="centerX" id="hGP-64-Udx"/>
                         <constraint firstItem="JfW-VY-5dG" firstAttribute="top" secondItem="j2i-qD-WiB" secondAttribute="top" constant="28" id="kEy-gI-SQR"/>
-                        <constraint firstItem="6tt-NX-jn4" firstAttribute="centerY" secondItem="j2i-qD-WiB" secondAttribute="centerY" id="mYg-Hf-8Ji"/>
-                        <constraint firstItem="6tt-NX-jn4" firstAttribute="centerX" secondItem="j2i-qD-WiB" secondAttribute="centerX" id="uDL-uD-KZV"/>
+                        <constraint firstItem="Nfw-Dl-NK2" firstAttribute="centerY" secondItem="j2i-qD-WiB" secondAttribute="centerY" id="zbj-xn-CGu"/>
                     </constraints>
                 </view>
             </subviews>

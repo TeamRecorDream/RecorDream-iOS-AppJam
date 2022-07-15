@@ -18,7 +18,7 @@ class TimeSettingViewController: UIViewController {
     }
     
     private func configureView(){
-        self.timeSettingViewHeight.constant = 0
+        //self.timeSettingViewHeight.constant = 0
     }
     
     //MARK: - Action
