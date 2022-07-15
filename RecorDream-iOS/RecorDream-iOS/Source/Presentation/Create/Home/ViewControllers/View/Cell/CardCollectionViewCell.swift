@@ -52,12 +52,12 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupView()
         setCardView(
-            imageName: Constant.BackgroundColor.IntType(3).title,
-            emojiName: Constant.Emotion.IntType(1).title,
+            imageName: Constant.BackgroundColor.IntType(1).title,
+            emojiName: Constant.Emotion.IntType(3).title,
             date: "2022/07/13(수)",
             contentText: "안녕하세요 반가워요 잘있어요 다시 만나요")
         setupConstraints()
-        setHashtagStackView([2,3], Constant.TextColor.IntType(3).title)
+        setHashtagStackView([1,2], Constant.TextColor.IntType(1).title)
     }
     
     func setupView() {
@@ -105,11 +105,22 @@ class CardCollectionViewCell: UICollectionViewCell {
         contentLabel.text = contentText
     }
     
-    func setHashtagStackView(_ genre:[Int], _ textColor: String){
-        // MARK: - 장르가 1개 이상인 경우에만 실행될 함수
-        genre.forEach { index in
+    // MARK: - 장르 뷰 생성하는 함수
+    func setHashtagStackView(_ genres:[Int], _ textColor: String){
+        if genres.count > 0 {
+            genres.forEach { index in
+                let hashtagView = HashtagView()
+                hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", color: textColor, textTypo: TypoStyle.subtitle3.font)
+                hashtagStackView.addArrangedSubview(hashtagView)
+                
+                hashtagView.snp.makeConstraints { make in
+                    make.height.equalTo(24)
+                }
+            }
+        } else {
             let hashtagView = HashtagView()
-            hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", color: textColor, textTypo: TypoStyle.subtitle3.font)
+            hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", color: ColorType.darkBlue03.name, textTypo: TypoStyle.subtitle3.font)
+            
             hashtagStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
