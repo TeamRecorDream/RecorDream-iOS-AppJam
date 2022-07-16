@@ -34,6 +34,51 @@ enum ImageList: String, CaseIterable {
     case toggleOff = "toggle_off"
     case toggleOn = "toggle_on"
     
+    // MARK: - main card 이미지
+    case mainCardColorRed = "home_main_card_red"
+    case mainCardColorBlue = "home_main_card_blue"
+    case mainCardColorDark = "home_main_card_dark"
+    case mainCardColorGreen = "home_main_card_green"
+    case mainCardColorOrange = "home_main_card_orange"
+    case mainCardColorPink = "home_main_card_pink"
+    case mainCardColorPurple = "home_main_card_purple"
+    case mainBackground = "main_background"
+    
+    // MARK: - emotion icon
+    case emojiShy = "emoji_shy"
+    case emojiShyOff = "emoji_shy_off"
+    case emojiAngry = "emoji_angry"
+    case emojiAngryOff = "emoji_angry_off"
+    case emojiBlank = "emoji_blank"
+    case emojiBlankOff = "emoji_blank_off"
+    case emojiJoy = "emoji_joy"
+    case emojiJoyOff = "emoji_joy_off"
+    case emojiLove = "emoji_love"
+    case emojiLoveOff = "emoji_love_off"
+    case emojiSad = "emoji_sad"
+    case emojiSadOff = "emoji_sad_off"
+    case emojiShocked = "emoji_shocked"
+    case emojiShockedOff = "emoji_shocked_off"
+    case emojiAll = "emoji_all"
+    case emojiAllOff = "emoji_all_off"
+    
+    // MARK: - 상세보기에 들어갈 배경
+    case detailCardColorRed = "document_bg_red"
+    case detailCardColorBlue = "document_bg_blue"
+    case detailCardColorDark = "document_bg_dark"
+    case detailCardColorGreen = "document_bg_green"
+    case detailCardColorOrange = "document_bg_orange"
+    case detailCardColorPink = "document_bg_pink"
+    case detailCardColorPurple = "document_bg_purple"
+    
+    // MARK: - 기록하기 뷰에 들어갈 컬러셋
+    case colorChipColorRed = "colorchip_red_on"
+    case colorChipColorBlue = "colorchip_blue_on"
+    case colorChipColorGreen = "colorchip_green_on"
+    case colorChipColorOrange = "colorchip_orange_on"
+    case colorChipColorPink = "colorchip_pink_on"
+    case colorChipColorPurple = "colorchip_purple_on"
+    
     var name: String {
         return self.rawValue
     }

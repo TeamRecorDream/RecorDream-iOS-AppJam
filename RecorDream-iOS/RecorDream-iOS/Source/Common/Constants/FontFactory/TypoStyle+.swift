@@ -17,7 +17,7 @@ extension TypoStyle {
         case .head1:
             return FontDescription(font: .pretendardBold, size: 24)
         case .head2:
-            return FontDescription(font: .pretendardExtraBold, size: 24)
+            return FontDescription(font: .pretendardExtraLight, size: 24)
         case .subhead:
             return FontDescription(font: .pretendardSemibold, size: 18)
         case .title1:

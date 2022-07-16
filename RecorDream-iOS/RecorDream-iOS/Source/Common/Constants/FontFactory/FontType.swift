@@ -14,6 +14,7 @@ enum FontType: String {
     case pretendardExtraBold = "Pretendard-ExtraBold"
     case pretendardMedium = "Pretendard-Medium"
     case pretendardRegular = "Pretendard-Regular"
+    case pretendardExtraLight = "Pretendard-ExtraLight"
     
     var name: String {
         return self.rawValue

@@ -11,7 +11,7 @@ enum TypoStyle: Int, CaseIterable {
     case modal1             // semibold, 28
     case modal2             // light, 26
     case head1              // bold, 24
-    case head2              // extrabold, 24
+    case head2              // extralight, 24
     case subhead            // semibold, 18
     case title1             // bold, 20
     case title2             // semibold, 14
