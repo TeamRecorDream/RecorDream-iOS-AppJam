@@ -147,17 +147,9 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		232D0E41287DC4AB0063D725 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		23695C6E287C29E500B479A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				232D0E41287DC4AB0063D725 /* Model */,
 				23695C70287C2A2000B479A2 /* ViewControllers */,
 			);
 			path = Home;
