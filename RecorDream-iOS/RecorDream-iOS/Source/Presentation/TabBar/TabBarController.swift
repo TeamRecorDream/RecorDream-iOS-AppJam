@@ -65,27 +65,28 @@ extension TabBarController: Presentable {
             tabs[$0.rawValue].tabBarItem = $0.asTabBarItem()
             tabs[$0.rawValue].tabBarItem.tag = $0.rawValue
             tabs[$0.rawValue].tabBarItem.imageInsets = UIEdgeInsets(
-                top: 0, left: 0, bottom: -4, right: 0
+                top: 0, left: 0, bottom: -14, right: 0
             )
         }
         self.setViewControllers(tabs, animated: false)
     }
     
     private func setTabBarAppearance() {
+        UITabBar.appearance().backgroundColor = .clear
         UITabBar.appearance().tintColor = .white
         UITabBar.appearance().unselectedItemTintColor = .white
     }
-    
+
     private func setTabBarFrame() {
-        tabBar.frame.size.height = 96
-        tabBar.frame.origin.y = view.frame.height - 9
+        tabBar.frame.size.height = 106.adjustedHeight
+        tabBar.frame.origin.y = view.frame.height - 9.adjustedHeight
         let customTabBar = UIImageView(image: ImageList.icnTabBarBackGround.image)
         customTabBar.frame = self.tabBar.bounds
         tabBar.addSubview(customTabBar)
         tabBar.sendSubviewToBack(customTabBar)
         tabBar.bringSubviewToFront(recordButton)
         tabBar.isTranslucent = true
-        tabBar.itemSpacing = 67
+        tabBar.itemSpacing = 67.adjustedWidth
     }
 }
 
