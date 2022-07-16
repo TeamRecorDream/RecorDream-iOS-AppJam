@@ -28,8 +28,6 @@ class CustomTimeSettingPickerView: UIPickerView {
     private func configureView(){
         self.dataSource = self
         self.delegate = self
-        //print("\(self.subviews.count)")
-        //self.subviews[1].backgroundColor = .clear //선택 회색 바 배경 clear
         
     }
 }
@@ -61,6 +59,7 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
     }
     
         func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+            self.subviews[1].backgroundColor = .clear
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width/3, height: 30))
             label.font = row == self.selectedRow(inComponent: component) ? TypoStyle.modal1.font : TypoStyle.modal2.font
             label.textColor = row == self.selectedRow(inComponent: component) ?  ColorType.lightBlue01.color : ColorType.white02.color
@@ -85,7 +84,7 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
             }
         }
     
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        self.reloadComponent(component)
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.reloadComponent(component)
+    }
 }
