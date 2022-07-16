@@ -7,6 +7,17 @@
 
 import UIKit
 
+enum Time: Int {
+    case meridiem = 0
+    case hour = 1
+    case colon = 2
+    case minute = 3
+    
+    var order: Int {
+        return self.rawValue
+    }
+}
+
 class CustomTimeSettingPickerView: UIPickerView {
     
     let meridiems = ["AM", "PM"]
@@ -39,13 +50,13 @@ extension CustomTimeSettingPickerView: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
-        case 0:
+        case Time.meridiem.order:
             return self.meridiems.count
-        case 1:
+        case Time.hour.order:
             return self.hours.count
-        case 2:
+        case Time.colon.order:
             return 1
-        case 3:
+        case Time.minute.order:
             return self.minutes.count
         default:
             return 0
@@ -60,23 +71,23 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
     
         func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
             self.subviews[1].backgroundColor = .clear
+            
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width/3, height: 30))
             label.font = row == self.selectedRow(inComponent: component) ? TypoStyle.modal1.font : TypoStyle.modal2.font
             label.textColor = row == self.selectedRow(inComponent: component) ?  ColorType.lightBlue01.color : ColorType.white02.color
             label.textAlignment = .center
 
-            //TODO: - 열거형으로 component 명시적으로 변경하기
             switch component {
-            case 0:
+            case Time.meridiem.order:
                 label.text = meridiems[row]
                 return label
-            case 1:
+            case Time.hour.order:
                 label.text = hours[row] < 10 ? "0"+String(hours[row]) : String(hours[row])
                 return label
-            case 2:
+            case Time.colon.order:
                 label.text = ":"
                 return label
-            case 3:
+            case Time.minute.order:
                 label.text = minutes[row] < 10 ? "0"+String(minutes[row]) : String(minutes[row])
                 return label
             default:
