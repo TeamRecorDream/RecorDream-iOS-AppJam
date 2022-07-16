@@ -10,6 +10,7 @@ import UIKit
 class TimeSettingViewController: UIViewController {
     @IBOutlet weak var timeSettingView: UIView!
     @IBOutlet weak var timeSettingViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var modalIndicatorView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,8 @@ class TimeSettingViewController: UIViewController {
     }
     
     private func configureView(){
-        //self.timeSettingViewHeight.constant = 0
+        self.timeSettingViewHeight.constant = 0
+        self.modalIndicatorView.makeRounded(radius: 4)
     }
     
     //MARK: - Action

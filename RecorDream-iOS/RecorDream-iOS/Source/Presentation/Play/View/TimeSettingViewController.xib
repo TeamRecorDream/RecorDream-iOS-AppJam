@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeSettingViewController" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="modalIndicatorView" destination="wWr-B0-6aM" id="DcK-MW-1bt"/>
                 <outlet property="timeSettingView" destination="j2i-qD-WiB" id="XKZ-Af-V4F"/>
                 <outlet property="timeSettingViewHeight" destination="DZR-ts-YvN" id="SHA-Qn-aPV"/>
                 <outlet property="view" destination="d0q-i9-ahj" id="g0a-JQ-BvT"/>
