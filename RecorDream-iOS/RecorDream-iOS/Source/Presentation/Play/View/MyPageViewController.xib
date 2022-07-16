@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="dropOutButton" destination="KLp-ao-h3v" id="xSZ-Zt-2NC"/>
                 <outlet property="view" destination="hWG-yj-iMS" id="KAS-Uu-mkC"/>
                 <outletCollection property="settingView" destination="0CI-x6-BDp" collectionClass="NSMutableArray" id="gIW-5Z-wdH"/>
                 <outletCollection property="settingView" destination="PPs-UP-qga" collectionClass="NSMutableArray" id="J4P-7R-M3t"/>
@@ -151,12 +152,32 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="icn_edit"/>
                 </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ids-LK-C3D">
+                    <rect key="frame" x="16" y="745" width="382" height="105"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxy-gh-grz">
+                            <rect key="frame" x="7.5" y="0.0" width="367" height="64"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="btn_logout"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLp-ao-h3v">
+                            <rect key="frame" x="166.5" y="76" width="49" height="29"/>
+                            <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="탈퇴하기">
+                                <color key="titleColor" name="light_blue01"/>
+                            </state>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="1nu-c3-dEO"/>
             <color key="backgroundColor" name="dark_blue01"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Ids-LK-C3D" firstAttribute="leading" secondItem="hWG-yj-iMS" secondAttribute="leading" constant="16" id="A1m-e7-aC0"/>
                 <constraint firstItem="ACd-tl-ufQ" firstAttribute="top" secondItem="I3r-hb-dMF" secondAttribute="bottom" constant="7" id="Ceg-pt-koj"/>
+                <constraint firstItem="1nu-c3-dEO" firstAttribute="trailing" secondItem="Ids-LK-C3D" secondAttribute="trailing" constant="16" id="Cx3-le-zYy"/>
                 <constraint firstItem="QpM-9p-BBQ" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" id="DhM-JI-rzp"/>
                 <constraint firstItem="9fw-Hh-X8s" firstAttribute="top" secondItem="ACd-tl-ufQ" secondAttribute="bottom" constant="1" id="EDE-Kw-C6i"/>
                 <constraint firstItem="Qmf-gj-6tT" firstAttribute="top" secondItem="ACd-tl-ufQ" secondAttribute="top" id="JlE-1h-lTx"/>
@@ -171,6 +192,7 @@
                 <constraint firstItem="SPY-0C-nga" firstAttribute="trailing" secondItem="6FG-z5-5Ce" secondAttribute="trailing" id="fCz-lk-7WV"/>
                 <constraint firstItem="QpM-9p-BBQ" firstAttribute="trailing" secondItem="1nu-c3-dEO" secondAttribute="trailing" id="fO3-pm-75c"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="top" secondItem="6FG-z5-5Ce" secondAttribute="bottom" constant="14" id="iYF-2D-Dgp"/>
+                <constraint firstItem="1nu-c3-dEO" firstAttribute="bottom" secondItem="Ids-LK-C3D" secondAttribute="bottom" constant="12" id="kNP-Zx-X3g"/>
                 <constraint firstItem="I3r-hb-dMF" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="ruf-n2-WJn"/>
                 <constraint firstItem="6FG-z5-5Ce" firstAttribute="top" secondItem="9fw-Hh-X8s" secondAttribute="bottom" constant="22" id="z85-Ah-GUV"/>
             </constraints>
@@ -178,6 +200,7 @@
         </view>
     </objects>
     <resources>
+        <image name="btn_logout" width="343" height="50"/>
         <image name="icn_edit" width="24" height="24"/>
         <image name="icn_people" width="70" height="70"/>
         <namedColor name="dark_blue01">
@@ -185,6 +208,9 @@
         </namedColor>
         <namedColor name="gray">
             <color red="0.67799997329711914" green="0.67799997329711914" blue="0.67799997329711914" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_blue01">
+            <color red="0.79600000381469727" green="0.83499997854232788" blue="0.88200002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white01">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

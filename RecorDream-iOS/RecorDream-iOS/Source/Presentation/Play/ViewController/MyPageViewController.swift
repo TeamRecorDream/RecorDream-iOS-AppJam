@@ -9,6 +9,7 @@ import UIKit
 
 class MyPageViewController: UIViewController {
     @IBOutlet var settingView: [UIView]!
+    @IBOutlet weak var dropOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +21,6 @@ class MyPageViewController: UIViewController {
         settingView.forEach{ view in
             view.makeRoundedWithBorder(radius: CGFloat(8), borderColor: ColorType.gray.color.cgColor)
         }
+        dropOutButton.setUnderLine()
     }
 }

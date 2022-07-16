@@ -12,6 +12,7 @@
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
 		14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E152880782300CCE8A0 /* TimeSettingViewController.swift */; };
 		14243E182880782300CCE8A0 /* TimeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E162880782300CCE8A0 /* TimeSettingViewController.xib */; };
+		1451219E288356760043BF07 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451219D288356760043BF07 /* UIButton+.swift */; };
 		14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
 		14243E152880782300CCE8A0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		14243E162880782300CCE8A0 /* TimeSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSettingViewController.xib; sourceTree = "<group>"; };
+		1451219D288356760043BF07 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeSettingPickerView.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +310,7 @@
 				14243E0C287FB7C000CCE8A0 /* ViewController */,
 				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
 				14243E152880782300CCE8A0 /* TimeSettingViewController.swift */,
+				1451219D288356760043BF07 /* UIButton+.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
+				1451219E288356760043BF07 /* UIButton+.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
