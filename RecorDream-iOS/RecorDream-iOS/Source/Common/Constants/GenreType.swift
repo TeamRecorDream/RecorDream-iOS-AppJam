@@ -15,8 +15,8 @@ extension Constant {
         
         var title: String {
             switch self {
-            case .IntType(let i):
-                return Genre.genreTitles[i < Genre.genreTitles.count ? i : 0]
+            case .IntType(let genreNum):
+                return Genre.genreTitles[genreNum < Genre.genreTitles.count ? genreNum : 0]
             }
         }
     }
