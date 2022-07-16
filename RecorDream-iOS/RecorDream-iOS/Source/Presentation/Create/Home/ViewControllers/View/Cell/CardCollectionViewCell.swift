@@ -117,7 +117,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                     make.height.equalTo(24)
                 }
             }
-        } else {
+        } else if genres.count == 0 {
             let hashtagView = HashtagView()
             hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", color: ColorType.darkBlue03.name, textTypo: TypoStyle.subtitle3.font)
             
@@ -126,6 +126,8 @@ class CardCollectionViewCell: UICollectionViewCell {
             hashtagView.snp.makeConstraints { make in
                 make.height.equalTo(24)
             }
+        } else {
+            assert(genres.count >= 0 , "The number of genres must be 0 or more")
         }
         cardStackView.addArrangedSubview(hashtagStackView)
         

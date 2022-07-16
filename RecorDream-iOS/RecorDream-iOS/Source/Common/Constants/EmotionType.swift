@@ -15,8 +15,8 @@ extension Constant {
         
         var title: String {
             switch self {
-            case .IntType(let i):
-                return Emotion.emotionTitles[i < Emotion.emotionTitles.count ? i : 0]
+            case .IntType(let emotionNum):
+                return Emotion.emotionTitles[emotionNum < Emotion.emotionTitles.count ? emotionNum : 0]
             }
         }
     }
@@ -31,8 +31,8 @@ extension Constant {
         
         var title: String {
             switch self {
-            case .IntType(let i):
-                return EmotionOff.emotionTitles[i < EmotionOff.emotionTitles.count ? i : 0
+            case .IntType(let emotionNum):
+                return EmotionOff.emotionTitles[emotionNum < EmotionOff.emotionTitles.count ? emotionNum : 0
                 ]
             }
         }
