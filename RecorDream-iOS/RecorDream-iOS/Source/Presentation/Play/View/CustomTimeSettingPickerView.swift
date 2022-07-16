@@ -20,9 +20,13 @@ enum Time: Int {
 
 class CustomTimeSettingPickerView: UIPickerView {
     
-    let meridiems = ["AM", "PM"]
-    let hours = Array<Int>(1...12)
-    let minutes = Array<Int>(0...59)
+    private let meridiems = ["AM", "PM"]
+    private let hours = Array<Int>(1...12)
+    private let minutes = Array<Int>(0...59)
+    
+    var selectedMeridiem = "AM"
+    var selectedHour = 1
+    var selectedMinute = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,6 +103,18 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
         }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch component {
+        case Time.meridiem.order:
+            self.selectedMeridiem = meridiems[row]
+            break
+        case Time.hour.order:
+            self.selectedHour = hours[row]
+            break
+        case Time.minute.order:
+            self.selectedMinute = minutes[row]
+        default:
+            break
+        }
         self.reloadComponent(component)
     }
 }
