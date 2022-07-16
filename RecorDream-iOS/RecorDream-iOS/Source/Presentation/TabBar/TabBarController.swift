@@ -12,13 +12,11 @@ import SnapKit
 import Then
 
 final class TabBarController: UITabBarController {
-    
     // MARK: - Properties
     private lazy var emptyViewController = UIViewController()
     private lazy var tabs: [UIViewController] = [ ]
-    private lazy var plusButton = UIButton().then {
-        $0.setBackgroundImage(ImageList.icnPlay, for: .normal)
-        $0.isEnabled = true
+    private lazy var recordButton = UIButton().then {
+        $0.setBackgroundImage(ImageList.icnRecord.image, for: .normal)
         $0.addTarget(self,
                      action: #selector(presentRecordView),
                      for: .touchUpInside
@@ -32,9 +30,6 @@ final class TabBarController: UITabBarController {
         setupConstraint()
         setTabBarItems()
         setTabBarAppearance()
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
         setTabBarFrame()
     }
 }
@@ -42,12 +37,12 @@ final class TabBarController: UITabBarController {
 // MARK: - Extensions
 extension TabBarController: Presentable {
     internal func setupView() {
-        self.tabBar.addSubview(plusButton)
+        self.tabBar.addSubview(recordButton)
         self.delegate = self
     }
     
     internal func setupConstraint() {
-        self.plusButton.snp.makeConstraints {
+        self.recordButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalTo(tabBar.snp.top)
         }
@@ -55,7 +50,7 @@ extension TabBarController: Presentable {
     
     @objc
     private func presentRecordView() {
-        let recordViewController = WriteViewController.instanceFromNib()
+        let recordViewController = SampleViewController.instanceFromNib()
         recordViewController.modalPresentationStyle = .fullScreen
         self.present(recordViewController, animated: true)
     }
@@ -64,7 +59,7 @@ extension TabBarController: Presentable {
         tabs = [
             UINavigationController(rootViewController: HomeViewController()),
             UINavigationController(rootViewController: emptyViewController),
-            UINavigationController(rootViewController: ArchieveViewController())
+            UINavigationController(rootViewController: emptyViewController)
         ]
         TabBarItem.allCases.forEach {
             tabs[$0.rawValue].tabBarItem = $0.asTabBarItem()
@@ -84,11 +79,11 @@ extension TabBarController: Presentable {
     private func setTabBarFrame() {
         tabBar.frame.size.height = 96
         tabBar.frame.origin.y = view.frame.height - 9
-        let customTabBar = UIImageView(image: UIImage(named: "navibar_bg"))
+        let customTabBar = UIImageView(image: ImageList.icnTabBarBackGround.image)
         customTabBar.frame = self.tabBar.bounds
         tabBar.addSubview(customTabBar)
         tabBar.sendSubviewToBack(customTabBar)
-        tabBar.bringSubviewToFront(plusButton)
+        tabBar.bringSubviewToFront(recordButton)
         tabBar.isTranslucent = true
         tabBar.itemSpacing = 67
     }
