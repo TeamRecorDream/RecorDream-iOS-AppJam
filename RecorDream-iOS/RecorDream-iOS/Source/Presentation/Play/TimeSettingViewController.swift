@@ -21,6 +21,7 @@ class TimeSettingViewController: UIViewController {
     private func configureView(){
         self.timeSettingViewHeight.constant = 0
         self.modalIndicatorView.makeRounded(radius: 4)
+        self.timeSettingView.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 12)
     }
     
     //MARK: - Action
@@ -40,7 +41,7 @@ class TimeSettingViewController: UIViewController {
 extension TimeSettingViewController {
     func showBottomSheet(){
         UIView.animate(withDuration: 0.3){
-            self.timeSettingViewHeight.constant = 270
+            self.timeSettingViewHeight.constant = 272
             self.view.layoutIfNeeded()
         }
     }
