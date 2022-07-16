@@ -57,7 +57,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             date: "2022/07/13(수)",
             contentText: "안녕하세요 반가워요 잘있어요 다시 만나요")
         setupConstraints()
-        setHashtagStackView([1,2], Constant.TextColor.IntType(1).title)
+        setHashtagStackView(genres: [1,2], textColor: Constant.TextColor.IntType(1).title)
     }
     
     func setupView() {
@@ -106,7 +106,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - 장르 뷰 생성하는 함수
-    func setHashtagStackView(_ genres:[Int], _ textColor: String){
+    func setHashtagStackView(genres:[Int], textColor: String){
         if genres.count > 0 {
             genres.forEach { index in
                 let hashtagView = HashtagView()
