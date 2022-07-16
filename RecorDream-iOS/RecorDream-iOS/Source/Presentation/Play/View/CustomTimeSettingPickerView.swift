@@ -36,12 +36,15 @@ class CustomTimeSettingPickerView: UIPickerView {
         configureView()
     }
     
+    //MARK: - Configure
+    
     private func configureView(){
         self.dataSource = self
         self.delegate = self
-        
     }
 }
+
+//MARK: - Extension
 
 extension CustomTimeSettingPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
