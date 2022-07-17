@@ -35,7 +35,8 @@ class HomeViewController: BaseViewController {
         
         headerView.snp.makeConstraints { make in
             make.height.equalTo(72)
-            make.leading.trailing.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview().offset(50)
         }
     }
     

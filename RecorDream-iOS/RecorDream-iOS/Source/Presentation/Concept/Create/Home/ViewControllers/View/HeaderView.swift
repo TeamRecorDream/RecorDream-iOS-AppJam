@@ -17,11 +17,13 @@ class HeaderView: BaseView {
     }
     
     let searchButton = UIButton().then {
-        $0.setImage(UIImage(named: ImageList.icnSearch.name), for: .normal)
+        $0.setImage(UIImage(named: ImageList.icnSearch.name)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        $0.tintColor = .white
     }
     
     let profileButton = UIButton().then {
-        $0.setImage(UIImage(named: ImageList.icnMypage.name), for: .normal)
+        $0.setImage(UIImage(named: ImageList.icnMypage.name)?.withRenderingMode(.alwaysTemplate), for: .normal)
+        $0.tintColor = .white
     }
     
     lazy var iconStackView = UIStackView().then {
