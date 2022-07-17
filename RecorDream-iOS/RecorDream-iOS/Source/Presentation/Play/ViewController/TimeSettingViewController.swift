@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TimeSettingViewController: UIViewController {
+class TimeSettingViewController: BaseViewController {
     @IBOutlet weak var timeSettingView: UIView!
     @IBOutlet weak var timeSettingViewHeight: NSLayoutConstraint!
     @IBOutlet weak var modalIndicatorView: UIView!

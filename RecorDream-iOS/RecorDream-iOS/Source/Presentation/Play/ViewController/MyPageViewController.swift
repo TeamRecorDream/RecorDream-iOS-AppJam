@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: BaseViewController {
     @IBOutlet var settingView: [UIView]!
     @IBOutlet weak var dropOutButton: UIButton!
     
