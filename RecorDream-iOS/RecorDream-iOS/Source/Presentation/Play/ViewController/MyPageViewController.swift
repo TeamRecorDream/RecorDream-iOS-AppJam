@@ -24,6 +24,6 @@ class MyPageViewController: BaseViewController {
                 borderColor: ColorType.lightBlue03.color.cgColor
             )
         }
-        dropOutButton.setUnderLine()
+        dropOutButton.setUnderline(at: dropOutButton, state: .normal)
     }
 }
