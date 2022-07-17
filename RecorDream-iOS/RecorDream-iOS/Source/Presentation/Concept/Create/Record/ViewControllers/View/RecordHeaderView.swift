@@ -15,7 +15,7 @@ class RecordHeaderView: BaseView {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var moreButton: UIButton!
-    var delegate: HeaderViewDelegate?
+    var delegate: NavigationBarDelegate?
     
     override func setupView() {
         guard let headerView = UINib(nibName: "RecordHeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else { return }
@@ -30,13 +30,13 @@ class RecordHeaderView: BaseView {
     @IBAction func moreButtonDidTap(_ sender: UIButton) {
         // TODO: - 윤휘언니의 더보기 버튼
         if let delegate = delegate {
-            delegate.MoreButtonDidTap()
+            delegate.navigationMoreButtonDidTap()
         }
     }
     
     @IBAction func backButtonDidTap(_ sender: UIButton) {
         if let delegate = delegate {
-            delegate.BackButtonDidTap()
+            delegate.navigationBackButtonDidTap()
         }
     }
     

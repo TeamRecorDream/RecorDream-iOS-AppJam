@@ -34,7 +34,7 @@ class RecordViewController: BaseViewController {
     }
 }
 
-extension RecordViewController: Presentable, HeaderViewDelegate {
+extension RecordViewController: Presentable, NavigationBarDelegate {
     func setupConstraint() {
         self.headerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
@@ -47,10 +47,10 @@ extension RecordViewController: Presentable, HeaderViewDelegate {
         self.view.addSubview(headerView)
     }
     
-    func BackButtonDidTap() {
+    func navigationBackButtonDidTap() {
         print("backBtnTap")
     }
     
-    func MoreButtonDidTap() {}
+    func navigationMoreButtonDidTap() {}
 
 }

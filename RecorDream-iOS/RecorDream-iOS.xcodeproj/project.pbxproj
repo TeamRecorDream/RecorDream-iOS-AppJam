@@ -13,7 +13,7 @@
 		2322D0882883EFA000DC5553 /* RecordHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D0872883EFA000DC5553 /* RecordHeaderView.swift */; };
 		2322D08A2883EFB100DC5553 /* RecordHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2322D0892883EFB100DC5553 /* RecordHeaderView.xib */; };
 		2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08D2883F37100DC5553 /* RecordViewController.swift */; };
-		2322D090288458BE00DC5553 /* HeaderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08F288458BE00DC5553 /* HeaderViewDelegate.swift */; };
+		2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */; };
 		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
 		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
@@ -79,7 +79,7 @@
 		2322D0872883EFA000DC5553 /* RecordHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHeaderView.swift; sourceTree = "<group>"; };
 		2322D0892883EFB100DC5553 /* RecordHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordHeaderView.xib; sourceTree = "<group>"; };
 		2322D08D2883F37100DC5553 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		2322D08F288458BE00DC5553 /* HeaderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewDelegate.swift; sourceTree = "<group>"; };
+		2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
 		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 		F613C7D6287564C7005CB133 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				2322D08F288458BE00DC5553 /* HeaderViewDelegate.swift */,
+				2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -576,7 +576,7 @@
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
-				2322D090288458BE00DC5553 /* HeaderViewDelegate.swift in Sources */,
+				2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
