@@ -11,7 +11,7 @@ import HeeKit
 import SnapKit
 import Then
 
-class RecordViewController: BaseViewController, Presentable, HeaderViewDelegate {
+class RecordViewController: BaseViewController {
     // MARK: - Properties
     private var headerView = RecordHeaderView()
     
@@ -25,6 +25,16 @@ class RecordViewController: BaseViewController, Presentable, HeaderViewDelegate 
     }
     
     // MARK: - Functions
+    private func setHeaderView() {
+        headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
+    }
+    
+    private func setDelegate() {
+        headerView.delegate = self
+    }
+}
+
+extension RecordViewController: Presentable, HeaderViewDelegate {
     func setupConstraint() {
         self.headerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
@@ -43,11 +53,4 @@ class RecordViewController: BaseViewController, Presentable, HeaderViewDelegate 
     
     func MoreButtonDidTap() {}
 
-    private func setHeaderView() {
-        headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
-    }
-    
-    private func setDelegate() {
-        headerView.delegate = self
-    }
 }
