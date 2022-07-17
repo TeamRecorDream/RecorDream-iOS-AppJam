@@ -13,6 +13,14 @@
 		14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E152880782300CCE8A0 /* TimeSettingViewController.swift */; };
 		14243E182880782300CCE8A0 /* TimeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E162880782300CCE8A0 /* TimeSettingViewController.xib */; };
 		14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */; };
+		2322D07428813D5F00DC5553 /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07328813D5F00DC5553 /* GenreType.swift */; };
+		2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07528814A9000DC5553 /* RecorDreamColorType.swift */; };
+		2322D07A288153E900DC5553 /* EmotionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D079288153E900DC5553 /* EmotionType.swift */; };
+		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
+		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
+		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
+		232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */; };
+		232D0E49287DEC380063D725 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E48287DEC380063D725 /* HashtagView.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
@@ -26,6 +34,10 @@
 		F613C7FC28756AB7005CB133 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7FB28756AB7005CB133 /* Then */; };
 		F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7FE2876D336005CB133 /* BaseViewController.swift */; };
 		F613C8012876D356005CB133 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C8002876D356005CB133 /* BaseView.swift */; };
+		F62CDF2C288304F400E5B19C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF2B288304F400E5B19C /* TabBarController.swift */; };
+		F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF31288307C800E5B19C /* TabBarItem.swift */; };
+		F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF3328830B9100E5B19C /* SampleViewController.swift */; };
+		F62CDF3628830B9100E5B19C /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62CDF3428830B9100E5B19C /* SampleViewController.xib */; };
 		F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3944C287D4164004A7DBB /* ShareViewController.swift */; };
 		F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
 		F6D39458287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
@@ -69,6 +81,14 @@
 		14243E152880782300CCE8A0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		14243E162880782300CCE8A0 /* TimeSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSettingViewController.xib; sourceTree = "<group>"; };
 		14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeSettingPickerView.swift; sourceTree = "<group>"; };
+		2322D07328813D5F00DC5553 /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
+		2322D07528814A9000DC5553 /* RecorDreamColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamColorType.swift; sourceTree = "<group>"; };
+		2322D079288153E900DC5553 /* EmotionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionType.swift; sourceTree = "<group>"; };
+		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
+		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
+		232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		232D0E48287DEC380063D725 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +100,10 @@
 		F613C7D7287564D2005CB133 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F613C7FE2876D336005CB133 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F613C8002876D356005CB133 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F62CDF2B288304F400E5B19C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F62CDF31288307C800E5B19C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		F62CDF3328830B9100E5B19C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		F62CDF3428830B9100E5B19C /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
 		F6D3944C287D4164004A7DBB /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F6D3944F287D41BE004A7DBB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -139,6 +163,18 @@
 				1432143C2883EC6500C27BD7 /* Custom */,
 				14243E162880782300CCE8A0 /* TimeSettingViewController.xib */,
 				14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */,
+        );
+			path = View;
+			sourceTree = "<group>";
+		};
+		232D0E37287D86850063D725 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				232D0E3E287D8F360063D725 /* Cell */,
+				232D0E38287D86C20063D725 /* HeaderView.swift */,
+				232D0E3A287D88E60063D725 /* UserNameView.swift */,
+				232D0E3C287D893E0063D725 /* RecorDreamView.swift */,
+				232D0E48287DEC380063D725 /* HashtagView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +186,14 @@
 				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
 			);
 			path = Custom;
+      sourceTree = "<group>";
+		};
+		232D0E3E287D8F360063D725 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		23695C6E287C29E500B479A2 /* Home */ = {
@@ -163,6 +207,7 @@
 		23695C70287C2A2000B479A2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				232D0E37287D86850063D725 /* View */,
 				23695C71287C2A3B00B479A2 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -259,6 +304,9 @@
 				F6D39479287D7526004A7DBB /* ColorFactory */,
 				F6D39475287D69DE004A7DBB /* FontFactory */,
 				F613C7D7287564D2005CB133 /* Constant.swift */,
+				2322D07328813D5F00DC5553 /* GenreType.swift */,
+				2322D07528814A9000DC5553 /* RecorDreamColorType.swift */,
+				2322D079288153E900DC5553 /* EmotionType.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -273,10 +321,9 @@
 		F613C7D9287564EC005CB133 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F6D3944B287D4151004A7DBB /* Share */,
+				F62CDF29288302C900E5B19C /* Concept */,
 				F613C7FD2876D314005CB133 /* Common */,
-				F613C7DD28756582005CB133 /* Create */,
-				F613C7DE28756587005CB133 /* Play */,
+				F62CDF2A288302D900E5B19C /* TabBar */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -325,8 +372,29 @@
 			children = (
 				F613C7FE2876D336005CB133 /* BaseViewController.swift */,
 				F613C8002876D356005CB133 /* BaseView.swift */,
+				F62CDF3328830B9100E5B19C /* SampleViewController.swift */,
+				F62CDF3428830B9100E5B19C /* SampleViewController.xib */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		F62CDF29288302C900E5B19C /* Concept */ = {
+			isa = PBXGroup;
+			children = (
+				F6D3944B287D4151004A7DBB /* Share */,
+				F613C7DD28756582005CB133 /* Create */,
+				F613C7DE28756587005CB133 /* Play */,
+			);
+			path = Concept;
+			sourceTree = "<group>";
+		};
+		F62CDF2A288302D900E5B19C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F62CDF2B288304F400E5B19C /* TabBarController.swift */,
+				F62CDF31288307C800E5B19C /* TabBarItem.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		F6D3944B287D4151004A7DBB /* Share */ = {
@@ -472,6 +540,7 @@
 				F6D39467287D41BF004A7DBB /* Pretendard-SemiBold.otf in Resources */,
 				F6D39461287D41BF004A7DBB /* Pretendard-ExtraBold.otf in Resources */,
 				F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */,
+				F62CDF3628830B9100E5B19C /* SampleViewController.xib in Resources */,
 				F6D3945B287D41BF004A7DBB /* Pretendard-Thin.otf in Resources */,
 				F6D39459287D41BF004A7DBB /* Pretendard-Light.otf in Resources */,
 				F6D3945F287D41BF004A7DBB /* Pretendard-Regular.otf in Resources */,
@@ -505,23 +574,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */,
+				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
+				232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */,
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
 				14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */,
+				F62CDF2C288304F400E5B19C /* TabBarController.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
+				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
+				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
+				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
 				14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */,
+				232D0E39287D86C20063D725 /* HeaderView.swift in Sources */,
 				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
 				14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */,
 				F6D3946D287D68D4004A7DBB /* ColorType.swift in Sources */,
 				14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */,
+				2322D07A288153E900DC5553 /* EmotionType.swift in Sources */,
+				F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */,
 				F6D39477287D6F31004A7DBB /* ColorType+.swift in Sources */,
+				232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */,
 				F6D3947F287D76F2004A7DBB /* ImageList+.swift in Sources */,
+				232D0E49287DEC380063D725 /* HashtagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,7 +744,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RS46GZF8TU;
+				DEVELOPMENT_TEAM = 272QNH7NKN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RecorDream-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -693,7 +773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RS46GZF8TU;
+				DEVELOPMENT_TEAM = 272QNH7NKN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RecorDream-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

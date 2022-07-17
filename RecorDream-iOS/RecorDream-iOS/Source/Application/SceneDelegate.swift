@@ -16,8 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: HomeViewController.instanceFromNib())
-        window?.backgroundColor = .black    // 에셋 추가 전 임시 설정
+        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+       
+        window?.backgroundColor = ColorType.darkBlue01.color
         window?.makeKeyAndVisible()
     }
 }
