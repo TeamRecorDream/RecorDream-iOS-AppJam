@@ -10,11 +10,6 @@ import UIKit
 import SnapKit
 import Then
 
-protocol HeaderViewDelegate {
-    func BackButtonDidTap()
-    func MoreButtonDidTap()
-}
-
 class RecordHeaderView: BaseView {
     // MARK: - Properties
     @IBOutlet weak var backButton: UIButton!
@@ -32,14 +27,14 @@ class RecordHeaderView: BaseView {
     }
     
     // MARK: - @IBAction Properties
-    @IBAction func moreBtnDidTap(_ sender: Any) {
+    @IBAction func moreButtonDidTap(_ sender: UIButton) {
         // TODO: - 윤휘언니의 더보기 버튼
         if let delegate = delegate {
             delegate.MoreButtonDidTap()
         }
     }
     
-    @IBAction func backBtnDidTap(_ sender: Any) {
+    @IBAction func backButtonDidTap(_ sender: UIButton) {
         if let delegate = delegate {
             delegate.BackButtonDidTap()
         }

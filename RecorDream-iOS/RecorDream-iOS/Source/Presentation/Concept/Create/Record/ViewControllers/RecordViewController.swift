@@ -13,7 +13,7 @@ import Then
 
 class RecordViewController: BaseViewController, Presentable, HeaderViewDelegate {
     // MARK: - Properties
-    var headerView = RecordHeaderView()
+    private var headerView = RecordHeaderView()
     
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class RecordViewController: BaseViewController, Presentable, HeaderViewDelegate 
         setupView()
         setupConstraint()
         setHeaderView()
-        headerView.delegate = self
+        setDelegate()
     }
     
     // MARK: - Functions
@@ -37,14 +37,17 @@ class RecordViewController: BaseViewController, Presentable, HeaderViewDelegate 
         self.view.addSubview(headerView)
     }
     
-    private func setHeaderView(){
-        headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
-    }
-    
     func BackButtonDidTap() {
         print("backBtnTap")
     }
     
     func MoreButtonDidTap() {}
 
+    private func setHeaderView() {
+        headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
+    }
+    
+    private func setDelegate() {
+        headerView.delegate = self
+    }
 }
