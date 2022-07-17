@@ -17,6 +17,7 @@ enum ColorType: String, CaseIterable {
     case gray = "gray"
     case lightBlue01 = "light_blue01"
     case lightBlue02 = "light_blue02"
+    case lightBlue03 = "light_blue03"
     case red = "red"
     case subBlue02 = "sub_blue02"
     case subDark02 = "sub_dark2"

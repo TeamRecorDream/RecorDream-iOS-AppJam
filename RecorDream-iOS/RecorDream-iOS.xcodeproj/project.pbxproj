@@ -308,9 +308,9 @@
 			children = (
 				14243E0D287FB7F100CCE8A0 /* View */,
 				14243E0C287FB7C000CCE8A0 /* ViewController */,
-				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
-				14243E152880782300CCE8A0 /* TimeSettingViewController.swift */,
 				1451219D288356760043BF07 /* UIButton+.swift */,
+				14243E152880782300CCE8A0 /* TimeSettingViewController.swift */,
+				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
 			);
 			path = Play;
 			sourceTree = "<group>";
