@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordHeaderView" customModule="RecorDream_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="wLN-Ci-EJz" id="vt7-Oe-goY"/>
+                <outlet property="headerLabel" destination="7Iy-rA-Frx" id="gdU-tR-T6I"/>
+                <outlet property="moreButton" destination="AWc-eB-mKD" id="kUo-Gi-Gk5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLN-Ci-EJz">
+                    <rect key="frame" x="16" y="22" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="JtJ-rc-H8n"/>
+                        <constraint firstAttribute="height" constant="24" id="kW1-IL-qhO"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="icn_allow_back">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="backBtnDidTap:" destination="-1" eventType="touchUpInside" id="kOi-xx-654"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Iy-rA-Frx">
+                    <rect key="frame" x="40" y="24" width="56" height="20"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWc-eB-mKD">
+                    <rect key="frame" x="335" y="22" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="hGb-Jd-G2m"/>
+                        <constraint firstAttribute="width" constant="24" id="yfx-0U-8wk"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="icn_more">
+                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="moreBtnDidTap:" destination="-1" eventType="touchUpInside" id="GOb-uh-0dg"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjM-rx-M6V">
+                    <rect key="frame" x="0.0" y="67" width="375" height="1"/>
+                    <color key="backgroundColor" name="light_blue02"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="i1D-XD-DRD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="wLN-Ci-EJz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6Tg-ZE-Yiq"/>
+                <constraint firstAttribute="trailing" secondItem="AWc-eB-mKD" secondAttribute="trailing" constant="16" id="HYV-Va-emw"/>
+                <constraint firstItem="wLN-Ci-EJz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="JfP-Tf-Dl2"/>
+                <constraint firstItem="7Iy-rA-Frx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SFe-TL-p7V"/>
+                <constraint firstAttribute="trailing" secondItem="WjM-rx-M6V" secondAttribute="trailing" id="U3u-tf-M2x"/>
+                <constraint firstItem="7Iy-rA-Frx" firstAttribute="leading" secondItem="wLN-Ci-EJz" secondAttribute="trailing" id="XVi-Oa-FQb"/>
+                <constraint firstItem="AWc-eB-mKD" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="eRz-HN-5Ya"/>
+                <constraint firstAttribute="bottom" secondItem="WjM-rx-M6V" secondAttribute="bottom" id="lgO-5H-pWf"/>
+                <constraint firstItem="WjM-rx-M6V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q5b-y1-q4E"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="132.60869565217394" y="-8.0357142857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icn_allow_back" width="24" height="24"/>
+        <image name="icn_more" width="24" height="24"/>
+        <namedColor name="light_blue02">
+            <color red="0.79600000381469727" green="0.83499997854232788" blue="0.88200002908706665" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
