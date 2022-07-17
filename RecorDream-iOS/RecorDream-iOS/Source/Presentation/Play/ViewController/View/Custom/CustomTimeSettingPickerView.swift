@@ -8,7 +8,7 @@
 import UIKit
 
 //시간 설정 PickerView 구성 요소
-enum Time: Int {
+enum Time: Int, CaseIterable {
     case meridiem = 0
     case hour = 1
     case colon = 2
@@ -55,7 +55,7 @@ class CustomTimeSettingPickerView: UIPickerView {
 
 extension CustomTimeSettingPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 4
+        return Time.allCases.count
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
