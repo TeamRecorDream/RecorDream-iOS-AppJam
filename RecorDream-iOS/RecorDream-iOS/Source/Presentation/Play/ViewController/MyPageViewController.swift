@@ -19,7 +19,10 @@ class MyPageViewController: BaseViewController {
     
     private func configureView() {
         settingView.forEach{ view in
-            view.makeRoundedWithBorder(radius: CGFloat(8), borderColor: ColorType.lightBlue03.color.cgColor)
+            view.makeRoundedWithBorder(
+                radius: CGFloat(8),
+                borderColor: ColorType.lightBlue03.color.cgColor
+            )
         }
         dropOutButton.setUnderLine()
     }

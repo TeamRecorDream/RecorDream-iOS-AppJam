@@ -21,7 +21,10 @@ class TimeSettingViewController: BaseViewController {
     private func configureView(){
         self.timeSettingViewHeight.constant = 0
         self.modalIndicatorView.makeRounded(radius: 4)
-        self.timeSettingView.makeRoundedSpecificCorner(corners: [.topLeft, .topRight], cornerRadius: 12)
+        self.timeSettingView.makeRoundedSpecificCorner(
+            corners: [.topLeft, .topRight],
+            cornerRadius: 12
+        )
     }
     
     //MARK: - Action

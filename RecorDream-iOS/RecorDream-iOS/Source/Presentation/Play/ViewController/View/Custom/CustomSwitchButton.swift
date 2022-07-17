@@ -28,7 +28,7 @@ class CustomSwitchButton: UIButton {
             self.circleCenter = isOn ? frame.width - (circleHorizontalMargin + (circleSize/2)) : circleHorizontalMargin + (circleSize/2)
         }
     }
-    var completion:(() -> Void) = {}
+    var completion: (() -> Void) = {}
     
     
     //MARK: - Initialize
@@ -49,7 +49,14 @@ class CustomSwitchButton: UIButton {
     
     private func configureButton(frame: CGRect){
         barView = {
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
+            let view = UIView(
+                frame: CGRect(
+                    x: 0,
+                    y: 0,
+                    width: frame.width,
+                    height: frame.height
+                )
+            )
             view.backgroundColor = ColorType.black01.color
             view.layer.cornerRadius = frame.height / 2
             view.layer.masksToBounds = true
@@ -57,7 +64,14 @@ class CustomSwitchButton: UIButton {
         }()
         
         circleView = {
-            let view = UIView(frame: CGRect(x: circleHorizontalMargin + (circleSize/2), y: circleVerticalMargin, width: circleSize, height: circleSize))
+            let view = UIView(
+                frame: CGRect(
+                    x: circleHorizontalMargin + (circleSize/2),
+                    y: circleVerticalMargin,
+                    width: circleSize,
+                    height: circleSize
+                )
+            )
             view.backgroundColor = ColorType.white01.color
             view.layer.cornerRadius = circleSize / 2
             view.layer.masksToBounds = true
@@ -71,10 +85,13 @@ class CustomSwitchButton: UIButton {
     }
     
     private func configureAnimation(){
-        UIView.animate(withDuration: animationDuration, animations: {[weak self] in
-            guard let self = self else {return}
-            self.circleView?.center.x = self.circleCenter
-        })
+        UIView.animate(
+            withDuration: animationDuration,
+            animations: {[weak self] in
+                guard let self = self else {return}
+                self.circleView?.center.x = self.circleCenter
+            }
+        )
     }
     
     //MARK: - Action

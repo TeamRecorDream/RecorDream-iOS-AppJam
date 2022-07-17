@@ -7,6 +7,7 @@
 
 import UIKit
 
+//시간 설정 PickerView 구성 요소
 enum Time: Int {
     case meridiem = 0
     case hour = 1
@@ -27,6 +28,8 @@ class CustomTimeSettingPickerView: UIPickerView {
     var selectedMeridiem = "AM"
     var selectedHour = 1
     var selectedMinute = 0
+    
+    //MARK: - Initialize
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,31 +79,38 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
         return 53
     }
     
-        func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-            self.subviews[1].backgroundColor = .clear
-            
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width/3, height: 30))
-            label.font = row == self.selectedRow(inComponent: component) ? TypoStyle.modal1.font : TypoStyle.modal2.font
-            label.textColor = row == self.selectedRow(inComponent: component) ?  ColorType.lightBlue01.color : ColorType.white02.color
-            label.textAlignment = .center
-
-            switch component {
-            case Time.meridiem.order:
-                label.text = meridiems[row]
-                return label
-            case Time.hour.order:
-                label.text = hours[row] < 10 ? "0"+String(hours[row]) : String(hours[row])
-                return label
-            case Time.colon.order:
-                label.text = ":"
-                return label
-            case Time.minute.order:
-                label.text = minutes[row] < 10 ? "0"+String(minutes[row]) : String(minutes[row])
-                return label
-            default:
-                return UIView()
-            }
+    //PickerView의 각 Component마다 넣어 줄 UIView 구성
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        self.subviews[1].backgroundColor = .clear
+        
+        let label = UILabel(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: self.frame.width/3,
+                height: 30)
+        )
+        label.font = row == self.selectedRow(inComponent: component) ? TypoStyle.modal1.font : TypoStyle.modal2.font
+        label.textColor = row == self.selectedRow(inComponent: component) ?  ColorType.lightBlue01.color : ColorType.white02.color
+        label.textAlignment = .center
+        
+        switch component {
+        case Time.meridiem.order:
+            label.text = meridiems[row]
+            return label
+        case Time.hour.order:
+            label.text = hours[row] < 10 ? "0"+String(hours[row]) : String(hours[row])
+            return label
+        case Time.colon.order:
+            label.text = ":"
+            return label
+        case Time.minute.order:
+            label.text = minutes[row] < 10 ? "0"+String(minutes[row]) : String(minutes[row])
+            return label
+        default:
+            return UIView()
         }
+    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
