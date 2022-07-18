@@ -34,22 +34,22 @@ class RecordViewController: BaseViewController {
         $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
         $0.text = textViewPlaceHolder
     }
-    // 송영모 하트
+    
     //collectionView
-//    static let itemSize = CGSize(width: 54.adjustedWidth, height: 60.adjustedHeight)
-//    let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
-//        $0.scrollDirection = .horizontal
-//        $0.itemSize = RecordViewController.itemSize
-////        $0.sectionInset = TypeConst.collectionViewContentInset
-//    }
-//
-//    lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
-//        $0.register(EmotionCollectionViewCell.self, forCellWithReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier)
-//        $0.isPagingEnabled = false
-//        $0.decelerationRate = .fast
-//        $0.contentInsetAdjustmentBehavior = .never
-//        $0.backgroundColor = .clear
-//    }
+    static let itemSize = CGSize(width: 54.adjustedWidth, height: 60.adjustedHeight)
+    let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
+        $0.scrollDirection = .horizontal
+        $0.itemSize = RecordViewController.itemSize
+//        $0.sectionInset = TypeConst.collectionViewContentInset
+    }
+
+    lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
+        $0.register(EmotionCollectionViewCell.self, forCellWithReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier)
+        $0.isPagingEnabled = false
+        $0.decelerationRate = .fast
+        $0.contentInsetAdjustmentBehavior = .never
+        $0.backgroundColor = .clear
+    }
     
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
@@ -59,19 +59,14 @@ class RecordViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     
-    private var contentsHeight:Double = ( 54 + 54 + 300 + 32 + 14 + 14 + 418 + 100).adjustedHeight
-    
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
-        tapGesture.delegate = self
-        dateView.addGestureRecognizer(tapGesture)
-        
+        setGesture()
+        setDelegate()
         setupView()
         setupConstraint()
         setHeaderView()
-        setDelegate()
     }
     
     // MARK: - Functions
@@ -82,9 +77,15 @@ class RecordViewController: BaseViewController {
     private func setDelegate() {
         headerView.delegate = self
     }
+    
+    private func setGesture() {
+        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
+        tapGesture.delegate = self
+        dateView.addGestureRecognizer(tapGesture)
+    }
 }
 
-extension RecordViewController: Presentable, NavigationBarDelegate, UIGestureRecognizerDelegate {
+extension RecordViewController: Presentable, NavigationBarDelegate {
     // MARK: - constraints
     func setupConstraint() {
         self.headerView.snp.makeConstraints { make in
@@ -114,7 +115,6 @@ extension RecordViewController: Presentable, NavigationBarDelegate, UIGestureRec
         self.contentTextView.snp.makeConstraints { make in
             make.height.equalTo(418.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
-//            make.bottom.
             make.top.equalTo(titleTextField.snp.bottom).offset(14)
         }
         
@@ -129,8 +129,6 @@ extension RecordViewController: Presentable, NavigationBarDelegate, UIGestureRec
             make.top.equalTo(scrollView.snp.top)
             make.bottom.equalToSuperview()
             make.leading.trailing.equalTo(self.view)
-//            make.width.equalTo(375.adjustedWidth)
-//            make.height.equalTo(contentsHeight)
         }
         
         // content안에 있는 view들의 제약조건을 수정하였음
@@ -151,7 +149,6 @@ extension RecordViewController: Presentable, NavigationBarDelegate, UIGestureRec
     func setupView() {
         contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, testView)
         scrollView.addSubviews(contentsView)
-//        contentsView.bringSubviewToFront(titleTextField)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
     
@@ -160,13 +157,17 @@ extension RecordViewController: Presentable, NavigationBarDelegate, UIGestureRec
     }
     
     func navigationMoreButtonDidTap() {}
-    
-    @objc func tapMethod(sender: UITapGestureRecognizer) {
-        print("help mee plzzzz")
-    }
-    
+
+}
+
+extension RecordViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
         return true
     }
-    
+
+    @objc func tapMethod(sender: UITapGestureRecognizer) {
+        print("help mee plzzzz")
+    }
 }
+
+
