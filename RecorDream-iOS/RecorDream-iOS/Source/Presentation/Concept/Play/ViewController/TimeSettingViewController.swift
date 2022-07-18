@@ -31,8 +31,7 @@ class TimeSettingViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        if let touch = touches.first,
-        touch.view == self.view {
+        if let touch = touches.first, touch.view == self.view {
             self.hideBottomSheet()
         }
     }
@@ -51,8 +50,8 @@ extension TimeSettingViewController {
         UIView.animate(withDuration: 0.3){
             self.timeSettingViewHeight.constant = 0
             self.view.layoutIfNeeded()
-        }completion: { _ in
-            self.dismiss(animated: false)
+        }completion: {[weak self] _ in
+            self?.dismiss(animated: false)
         }
     }
 }
