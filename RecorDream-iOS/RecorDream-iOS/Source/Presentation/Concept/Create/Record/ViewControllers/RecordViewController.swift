@@ -11,6 +11,15 @@ import HeeKit
 import SnapKit
 import Then
 
+enum CollectionViewConst {
+    static let itemSize = CGSize(width: 45.adjustedWidth, height: 60.adjustedHeight)
+    static let itemSpacing = 20.0
+
+    static var collectionViewContentInset: UIEdgeInsets {
+        UIEdgeInsets(top:0, left: 10, bottom: 0, right: 10)
+    }
+}
+
 class RecordViewController: BaseViewController {
     // MARK: - Properties
     private let headerView = RecordHeaderView()
@@ -26,6 +35,7 @@ class RecordViewController: BaseViewController {
         $0.placeholder = "꿈의 제목을 남겨주세요."
         $0.addLeftPadding(width: 16)
     }
+    
     let textViewPlaceHolder = "꿈을 기록해주세요."
     private lazy var contentTextView = UITextView().then {
         $0.font = TypoStyle.title2.font
@@ -35,12 +45,10 @@ class RecordViewController: BaseViewController {
         $0.text = textViewPlaceHolder
     }
     
-    //collectionView
-    static let itemSize = CGSize(width: 54.adjustedWidth, height: 60.adjustedHeight)
     let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
-        $0.itemSize = RecordViewController.itemSize
-//        $0.sectionInset = TypeConst.collectionViewContentInset
+        $0.itemSize = CollectionViewConst.itemSize
+        $0.sectionInset = CollectionViewConst.collectionViewContentInset
     }
 
     lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
@@ -51,14 +59,17 @@ class RecordViewController: BaseViewController {
         $0.backgroundColor = .clear
     }
     
+    lazy var emotionView = UIView().then {
+        $0.backgroundColor = ColorType.darkBlue02.color
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
+    }
+    
+    let emotionList = [ImageList.emojiJoy.name, ImageList.emojiShocked.name, ImageList.emojiLove.name, ImageList.emojiShy.name, ImageList.emojiSad.name, ImageList.emojiAngry.name]
+    
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
     }
-    
-    private let testView = UIView().then {
-        $0.backgroundColor = .white
-    }
-    
+
     // MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +87,8 @@ class RecordViewController: BaseViewController {
     
     private func setDelegate() {
         headerView.delegate = self
+        emotionCollectionView.delegate = self
+        emotionCollectionView.dataSource = self
     }
     
     private func setGesture() {
@@ -118,11 +131,15 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(titleTextField.snp.bottom).offset(14)
         }
         
-        self.testView.snp.makeConstraints { make in
-            make.height.equalTo(300.adjustedHeight)
+        self.emotionCollectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.emotionView.snp.makeConstraints { make in
+            make.height.equalTo(60.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(contentTextView.snp.bottom).offset(14)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(50)
         }
         
         self.contentsView.snp.makeConstraints { make in
@@ -147,7 +164,8 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     }
 
     func setupView() {
-        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, testView)
+        emotionView.addSubview(emotionCollectionView)
+        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionView)
         scrollView.addSubviews(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
@@ -160,6 +178,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
 
 }
 
+// MARK: - UIGestureRecognizerDelegate
 extension RecordViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool{
         return true
@@ -170,4 +189,16 @@ extension RecordViewController: UIGestureRecognizerDelegate {
     }
 }
 
+// MARK: - CollectionViewDelegate
+extension RecordViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier, for: indexPath) as? EmotionCollectionViewCell else { return UICollectionViewCell() }
+        cell.setEmotionImage(imageName: emotionList[indexPath.item])
+        return cell
+    }
+}
 
