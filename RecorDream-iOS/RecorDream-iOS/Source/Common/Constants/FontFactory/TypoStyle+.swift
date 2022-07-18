@@ -23,7 +23,7 @@ extension TypoStyle {
         case .title1:
             return FontDescription(font: .pretendardBold, size: 20)
         case .title2:
-            return FontDescription(font: .pretendardSemibold, size: 18)
+            return FontDescription(font: .pretendardSemibold, size: 14)
         case .subtitle1:
             return FontDescription(font: .pretendardMedium, size: 16)
         case .subtitle2:
