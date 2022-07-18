@@ -10,12 +10,10 @@ import UIKit
 
 class CustomSwitchButton: UIButton {
     //MARK: - UIView
-    
     private var barView: UIView?
     private var circleView: UIView?
     
     //MARK: - Properties
-    
     private let onTintColor = ColorType.subPurple01.color
     private let offTintColor = ColorType.black01.color
     private let animationDuration: TimeInterval = 0.3
@@ -33,13 +31,6 @@ class CustomSwitchButton: UIButton {
     
     
     //MARK: - Initialize
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.configureButton(frame: frame)
-    }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -47,7 +38,6 @@ class CustomSwitchButton: UIButton {
     }
     
     //MARK: - Configure
-    
     private func configureButton(frame: CGRect){
         barView = {
             let view = UIView(
@@ -80,8 +70,8 @@ class CustomSwitchButton: UIButton {
             return view
         }()
         
-        guard let circleView = circleView else {return}
-        guard let barView = barView else {return}
+        guard let circleView = circleView else { return }
+        guard let barView = barView else { return }
         self.addSubviews(barView, circleView)
     }
     
@@ -89,14 +79,13 @@ class CustomSwitchButton: UIButton {
         UIView.animate(
             withDuration: animationDuration,
             animations: {[weak self] in
-                guard let self = self else {return}
+                guard let self = self else { return }
                 self.circleView?.center.x = self.circleCenter
             }
         )
     }
     
     //MARK: - Action
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         isOn.toggle()

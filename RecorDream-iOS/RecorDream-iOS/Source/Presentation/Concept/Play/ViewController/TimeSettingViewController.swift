@@ -50,7 +50,7 @@ extension TimeSettingViewController {
         UIView.animate(withDuration: 0.3){
             self.timeSettingViewHeight.constant = 0
             self.view.layoutIfNeeded()
-        }completion: {[weak self] _ in
+        } completion: {[weak self] _ in
             self?.dismiss(animated: false)
         }
     }
