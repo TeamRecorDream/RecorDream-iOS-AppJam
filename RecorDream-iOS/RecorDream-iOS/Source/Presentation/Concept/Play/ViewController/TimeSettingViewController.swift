@@ -21,14 +21,13 @@ class TimeSettingViewController: BaseViewController {
     private func configureView(){
         self.timeSettingViewHeight.constant = 0
         self.modalIndicatorView.makeRounded(radius: 4)
-        self.timeSettingView.makeRoundedSpecificCorner(
-            corners: [.topLeft, .topRight],
-            cornerRadius: 12
-        )
+        
+        self.timeSettingView.clipsToBounds = true
+        self.timeSettingView.layer.cornerRadius = 12
+        self.timeSettingView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
     }
     
     //MARK: - Action
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
@@ -40,11 +39,10 @@ class TimeSettingViewController: BaseViewController {
 }
 
 //MARK: - BottomSheet Animation
-
 extension TimeSettingViewController {
     func showBottomSheet(){
         UIView.animate(withDuration: 0.3){
-            self.timeSettingViewHeight.constant = 272
+            self.timeSettingViewHeight.constant = self.view.frame.height / 3
             self.view.layoutIfNeeded()
         }
     }
