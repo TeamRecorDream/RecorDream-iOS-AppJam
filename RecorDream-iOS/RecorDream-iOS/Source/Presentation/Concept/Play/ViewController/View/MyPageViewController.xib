@@ -151,6 +151,7 @@
                         <constraint firstAttribute="width" secondItem="Qmf-gj-6tT" secondAttribute="height" multiplier="1:1" id="aIH-zo-Ru6"/>
                         <constraint firstAttribute="height" constant="24" id="j2g-6C-n05"/>
                     </constraints>
+                    <color key="tintColor" name="white01"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="icn_edit"/>
                 </button>
