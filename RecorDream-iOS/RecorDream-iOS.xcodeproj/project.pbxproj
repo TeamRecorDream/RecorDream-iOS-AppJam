@@ -163,8 +163,6 @@
 		2322D0822883EEE200DC5553 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2322D0872883EFA000DC5553 /* RecordHeaderView.swift */,
-				2322D0892883EFB100DC5553 /* RecordHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +362,8 @@
 		F613C7FD2876D314005CB133 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2322D0872883EFA000DC5553 /* RecordHeaderView.swift */,
+				2322D0892883EFB100DC5553 /* RecordHeaderView.xib */,
 				F613C7FE2876D336005CB133 /* BaseViewController.swift */,
 				F613C8002876D356005CB133 /* BaseView.swift */,
 				F62CDF3328830B9100E5B19C /* SampleViewController.swift */,
