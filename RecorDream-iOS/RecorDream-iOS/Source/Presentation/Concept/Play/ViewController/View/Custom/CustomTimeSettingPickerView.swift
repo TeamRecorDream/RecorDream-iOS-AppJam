@@ -12,8 +12,7 @@ import UIKit
 enum Time: Int, CaseIterable {
     case meridiem = 0
     case hour = 1
-    case colon = 2
-    case minute = 3
+    case minute = 2
     
     var order: Int {
         return self.rawValue
@@ -31,13 +30,6 @@ class CustomTimeSettingPickerView: UIPickerView {
     var selectedMinute = 0
     
     //MARK: - Initialize
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        configureView()
-    }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -45,15 +37,33 @@ class CustomTimeSettingPickerView: UIPickerView {
     }
     
     //MARK: - Configure
-    
     private func configureView(){
+        configureColon()
+        
         self.dataSource = self
         self.delegate = self
+    }
+    
+    private func configureColon(){
+        let colonLabel = UILabel(frame: CGRect(
+            x: 0,
+            y: 0,
+            width: 30,
+            height: 30
+        ))
+        colonLabel.text = ":"
+        colonLabel.font = TypoStyle.modal1.font
+        colonLabel.textColor = ColorType.lightBlue01.color
+        colonLabel.textAlignment = .center
+        
+        self.addSubview(colonLabel)
+        colonLabel.translatesAutoresizingMaskIntoConstraints = false
+        colonLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        colonLabel.centerXAnchor.constraint(equalTo: self.rightAnchor, constant: -115).isActive = true
     }
 }
 
 //MARK: - Extension
-
 extension CustomTimeSettingPickerView: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return Time.allCases.count
@@ -65,8 +75,6 @@ extension CustomTimeSettingPickerView: UIPickerViewDataSource {
             return self.meridiems.count
         case Time.hour.order:
             return self.hours.count
-        case Time.colon.order:
-            return 1
         case Time.minute.order:
             return self.minutes.count
         default:
@@ -77,18 +85,18 @@ extension CustomTimeSettingPickerView: UIPickerViewDataSource {
 
 extension CustomTimeSettingPickerView: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 53
+        return 50
     }
     
     //PickerView의 각 Component마다 넣어 줄 UIView 구성
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        self.subviews[1].backgroundColor = .clear
+        self.subviews[2].backgroundColor = .clear
         
         let label = UILabel(
             frame: CGRect(
                 x: 0,
                 y: 0,
-                width: self.frame.width/3,
+                width: self.frame.width/5,
                 height: 30)
         )
         label.font = row == self.selectedRow(inComponent: component) ? TypoStyle.modal1.font : TypoStyle.modal2.font
@@ -101,9 +109,7 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
             return label
         case Time.hour.order:
             label.text = hours[row] < 10 ? "0"+String(hours[row]) : String(hours[row])
-            return label
-        case Time.colon.order:
-            label.text = ":"
+            label.textAlignment = .left
             return label
         case Time.minute.order:
             label.text = minutes[row] < 10 ? "0"+String(minutes[row]) : String(minutes[row])

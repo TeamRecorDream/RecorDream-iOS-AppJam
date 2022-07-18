@@ -30,10 +30,10 @@
                     <rect key="frame" x="0.0" y="624" width="414" height="272"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-O7-EG7">
-                            <rect key="frame" x="20" y="18" width="374" height="204"/>
+                            <rect key="frame" x="0.0" y="18" width="414" height="204"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWr-B0-6aM">
-                                    <rect key="frame" x="161" y="0.0" width="52" height="3"/>
+                                    <rect key="frame" x="181" y="0.0" width="52" height="3"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="3" id="9wE-3F-5Du"/>
@@ -41,16 +41,16 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-VY-5dG">
-                                    <rect key="frame" x="0.0" y="11" width="374" height="17"/>
+                                    <rect key="frame" x="20" y="11" width="374" height="13"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szo-yR-2c1">
-                                            <rect key="frame" x="0.0" y="0.0" width="52" height="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="52" height="13"/>
                                             <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
                                             <color key="textColor" name="white01"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-2N-Kel">
-                                            <rect key="frame" x="344" y="0.0" width="30" height="17"/>
+                                            <rect key="frame" x="344" y="0.0" width="30" height="13"/>
                                             <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                             <state key="normal" title="저장">
@@ -60,12 +60,13 @@
                                     </subviews>
                                 </stackView>
                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfw-Dl-NK2" customClass="CustomTimeSettingPickerView" customModule="RecorDream_iOS" customModuleProvider="target">
-                                    <rect key="frame" x="27" y="36" width="320" height="168"/>
+                                    <rect key="frame" x="47" y="32" width="320" height="172"/>
                                 </pickerView>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="JfW-VY-5dG" firstAttribute="leading" secondItem="VAj-O7-EG7" secondAttribute="leading" id="5Xg-Vd-bg8"/>
-                                <constraint firstAttribute="trailing" secondItem="JfW-VY-5dG" secondAttribute="trailing" id="NaN-Er-jtz"/>
+                                <constraint firstItem="JfW-VY-5dG" firstAttribute="leading" secondItem="VAj-O7-EG7" secondAttribute="leading" constant="20" id="5Xg-Vd-bg8"/>
+                                <constraint firstAttribute="trailing" secondItem="JfW-VY-5dG" secondAttribute="trailing" constant="20" id="NaN-Er-jtz"/>
+                                <constraint firstItem="Nfw-Dl-NK2" firstAttribute="centerX" secondItem="VAj-O7-EG7" secondAttribute="centerX" id="nFJ-Ju-tXS"/>
                             </constraints>
                         </stackView>
                     </subviews>
@@ -74,15 +75,16 @@
                         <constraint firstAttribute="bottom" secondItem="VAj-O7-EG7" secondAttribute="bottom" constant="50" id="1bK-mf-oaB"/>
                         <constraint firstItem="VAj-O7-EG7" firstAttribute="top" secondItem="j2i-qD-WiB" secondAttribute="top" constant="18" id="9jh-tC-FIq"/>
                         <constraint firstAttribute="height" constant="272" id="DZR-ts-YvN"/>
-                        <constraint firstItem="VAj-O7-EG7" firstAttribute="leading" secondItem="j2i-qD-WiB" secondAttribute="leading" constant="20" id="FPG-wp-pei"/>
-                        <constraint firstAttribute="trailing" secondItem="VAj-O7-EG7" secondAttribute="trailing" constant="20" id="q10-dZ-Q2P"/>
+                        <constraint firstItem="VAj-O7-EG7" firstAttribute="leading" secondItem="j2i-qD-WiB" secondAttribute="leading" id="FPG-wp-pei"/>
+                        <constraint firstItem="Nfw-Dl-NK2" firstAttribute="centerY" secondItem="j2i-qD-WiB" secondAttribute="centerY" id="Lx4-6h-zla"/>
+                        <constraint firstAttribute="trailing" secondItem="VAj-O7-EG7" secondAttribute="trailing" id="q10-dZ-Q2P"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="c5W-Az-BP1"/>
             <color key="backgroundColor" red="0.0" green="0.0040000001899898052" blue="0.097999997437000275" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="c5W-Az-BP1" firstAttribute="trailing" secondItem="j2i-qD-WiB" secondAttribute="trailing" id="bIp-Rc-Vkw"/>
+                <constraint firstItem="c5W-Az-BP1" firstAttribute="trailing" secondItem="j2i-qD-WiB" secondAttribute="trailing" id="ESR-8Q-rgQ"/>
                 <constraint firstItem="j2i-qD-WiB" firstAttribute="leading" secondItem="c5W-Az-BP1" secondAttribute="leading" id="pWB-bP-mhi"/>
                 <constraint firstAttribute="bottom" secondItem="j2i-qD-WiB" secondAttribute="bottom" id="vf3-c5-neS"/>
             </constraints>
