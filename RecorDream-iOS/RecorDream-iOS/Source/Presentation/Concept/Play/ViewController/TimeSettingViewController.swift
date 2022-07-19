@@ -15,8 +15,9 @@ class TimeSettingViewController: BaseViewController {
     @IBOutlet weak var timeSettingView: UIView!
     @IBOutlet weak var timeSettingViewHeight: NSLayoutConstraint!
     @IBOutlet weak var modalIndicatorView: UIView!
-    
     @IBOutlet weak var timeSettingPickerView: CustomTimeSettingPickerView!
+    
+    //MARK: - Properties
     weak var delegate: TimeSettingViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class TimeSettingViewController: BaseViewController {
         configureView()
     }
     
+    //MARK: - Configure
     private func configureView(){
         self.timeSettingViewHeight.constant = 0
         self.modalIndicatorView.makeRounded(radius: 4)

@@ -26,6 +26,7 @@ class MyPageViewController: BaseViewController {
         configureView()
     }
     
+    //MARK: - Configure
     private func configureView() {
         settingView.forEach { view in
             view.makeRoundedWithBorder(
@@ -69,6 +70,7 @@ class MyPageViewController: BaseViewController {
         self.headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "마이페이지")
     }
     
+    //MARK: - Action
     private func presentTimeSettingView() {
         let timeSettingViewController = TimeSettingViewController.instanceFromNib()
         timeSettingViewController.modalPresentationStyle = .overFullScreen
@@ -89,6 +91,7 @@ class MyPageViewController: BaseViewController {
     
 }
 
+//MARK: - Extension
 extension MyPageViewController: TimeSettingViewControllerDelegate {
     func passTime(meridiem: String, hour: String, minute: String) {
         timeSettingButton.setTitle("\(meridiem) \(hour):\(minute)", for: .normal)
