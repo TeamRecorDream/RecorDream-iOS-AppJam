@@ -36,13 +36,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpM-9p-BBQ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="67"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="67" id="k9d-53-gq7"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678@naver.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fw-Hh-X8s">
                     <rect key="frame" x="145.5" y="264" width="123.5" height="14.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
@@ -186,24 +179,21 @@
             <color key="backgroundColor" name="dark_blue01"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="I3r-hb-dMF" firstAttribute="top" secondItem="1nu-c3-dEO" secondAttribute="top" constant="117" id="0kp-m6-zP0"/>
                 <constraint firstItem="Qxy-gh-grz" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="3dt-6z-n6f"/>
                 <constraint firstItem="KLp-ao-h3v" firstAttribute="top" secondItem="Qxy-gh-grz" secondAttribute="bottom" constant="12" id="5Vk-5h-CiZ"/>
                 <constraint firstItem="fSP-J9-Vfd" firstAttribute="leading" secondItem="PQ3-e0-zF8" secondAttribute="trailing" id="ANz-bb-Fkt"/>
                 <constraint firstItem="KLp-ao-h3v" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="B0U-xY-zHP"/>
-                <constraint firstItem="QpM-9p-BBQ" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" id="DhM-JI-rzp"/>
                 <constraint firstItem="1nu-c3-dEO" firstAttribute="trailing" secondItem="Qxy-gh-grz" secondAttribute="trailing" constant="16" id="Ef6-zN-UMs"/>
                 <constraint firstItem="9fw-Hh-X8s" firstAttribute="centerX" secondItem="PQ3-e0-zF8" secondAttribute="centerX" id="FXm-yb-Qt0"/>
                 <constraint firstItem="1nu-c3-dEO" firstAttribute="trailing" secondItem="6FG-z5-5Ce" secondAttribute="trailing" constant="16" id="LCR-eM-OlC"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="leading" secondItem="6FG-z5-5Ce" secondAttribute="leading" id="NRc-De-rI3"/>
                 <constraint firstItem="PQ3-e0-zF8" firstAttribute="top" secondItem="I3r-hb-dMF" secondAttribute="bottom" constant="7" id="Nt4-UM-8wE"/>
                 <constraint firstItem="Qxy-gh-grz" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" constant="16" id="SPG-yh-fzu"/>
-                <constraint firstItem="I3r-hb-dMF" firstAttribute="top" secondItem="QpM-9p-BBQ" secondAttribute="bottom" constant="50" id="TBo-3r-XWi"/>
-                <constraint firstItem="QpM-9p-BBQ" firstAttribute="top" secondItem="hWG-yj-iMS" secondAttribute="top" constant="44" id="TTh-lY-XRo"/>
                 <constraint firstItem="6FG-z5-5Ce" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" constant="16" id="ca4-C2-GKv"/>
                 <constraint firstItem="KLp-ao-h3v" firstAttribute="bottom" secondItem="1nu-c3-dEO" secondAttribute="bottom" id="dB6-Xx-Qtb"/>
                 <constraint firstItem="9fw-Hh-X8s" firstAttribute="top" secondItem="PQ3-e0-zF8" secondAttribute="bottom" constant="1" id="dYs-MV-NKl"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="trailing" secondItem="6FG-z5-5Ce" secondAttribute="trailing" id="fCz-lk-7WV"/>
-                <constraint firstItem="QpM-9p-BBQ" firstAttribute="trailing" secondItem="1nu-c3-dEO" secondAttribute="trailing" id="fO3-pm-75c"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="top" secondItem="6FG-z5-5Ce" secondAttribute="bottom" constant="14" id="iYF-2D-Dgp"/>
                 <constraint firstItem="Qxy-gh-grz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SPY-0C-nga" secondAttribute="bottom" constant="160" id="nHg-OF-Wwv"/>
                 <constraint firstItem="I3r-hb-dMF" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="ruf-n2-WJn"/>
