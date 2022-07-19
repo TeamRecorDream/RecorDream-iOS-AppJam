@@ -12,6 +12,7 @@
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
 		14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E152880782300CCE8A0 /* TimeSettingViewController.swift */; };
 		14243E182880782300CCE8A0 /* TimeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E162880782300CCE8A0 /* TimeSettingViewController.xib */; };
+		144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */; };
 		14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */; };
 		2322D07428813D5F00DC5553 /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07328813D5F00DC5553 /* GenreType.swift */; };
 		2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07528814A9000DC5553 /* RecorDreamColorType.swift */; };
@@ -84,6 +85,7 @@
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
 		14243E152880782300CCE8A0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		14243E162880782300CCE8A0 /* TimeSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSettingViewController.xib; sourceTree = "<group>"; };
+		144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingDelegate.swift; sourceTree = "<group>"; };
 		14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeSettingPickerView.swift; sourceTree = "<group>"; };
 		2322D07328813D5F00DC5553 /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
 		2322D07528814A9000DC5553 /* RecorDreamColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamColorType.swift; sourceTree = "<group>"; };
@@ -171,8 +173,17 @@
 				1432143C2883EC6500C27BD7 /* Custom */,
 				14243E162880782300CCE8A0 /* TimeSettingViewController.xib */,
 				14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */,
-        );
-        path = View;
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1432143C2883EC6500C27BD7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */,
+				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		2322D0802883EE7F00DC5553 /* Record */ = {
@@ -212,15 +223,6 @@
 			);
 			path = View;
 			sourceTree = "<group>";
-		};
-		1432143C2883EC6500C27BD7 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */,
-				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
-			);
-			path = Custom;
-      sourceTree = "<group>";
 		};
 		232D0E3E287D8F360063D725 /* Cell */ = {
 			isa = PBXGroup;
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */,
+				144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
+				144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */,
 				2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
