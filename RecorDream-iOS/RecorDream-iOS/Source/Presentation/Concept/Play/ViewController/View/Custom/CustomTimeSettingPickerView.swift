@@ -128,7 +128,6 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
             break
         case Time.minute.order:
             self.selectedMinute = minutes[row] < 10 ? "0"+String(minutes[row]) : String(minutes[row])
-            print("\(self.selectedMinute)")
         default:
             break
         }
