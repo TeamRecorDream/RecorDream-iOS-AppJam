@@ -36,12 +36,6 @@ class RecordViewController: BaseViewController {
         $0.addLeftPadding(width: 16)
         $0.attributedPlaceholder = NSAttributedString(string: "꿈의 제목을 남겨주세요.", attributes: [NSAttributedString.Key.foregroundColor : ColorType.white02.color])
     }
-    
-    private let contentLable = UILabel().then {
-        $0.text = "꿈을 기록해주세요."
-        $0.font = TypoStyle.title2.font
-        $0.textColor = ColorType.white02.color
-    }
     private lazy var contentTextView = UITextView().then {
         $0.font = TypoStyle.title2.font
         $0.tintColor = ColorType.white01.color
@@ -50,10 +44,21 @@ class RecordViewController: BaseViewController {
         $0.textContainerInset = UIEdgeInsets.init(top: 18, left: 16, bottom: 18, right: 16)
     }
     
+    private let contentLable = UILabel().then {
+        $0.text = "꿈을 기록해주세요."
+        $0.font = TypoStyle.title2.font
+        $0.textColor = ColorType.white02.color
+    }
+    
     private let emotionLabel = UILabel().then {
         $0.font = TypoStyle.title2.font
         $0.tintColor = ColorType.white01.color
         $0.text = "나의 감정"
+    }
+    private let dreamColorLabel = UILabel().then {
+        $0.font = TypoStyle.title2.font
+        $0.tintColor = ColorType.white01.color
+        $0.text = "꿈의 색상"
     }
     private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
@@ -69,12 +74,25 @@ class RecordViewController: BaseViewController {
         $0.backgroundColor = .clear
     }
     
+    private lazy var dreamColorCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
+        $0.register(RecordBarCollectionViewCell.self, forCellWithReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier)
+        $0.isPagingEnabled = false
+        $0.decelerationRate = .fast
+        $0.contentInsetAdjustmentBehavior = .never
+        $0.backgroundColor = .clear
+    }
+    
     private lazy var emotionView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
         $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
     }
     
-    private let emotionList = [ImageList.emojiJoy.name, ImageList.emojiShocked.name, ImageList.emojiLove.name, ImageList.emojiShy.name, ImageList.emojiSad.name, ImageList.emojiAngry.name]
+    private lazy var dreamColorView = UIView().then {
+        $0.backgroundColor = ColorType.darkBlue02.color
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
+    }
+    
+    private let dreamColorList = [ImageList.colorChipColorRed.name, ImageList.colorChipColorOrange.name, ImageList.colorChipColorPink.name, ImageList.colorChipColorPurple.name, ImageList.colorChipColorGreen.name, ImageList.colorChipColorBlue.name]
     
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
@@ -99,6 +117,8 @@ class RecordViewController: BaseViewController {
         headerView.delegate = self
         emotionCollectionView.delegate = self
         emotionCollectionView.dataSource = self
+        dreamColorCollectionView.delegate = self
+        dreamColorCollectionView.dataSource = self
         contentTextView.delegate = self
     }
     
@@ -155,6 +175,21 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.height.equalTo(60.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(emotionLabel.snp.bottom).offset(14)
+        }
+        
+        self.dreamColorLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(emotionView.snp.bottom).offset(32)
+        }
+
+        self.dreamColorCollectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        self.dreamColorView.snp.makeConstraints { make in
+            make.height.equalTo(60.adjustedHeight)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(dreamColorLabel.snp.bottom).offset(14)
             make.bottom.equalToSuperview().inset(50)
         }
         
@@ -187,7 +222,8 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     func setupView() {
         contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
-        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView)
+        dreamColorView.addSubview(dreamColorCollectionView) // 새로 추가
+        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView)
         scrollView.addSubview(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
@@ -220,7 +256,11 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == emotionCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
-            cell.setRecordBarImage(imageName: emotionList[indexPath.item])
+            cell.setRecordBarImage(imageName: Constant.Emotion.IntType(indexPath.item).title)
+            return cell
+        } else if collectionView == dreamColorCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
+            cell.setRecordBarImage(imageName: dreamColorList[indexPath.item])
             return cell
         }
         return UICollectionViewCell()
@@ -228,7 +268,11 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: - 서버통신시 index 넣어주기 
-        //print(indexPath.item)
+        if collectionView == emotionCollectionView {
+            print("emotionCell :\(indexPath.item)")
+        } else if collectionView == dreamColorCollectionView {
+            print("dreamColorCell :\(indexPath.item)")
+        }
     }
 }
 
