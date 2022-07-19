@@ -29,29 +29,39 @@ class RecordViewController: BaseViewController {
     private let contentsView = UIView()
     private let titleTextField = UITextField().then {
         $0.font = TypoStyle.title2.font
-        $0.tintColor = ColorType.white02.color // TODO: - light_blue03 으로 변경해야함
+        $0.tintColor = ColorType.white01.color
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03 으로 변경해야함
         $0.placeholder = "꿈의 제목을 남겨주세요."
         $0.addLeftPadding(width: 16)
+        $0.attributedPlaceholder = NSAttributedString(string: "꿈의 제목을 남겨주세요.", attributes: [NSAttributedString.Key.foregroundColor : ColorType.white02.color])
     }
     
-    let textViewPlaceHolder = "꿈을 기록해주세요."
+    private let contentLable = UILabel().then {
+        $0.text = "꿈을 기록해주세요."
+        $0.font = TypoStyle.title2.font
+        $0.textColor = ColorType.white02.color
+    }
     private lazy var contentTextView = UITextView().then {
         $0.font = TypoStyle.title2.font
-        $0.tintColor = ColorType.white02.color // TODO: - light_blue03 으로 변경해야함
+        $0.tintColor = ColorType.white01.color
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
-        $0.text = textViewPlaceHolder
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03 으로 변경해야함
+        $0.textContainerInset = UIEdgeInsets.init(top: 18, left: 16, bottom: 18, right: 16)
     }
     
-    let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
+    private let emotionLabel = UILabel().then {
+        $0.font = TypoStyle.title2.font
+        $0.tintColor = ColorType.white01.color
+        $0.text = "나의 감정"
+    }
+    private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
         $0.itemSize = CollectionViewConst.itemSize
         $0.sectionInset = CollectionViewConst.collectionViewContentInset
     }
 
-    lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
+    private lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
         $0.register(EmotionCollectionViewCell.self, forCellWithReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier)
         $0.isPagingEnabled = false
         $0.decelerationRate = .fast
@@ -59,12 +69,12 @@ class RecordViewController: BaseViewController {
         $0.backgroundColor = .clear
     }
     
-    lazy var emotionView = UIView().then {
+    private lazy var emotionView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
         $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
     }
     
-    let emotionList = [ImageList.emojiJoy.name, ImageList.emojiShocked.name, ImageList.emojiLove.name, ImageList.emojiShy.name, ImageList.emojiSad.name, ImageList.emojiAngry.name]
+    private let emotionList = [ImageList.emojiJoy.name, ImageList.emojiShocked.name, ImageList.emojiLove.name, ImageList.emojiShy.name, ImageList.emojiSad.name, ImageList.emojiAngry.name]
     
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
@@ -89,6 +99,7 @@ class RecordViewController: BaseViewController {
         headerView.delegate = self
         emotionCollectionView.delegate = self
         emotionCollectionView.dataSource = self
+        contentTextView.delegate = self
     }
     
     private func setGesture() {
@@ -131,6 +142,11 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(titleTextField.snp.bottom).offset(14)
         }
         
+        self.emotionLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(contentTextView.snp.bottom).offset(32)
+        }
+        
         self.emotionCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -138,7 +154,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
         self.emotionView.snp.makeConstraints { make in
             make.height.equalTo(60.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.top.equalTo(contentTextView.snp.bottom).offset(14)
+            make.top.equalTo(emotionLabel.snp.bottom).offset(14)
             make.bottom.equalToSuperview().inset(50)
         }
         
@@ -146,6 +162,11 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(scrollView.snp.top)
             make.bottom.equalToSuperview()
             make.leading.trailing.equalTo(self.view)
+        }
+        
+        self.contentLable.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(18)
+            make.leading.equalToSuperview().inset(18)
         }
         
         // content안에 있는 view들의 제약조건을 수정하였음
@@ -164,9 +185,10 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     }
 
     func setupView() {
+        contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
-        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionView)
-        scrollView.addSubviews(contentsView)
+        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView)
+        scrollView.addSubview(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
     
@@ -202,3 +224,13 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     }
 }
 
+// MARK: - UITextViewDelegate
+extension RecordViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        contentLable.isHidden = true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if contentTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { contentLable.isHidden = false }
+    }
+}
