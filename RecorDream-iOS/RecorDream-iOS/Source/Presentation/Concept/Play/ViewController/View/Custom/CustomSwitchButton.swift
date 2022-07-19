@@ -25,6 +25,9 @@ class CustomSwitchButton: UIButton {
         didSet {
             self.barView?.backgroundColor = isOn ? onTintColor : offTintColor
             self.circleCenter = isOn ? frame.width - (circleHorizontalMargin + (circleSize/2)) : circleHorizontalMargin + (circleSize/2)
+            
+            configureAnimation()
+            self.completion(isOn)
         }
     }
     var completion: ((_ isOn: Bool) -> Void) = { isOn in }
@@ -48,7 +51,7 @@ class CustomSwitchButton: UIButton {
                     height: frame.height
                 )
             )
-            view.backgroundColor = ColorType.black01.color
+            view.backgroundColor = isOn ? onTintColor : offTintColor
             view.layer.cornerRadius = frame.height / 2
             view.layer.masksToBounds = true
             return view
@@ -57,7 +60,7 @@ class CustomSwitchButton: UIButton {
         circleView = {
             let view = UIView(
                 frame: CGRect(
-                    x: circleHorizontalMargin + (circleSize/2),
+                    x: isOn ? frame.width - (circleHorizontalMargin + (circleSize/2)) : circleHorizontalMargin + (circleSize/2),
                     y: circleVerticalMargin,
                     width: circleSize,
                     height: circleSize
@@ -78,7 +81,7 @@ class CustomSwitchButton: UIButton {
     private func configureAnimation(){
         UIView.animate(
             withDuration: animationDuration,
-            animations: {[weak self] in
+            animations: { [weak self] in
                 guard let self = self else { return }
                 self.circleView?.center.x = self.circleCenter
             }
@@ -89,7 +92,5 @@ class CustomSwitchButton: UIButton {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         isOn.toggle()
-        configureAnimation()
-        self.completion(isOn)
     }
 }

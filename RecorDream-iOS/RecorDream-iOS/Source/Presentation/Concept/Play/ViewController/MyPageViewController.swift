@@ -42,13 +42,14 @@ class MyPageViewController: BaseViewController {
     }
     
     private func configureDreamAlarmButton(){
+        //TODO: - 서버 연결 시 dreamAlarmButton.isOn에 값 할당할 예정
         dreamAlarmButton.isOn = false
         if !dreamAlarmButton.isOn {
             self.timeSettingButton.setTitle(nil, for: .normal)
             self.timeSettingLabel.textColor = ColorType.white03.color
         }
         
-        dreamAlarmButton.completion = {[weak self] isOn in
+        dreamAlarmButton.completion = { [weak self] isOn in
             guard let self = self else { return }
             
             if isOn {
