@@ -141,6 +141,16 @@ class RecordViewController: BaseViewController {
         $0.textContainerInset = UIEdgeInsets.init(top: 18, left: 16, bottom: 18, right: 16)
     }
     
+    private let toastTextLabel = UILabel().then {
+        $0.text = "꿈의 제목을 입력해주세요."
+    }
+    
+    private let toastMessageView = UIView().then {
+        $0.backgroundColor = ColorType.warningGray.color
+        $0.makeRoundedWithBorder(radius: 10, borderColor: ColorType.warningGray.color.cgColor)
+        $0.alpha = 0
+    }
+    
     private let dreamColorList = [ImageList.colorChipColorRed.name, ImageList.colorChipColorOrange.name, ImageList.colorChipColorPink.name, ImageList.colorChipColorPurple.name, ImageList.colorChipColorGreen.name, ImageList.colorChipColorBlue.name]
     
     private let saveButton = UIButton().then {
@@ -175,7 +185,6 @@ class RecordViewController: BaseViewController {
         dreamColorCollectionView.delegate = self
         dreamColorCollectionView.dataSource = self
         contentTextView.delegate = self
-//        genreTapGesture.delegate = self
     }
     
     private func setGesture() {
@@ -186,15 +195,15 @@ class RecordViewController: BaseViewController {
     
     internal override func setTargets() {
         titleTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
     }
     
     private func resetSaveButton() {
-        saveButton.isUserInteractionEnabled = false
+//        saveButton.isUserInteractionEnabled = false
         titleTextField.text?.removeAll()
     }
     
     private func setHashtagView() {
-        
         for index in 0..<5 {
             let hashtagView = HashtagView()
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
@@ -209,7 +218,7 @@ class RecordViewController: BaseViewController {
             genresTopStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
-                make.height.equalTo(30)
+                make.height.equalTo(30.adjustedHeight)
             }
         }
         
@@ -227,19 +236,34 @@ class RecordViewController: BaseViewController {
             genresBottomStackView.addArrangedSubview(hashtagView)
 
             hashtagView.snp.makeConstraints { make in
-                make.height.equalTo(30)
+                make.height.equalTo(30.adjustedHeight)
             }
         }
     }
     
     @objc func textFieldDidChange() {
         if let title = titleTextField.text {
-            if !title.isEmpty {
-                saveButton.isUserInteractionEnabled = true
+            if !title.isEmpty && title.first !=  " " {
+                // MARK: - 저장 가능 상태
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
             } else {
-                saveButton.isUserInteractionEnabled = false
+                // MARK: - 저장 불가능 상태
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
+            }
+        }
+    }
+    
+    @objc func saveButtonDidTap() {
+        if let title = titleTextField.text {
+            if !title.isEmpty && title.first !=  " " {
+                // MARK: - 저장 가능 상태
+            } else {
+                // MARK: - 저장 불가능 상태
+                UIView.animate(withDuration: 1.25, delay: 0.01, options: .curveEaseIn, animations: {
+                    self.toastMessageView.alpha = 1.0
+                }, completion: {_ in
+                    self.toastMessageView.removeFromSuperview()
+                })
             }
         }
     }
@@ -340,7 +364,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.height.equalTo(212.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(noteLabel.snp.bottom).offset(16)
-            make.bottom.equalToSuperview().inset(60)
+            make.bottom.equalToSuperview().inset(70)
         }
         
         self.contentsView.snp.makeConstraints { make in
@@ -367,15 +391,27 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.leading.bottom.trailing.equalToSuperview()
             make.height.equalTo(75.adjustedHeight)
         }
+        
+        self.toastTextLabel.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+        }
+        
+        self.toastMessageView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(29)
+            make.height.equalTo(44.adjustedHeight)
+            make.bottom.equalTo(saveButton.snp.top).offset(-40)
+        }
+        
     }
 
     func setupView() {
+        toastMessageView.addSubview(toastTextLabel)
         contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
         dreamColorView.addSubview(dreamColorCollectionView)
         contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView, genreLable, genresTopStackView, genresBottomStackView, noticeLabel, noteLabel, noteTextView)
         scrollView.addSubview(contentsView)
-        self.view.addSubviews(headerView, scrollView, saveButton)
+        self.view.addSubviews(headerView, scrollView, saveButton, toastMessageView)
     }
     
     func navigationBackButtonDidTap() {
@@ -467,3 +503,5 @@ extension UILabel {
         self.tintColor = ColorType.white01.color
     }
 }
+
+
