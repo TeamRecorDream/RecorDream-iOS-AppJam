@@ -20,6 +20,10 @@ enum CollectionViewConst {
     }
 }
 
+class GenreTapGestureRecognizer: UITapGestureRecognizer {
+    var index: Int?
+}
+
 class RecordViewController: BaseViewController {
     // MARK: - Properties
     private let headerView = RecordHeaderView()
@@ -143,10 +147,11 @@ class RecordViewController: BaseViewController {
         dreamColorCollectionView.delegate = self
         dreamColorCollectionView.dataSource = self
         contentTextView.delegate = self
+//        genreTapGesture.delegate = self
     }
     
     private func setGesture() {
-        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
         tapGesture.delegate = self
         dateView.addGestureRecognizer(tapGesture)
     }
@@ -161,10 +166,15 @@ class RecordViewController: BaseViewController {
     }
     
     private func setHashtagView() {
+        
         for index in 0..<5 {
             let hashtagView = HashtagView()
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
+        
+            let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreTapMethod))
+            genreTapGesture.index = index
+            hashtagView.addGestureRecognizer(genreTapGesture)
             
             genresTopStackView.addArrangedSubview(hashtagView)
             
@@ -177,6 +187,10 @@ class RecordViewController: BaseViewController {
             let hashtagView = HashtagView()
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
+
+            let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreTapMethod))
+            genreTapGesture.index = index
+            hashtagView.addGestureRecognizer(genreTapGesture)
 
             genresBottomStackView.addArrangedSubview(hashtagView)
 
@@ -331,6 +345,12 @@ extension RecordViewController: UIGestureRecognizerDelegate {
 
     @objc func tapMethod(sender: UITapGestureRecognizer) {
         print("help mee plzzzz")
+    }
+    
+    @objc func genreTapMethod(sender: GenreTapGestureRecognizer) {
+        if let index = sender.index {
+            print(index)
+        }
     }
 }
 
