@@ -91,6 +91,13 @@
 		F6F14A782886CAEF0065D291 /* dummySearchResultNone.json in Resources */ = {isa = PBXBuildFile; fileRef = F6F14A772886CAEF0065D291 /* dummySearchResultNone.json */; };
 		F6F14A7C2886CC210065D291 /* dummySearchResultExist.json in Resources */ = {isa = PBXBuildFile; fileRef = F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */; };
 		F6F14A7E2886CC570065D291 /* SearchResultDummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */; };
+		F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A882886F47F0065D291 /* HTTPMethod.swift */; };
+		F6F14A8B2886F4D20065D291 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */; };
+		F6F14A8D2886F5A60065D291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8C2886F5A60065D291 /* APIManager.swift */; };
+		F6F14A8F2886F5DC0065D291 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8E2886F5DC0065D291 /* APIError.swift */; };
+		F6F14A912886F6120065D291 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A902886F6120065D291 /* BaseModel.swift */; };
+		F6F14A932886F7910065D291 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A922886F7910065D291 /* APIEnvironment.swift */; };
+		F6F14A992886FB230065D291 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A982886FB230065D291 /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +168,13 @@
 		F6F14A772886CAEF0065D291 /* dummySearchResultNone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummySearchResultNone.json; sourceTree = "<group>"; };
 		F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummySearchResultExist.json; sourceTree = "<group>"; };
 		F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDummyModel.swift; sourceTree = "<group>"; };
+		F6F14A882886F47F0065D291 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		F6F14A8C2886F5A60065D291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6F14A8E2886F5DC0065D291 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F6F14A902886F6120065D291 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		F6F14A922886F7910065D291 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		F6F14A982886FB230065D291 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +418,7 @@
 		F613C7DB28756527005CB133 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				F6F14A7F2886F3390065D291 /* Network */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -570,6 +585,68 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
+		F6F14A7F2886F3390065D291 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A872886F3E90065D291 /* EndPoint */,
+				F6F14A862886F3E10065D291 /* Manager */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F6F14A862886F3E10065D291 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A882886F47F0065D291 /* HTTPMethod.swift */,
+				F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */,
+				F6F14A8C2886F5A60065D291 /* APIManager.swift */,
+				F6F14A8E2886F5DC0065D291 /* APIError.swift */,
+				F6F14A902886F6120065D291 /* BaseModel.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F6F14A872886F3E90065D291 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A942886F88F0065D291 /* Concept */,
+				F6F14A922886F7910065D291 /* APIEnvironment.swift */,
+				F6F14A982886FB230065D291 /* EndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		F6F14A942886F88F0065D291 /* Concept */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A972886FADD0065D291 /* Share */,
+				F6F14A962886FAD90065D291 /* Play */,
+				F6F14A952886FAD40065D291 /* Create */,
+			);
+			path = Concept;
+			sourceTree = "<group>";
+		};
+		F6F14A952886FAD40065D291 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		F6F14A962886FAD90065D291 /* Play */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		F6F14A972886FADD0065D291 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -708,6 +785,7 @@
 			files = (
 				F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */,
 				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
+				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
@@ -729,10 +807,14 @@
 				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
+				F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */,
+				F6F14A8D2886F5A60065D291 /* APIManager.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F6F14A732886A18F0065D291 /* SearchResultNone.swift in Sources */,
+				F6F14A932886F7910065D291 /* APIEnvironment.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
 				14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */,
+				F6F14A8F2886F5DC0065D291 /* APIError.swift in Sources */,
 				232D0E39287D86C20063D725 /* HeaderView.swift in Sources */,
 				F6F14A762886CA950065D291 /* MockParser.swift in Sources */,
 				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
@@ -740,9 +822,11 @@
 				F6F14A6A2885857F0065D291 /* EmptyView.swift in Sources */,
 				F6F14A712886A17F0065D291 /* SearchResultExist.swift in Sources */,
 				14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */,
+				F6F14A992886FB230065D291 /* EndPoint.swift in Sources */,
 				2322D0882883EFA000DC5553 /* RecordHeaderView.swift in Sources */,
 				F6D3946D287D68D4004A7DBB /* ColorType.swift in Sources */,
 				14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */,
+				F6F14A8B2886F4D20065D291 /* NetworkRequest.swift in Sources */,
 				2322D07A288153E900DC5553 /* EmotionType.swift in Sources */,
 				F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */,
 				F6D39477287D6F31004A7DBB /* ColorType+.swift in Sources */,
