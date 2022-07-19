@@ -51,15 +51,20 @@ class RecordViewController: BaseViewController {
     }
     
     private let emotionLabel = UILabel().then {
-        $0.font = TypoStyle.title2.font
-        $0.tintColor = ColorType.white01.color
+        $0.setLabel()
         $0.text = "나의 감정"
     }
+    
     private let dreamColorLabel = UILabel().then {
-        $0.font = TypoStyle.title2.font
-        $0.tintColor = ColorType.white01.color
+        $0.setLabel()
         $0.text = "꿈의 색상"
     }
+    
+    private let genreLable = UILabel().then {
+        $0.setLabel()
+        $0.text = "꿈의 장르"
+    }
+    
     private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
         $0.itemSize = CollectionViewConst.itemSize
@@ -108,6 +113,11 @@ class RecordViewController: BaseViewController {
         setHeaderView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        resetSaveButton()
+    }
+    
     // MARK: - Functions
     private func setHeaderView() {
         headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
@@ -126,6 +136,27 @@ class RecordViewController: BaseViewController {
         var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
         tapGesture.delegate = self
         dateView.addGestureRecognizer(tapGesture)
+    }
+    
+    internal override func setTargets() {
+        titleTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    private func resetSaveButton() {
+        saveButton.isUserInteractionEnabled = false
+        titleTextField.text?.removeAll()
+    }
+    
+    @objc func textFieldDidChange() {
+        if let title = titleTextField.text {
+            if !title.isEmpty {
+                saveButton.isUserInteractionEnabled = true
+                saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
+            } else {
+                saveButton.isUserInteractionEnabled = false
+                saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
+            }
+        }
     }
 }
 
@@ -222,7 +253,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     func setupView() {
         contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
-        dreamColorView.addSubview(dreamColorCollectionView) // 새로 추가
+        dreamColorView.addSubview(dreamColorCollectionView)
         contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView)
         scrollView.addSubview(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
@@ -233,7 +264,6 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     }
     
     func navigationMoreButtonDidTap() {}
-
 }
 
 // MARK: - UIGestureRecognizerDelegate
@@ -284,5 +314,13 @@ extension RecordViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if contentTextView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { contentLable.isHidden = false }
+    }
+}
+
+// MARK: - record view에서만 자주 사용됨
+extension UILabel {
+    func setLabel(){
+        self.font = TypoStyle.title2.font
+        self.tintColor = ColorType.white01.color
     }
 }
