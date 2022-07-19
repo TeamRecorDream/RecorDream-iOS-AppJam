@@ -77,23 +77,9 @@ class RecordViewController: BaseViewController {
         $0.text = "꿈의 장르"
     }
     
-    var noticeLabel = UILabel().then {
-        $0.text = "!꿈의 장르는 최대 3개까지만 선택할 수 있어요."
-        $0.font = TypoStyle.subtitle7.font
-        $0.textColor = ColorType.red.color
-        $0.isHidden = true
-    }
-    
-    private lazy var genresTopStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.alignment = .leading
-        $0.spacing = 11
-    }
-    
-    private lazy var genresBottomStackView = UIStackView().then {
-        $0.axis = .horizontal
-        $0.alignment = .leading
-        $0.spacing = 11
+    private let noteLabel = UILabel().then {
+        $0.setLabel()
+        $0.text = "노트"
     }
     
     private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
@@ -126,6 +112,33 @@ class RecordViewController: BaseViewController {
     private lazy var dreamColorView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
         $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
+    }
+    
+    private lazy var genresTopStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.alignment = .leading
+        $0.spacing = 11
+    }
+    
+    private lazy var genresBottomStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.alignment = .leading
+        $0.spacing = 11
+    }
+    
+    private var noticeLabel = UILabel().then {
+        $0.text = "!꿈의 장르는 최대 3개까지만 선택할 수 있어요."
+        $0.font = TypoStyle.subtitle7.font
+        $0.textColor = ColorType.red.color
+        $0.isHidden = true
+    }
+    
+    private let noteTextView = UITextView().then {
+        $0.font = TypoStyle.title2.font
+        $0.tintColor = ColorType.white01.color
+        $0.backgroundColor = ColorType.darkBlue02.color
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03 으로 변경해야함
+        $0.textContainerInset = UIEdgeInsets.init(top: 18, left: 16, bottom: 18, right: 16)
     }
     
     private let dreamColorList = [ImageList.colorChipColorRed.name, ImageList.colorChipColorOrange.name, ImageList.colorChipColorPink.name, ImageList.colorChipColorPurple.name, ImageList.colorChipColorGreen.name, ImageList.colorChipColorBlue.name]
@@ -316,7 +329,18 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
         self.noticeLabel.snp.makeConstraints { make in
             make.top.equalTo(genresBottomStackView.snp.bottom).offset(8)
             make.leading.equalToSuperview().inset(16)
-            make.bottom.equalToSuperview().inset(50)
+        }
+        
+        self.noteLabel.snp.makeConstraints { make in
+            make.top.equalTo(noticeLabel.snp.bottom).offset(11)
+            make.leading.equalToSuperview().inset(16)
+        }
+        
+        self.noteTextView.snp.makeConstraints { make in
+            make.height.equalTo(212.adjustedHeight)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.top.equalTo(noteLabel.snp.bottom).offset(16)
+            make.bottom.equalToSuperview().inset(60)
         }
         
         self.contentsView.snp.makeConstraints { make in
@@ -349,7 +373,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
         contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
         dreamColorView.addSubview(dreamColorCollectionView)
-        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView, genreLable, genresTopStackView, genresBottomStackView, noticeLabel)
+        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView, genreLable, genresTopStackView, genresBottomStackView, noticeLabel, noteLabel, noteTextView)
         scrollView.addSubview(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
@@ -436,7 +460,7 @@ extension RecordViewController: UITextViewDelegate {
     }
 }
 
-// MARK: - record view에서만 자주 사용됨
+// MARK: - record view에서만 사용될 메서드
 extension UILabel {
     func setLabel(){
         self.font = TypoStyle.title2.font
