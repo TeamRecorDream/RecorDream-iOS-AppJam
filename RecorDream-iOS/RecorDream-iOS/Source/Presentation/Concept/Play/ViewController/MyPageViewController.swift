@@ -93,8 +93,8 @@ class MyPageViewController: BaseViewController {
 }
 
 //MARK: - Extension
-extension MyPageViewController: TimeSettingViewControllerDelegate {
-    func passTime(meridiem: String, hour: String, minute: String) {
+extension MyPageViewController: TimeSettingDelegate {
+    func timeSettingDidSelectTime(meridiem: String, hour: String, minute: String) {
         timeSettingButton.setTitle("\(meridiem) \(hour):\(minute)", for: .normal)
         self.timeSettingLabel.textColor = ColorType.white01.color
     }

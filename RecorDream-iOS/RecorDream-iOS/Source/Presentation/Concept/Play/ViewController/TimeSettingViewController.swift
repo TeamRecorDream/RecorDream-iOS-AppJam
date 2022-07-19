@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol TimeSettingViewControllerDelegate: AnyObject {
-    func passTime(meridiem: String, hour: String, minute: String)
-}
-
 class TimeSettingViewController: BaseViewController {
     @IBOutlet weak var timeSettingView: UIView!
     @IBOutlet weak var timeSettingViewHeight: NSLayoutConstraint!
@@ -18,7 +14,7 @@ class TimeSettingViewController: BaseViewController {
     @IBOutlet weak var timeSettingPickerView: CustomTimeSettingPickerView!
     
     //MARK: - Properties
-    weak var delegate: TimeSettingViewControllerDelegate?
+    weak var delegate: TimeSettingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +37,7 @@ class TimeSettingViewController: BaseViewController {
         let selectedMeridiem = self.timeSettingPickerView.selectedMeridiem
         let selectedHour = self.timeSettingPickerView.selectedHour
         let selectedMinute = self.timeSettingPickerView.selectedMinute
-        self.delegate?.passTime(meridiem: selectedMeridiem, hour: selectedHour, minute: selectedMinute)
+        self.delegate?.timeSettingDidSelectTime(meridiem: selectedMeridiem, hour: selectedHour, minute: selectedMinute)
         
         hideBottomSheet()
     }
