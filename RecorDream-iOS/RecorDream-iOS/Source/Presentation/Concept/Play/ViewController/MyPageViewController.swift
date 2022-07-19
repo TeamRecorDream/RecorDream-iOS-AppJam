@@ -13,6 +13,7 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var dreamAlarmButton: CustomSwitchButton!
     @IBOutlet weak var timeSettingLabel: UILabel!
     @IBOutlet weak var timeSettingButton: UIButton!
+    @IBOutlet weak var userNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,6 @@ class MyPageViewController: BaseViewController {
     }
     
     private func configureView() {
-        dreamAlarmButton.isOn = false
-        if !dreamAlarmButton.isOn {
-            self.timeSettingButton.setTitle(nil, for: .normal)
-            self.timeSettingLabel.textColor = ColorType.white03.color
-        }
-        
         settingView.forEach { view in
             view.makeRoundedWithBorder(
                 radius: CGFloat(8),
@@ -34,6 +29,17 @@ class MyPageViewController: BaseViewController {
             )
         }
         dropOutButton.setUnderline(at: dropOutButton, state: .normal)
+        
+        userNameTextField.delegate = self
+        configureDreamAlarmButton()
+    }
+    
+    private func configureDreamAlarmButton(){
+        dreamAlarmButton.isOn = false
+        if !dreamAlarmButton.isOn {
+            self.timeSettingButton.setTitle(nil, for: .normal)
+            self.timeSettingLabel.textColor = ColorType.white03.color
+        }
         
         dreamAlarmButton.completion = {[weak self] isOn in
             guard let self = self else { return }
@@ -61,11 +67,26 @@ class MyPageViewController: BaseViewController {
         presentTimeSettingView()
     }
     
+    @IBAction func didTapNameEditButton(_ sender: UIButton) {
+        self.userNameTextField.becomeFirstResponder()
+    }
+    
 }
 
 extension MyPageViewController: TimeSettingViewControllerDelegate {
     func passTime(meridiem: String, hour: String, minute: String) {
         timeSettingButton.setTitle("\(meridiem) \(hour):\(minute)", for: .normal)
         self.timeSettingLabel.textColor = ColorType.white01.color
+    }
+}
+
+extension MyPageViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let userName = self.userNameTextField.text,
+            userName.isEmpty {
+            return false
+        }
+        self.userNameTextField.resignFirstResponder()
+        return true
     }
 }

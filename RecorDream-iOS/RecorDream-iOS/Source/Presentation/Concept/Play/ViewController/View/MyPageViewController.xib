@@ -25,6 +25,7 @@
                 <outlet property="dropOutButton" destination="KLp-ao-h3v" id="xSZ-Zt-2NC"/>
                 <outlet property="timeSettingButton" destination="pBV-qc-uVm" id="or9-gI-x3R"/>
                 <outlet property="timeSettingLabel" destination="Xly-3e-DYV" id="Qss-zC-tAB"/>
+                <outlet property="userNameTextField" destination="PQ3-e0-zF8" id="gAF-Dd-CW3"/>
                 <outlet property="view" destination="hWG-yj-iMS" id="KAS-Uu-mkC"/>
                 <outletCollection property="settingView" destination="0CI-x6-BDp" collectionClass="NSMutableArray" id="gIW-5Z-wdH"/>
                 <outletCollection property="settingView" destination="PPs-UP-qga" collectionClass="NSMutableArray" id="J4P-7R-M3t"/>
@@ -43,13 +44,13 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678@naver.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fw-Hh-X8s">
-                    <rect key="frame" x="145.5" y="263.5" width="123.5" height="14.5"/>
+                    <rect key="frame" x="145.5" y="264" width="123.5" height="14.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                     <color key="textColor" name="gray"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="6FG-z5-5Ce">
-                    <rect key="frame" x="16" y="300" width="382" height="142"/>
+                    <rect key="frame" x="16" y="300.5" width="382" height="142"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CI-x6-BDp">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="64"/>
@@ -139,28 +140,12 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="x8y-ln-Epf"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-tl-ufQ">
-                    <rect key="frame" x="158.5" y="238" width="97" height="24.5"/>
-                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
-                    <color key="textColor" name="white01"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정한 시간의 푸시알림을 통해 꿈을 바로 기록할 수 있어요!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPY-0C-nga">
-                    <rect key="frame" x="16" y="456" width="382" height="14.5"/>
+                    <rect key="frame" x="16" y="456.5" width="382" height="14.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="12"/>
                     <color key="textColor" name="white02"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmf-gj-6tT">
-                    <rect key="frame" x="255.5" y="238" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="Qmf-gj-6tT" secondAttribute="height" multiplier="1:1" id="aIH-zo-Ru6"/>
-                        <constraint firstAttribute="height" constant="24" id="j2g-6C-n05"/>
-                    </constraints>
-                    <color key="tintColor" name="white01"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="icn_edit"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxy-gh-grz">
                     <rect key="frame" x="16" y="765.5" width="382" height="55.5"/>
                     <constraints>
@@ -177,6 +162,25 @@
                         <color key="titleColor" name="light_blue01"/>
                     </state>
                 </button>
+                <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="12345678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ3-e0-zF8">
+                    <rect key="frame" x="158.5" y="238" width="97" height="25"/>
+                    <color key="textColor" name="white01"/>
+                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSP-J9-Vfd">
+                    <rect key="frame" x="255.5" y="238" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fSP-J9-Vfd" secondAttribute="height" multiplier="1:1" id="dFH-9W-QpT"/>
+                        <constraint firstAttribute="height" constant="24" id="eEJ-dC-sgD"/>
+                    </constraints>
+                    <color key="tintColor" name="white01"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="icn_edit"/>
+                    <connections>
+                        <action selector="didTapNameEditButton:" destination="-1" eventType="touchUpInside" id="y32-ng-Rt5"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="1nu-c3-dEO"/>
             <color key="backgroundColor" name="dark_blue01"/>
@@ -184,28 +188,28 @@
             <constraints>
                 <constraint firstItem="Qxy-gh-grz" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="3dt-6z-n6f"/>
                 <constraint firstItem="KLp-ao-h3v" firstAttribute="top" secondItem="Qxy-gh-grz" secondAttribute="bottom" constant="12" id="5Vk-5h-CiZ"/>
+                <constraint firstItem="fSP-J9-Vfd" firstAttribute="leading" secondItem="PQ3-e0-zF8" secondAttribute="trailing" id="ANz-bb-Fkt"/>
                 <constraint firstItem="KLp-ao-h3v" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="B0U-xY-zHP"/>
-                <constraint firstItem="ACd-tl-ufQ" firstAttribute="top" secondItem="I3r-hb-dMF" secondAttribute="bottom" constant="7" id="Ceg-pt-koj"/>
                 <constraint firstItem="QpM-9p-BBQ" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" id="DhM-JI-rzp"/>
-                <constraint firstItem="9fw-Hh-X8s" firstAttribute="top" secondItem="ACd-tl-ufQ" secondAttribute="bottom" constant="1" id="EDE-Kw-C6i"/>
                 <constraint firstItem="1nu-c3-dEO" firstAttribute="trailing" secondItem="Qxy-gh-grz" secondAttribute="trailing" constant="16" id="Ef6-zN-UMs"/>
-                <constraint firstItem="Qmf-gj-6tT" firstAttribute="top" secondItem="ACd-tl-ufQ" secondAttribute="top" id="JlE-1h-lTx"/>
+                <constraint firstItem="9fw-Hh-X8s" firstAttribute="centerX" secondItem="PQ3-e0-zF8" secondAttribute="centerX" id="FXm-yb-Qt0"/>
                 <constraint firstItem="1nu-c3-dEO" firstAttribute="trailing" secondItem="6FG-z5-5Ce" secondAttribute="trailing" constant="16" id="LCR-eM-OlC"/>
-                <constraint firstItem="ACd-tl-ufQ" firstAttribute="centerX" secondItem="I3r-hb-dMF" secondAttribute="centerX" id="MQp-Q7-tol"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="leading" secondItem="6FG-z5-5Ce" secondAttribute="leading" id="NRc-De-rI3"/>
-                <constraint firstItem="Qmf-gj-6tT" firstAttribute="leading" secondItem="ACd-tl-ufQ" secondAttribute="trailing" id="RfW-Um-iD8"/>
+                <constraint firstItem="PQ3-e0-zF8" firstAttribute="top" secondItem="I3r-hb-dMF" secondAttribute="bottom" constant="7" id="Nt4-UM-8wE"/>
                 <constraint firstItem="Qxy-gh-grz" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" constant="16" id="SPG-yh-fzu"/>
                 <constraint firstItem="I3r-hb-dMF" firstAttribute="top" secondItem="QpM-9p-BBQ" secondAttribute="bottom" constant="50" id="TBo-3r-XWi"/>
                 <constraint firstItem="QpM-9p-BBQ" firstAttribute="top" secondItem="hWG-yj-iMS" secondAttribute="top" constant="44" id="TTh-lY-XRo"/>
                 <constraint firstItem="6FG-z5-5Ce" firstAttribute="leading" secondItem="1nu-c3-dEO" secondAttribute="leading" constant="16" id="ca4-C2-GKv"/>
                 <constraint firstItem="KLp-ao-h3v" firstAttribute="bottom" secondItem="1nu-c3-dEO" secondAttribute="bottom" id="dB6-Xx-Qtb"/>
-                <constraint firstItem="9fw-Hh-X8s" firstAttribute="centerX" secondItem="ACd-tl-ufQ" secondAttribute="centerX" id="eL0-HB-qS8"/>
+                <constraint firstItem="9fw-Hh-X8s" firstAttribute="top" secondItem="PQ3-e0-zF8" secondAttribute="bottom" constant="1" id="dYs-MV-NKl"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="trailing" secondItem="6FG-z5-5Ce" secondAttribute="trailing" id="fCz-lk-7WV"/>
                 <constraint firstItem="QpM-9p-BBQ" firstAttribute="trailing" secondItem="1nu-c3-dEO" secondAttribute="trailing" id="fO3-pm-75c"/>
                 <constraint firstItem="SPY-0C-nga" firstAttribute="top" secondItem="6FG-z5-5Ce" secondAttribute="bottom" constant="14" id="iYF-2D-Dgp"/>
                 <constraint firstItem="Qxy-gh-grz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SPY-0C-nga" secondAttribute="bottom" constant="160" id="nHg-OF-Wwv"/>
                 <constraint firstItem="I3r-hb-dMF" firstAttribute="centerX" secondItem="hWG-yj-iMS" secondAttribute="centerX" id="ruf-n2-WJn"/>
+                <constraint firstItem="PQ3-e0-zF8" firstAttribute="centerX" secondItem="I3r-hb-dMF" secondAttribute="centerX" id="uAV-jv-fGW"/>
                 <constraint firstItem="6FG-z5-5Ce" firstAttribute="top" secondItem="9fw-Hh-X8s" secondAttribute="bottom" constant="22" id="z85-Ah-GUV"/>
+                <constraint firstItem="fSP-J9-Vfd" firstAttribute="top" secondItem="PQ3-e0-zF8" secondAttribute="top" id="zKt-Pq-bQv"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </view>
