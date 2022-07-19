@@ -12,6 +12,7 @@
                 <outlet property="backButton" destination="wLN-Ci-EJz" id="vt7-Oe-goY"/>
                 <outlet property="headerLabel" destination="7Iy-rA-Frx" id="gdU-tR-T6I"/>
                 <outlet property="moreButton" destination="AWc-eB-mKD" id="Pp8-ot-4c2"/>
+                <outlet property="underLineView" destination="WjM-rx-M6V" id="AOd-fM-ibJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
