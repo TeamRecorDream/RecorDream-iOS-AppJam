@@ -21,7 +21,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="dreamAlarmButton" destination="fUm-t9-x8o" id="N2D-GA-b1r"/>
                 <outlet property="dropOutButton" destination="KLp-ao-h3v" id="xSZ-Zt-2NC"/>
+                <outlet property="timeSettingButton" destination="pBV-qc-uVm" id="or9-gI-x3R"/>
+                <outlet property="timeSettingLabel" destination="Xly-3e-DYV" id="Qss-zC-tAB"/>
                 <outlet property="view" destination="hWG-yj-iMS" id="KAS-Uu-mkC"/>
                 <outletCollection property="settingView" destination="0CI-x6-BDp" collectionClass="NSMutableArray" id="gIW-5Z-wdH"/>
                 <outletCollection property="settingView" destination="PPs-UP-qga" collectionClass="NSMutableArray" id="J4P-7R-M3t"/>
@@ -105,6 +108,9 @@
                                             <state key="normal" title="AM 06:24">
                                                 <color key="titleColor" name="white01"/>
                                             </state>
+                                            <connections>
+                                                <action selector="didTapTimeSettingButton:" destination="-1" eventType="touchUpInside" id="c8b-Dy-9bX"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol TimeSettingViewControllerDelegate: AnyObject {
+    func passTime(meridiem: String, hour: String, minute: String)
+}
+
 class TimeSettingViewController: BaseViewController {
     @IBOutlet weak var timeSettingView: UIView!
     @IBOutlet weak var timeSettingViewHeight: NSLayoutConstraint!
     @IBOutlet weak var modalIndicatorView: UIView!
+    
+    @IBOutlet weak var timeSettingPickerView: CustomTimeSettingPickerView!
+    weak var delegate: TimeSettingViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +35,13 @@ class TimeSettingViewController: BaseViewController {
     }
     
     //MARK: - Action
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    @IBAction func didTapTimeSaveButton(_ sender: UIButton) {
+        let selectedMeridiem = self.timeSettingPickerView.selectedMeridiem
+        let selectedHour = self.timeSettingPickerView.selectedHour
+        let selectedMinute = self.timeSettingPickerView.selectedMinute
+        self.delegate?.passTime(meridiem: selectedMeridiem, hour: selectedHour, minute: selectedMinute)
         
-        if let touch = touches.first, touch.view == self.view {
-            self.hideBottomSheet()
-        }
+        hideBottomSheet()
     }
 }
 
@@ -51,7 +59,8 @@ extension TimeSettingViewController {
             self.timeSettingViewHeight.constant = 0
             self.view.layoutIfNeeded()
         } completion: {[weak self] _ in
-            self?.dismiss(animated: false)
+            guard let self = self else { return }
+            self.dismiss(animated: false)
         }
     }
 }

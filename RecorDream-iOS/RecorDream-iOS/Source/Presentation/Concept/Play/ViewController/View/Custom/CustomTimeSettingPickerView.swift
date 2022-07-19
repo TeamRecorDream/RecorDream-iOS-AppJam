@@ -26,8 +26,8 @@ class CustomTimeSettingPickerView: UIPickerView {
     private let minutes = Array<Int>(0...59)
     
     var selectedMeridiem = "AM"
-    var selectedHour = 1
-    var selectedMinute = 0
+    var selectedHour = "01"
+    var selectedMinute = "00"
     
     //MARK: - Initialize
     required init?(coder: NSCoder) {
@@ -38,10 +38,9 @@ class CustomTimeSettingPickerView: UIPickerView {
     
     //MARK: - Configure
     private func configureView(){
-        configureColon()
-        
         self.dataSource = self
         self.delegate = self
+        configureColon()
     }
     
     private func configureColon(){
@@ -125,10 +124,11 @@ extension CustomTimeSettingPickerView: UIPickerViewDelegate {
             self.selectedMeridiem = meridiems[row]
             break
         case Time.hour.order:
-            self.selectedHour = hours[row]
+            self.selectedHour = hours[row] < 10 ? "0"+String(hours[row]) : String(hours[row])
             break
         case Time.minute.order:
-            self.selectedMinute = minutes[row]
+            self.selectedMinute = minutes[row] < 10 ? "0"+String(minutes[row]) : String(minutes[row])
+            print("\(self.selectedMinute)")
         default:
             break
         }

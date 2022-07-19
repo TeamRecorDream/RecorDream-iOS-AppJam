@@ -21,13 +21,13 @@ class CustomSwitchButton: UIButton {
     private var circleVerticalMargin: CGFloat = 3
     private var circleHorizontalMargin: CGFloat = 4
     private var circleCenter: CGFloat = 0
-    private var isOn: Bool = false {
+    var isOn: Bool = false {
         didSet {
             self.barView?.backgroundColor = isOn ? onTintColor : offTintColor
             self.circleCenter = isOn ? frame.width - (circleHorizontalMargin + (circleSize/2)) : circleHorizontalMargin + (circleSize/2)
         }
     }
-    var completion: (() -> Void) = {}
+    var completion: ((_ isOn: Bool) -> Void) = {isOn in }
     
     
     //MARK: - Initialize
@@ -90,6 +90,6 @@ class CustomSwitchButton: UIButton {
         super.touchesBegan(touches, with: event)
         isOn.toggle()
         configureAnimation()
-        self.completion()
+        self.completion(isOn)
     }
 }
