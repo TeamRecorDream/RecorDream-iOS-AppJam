@@ -65,6 +65,18 @@ class RecordViewController: BaseViewController {
         $0.text = "꿈의 장르"
     }
     
+    private lazy var genresTopStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.alignment = .leading
+        $0.spacing = 11
+    }
+    
+    private lazy var genresBottomStackView = UIStackView().then {
+        $0.axis = .horizontal
+        $0.alignment = .leading
+        $0.spacing = 11
+    }
+    
     private let collectionViewFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .horizontal
         $0.itemSize = CollectionViewConst.itemSize
@@ -111,6 +123,7 @@ class RecordViewController: BaseViewController {
         setupView()
         setupConstraint()
         setHeaderView()
+        setHashtagView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,6 +158,32 @@ class RecordViewController: BaseViewController {
     private func resetSaveButton() {
         saveButton.isUserInteractionEnabled = false
         titleTextField.text?.removeAll()
+    }
+    
+    private func setHashtagView() {
+        for index in 0..<5 {
+            let hashtagView = HashtagView()
+            hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
+            hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
+            
+            genresTopStackView.addArrangedSubview(hashtagView)
+            
+            hashtagView.snp.makeConstraints { make in
+                make.height.equalTo(30)
+            }
+        }
+        
+        for index in 5..<Constant.Genre.genreTitles.count {
+            let hashtagView = HashtagView()
+            hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
+            hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
+
+            genresBottomStackView.addArrangedSubview(hashtagView)
+
+            hashtagView.snp.makeConstraints { make in
+                make.height.equalTo(30)
+            }
+        }
     }
     
     @objc func textFieldDidChange() {
@@ -193,6 +232,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(titleTextField.snp.bottom).offset(14)
         }
         
+        // MARK: - 나의 감정 + 꿈의 색상 관련된
         self.emotionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
             make.top.equalTo(contentTextView.snp.bottom).offset(32)
@@ -221,6 +261,23 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.height.equalTo(60.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(dreamColorLabel.snp.bottom).offset(14)
+        }
+        
+        self.genreLable.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(dreamColorView.snp.bottom).offset(32)
+        }
+        
+        self.genresTopStackView.snp.makeConstraints { make in
+            make.height.equalTo(30.adjustedHeight)
+            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(genreLable.snp.bottom).offset(16)
+        }
+        
+        self.genresBottomStackView.snp.makeConstraints { make in
+            make.top.equalTo(genresTopStackView.snp.bottom).offset(8)
+            make.height.equalTo(30.adjustedHeight)
+            make.leading.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(50)
         }
         
@@ -254,7 +311,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
         contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
         dreamColorView.addSubview(dreamColorCollectionView)
-        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView)
+        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView, genreLable, genresTopStackView, genresBottomStackView)
         scrollView.addSubview(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
