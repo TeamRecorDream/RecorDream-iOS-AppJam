@@ -42,6 +42,8 @@ class HashtagView: BaseView {
         $0.layer.cornerRadius = 3
     }
     
+    static var isTouchedCount:Int = 0
+    
     override func setupView() {
         super.setupView()
         addSubview(paddingLabel)
@@ -77,5 +79,13 @@ class HashtagView: BaseView {
     func resetSelectedRecordLabel() {
         paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue02.color.cgColor)
         paddingLabel.textColor = ColorType.white02.color
+    }
+    
+    func calculateIsTouchCount(addCount: Bool) {
+        HashtagView.isTouchedCount = addCount ? HashtagView.isTouchedCount + 1 : HashtagView.isTouchedCount - 1
+    }
+
+    func touchedCount() -> Int {
+        return HashtagView.isTouchedCount
     }
 }

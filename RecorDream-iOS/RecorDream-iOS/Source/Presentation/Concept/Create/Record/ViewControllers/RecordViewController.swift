@@ -24,7 +24,6 @@ class GenreTapGestureRecognizer: UITapGestureRecognizer {
     var index: Int?
     var hashtagView: HashtagView?
     var isTouched: Bool? = false
-    public var touchedCount:Int = 0
     
     func setIsTouched() {
         self.isTouched?.toggle()
@@ -76,6 +75,13 @@ class RecordViewController: BaseViewController {
     private let genreLable = UILabel().then {
         $0.setLabel()
         $0.text = "꿈의 장르"
+    }
+    
+    var noticeLabel = UILabel().then {
+        $0.text = "!꿈의 장르는 최대 3개까지만 선택할 수 있어요."
+        $0.font = TypoStyle.subtitle7.font
+        $0.textColor = ColorType.red.color
+        $0.isHidden = true
     }
     
     private lazy var genresTopStackView = UIStackView().then {
@@ -305,6 +311,11 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(genresTopStackView.snp.bottom).offset(8)
             make.height.equalTo(30.adjustedHeight)
             make.leading.equalToSuperview().inset(16)
+        }
+        
+        self.noticeLabel.snp.makeConstraints { make in
+            make.top.equalTo(genresBottomStackView.snp.bottom).offset(8)
+            make.leading.equalToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(50)
         }
         
@@ -338,7 +349,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
         contentTextView.addSubview(contentLable)
         emotionView.addSubview(emotionCollectionView)
         dreamColorView.addSubview(dreamColorCollectionView)
-        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView, genreLable, genresTopStackView, genresBottomStackView)
+        contentsView.addSubviews(dateView, voiceView, titleTextField, contentTextView, emotionLabel, emotionView, dreamColorLabel, dreamColorView, genreLable, genresTopStackView, genresBottomStackView, noticeLabel)
         scrollView.addSubview(contentsView)
         self.view.addSubviews(headerView, scrollView, saveButton)
     }
@@ -362,15 +373,26 @@ extension RecordViewController: UIGestureRecognizerDelegate {
     
     @objc func genreTapMethod(sender: GenreTapGestureRecognizer) {
         sender.setIsTouched()
-        guard let view = sender.hashtagView else { return }
         
-        if let isTouched = sender.isTouched {
-            if isTouched {
-                view.setSelectedRecordLabel()
-            } else {
-                view.resetSelectedRecordLabel()
-            }
+        guard let view = sender.hashtagView else { return }
+        guard let isTouched = sender.isTouched else { return }
+        view.calculateIsTouchCount(addCount: isTouched)
+        let count = view.touchedCount()
+        
+        if isTouched && count >= 4 {
+            sender.setIsTouched()
+            view.calculateIsTouchCount(addCount: !isTouched)
+            noticeLabel.isHidden = false
+        } else if isTouched && count <= 3 {
+            view.setSelectedRecordLabel()
+            noticeLabel.isHidden = true
+        } else if !isTouched {
+            view.resetSelectedRecordLabel()
+            noticeLabel.isHidden = true
+        } else {
+            print("error")
         }
+        
     }
 }
 
