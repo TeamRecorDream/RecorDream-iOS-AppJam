@@ -45,7 +45,7 @@ class MyPageViewController: BaseViewController {
         //TODO: - 서버 연결 시 dreamAlarmButton.isOn에 값 할당할 예정
         dreamAlarmButton.isOn = false
         if !dreamAlarmButton.isOn {
-            self.timeSettingButton.setTitle(nil, for: .normal)
+            self.timeSettingButton.setTitle("", for: .normal)
             self.timeSettingLabel.textColor = ColorType.white03.color
         }
         
@@ -56,7 +56,7 @@ class MyPageViewController: BaseViewController {
                 self.presentTimeSettingView()
                 return
             }
-            self.timeSettingButton.setTitle(nil, for: .normal)
+            self.timeSettingButton.setTitle("", for: .normal)
             self.timeSettingLabel.textColor = ColorType.white03.color
         }
     }
