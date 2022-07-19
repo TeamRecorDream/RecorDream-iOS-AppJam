@@ -21,7 +21,7 @@
 		232D0E49287DEC380063D725 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E48287DEC380063D725 /* HashtagView.swift */; };
 		233D3C3C288527E000553605 /* RecordDateBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3B288527E000553605 /* RecordDateBarView.swift */; };
 		233D3C3E28852DE800553605 /* RecordVoiceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */; };
-		233D3C412885A0EF00553605 /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C402885A0EF00553605 /* EmotionCollectionViewCell.swift */; };
+		233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
@@ -90,7 +90,7 @@
 		232D0E48287DEC380063D725 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
 		233D3C3B288527E000553605 /* RecordDateBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDateBarView.swift; sourceTree = "<group>"; };
 		233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVoiceBarView.swift; sourceTree = "<group>"; };
-		233D3C402885A0EF00553605 /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		233D3C3F2885A0CD00553605 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				233D3C402885A0EF00553605 /* EmotionCollectionViewCell.swift */,
+				233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 			files = (
 				F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
-				233D3C412885A0EF00553605 /* EmotionCollectionViewCell.swift in Sources */,
+				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
 				2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */,
 				232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */,

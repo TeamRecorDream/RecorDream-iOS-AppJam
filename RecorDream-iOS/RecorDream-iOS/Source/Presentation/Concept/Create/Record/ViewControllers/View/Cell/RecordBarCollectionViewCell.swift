@@ -3,19 +3,19 @@
 //  RecorDream-iOS
 //
 //  Created by Sojin Lee on 2022/07/18.
-//
+//  나의 감정, 꿈의 색상 부분에 사용될 collectionViewCell
 
 import UIKit
 
 import SnapKit
 import Then
 
-class EmotionCollectionViewCell: UICollectionViewCell {
-    let emotionImageView = UIImageView().then {
+class RecordBarCollectionViewCell: UICollectionViewCell {
+    let recordBarImageView = UIImageView().then {
         $0.alpha = 0.35
     }
     
-    let emotionView = UIView()
+    let recordBarView = UIView()
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -28,23 +28,33 @@ class EmotionCollectionViewCell: UICollectionViewCell {
         setupConstraints()
     }
     
+    override var isSelected: Bool{
+        didSet {
+            if isSelected {
+                recordBarImageView.alpha = 1
+            } else {
+                recordBarImageView.alpha = 0.35
+            }
+        }
+    }
+    
     private func setupView() {
-        emotionView.addSubview(emotionImageView)
-        contentView.addSubview(emotionView)
+        recordBarView.addSubview(recordBarImageView)
+        contentView.addSubview(recordBarView)
     }
     
     private func setupConstraints() {
-        emotionView.snp.makeConstraints { make in
+        recordBarView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        emotionImageView.snp.makeConstraints { make in
+        recordBarImageView.snp.makeConstraints { make in
             make.width.equalTo(36.adjustedWidth)
             make.height.equalTo(36.adjustedHeight)
             make.centerX.centerY.equalToSuperview()
         }
     }
     
-    func setEmotionImage(imageName: String) {
-        emotionImageView.image = UIImage(named: imageName)
+    func setRecordBarImage(imageName: String) {
+        recordBarImageView.image = UIImage(named: imageName)
     }
 }

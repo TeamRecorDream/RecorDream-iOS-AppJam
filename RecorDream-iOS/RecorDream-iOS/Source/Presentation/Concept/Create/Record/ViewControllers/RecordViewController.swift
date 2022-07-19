@@ -62,7 +62,7 @@ class RecordViewController: BaseViewController {
     }
 
     private lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
-        $0.register(EmotionCollectionViewCell.self, forCellWithReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier)
+        $0.register(RecordBarCollectionViewCell.self, forCellWithReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier)
         $0.isPagingEnabled = false
         $0.decelerationRate = .fast
         $0.contentInsetAdjustmentBehavior = .never
@@ -218,9 +218,17 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EmotionCollectionViewCell.reuseIdentifier, for: indexPath) as? EmotionCollectionViewCell else { return UICollectionViewCell() }
-        cell.setEmotionImage(imageName: emotionList[indexPath.item])
-        return cell
+        if collectionView == emotionCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
+            cell.setRecordBarImage(imageName: emotionList[indexPath.item])
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TODO: - 서버통신시 index 넣어주기 
+        //print(indexPath.item)
     }
 }
 
