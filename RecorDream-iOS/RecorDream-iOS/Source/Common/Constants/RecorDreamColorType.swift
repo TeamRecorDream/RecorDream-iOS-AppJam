@@ -16,7 +16,7 @@ extension Constant {
         var title: String {
             switch self {
             case .IntType(let backgroundColorNum):
-                return BackgroundColor.backgroundColorTitles[backgroundColorNum < BackgroundColor.backgroundColorTitles.count ? backgroundColorNum : 0]
+                return BackgroundColor.backgroundColorTitles[ backgroundColorNum >= 0 && backgroundColorNum < BackgroundColor.backgroundColorTitles.count ? backgroundColorNum : 0]
             }
         }
     }
@@ -29,7 +29,7 @@ extension Constant {
         var title: String {
             switch self {
             case .IntType(let textColorNum):
-                return TextColor.textColorTitles[textColorNum < TextColor.textColorTitles.count ? textColorNum : 0]
+                return TextColor.textColorTitles[ textColorNum >= 0 && textColorNum < TextColor.textColorTitles.count ? textColorNum : 0]
             }
         }
     }
