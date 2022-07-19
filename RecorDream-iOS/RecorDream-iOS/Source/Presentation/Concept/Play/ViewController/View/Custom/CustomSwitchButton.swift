@@ -27,7 +27,7 @@ class CustomSwitchButton: UIButton {
             self.circleCenter = isOn ? frame.width - (circleHorizontalMargin + (circleSize/2)) : circleHorizontalMargin + (circleSize/2)
         }
     }
-    var completion: ((_ isOn: Bool) -> Void) = {isOn in }
+    var completion: ((_ isOn: Bool) -> Void) = { isOn in }
     
     
     //MARK: - Initialize
