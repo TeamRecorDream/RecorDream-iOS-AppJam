@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 class BasePaddingLabel: UILabel {
-    private var padding = UIEdgeInsets(top: 3.0, left: 6.0, bottom: 3.0, right: 6.0)
+    var padding = UIEdgeInsets(top: 3.0, left: 6.0, bottom: 3.0, right: 6.0)
 
     convenience init(padding: UIEdgeInsets) {
         self.init()
@@ -28,6 +28,10 @@ class BasePaddingLabel: UILabel {
         contentSize.width += padding.left + padding.right
 
         return contentSize
+    }
+    
+    func setPadding(padding: UIEdgeInsets) {
+        self.padding = padding
     }
 }
 
@@ -54,5 +58,24 @@ class HashtagView: BaseView {
         paddingLabel.text = text
         paddingLabel.textColor = UIColor(named: color)
         paddingLabel.font = textTypo
+    }
+    
+    
+    func setRecordLabel(text: String) {
+        paddingLabel.backgroundColor = ColorType.darkBlue02.color
+        paddingLabel.text = text
+        paddingLabel.textColor = ColorType.white02.color
+        paddingLabel.font = TypoStyle.title2.font
+        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03
+    }
+    
+    func setSelectedRecordLabel() {
+        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.subPurple01.color.cgColor)
+        paddingLabel.textColor = ColorType.subPurple01.color
+    }
+    
+    func resetSelectedRecordLabel() {
+        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue02.color.cgColor)
+        paddingLabel.textColor = ColorType.white02.color
     }
 }

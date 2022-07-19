@@ -22,6 +22,13 @@ enum CollectionViewConst {
 
 class GenreTapGestureRecognizer: UITapGestureRecognizer {
     var index: Int?
+    var hashtagView: HashtagView?
+    var isTouched: Bool? = false
+    public var touchedCount:Int = 0
+    
+    func setIsTouched() {
+        self.isTouched?.toggle()
+    }
 }
 
 class RecordViewController: BaseViewController {
@@ -29,7 +36,9 @@ class RecordViewController: BaseViewController {
     private let headerView = RecordHeaderView()
     private let dateView = RecordDateBarView()
     private let voiceView = RecordVoiceBarView()
-    private let scrollView = UIScrollView()
+    private let scrollView = UIScrollView().then {
+        $0.showsVerticalScrollIndicator = false
+    }
     private let contentsView = UIView()
     private let titleTextField = UITextField().then {
         $0.font = TypoStyle.title2.font
@@ -174,6 +183,8 @@ class RecordViewController: BaseViewController {
         
             let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreTapMethod))
             genreTapGesture.index = index
+            genreTapGesture.hashtagView = hashtagView
+            
             hashtagView.addGestureRecognizer(genreTapGesture)
             
             genresTopStackView.addArrangedSubview(hashtagView)
@@ -190,6 +201,8 @@ class RecordViewController: BaseViewController {
 
             let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreTapMethod))
             genreTapGesture.index = index
+            genreTapGesture.hashtagView = hashtagView
+            
             hashtagView.addGestureRecognizer(genreTapGesture)
 
             genresBottomStackView.addArrangedSubview(hashtagView)
@@ -348,8 +361,15 @@ extension RecordViewController: UIGestureRecognizerDelegate {
     }
     
     @objc func genreTapMethod(sender: GenreTapGestureRecognizer) {
-        if let index = sender.index {
-            print(index)
+        sender.setIsTouched()
+        guard let view = sender.hashtagView else { return }
+        
+        if let isTouched = sender.isTouched {
+            if isTouched {
+                view.setSelectedRecordLabel()
+            } else {
+                view.resetSelectedRecordLabel()
+            }
         }
     }
 }
