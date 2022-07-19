@@ -1,0 +1,9 @@
+{
+  "status": 200,
+  "success": true,
+  "message": "꿈 기록 검색 성공",
+  "data": {
+    "records_count": 0,
+    "records": []
+  }
+}

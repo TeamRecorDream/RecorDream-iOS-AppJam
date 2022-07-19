@@ -110,7 +110,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         if genres.count > 0 {
             genres.forEach { index in
                 let hashtagView = HashtagView()
-                hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", color: textColor, textTypo: TypoStyle.subtitle3.font)
+                hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", textColor: textColor, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
                 hashtagStackView.addArrangedSubview(hashtagView)
                 
                 hashtagView.snp.makeConstraints { make in
@@ -119,7 +119,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             }
         } else if genres.count == 0 {
             let hashtagView = HashtagView()
-            hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", color: ColorType.darkBlue03.name, textTypo: TypoStyle.subtitle3.font)
+            hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", textColor: ColorType.darkBlue03.name, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
             
             hashtagStackView.addArrangedSubview(hashtagView)
             

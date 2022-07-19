@@ -5,7 +5,7 @@
 //  Created by Sojin Lee on 2022/07/15.
 //
 
-import Foundation
+import UIKit
 
 extension Constant {
     enum BackgroundColor {

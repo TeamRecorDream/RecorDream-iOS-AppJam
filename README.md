@@ -16,6 +16,8 @@
 
 ## 🍎 RecorDream iOS Developers
 
+<img src="https://user-images.githubusercontent.com/70689381/179389399-b546c0dd-e65f-4ade-9f35-9b2dda6a72fd.JPG" width = 650>
+
 |<img src="./Asset/소진.png" width=200>|<img src="./Asset/은희.jpeg" width=200>|<img src="./Asset/윤휘.jpeg" width=200>|
 |:--:|:--:|:--:|
 |**소진**|**은희**|**윤휘**|
