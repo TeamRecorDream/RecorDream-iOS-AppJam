@@ -39,6 +39,8 @@ enum ColorType: String, CaseIterable {
     case subPurple01 = "sub_purple01"
     case subRed01 = "sub_red01"
     
+    case warningGray = "warning_gray"
+    
     var name: String {
         return self.rawValue
     }
