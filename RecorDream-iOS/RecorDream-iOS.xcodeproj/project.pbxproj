@@ -77,6 +77,13 @@
 		F6F14A67288584E70065D291 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A65288584E70065D291 /* SearchResultTableViewCell.swift */; };
 		F6F14A68288584E70065D291 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F14A66288584E70065D291 /* SearchResultTableViewCell.xib */; };
 		F6F14A6A2885857F0065D291 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A692885857F0065D291 /* EmptyView.swift */; };
+		F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A6D28867B340065D291 /* SearchViewModel.swift */; };
+		F6F14A712886A17F0065D291 /* SearchResultExist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A702886A17F0065D291 /* SearchResultExist.swift */; };
+		F6F14A732886A18F0065D291 /* SearchResultNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A722886A18E0065D291 /* SearchResultNone.swift */; };
+		F6F14A762886CA950065D291 /* MockParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A752886CA950065D291 /* MockParser.swift */; };
+		F6F14A782886CAEF0065D291 /* dummySearchResultNone.json in Resources */ = {isa = PBXBuildFile; fileRef = F6F14A772886CAEF0065D291 /* dummySearchResultNone.json */; };
+		F6F14A7C2886CC210065D291 /* dummySearchResultExist.json in Resources */ = {isa = PBXBuildFile; fileRef = F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */; };
+		F6F14A7E2886CC570065D291 /* SearchResultDummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +140,13 @@
 		F6F14A65288584E70065D291 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		F6F14A66288584E70065D291 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		F6F14A692885857F0065D291 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		F6F14A6D28867B340065D291 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		F6F14A702886A17F0065D291 /* SearchResultExist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultExist.swift; sourceTree = "<group>"; };
+		F6F14A722886A18E0065D291 /* SearchResultNone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultNone.swift; sourceTree = "<group>"; };
+		F6F14A752886CA950065D291 /* MockParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockParser.swift; sourceTree = "<group>"; };
+		F6F14A772886CAEF0065D291 /* dummySearchResultNone.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummySearchResultNone.json; sourceTree = "<group>"; };
+		F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummySearchResultExist.json; sourceTree = "<group>"; };
+		F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDummyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +367,10 @@
 		F613C7DC28756536005CB133 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				F6F14A742886CA680065D291 /* Parser */,
+				F6F14A772886CAEF0065D291 /* dummySearchResultNone.json */,
+				F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */,
+				F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -408,6 +426,8 @@
 		F6D3944B287D4151004A7DBB /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				F6F14A6F288682660065D291 /* Models */,
+				F6F14A6C28867AF70065D291 /* ViewModels */,
 				F6F14A5A28854F4A0065D291 /* Views */,
 				F6D3944C287D4164004A7DBB /* ShareViewController.swift */,
 			);
@@ -478,6 +498,31 @@
 				F6F14A66288584E70065D291 /* SearchResultTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		F6F14A6C28867AF70065D291 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A6D28867B340065D291 /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F6F14A6F288682660065D291 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A702886A17F0065D291 /* SearchResultExist.swift */,
+				F6F14A722886A18E0065D291 /* SearchResultNone.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6F14A742886CA680065D291 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A752886CA950065D291 /* MockParser.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,6 +621,7 @@
 				F6D39463287D41BF004A7DBB /* Pretendard-Medium.otf in Resources */,
 				F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */,
 				F6D39467287D41BF004A7DBB /* Pretendard-SemiBold.otf in Resources */,
+				F6F14A7C2886CC210065D291 /* dummySearchResultExist.json in Resources */,
 				F6D39461287D41BF004A7DBB /* Pretendard-ExtraBold.otf in Resources */,
 				F6F14A68288584E70065D291 /* SearchResultTableViewCell.xib in Resources */,
 				F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */,
@@ -586,6 +632,7 @@
 				F6D3945D287D41BF004A7DBB /* Pretendard-Black.otf in Resources */,
 				F613C7C028756181005CB133 /* Assets.xcassets in Resources */,
 				F6D39465287D41BF004A7DBB /* Pretendard-ExtraLight.otf in Resources */,
+				F6F14A782886CAEF0065D291 /* dummySearchResultNone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +660,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */,
+				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
@@ -626,17 +674,21 @@
 				F6F14A5E28854F980065D291 /* SearchView.swift in Sources */,
 				2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */,
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
+				F6F14A7E2886CC570065D291 /* SearchResultDummyModel.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
 				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
+				F6F14A732886A18F0065D291 /* SearchResultNone.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
 				232D0E39287D86C20063D725 /* HeaderView.swift in Sources */,
+				F6F14A762886CA950065D291 /* MockParser.swift in Sources */,
 				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
 				F6F14A67288584E70065D291 /* SearchResultTableViewCell.swift in Sources */,
 				F6F14A6A2885857F0065D291 /* EmptyView.swift in Sources */,
+				F6F14A712886A17F0065D291 /* SearchResultExist.swift in Sources */,
 				2322D0882883EFA000DC5553 /* RecordHeaderView.swift in Sources */,
 				F6D3946D287D68D4004A7DBB /* ColorType.swift in Sources */,
 				2322D07A288153E900DC5553 /* EmotionType.swift in Sources */,

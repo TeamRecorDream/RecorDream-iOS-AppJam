@@ -1,0 +1,30 @@
+{
+  "status": 200,
+  "success": true,
+  "message": "꿈 기록 검색 성공",
+  "data": {
+    "records_count": 7,
+    "records": [
+      {
+        "_id": "62d32a47fc88f70097698fff",
+        "dream_color": 2,
+        "emotion": 1,
+        "date": "2023/07/15 (토)",
+        "title": "fighting_note2",
+        "genre": [
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "_id": "62d32a41fc88f70097698ffd",
+        "dream_color": 2,
+        "emotion": 1,
+        "date": "2023/07/15 (토)",
+        "title": "fighting_note",
+        "genre": [10]
+      }
+    ]
+  }
+}

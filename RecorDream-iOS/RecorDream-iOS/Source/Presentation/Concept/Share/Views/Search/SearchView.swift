@@ -35,16 +35,31 @@ final class SearchView: BaseView {
         $0.contentMode = .scaleAspectFit
         $0.tintColor = ColorType.white01.color
     }
+    let searchResultTableView = UITableView().then {
+        $0.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.reuseIdentifier)
+        $0.register(SearchHeaderTableViewCell.self, forHeaderFooterViewReuseIdentifier: SearchHeaderTableViewCell.reuseIdentifier)
+        $0.register(SearchFooterTableViewCell.self, forHeaderFooterViewReuseIdentifier: SearchFooterTableViewCell.reuseIdentifier)
+        $0.estimatedRowHeight = UITableView.automaticDimension
+        $0.sectionFooterHeight = 114.adjustedHeight
+        $0.sectionHeaderHeight = 49.adjustedHeight
+        $0.rowHeight = UITableView.automaticDimension
+        $0.separatorStyle = .none
+        $0.separatorInset = UIEdgeInsets(
+            top: 12, left: 16, bottom: 0, right: 16
+        )
+        $0.scrollsToTop = true
+        $0.showsVerticalScrollIndicator = false
+    }
     
     // MARK: - Functions
     override func setupView() {
-        self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage)
+        self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage, searchResultTableView)
     }
     override func setupConstraint() {
         self.navigationBarView.snp.makeConstraints { make in
+            make.height.equalTo(67.adjustedHeight)
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview().offset(50)
-            make.height.equalTo(67.adjustedHeight)
         }
         self.searchInputLabel.snp.makeConstraints { make in
             make.top.equalTo(navigationBarView.snp.bottom).offset(31)
@@ -57,9 +72,16 @@ final class SearchView: BaseView {
             make.top.equalTo(searchInputLabel.snp.bottom).offset(8)
         }
         self.searchImage.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.equalTo(24.adjustedWidth)
+            make.height.equalTo(24.adjustedHeight)
             make.centerY.equalTo(searchTextField)
             make.leading.equalToSuperview().offset(30)
+        }
+        self.searchResultTableView.snp.makeConstraints { make in
+            make.width.equalTo(375.adjustedWidth)
+            make.height.equalTo(588.adjustedHeight)
+            make.top.equalTo(searchTextField.snp.bottom)
+            make.leading.bottom.equalToSuperview()
         }
     }
 }
