@@ -151,7 +151,14 @@ class RecordViewController: BaseViewController {
         $0.alpha = 0
     }
     
-    private let dreamColorList = [ImageList.colorChipColorRed.name, ImageList.colorChipColorOrange.name, ImageList.colorChipColorPink.name, ImageList.colorChipColorPurple.name, ImageList.colorChipColorGreen.name, ImageList.colorChipColorBlue.name]
+    private let chipColorList: [Array<Any>] = [
+        [ImageList.colorChipColorRed.name, 6],
+        [ImageList.colorChipColorOrange.name, 3],
+        [ImageList.colorChipColorPink.name, 5],
+        [ImageList.colorChipColorPurple.name, 4],
+        [ImageList.colorChipColorGreen.name , 1],
+        [ImageList.colorChipColorBlue.name, 2]
+    ]
     
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
@@ -170,7 +177,7 @@ class RecordViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        resetSaveButton()
+        resetTextStatus()
     }
     
     // MARK: - Functions
@@ -198,9 +205,10 @@ class RecordViewController: BaseViewController {
         saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
     }
     
-    private func resetSaveButton() {
-//        saveButton.isUserInteractionEnabled = false
+    private func resetTextStatus() {
         titleTextField.text?.removeAll()
+        noteTextView.text?.removeAll()
+        contentTextView.text?.removeAll()
     }
     
     private func setHashtagView() {
@@ -243,11 +251,11 @@ class RecordViewController: BaseViewController {
     
     @objc func textFieldDidChange() {
         if let title = titleTextField.text {
-            if !title.isEmpty && title.first !=  " " {
+            if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 // MARK: - 저장 가능 상태
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
             } else {
-                // MARK: - 저장 불가능 상태ㅗ
+                // MARK: - 저장 불가능 상태
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
             }
         }
@@ -255,7 +263,7 @@ class RecordViewController: BaseViewController {
     
     @objc func saveButtonDidTap() {
         if let title = titleTextField.text {
-            if !title.isEmpty && title.first !=  " " {
+            if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 // MARK: - 저장 가능 상태
             } else {
                 // MARK: - 저장 불가능 상태
@@ -296,13 +304,18 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(voiceView.snp.bottom).offset(14)
         }
         
+        self.contentLable.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(18)
+            make.leading.equalToSuperview().inset(18)
+        }
+        
         self.contentTextView.snp.makeConstraints { make in
             make.height.equalTo(418.adjustedHeight)
             make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalTo(titleTextField.snp.bottom).offset(14)
         }
         
-        // MARK: - 나의 감정 + 꿈의 색상 관련된
+        // MARK: - 나의 감정
         self.emotionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
             make.top.equalTo(contentTextView.snp.bottom).offset(32)
@@ -318,6 +331,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(emotionLabel.snp.bottom).offset(14)
         }
         
+        // MARK: - 꿈의 색상
         self.dreamColorLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
             make.top.equalTo(emotionView.snp.bottom).offset(32)
@@ -333,6 +347,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.top.equalTo(dreamColorLabel.snp.bottom).offset(14)
         }
         
+        // MARK: - 꿈의 장르
         self.genreLable.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
             make.top.equalTo(dreamColorView.snp.bottom).offset(32)
@@ -355,6 +370,7 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.leading.equalToSuperview().inset(16)
         }
         
+        // MARK: - 노트 부분
         self.noteLabel.snp.makeConstraints { make in
             make.top.equalTo(noticeLabel.snp.bottom).offset(11)
             make.leading.equalToSuperview().inset(16)
@@ -372,15 +388,6 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
             make.bottom.equalToSuperview()
             make.leading.trailing.equalTo(self.view)
         }
-        
-        self.contentLable.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(18)
-            make.leading.equalToSuperview().inset(18)
-        }
-        
-        // content안에 있는 view들의 제약조건을 수정하였음
-        // 너비지정 + centerX 코드를 지우고 leading.trailing에다가 inset을 주는걸로 -> 하드코딩이다 ?
-        // scrollview 안에 contentsview가 있는데 부모자식을 못찾음 ? -> top은 있는데 bottom이 없었음. top만 연결되어 있었던 상태였음
         
         self.scrollView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom)
@@ -430,7 +437,6 @@ extension RecordViewController: UIGestureRecognizerDelegate {
     @objc func dateViewDidTap(sender: UITapGestureRecognizer) {
         let modalVC = DateModalViewController()
         modalVC.dateClosure = { date in
-            // TODO: - date formatting 해줘야함
             self.dateView.setRecordDateLabel(date: date)
         }
         modalVC.modalPresentationStyle = .custom
@@ -471,11 +477,11 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == emotionCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
-            cell.setRecordBarImage(imageName: Constant.Emotion.IntType(indexPath.item).title)
+            cell.setRecordBarImage(imageName: Constant.Emotion.IntType(indexPath.item + 1).title)
             return cell
         } else if collectionView == dreamColorCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
-            cell.setRecordBarImage(imageName: dreamColorList[indexPath.item])
+            cell.setRecordBarImage(imageName: chipColorList[indexPath.item][0] as? String ?? ImageList.colorChipColorRed.name) //TODO: - optional 처리
             return cell
         }
         return UICollectionViewCell()
@@ -484,9 +490,10 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: - 서버통신시 index 넣어주기 
         if collectionView == emotionCollectionView {
-            print("emotionCell :\(indexPath.item)")
+            print("emotionCell :\(indexPath.item + 1)")
         } else if collectionView == dreamColorCollectionView {
             print("dreamColorCell :\(indexPath.item)")
+            print("dreamColorIndex : \(chipColorList[indexPath.item][1])")
         }
     }
 }
