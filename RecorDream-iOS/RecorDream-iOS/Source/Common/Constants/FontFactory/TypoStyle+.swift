@@ -36,6 +36,8 @@ extension TypoStyle {
             return FontDescription(font: .pretendardBold, size: 10)
         case .subtitle6:
             return FontDescription(font: .pretendardMedium, size: 10)
+        case .subtitle7:
+            return FontDescription(font: .pretendardBold, size: 8)
         case .menu1:
             return FontDescription(font: .pretendardSemibold, size: 16)
         case .menu2:

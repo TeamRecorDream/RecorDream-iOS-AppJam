@@ -26,6 +26,10 @@
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
 		232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */; };
 		232D0E49287DEC380063D725 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E48287DEC380063D725 /* HashtagView.swift */; };
+		233D3C3C288527E000553605 /* RecordDateBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3B288527E000553605 /* RecordDateBarView.swift */; };
+		233D3C3E28852DE800553605 /* RecordVoiceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */; };
+		233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */; };
+		23450D6A2887D5A400A8FB70 /* DateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23450D692887D5A400A8FB70 /* DateModalViewController.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
@@ -120,6 +124,10 @@
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
 		232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		232D0E48287DEC380063D725 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
+		233D3C3B288527E000553605 /* RecordDateBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDateBarView.swift; sourceTree = "<group>"; };
+		233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVoiceBarView.swift; sourceTree = "<group>"; };
+		233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		23450D692887D5A400A8FB70 /* DateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModalViewController.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +249,7 @@
 			children = (
 				2322D0822883EEE200DC5553 /* View */,
 				2322D08D2883F37100DC5553 /* RecordViewController.swift */,
+				23450D692887D5A400A8FB70 /* DateModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -248,6 +257,11 @@
 		2322D0822883EEE200DC5553 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				233D3C3F2885A0CD00553605 /* Cell */,
+				2322D0872883EFA000DC5553 /* RecordHeaderView.swift */,
+				2322D0892883EFB100DC5553 /* RecordHeaderView.xib */,
+				233D3C3B288527E000553605 /* RecordDateBarView.swift */,
+				233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +282,14 @@
 			isa = PBXGroup;
 			children = (
 				232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		233D3C3F2885A0CD00553605 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -787,6 +809,7 @@
 				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
 				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
+				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
 				2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */,
@@ -804,6 +827,7 @@
 				F6F14A7E2886CC570065D291 /* SearchResultDummyModel.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
+				233D3C3E28852DE800553605 /* RecordVoiceBarView.swift in Sources */,
 				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
@@ -829,9 +853,11 @@
 				F6F14A8B2886F4D20065D291 /* NetworkRequest.swift in Sources */,
 				2322D07A288153E900DC5553 /* EmotionType.swift in Sources */,
 				F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */,
+				233D3C3C288527E000553605 /* RecordDateBarView.swift in Sources */,
 				F6D39477287D6F31004A7DBB /* ColorType+.swift in Sources */,
 				232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */,
 				F6D3947F287D76F2004A7DBB /* ImageList+.swift in Sources */,
+				23450D6A2887D5A400A8FB70 /* DateModalViewController.swift in Sources */,
 				232D0E49287DEC380063D725 /* HashtagView.swift in Sources */,
 				F6F14A5C28854F730065D291 /* SearchViewController.swift in Sources */,
 			);
