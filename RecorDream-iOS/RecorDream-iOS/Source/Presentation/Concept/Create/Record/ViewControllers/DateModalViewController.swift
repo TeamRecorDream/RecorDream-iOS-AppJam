@@ -16,8 +16,7 @@ class DateModalViewController: BaseViewController {
     var dateClosure: ((Date)->())?
     let dateView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
-//        $0.makeRoundedSpecificCorner(corners: .topLeft, cornerRadius: 12)
-//        $0.makeRoundedSpecificCorner(corners: .topRight, cornerRadius: 12)
+        $0.makeRounded(radius: 12)
     }
     
     lazy var datePicker = UIDatePicker().then {
@@ -87,11 +86,13 @@ extension DateModalViewController {
     }
     
     @objc func cancelButtonDidTap() {
+        self.modalTransitionStyle = .crossDissolve
         self.dismiss(animated: true)
     }
     
     @objc func dateSaveButtonDidTap() {
         dateClosure?(DateModalViewController.saveDate)
+        self.modalTransitionStyle = .crossDissolve
         self.dismiss(animated: true)
     }
 }
