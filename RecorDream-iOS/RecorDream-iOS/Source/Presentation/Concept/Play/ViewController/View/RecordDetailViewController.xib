@@ -36,29 +36,29 @@
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji_shocked" translatesAutoresizingMaskIntoConstraints="NO" id="8gS-GA-Uyw">
-                    <rect key="frame" x="30" y="107" width="48" height="48"/>
+                    <rect key="frame" x="30" y="119.33333333333331" width="48" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="6fM-Vi-POO"/>
                         <constraint firstAttribute="width" secondItem="8gS-GA-Uyw" secondAttribute="height" multiplier="1:1" id="pkx-2y-uIp"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zgO-iz-VLZ">
-                    <rect key="frame" x="25" y="163" width="228" height="123.66666666666669"/>
+                    <rect key="frame" x="25" y="175.33333333333334" width="228" height="126.66666666666666"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/06/26(월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-MY-XZr">
-                            <rect key="frame" x="0.0" y="0.0" width="228" height="18.666666666666668"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2022/06/26(월)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUH-MY-XZr">
+                            <rect key="frame" x="0.0" y="0.0" width="228" height="19.333333333333332"/>
                             <fontDescription key="fontDescription" name="Pretendard-Medium" family="Pretendard" pointSize="16"/>
                             <color key="textColor" name="white01"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 친구들이랑 피자도 먹고 진짜 재밌는 일이 많은 꿈을 ㅋ꿨다." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuu-Ln-qeD">
-                            <rect key="frame" x="0.0" y="24.666666666666657" width="228" height="70"/>
+                            <rect key="frame" x="0.0" y="25.333333333333314" width="228" height="72.333333333333329"/>
                             <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                             <color key="textColor" name="white01"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GSK-GM-LM7">
-                            <rect key="frame" x="0.0" y="100.66666666666669" width="228" height="23"/>
+                            <rect key="frame" x="0.0" y="103.66666666666666" width="228" height="23"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="23" id="J2g-GY-RN7"/>
@@ -89,8 +89,9 @@
                 <constraint firstItem="baA-Fe-sjy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="baQ-y4-1k2"/>
                 <constraint firstItem="zgO-iz-VLZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="cSJ-Yg-wIw"/>
                 <constraint firstItem="baA-Fe-sjy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eKj-Am-Uwm"/>
+                <constraint firstItem="SQs-ud-1r7" firstAttribute="top" secondItem="zgO-iz-VLZ" secondAttribute="bottom" constant="20" id="ip9-4m-bme"/>
                 <constraint firstAttribute="bottom" secondItem="SQs-ud-1r7" secondAttribute="bottom" id="mCB-eN-kmc"/>
-                <constraint firstItem="8gS-GA-Uyw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="sDK-zW-4EV"/>
+                <constraint firstItem="8gS-GA-Uyw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="107" id="sDK-zW-4EV"/>
                 <constraint firstItem="baA-Fe-sjy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="uQh-gn-wlu"/>
             </constraints>
             <point key="canvasLocation" x="136.80000000000001" y="109.35960591133005"/>
