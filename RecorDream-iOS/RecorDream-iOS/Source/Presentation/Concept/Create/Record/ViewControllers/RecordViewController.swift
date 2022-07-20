@@ -43,7 +43,7 @@ class RecordViewController: BaseViewController {
         $0.font = TypoStyle.title2.font
         $0.tintColor = ColorType.white01.color
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03 으로 변경해야함
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
         $0.placeholder = "꿈의 제목을 남겨주세요."
         $0.addLeftPadding(width: 16)
         $0.attributedPlaceholder = NSAttributedString(string: "꿈의 제목을 남겨주세요.", attributes: [NSAttributedString.Key.foregroundColor : ColorType.white02.color])
@@ -52,7 +52,7 @@ class RecordViewController: BaseViewController {
         $0.font = TypoStyle.title2.font
         $0.tintColor = ColorType.white01.color
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03 으로 변경해야함
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
         $0.textContainerInset = UIEdgeInsets.init(top: 18, left: 16, bottom: 18, right: 16)
     }
     
@@ -90,28 +90,22 @@ class RecordViewController: BaseViewController {
 
     private lazy var emotionCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
         $0.register(RecordBarCollectionViewCell.self, forCellWithReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier)
-        $0.isPagingEnabled = false
-        $0.decelerationRate = .fast
-        $0.contentInsetAdjustmentBehavior = .never
         $0.backgroundColor = .clear
     }
     
     private lazy var dreamColorCollectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout).then {
         $0.register(RecordBarCollectionViewCell.self, forCellWithReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier)
-        $0.isPagingEnabled = false
-        $0.decelerationRate = .fast
-        $0.contentInsetAdjustmentBehavior = .never
         $0.backgroundColor = .clear
     }
     
     private lazy var emotionView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
     }
     
     private lazy var dreamColorView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
     }
     
     private lazy var genresTopStackView = UIStackView().then {
@@ -137,7 +131,7 @@ class RecordViewController: BaseViewController {
         $0.font = TypoStyle.title2.font
         $0.tintColor = ColorType.white01.color
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03 으로 변경해야함
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
         $0.textContainerInset = UIEdgeInsets.init(top: 18, left: 16, bottom: 18, right: 16)
     }
     
@@ -212,6 +206,7 @@ class RecordViewController: BaseViewController {
     }
     
     private func setHashtagView() {
+        HashtagView.isTouchedCount = 0
         for index in 0..<5 {
             let hashtagView = HashtagView()
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
@@ -230,7 +225,7 @@ class RecordViewController: BaseViewController {
             }
         }
         
-        for index in 5..<Constant.Genre.genreTitles.count {
+        for index in 5..<Constant.Genre.genreTitles.count - 1 {
             let hashtagView = HashtagView()
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")

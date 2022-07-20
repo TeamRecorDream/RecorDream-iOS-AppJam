@@ -62,13 +62,13 @@ class HashtagView: BaseView {
         paddingLabel.font = textTypo
     }
     
-    
+    // MARK: - 기록하기 뷰에 쓰일 함수
     func setRecordLabel(text: String) {
         paddingLabel.backgroundColor = ColorType.darkBlue02.color
         paddingLabel.text = text
         paddingLabel.textColor = ColorType.white02.color
         paddingLabel.font = TypoStyle.title2.font
-        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue02.color.cgColor) // TODO: - light_blue03
+        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue03.color.cgColor)
     }
     
     func setSelectedRecordLabel() {
@@ -77,10 +77,11 @@ class HashtagView: BaseView {
     }
     
     func resetSelectedRecordLabel() {
-        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue02.color.cgColor)
+        paddingLabel.makeRoundedWithBorder(radius: 3, borderColor: ColorType.lightBlue03.color.cgColor)
         paddingLabel.textColor = ColorType.white02.color
     }
     
+    // MARK: - 선택된 hashtagView의 개수를 세어주는 함수
     func calculateIsTouchCount(addCount: Bool) {
         HashtagView.isTouchedCount = addCount ? HashtagView.isTouchedCount + 1 : HashtagView.isTouchedCount - 1
     }

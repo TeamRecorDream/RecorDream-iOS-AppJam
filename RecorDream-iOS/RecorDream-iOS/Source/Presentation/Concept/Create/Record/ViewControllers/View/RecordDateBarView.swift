@@ -38,8 +38,7 @@ class RecordDateBarView: BaseView {
     
     private lazy var dateView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
-        // TODO: - lightBlue03 으로 수정하기 
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
     }
     
     override init(frame: CGRect) {
@@ -55,7 +54,8 @@ class RecordDateBarView: BaseView {
     
     override func setupConstraint() {
         calendarIconImage.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.equalTo(24.adjustedWidth)
+            make.height.equalTo(24.adjustedHeight)
             make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
         }
@@ -66,7 +66,8 @@ class RecordDateBarView: BaseView {
         }
         
         detailIconImage.snp.makeConstraints { make in
-            make.width.height.equalTo(14)
+            make.width.equalTo(14.adjustedWidth)
+            make.height.equalTo(14.adjustedHeight)
         }
         
         detailStackView.snp.makeConstraints { make in

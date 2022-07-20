@@ -34,27 +34,18 @@ class RecordVoiceBarView: BaseView {
     
     private lazy var voiceView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
-        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue02.color.cgColor)
-        // TODO: - lightBlue03 으로 수정하기
+        $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.lightBlue03.color.cgColor)
     }
-    
-//    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
-//
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        tapGesture.delegate = self
-//        self.voiceView.addGestureRecognizer(tapGesture)
-//    }
     
     override func setupView() {
         voiceView.addSubviews(voiceIconImage, voiceLabel, recordTimeLabel, detailIconImage)
-//        voiceView.addGestureRecognizer(tapGesture)
         addSubview(voiceView)
     }
     
     override func setupConstraint() {
         voiceIconImage.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
+            make.width.equalTo(24.adjustedWidth)
+            make.height.equalTo(24.adjustedHeight)
             make.leading.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
         }
@@ -66,7 +57,8 @@ class RecordVoiceBarView: BaseView {
         
         detailIconImage.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(16)
-            make.width.height.equalTo(14)
+            make.width.equalTo(14.adjustedWidth)
+            make.height.equalTo(14.adjustedHeight)
             make.centerY.equalToSuperview()
         }
         
