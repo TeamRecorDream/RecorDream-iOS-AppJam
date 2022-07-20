@@ -428,13 +428,15 @@ extension RecordViewController: UIGestureRecognizerDelegate {
     }
 
     @objc func dateViewDidTap(sender: UITapGestureRecognizer) {
-        print("help mee plzzzz")
         let modalVC = DateModalViewController()
+        modalVC.dateClosure = { date in
+            // TODO: - date formatting 해줘야함
+            self.dateView.setRecordDateLabel(date: date)
+        }
         modalVC.modalPresentationStyle = .custom
-            
         self.present(modalVC, animated: true, completion: nil)
     }
-    
+
     @objc func genreViewDidTap(sender: GenreTapGestureRecognizer) {
         sender.setIsTouched()
         
@@ -507,5 +509,4 @@ extension UILabel {
         self.tintColor = ColorType.white01.color
     }
 }
-
 

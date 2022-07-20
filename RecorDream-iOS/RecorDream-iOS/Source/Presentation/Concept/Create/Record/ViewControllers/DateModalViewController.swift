@@ -12,6 +12,8 @@ import Then
 import HeeKit
 
 class DateModalViewController: BaseViewController {
+    static var saveDate = Date()
+    var dateClosure: ((Date)->())?
     let dateView = UIView().then {
         $0.backgroundColor = ColorType.darkBlue02.color
 //        $0.makeRoundedSpecificCorner(corners: .topLeft, cornerRadius: 12)
@@ -23,10 +25,10 @@ class DateModalViewController: BaseViewController {
         $0.datePickerMode = .date
     }
     
-    let noticeLabel = UILabel().then {
-        $0.text = "날짜 설정"
-        $0.font = TypoStyle.title2.font
-        $0.textColor = ColorType.white01.color
+    let cancelButton = UIButton().then {
+        $0.setTitle("취소", for: .normal)
+        $0.titleLabel?.font = TypoStyle.title2.font
+        $0.setTitleColor(ColorType.white01.color, for: .normal)
     }
     
     let dateSaveButton = UIButton().then {
@@ -34,8 +36,6 @@ class DateModalViewController: BaseViewController {
         $0.titleLabel?.font = TypoStyle.title2.font
         $0.setTitleColor(ColorType.white01.color, for: .normal)
     }
-    
-    static var saveDate = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,7 @@ class DateModalViewController: BaseViewController {
     
     override func setTargets() {
         datePicker.addTarget(self, action: #selector(onDidChangeDate(sender:)), for: .valueChanged)
+        cancelButton.addTarget(self, action: #selector(cancelButtonDidTap), for: .touchUpInside)
         dateSaveButton.addTarget(self, action: #selector(dateSaveButtonDidTap), for: .touchUpInside)
     }
 }
@@ -53,7 +54,7 @@ extension DateModalViewController: Presentable {
     func setupView() {
         view.backgroundColor = ColorType.black02.color
         self.view.addSubview(dateView)
-        dateView.addSubviews(noticeLabel, dateSaveButton, datePicker)
+        dateView.addSubviews(cancelButton, dateSaveButton, datePicker)
     }
 
     func setupConstraint() {
@@ -62,8 +63,10 @@ extension DateModalViewController: Presentable {
             make.height.equalTo(318.adjustedHeight)
         }
         
-        self.noticeLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().offset(25)
+        self.cancelButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(25)
+            make.top.equalToSuperview().inset(27)
+            make.height.equalTo(14.adjustedHeight)
         }
         
         self.dateSaveButton.snp.makeConstraints { make in
@@ -80,12 +83,15 @@ extension DateModalViewController: Presentable {
 
 extension DateModalViewController {
     @objc func onDidChangeDate(sender: UIDatePicker) {
-        print(sender.date)
         DateModalViewController.saveDate = sender.date
     }
     
+    @objc func cancelButtonDidTap() {
+        self.dismiss(animated: true)
+    }
+    
     @objc func dateSaveButtonDidTap() {
-        print("clicked")
-        print(DateModalViewController.saveDate)
+        dateClosure?(DateModalViewController.saveDate)
+        self.dismiss(animated: true)
     }
 }

@@ -22,8 +22,7 @@ class RecordDateBarView: BaseView {
         $0.font = TypoStyle.title2.font
     }
     
-    private let recordDateLabel = UILabel().then {
-        $0.text = "2022-06-27"
+    var recordDateLabel = UILabel().then {
         $0.font = TypoStyle.title2.font
     }
 
@@ -43,16 +42,14 @@ class RecordDateBarView: BaseView {
         // TODO: - lightBlue03 으로 수정하기 
     }
     
-//    let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
-
-//    view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:))))
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setRecordDateLabel(date: Date())
+    }
+    
     override func setupView() {
-//        tapGesture.delegate = self
-//        recordDateLabel.addGestureRecognizer(tapGesture)
-//        
         detailStackView.addArrangedSubviews(recordDateLabel, detailIconImage)
         dateView.addSubviews(calendarIconImage, dateLabel, detailStackView)
-//        dateView.sendSubviewToBack(detailStackView)
         addSubview(dateView)
     }
     
@@ -69,15 +66,8 @@ class RecordDateBarView: BaseView {
         }
         
         detailIconImage.snp.makeConstraints { make in
-//            make.trailing.equalToSuperview().inset(16)
             make.width.height.equalTo(14)
-//            make.centerY.equalToSuperview()
         }
-        
-//        recordDateLabel.snp.makeConstraints { make in
-//            make.trailing.equalTo(detailIconImage.snp.leading).offset(-6)
-//            make.centerY.equalToSuperview()
-//        }
         
         detailStackView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-16)
@@ -89,17 +79,11 @@ class RecordDateBarView: BaseView {
         }
     }
     
-    @objc func tapMethod(sender: UITapGestureRecognizer) {
-        print("help mee plzzzz")
+    func setRecordDateLabel(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let convertDate = dateFormatter.string(from: date)
+        recordDateLabel.text = convertDate
     }
 }
-
-//extension RecordDateBarView: UIGestureRecognizerDelegate {
-//    func gestureRecognizer(
-//        _ gestureRecognizer: UIGestureRecognizer,
-//        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer
-//    ) -> Bool {
-//        return true
-//    }
-//}
-
