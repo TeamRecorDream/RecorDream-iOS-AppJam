@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeSettingViewController" customModule="RecorDream_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="modalIndicatorView" destination="wWr-B0-6aM" id="Ypm-01-AYz"/>
+                <outlet property="timeSettingPickerView" destination="Nfw-Dl-NK2" id="YGB-Gm-HOf"/>
+                <outlet property="timeSettingView" destination="j2i-qD-WiB" id="XKZ-Af-V4F"/>
+                <outlet property="timeSettingViewHeight" destination="DZR-ts-YvN" id="GTr-gN-zlR"/>
+                <outlet property="view" destination="d0q-i9-ahj" id="g0a-JQ-BvT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="d0q-i9-ahj">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-qD-WiB">
+                    <rect key="frame" x="0.0" y="624" width="414" height="272"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nfw-Dl-NK2" customClass="CustomTimeSettingPickerView" customModule="RecorDream_iOS" customModuleProvider="target">
+                            <rect key="frame" x="47" y="43" width="320" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="Iia-Gq-00x"/>
+                            </constraints>
+                        </pickerView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-O7-EG7">
+                            <rect key="frame" x="0.0" y="18" width="414" height="40"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWr-B0-6aM">
+                                    <rect key="frame" x="181" y="0.0" width="52" height="3"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="3" id="9wE-3F-5Du"/>
+                                        <constraint firstAttribute="width" constant="52" id="Gtd-9s-bqU"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="JfW-VY-5dG">
+                                    <rect key="frame" x="20" y="11" width="374" height="29"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szo-yR-2c1">
+                                            <rect key="frame" x="0.0" y="0.0" width="52" height="29"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                                            <color key="textColor" name="white01"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzR-2N-Kel">
+                                            <rect key="frame" x="344" y="0.0" width="30" height="29"/>
+                                            <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" title="저장">
+                                                <color key="titleColor" name="white01"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="didTapTimeSaveButton:" destination="-1" eventType="touchUpInside" id="kXj-7p-ahq"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="JfW-VY-5dG" firstAttribute="leading" secondItem="VAj-O7-EG7" secondAttribute="leading" constant="20" id="5Xg-Vd-bg8"/>
+                                <constraint firstAttribute="trailing" secondItem="JfW-VY-5dG" secondAttribute="trailing" constant="20" id="NaN-Er-jtz"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="dark_blue02"/>
+                    <constraints>
+                        <constraint firstItem="Nfw-Dl-NK2" firstAttribute="centerX" secondItem="j2i-qD-WiB" secondAttribute="centerX" id="1vm-Po-myM"/>
+                        <constraint firstItem="VAj-O7-EG7" firstAttribute="top" secondItem="j2i-qD-WiB" secondAttribute="top" constant="18" id="9jh-tC-FIq"/>
+                        <constraint firstAttribute="height" constant="272" id="DZR-ts-YvN"/>
+                        <constraint firstItem="VAj-O7-EG7" firstAttribute="leading" secondItem="j2i-qD-WiB" secondAttribute="leading" id="FPG-wp-pei"/>
+                        <constraint firstItem="Nfw-Dl-NK2" firstAttribute="top" secondItem="VAj-O7-EG7" secondAttribute="bottom" constant="-15" id="Ire-f4-0S4"/>
+                        <constraint firstAttribute="trailing" secondItem="VAj-O7-EG7" secondAttribute="trailing" id="q10-dZ-Q2P"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="c5W-Az-BP1"/>
+            <color key="backgroundColor" red="0.0" green="0.0040000001899898052" blue="0.097999997437000275" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="c5W-Az-BP1" firstAttribute="trailing" secondItem="j2i-qD-WiB" secondAttribute="trailing" id="ESR-8Q-rgQ"/>
+                <constraint firstItem="j2i-qD-WiB" firstAttribute="leading" secondItem="c5W-Az-BP1" secondAttribute="leading" id="pWB-bP-mhi"/>
+                <constraint firstAttribute="bottom" secondItem="j2i-qD-WiB" secondAttribute="bottom" id="vf3-c5-neS"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="dark_blue02">
+            <color red="0.097999997437000275" green="0.10199999809265137" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white01">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

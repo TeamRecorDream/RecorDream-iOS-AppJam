@@ -37,7 +37,6 @@ class BasePaddingLabel: UILabel {
 
 class HashtagView: BaseView {
     lazy var paddingLabel = BasePaddingLabel().then {
-        $0.backgroundColor = .white
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 3
     }
@@ -56,9 +55,10 @@ class HashtagView: BaseView {
         }
     }
     
-    func setLabelText(text: String, color: String, textTypo: UIFont){
+    func setLabelText(text: String, textColor: String, textBackgroundColor: String, textTypo: UIFont) {
+        paddingLabel.backgroundColor = UIColor(named: textBackgroundColor)
         paddingLabel.text = text
-        paddingLabel.textColor = UIColor(named: color)
+        paddingLabel.textColor = UIColor(named: textColor)
         paddingLabel.font = textTypo
     }
     

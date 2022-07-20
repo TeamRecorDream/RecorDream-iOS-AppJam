@@ -128,4 +128,4 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-SceneDelegate.swift
+RecorDream-iOS/RecorDream-iOS/Source/Application/SceneDelegate.swift
