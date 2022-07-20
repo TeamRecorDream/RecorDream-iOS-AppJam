@@ -188,7 +188,7 @@ class RecordViewController: BaseViewController {
     }
     
     private func setGesture() {
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dateViewDidTap))
         tapGesture.delegate = self
         dateView.addGestureRecognizer(tapGesture)
     }
@@ -209,7 +209,7 @@ class RecordViewController: BaseViewController {
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
         
-            let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreTapMethod))
+            let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreViewDidTap))
             genreTapGesture.index = index
             genreTapGesture.hashtagView = hashtagView
             
@@ -227,7 +227,7 @@ class RecordViewController: BaseViewController {
             hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
 
-            let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreTapMethod))
+            let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreViewDidTap))
             genreTapGesture.index = index
             genreTapGesture.hashtagView = hashtagView
             
@@ -247,7 +247,7 @@ class RecordViewController: BaseViewController {
                 // MARK: - 저장 가능 상태
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
             } else {
-                // MARK: - 저장 불가능 상태
+                // MARK: - 저장 불가능 상태ㅗ
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
             }
         }
@@ -427,11 +427,15 @@ extension RecordViewController: UIGestureRecognizerDelegate {
         return true
     }
 
-    @objc func tapMethod(sender: UITapGestureRecognizer) {
+    @objc func dateViewDidTap(sender: UITapGestureRecognizer) {
         print("help mee plzzzz")
+        let modalVC = DateModalViewController()
+        modalVC.modalPresentationStyle = .custom
+            
+        self.present(modalVC, animated: true, completion: nil)
     }
     
-    @objc func genreTapMethod(sender: GenreTapGestureRecognizer) {
+    @objc func genreViewDidTap(sender: GenreTapGestureRecognizer) {
         sender.setIsTouched()
         
         guard let view = sender.hashtagView else { return }
