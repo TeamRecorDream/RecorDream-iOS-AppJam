@@ -38,6 +38,8 @@ class RecordDetailViewController: BaseViewController {
         }
         self.headerView.setHeaderView(HiddenMoreBtn: false, headerLabelText: "기록 상세보기")
         self.headerView.isHiddenUnderLine = true
+        
+        self.headerView.delegate = self
     }
     
     private func configureGenreView(){
@@ -79,5 +81,20 @@ extension RecordDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 6
+    }
+}
+
+extension  RecordDetailViewController: NavigationBarDelegate {
+    func navigationMoreButtonDidTap() {
+        let recordDetailBottomSheet = RecordDetailBottomSheetViewController.instanceFromNib()
+        recordDetailBottomSheet.modalPresentationStyle = .overFullScreen
+        
+        self.present(recordDetailBottomSheet, animated: false) {
+            recordDetailBottomSheet.showBottomSheet()
+        }
+    }
+    
+    func navigationBackButtonDidTap() {
+        
     }
 }

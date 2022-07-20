@@ -19,6 +19,8 @@
 		144457062887AEE10023E090 /* TabPagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144457052887AEE10023E090 /* TabPagerDelegate.swift */; };
 		144457092887AF980023E090 /* TabPagerContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144457072887AF980023E090 /* TabPagerContentCollectionViewCell.swift */; };
 		1444570A2887AF980023E090 /* TabPagerContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144457082887AF980023E090 /* TabPagerContentCollectionViewCell.xib */; };
+		1444570D28888C760023E090 /* RecordDetailBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444570B28888C760023E090 /* RecordDetailBottomSheetViewController.swift */; };
+		1444570E28888C760023E090 /* RecordDetailBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1444570C28888C760023E090 /* RecordDetailBottomSheetViewController.xib */; };
 		144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */; };
 		144A1C7F2886E8C600598121 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */; };
 		144A1C802886E8C600598121 /* RecordDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */; };
@@ -117,6 +119,8 @@
 		144457052887AEE10023E090 /* TabPagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerDelegate.swift; sourceTree = "<group>"; };
 		144457072887AF980023E090 /* TabPagerContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerContentCollectionViewCell.swift; sourceTree = "<group>"; };
 		144457082887AF980023E090 /* TabPagerContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabPagerContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		1444570B28888C760023E090 /* RecordDetailBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailBottomSheetViewController.swift; sourceTree = "<group>"; };
+		1444570C28888C760023E090 /* RecordDetailBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailBottomSheetViewController.xib; sourceTree = "<group>"; };
 		144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingDelegate.swift; sourceTree = "<group>"; };
 		144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailViewController.xib; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */,
 				14243E152880782300CCE8A0 /* TimeSettingViewController.swift */,
 				144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */,
+				1444570B28888C760023E090 /* RecordDetailBottomSheetViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */,
 				144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */,
 				144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */,
+				1444570C28888C760023E090 /* RecordDetailBottomSheetViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,6 +712,7 @@
 				144A1C8428871EF600598121 /* GenreCollectionViewCell.xib in Resources */,
 				2322D08A2883EFB100DC5553 /* RecordHeaderView.xib in Resources */,
 				F613C7D2287563FF005CB133 /* Images.xcassets in Resources */,
+				1444570E28888C760023E090 /* RecordDetailBottomSheetViewController.xib in Resources */,
 				F6D39463287D41BF004A7DBB /* Pretendard-Medium.otf in Resources */,
 				F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */,
 				144456FC2887A1B00023E090 /* TabPagerView.xib in Resources */,
@@ -777,6 +784,7 @@
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
 				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
+				1444570D28888C760023E090 /* RecordDetailBottomSheetViewController.swift in Sources */,
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
