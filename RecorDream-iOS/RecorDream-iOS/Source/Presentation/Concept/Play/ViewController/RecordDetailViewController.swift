@@ -66,10 +66,11 @@ extension RecordDetailViewController: UICollectionViewDataSource {
 
 extension RecordDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = 66
-        let cellHeight = 23
+        //해시태그 길이 글자 크기에 맞추기
+        let temporaryLabel = UILabel()
+        temporaryLabel.text = "# \(Constant.Genre.IntType(genres[indexPath.row]).title)"
+        return CGSize(width: temporaryLabel.intrinsicContentSize.width, height: 23)
         
-        return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -77,6 +78,6 @@ extension RecordDetailViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-            return 6
-        }
+        return 6
+    }
 }
