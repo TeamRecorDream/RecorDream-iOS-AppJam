@@ -58,7 +58,7 @@
                                                                         </constraints>
                                                                         <color key="tintColor" name="white01"/>
                                                                         <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" image="icn_play"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="icn_doc_play"/>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9y-WU-VG3">
                                                                         <rect key="frame" x="35" y="0.0" width="39.666666666666657" height="32"/>
@@ -80,7 +80,7 @@
                                                                     <constraint firstAttribute="height" constant="32" id="g2J-Cv-B54"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="repeat.1" catalog="system" title=""/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="icn_replay" title=""/>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -168,9 +168,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icn_play" width="14" height="14"/>
+        <image name="icn_doc_play" width="32" height="32"/>
+        <image name="icn_replay" width="32" height="33"/>
         <image name="rd_rogo_grey" width="144" height="20"/>
-        <image name="repeat.1" catalog="system" width="128" height="101"/>
         <namedColor name="black02">
             <color red="0.0" green="0.0" blue="0.0" alpha="0.64999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
