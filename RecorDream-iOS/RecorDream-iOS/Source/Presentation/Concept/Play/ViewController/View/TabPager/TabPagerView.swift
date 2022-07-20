@@ -66,7 +66,7 @@ extension TabPagerView: UICollectionViewDataSource {
             return cell
         }
         if let cell = cell as? TabPagerContentCollectionViewCell {
-            cell.configureCell(isHidden: false)
+            cell.configureCell(isHidden: indexPath.row == 0 ? false : true)
             return cell
         }
         
