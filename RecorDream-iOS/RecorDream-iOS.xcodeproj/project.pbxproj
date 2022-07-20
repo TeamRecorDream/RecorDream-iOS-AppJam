@@ -15,6 +15,8 @@
 		144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */; };
 		144A1C7F2886E8C600598121 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */; };
 		144A1C802886E8C600598121 /* RecordDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */; };
+		144A1C8328871EF600598121 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C8128871EF600598121 /* GenreCollectionViewCell.swift */; };
+		144A1C8428871EF600598121 /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */; };
 		14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */; };
 		2322D07428813D5F00DC5553 /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07328813D5F00DC5553 /* GenreType.swift */; };
 		2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07528814A9000DC5553 /* RecorDreamColorType.swift */; };
@@ -104,6 +106,8 @@
 		144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingDelegate.swift; sourceTree = "<group>"; };
 		144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailViewController.xib; sourceTree = "<group>"; };
+		144A1C8128871EF600598121 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeSettingPickerView.swift; sourceTree = "<group>"; };
 		2322D07328813D5F00DC5553 /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
 		2322D07528814A9000DC5553 /* RecorDreamColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamColorType.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				14243E0D287FB7F100CCE8A0 /* View */,
+				144A1C8128871EF600598121 /* GenreCollectionViewCell.swift */,
 				14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */,
 				14243E152880782300CCE8A0 /* TimeSettingViewController.swift */,
 				144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */,
@@ -207,6 +212,7 @@
 				14243E162880782300CCE8A0 /* TimeSettingViewController.xib */,
 				14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */,
 				144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */,
+				144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -668,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				144A1C802886E8C600598121 /* RecordDetailViewController.xib in Resources */,
+				144A1C8428871EF600598121 /* GenreCollectionViewCell.xib in Resources */,
 				2322D08A2883EFB100DC5553 /* RecordHeaderView.xib in Resources */,
 				F613C7D2287563FF005CB133 /* Images.xcassets in Resources */,
 				F6D39463287D41BF004A7DBB /* Pretendard-Medium.otf in Resources */,
@@ -721,6 +728,7 @@
 				2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */,
 				232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */,
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
+				144A1C8328871EF600598121 /* GenreCollectionViewCell.swift in Sources */,
 				14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */,
 				F62CDF2C288304F400E5B19C /* TabBarController.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,

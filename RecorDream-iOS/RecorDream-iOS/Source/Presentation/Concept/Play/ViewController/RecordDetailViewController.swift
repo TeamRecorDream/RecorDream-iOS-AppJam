@@ -7,11 +7,18 @@
 
 import UIKit
 
-class RecordDetailViewController: UIViewController {
+class RecordDetailViewController: BaseViewController {
+    @IBOutlet weak var genreCollectionView: UICollectionView!
+    
     private var headerView = RecordHeaderView()
+    private var genres = [8, 4, 1]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        genreCollectionView.dataSource = self
+        genreCollectionView.delegate = self
+        genreCollectionView.register(GenreCollectionViewCell.nib(), forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
         
         configureHeaderView()
     }
@@ -27,3 +34,38 @@ class RecordDetailViewController: UIViewController {
         self.headerView.isHiddenUnderLine = true
     }
 }
+
+extension RecordDetailViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return genres.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else { return UICollectionViewCell()}
+        
+        cell.configureCell(Constant.Genre.IntType(genres[indexPath.row]).title)
+        return cell
+    }
+}
+
+extension RecordDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = 66
+        let cellHeight = 23
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 6
+        }
+}
+
