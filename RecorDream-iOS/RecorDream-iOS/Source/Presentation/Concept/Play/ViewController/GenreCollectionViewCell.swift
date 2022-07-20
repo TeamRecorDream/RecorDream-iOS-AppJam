@@ -20,11 +20,13 @@ class GenreCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         labelSize = self.genreLabel.intrinsicContentSize
-        configureCell(Constant.Genre.IntType(10).title)
+        configureCell(genreNumber: 10, emotionNumber: 7)
     }
     
-    func configureCell(_ genre: String) {
-        self.genreLabel.text = "# \(genre)"
+    func configureCell(genreNumber: Int, emotionNumber: Int) {
+        self.genreLabel.text = "# \(Constant.Genre.IntType(genreNumber).title)"
+        self.genreLabel.backgroundColor = UIColor(named: Constant.BackgroundColor.IntType(emotionNumber).title)
+        self.genreLabel.textColor = UIColor(named: Constant.TextColor.IntType(emotionNumber).title)
         self.makeRounded(radius: 2)
     }
 

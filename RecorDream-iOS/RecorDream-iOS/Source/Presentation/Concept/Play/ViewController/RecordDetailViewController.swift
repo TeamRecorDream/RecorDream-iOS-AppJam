@@ -9,18 +9,24 @@ import UIKit
 
 class RecordDetailViewController: BaseViewController {
     @IBOutlet weak var genreCollectionView: UICollectionView!
+    @IBOutlet weak var emotionImage: UIImageView!
     
     private var headerView = RecordHeaderView()
+    //TODO: - 서버 연결 시 사용할 프로퍼티
     private var genres = [8, 4, 1]
+    private var dreamColor = 1
+    private var emotion = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        genreCollectionView.dataSource = self
-        genreCollectionView.delegate = self
-        genreCollectionView.register(GenreCollectionViewCell.nib(), forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
-        
+        configureView()
+        configureGenreView()
         configureHeaderView()
+    }
+    
+    private func configureView(){
+        self.emotionImage.image = UIImage(named: Constant.Emotion.IntType(emotion).title)
     }
     
     private func configureHeaderView(){
@@ -32,6 +38,12 @@ class RecordDetailViewController: BaseViewController {
         }
         self.headerView.setHeaderView(HiddenMoreBtn: false, headerLabelText: "기록 상세보기")
         self.headerView.isHiddenUnderLine = true
+    }
+    
+    private func configureGenreView(){
+        genreCollectionView.dataSource = self
+        genreCollectionView.delegate = self
+        genreCollectionView.register(GenreCollectionViewCell.nib(), forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
     }
 }
 
@@ -47,7 +59,7 @@ extension RecordDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GenreCollectionViewCell.identifier, for: indexPath) as? GenreCollectionViewCell else { return UICollectionViewCell()}
         
-        cell.configureCell(Constant.Genre.IntType(genres[indexPath.row]).title)
+        cell.configureCell(genreNumber: genres[indexPath.row], emotionNumber: dreamColor)
         return cell
     }
 }
