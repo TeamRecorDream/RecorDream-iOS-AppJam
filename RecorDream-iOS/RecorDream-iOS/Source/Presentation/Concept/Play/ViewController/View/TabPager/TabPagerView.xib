@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabPagerView" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
-                <outlet property="contentCollectionView" destination="wif-xr-Vfs" id="t1v-0j-USm"/>
+                <outlet property="contentCollectionView" destination="wif-xr-Vfs" id="tfy-mJ-0ii"/>
+                <outlet property="indicatorLeading" destination="5GN-JA-6HC" id="7sB-Ul-NdI"/>
                 <outlet property="titleCollectionView" destination="lm7-hj-eOX" id="xzT-iZ-hmA"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lm7-hj-eOX">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lm7-hj-eOX">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>

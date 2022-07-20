@@ -11,6 +11,7 @@ class TabPagerView: UIView {
     @IBOutlet weak var titleCollectionView: UICollectionView!
     @IBOutlet weak var contentCollectionView: UICollectionView!
     
+    @IBOutlet weak var indicatorLeading: NSLayoutConstraint!
     private let titles = ["나의 꿈 기록", "노트"]
     var delegate: TabPagerDelegate?
     
@@ -74,11 +75,22 @@ extension TabPagerView: UICollectionViewDataSource {
 }
 
 extension TabPagerView: UICollectionViewDelegate {
-    //셀 클릭 시 해당 콘텐츠 뷰로 이동
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.scrollToIndex(to: indexPath.row)
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: TabPagerTitleCollectionViewCell.identifier,
+            for: indexPath
+        )
+        
+        if cell is TabPagerTitleCollectionViewCell {
+            //TODO: - 노트, 즉 1번 탭 클릭 시 이동 안 하거나 0번으로 이동 수정 필요
+            contentCollectionView.scrollToItem(at: IndexPath(row: indexPath.row, section: 0), at: .centeredHorizontally, animated: true)
+        }
     }
     
+    //content 슬라이드 시 인디케이터 이동
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        indicatorLeading.constant = scrollView.contentOffset.x / 2
+    }
 }
 
 extension TabPagerView: UICollectionViewDelegateFlowLayout {
