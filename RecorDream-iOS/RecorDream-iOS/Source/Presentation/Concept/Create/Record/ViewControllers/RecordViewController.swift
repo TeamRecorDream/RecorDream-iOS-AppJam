@@ -209,7 +209,6 @@ class RecordViewController: BaseViewController {
         HashtagView.isTouchedCount = 0
         for index in 0..<5 {
             let hashtagView = HashtagView()
-            hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
         
             let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreViewDidTap))
@@ -227,7 +226,6 @@ class RecordViewController: BaseViewController {
         
         for index in 5..<Constant.Genre.genreTitles.count - 1 {
             let hashtagView = HashtagView()
-            hashtagView.paddingLabel.setPadding(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
 
             let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreViewDidTap))

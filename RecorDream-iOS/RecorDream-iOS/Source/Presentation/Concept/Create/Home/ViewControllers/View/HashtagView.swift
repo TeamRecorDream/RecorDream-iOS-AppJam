@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 class HashtagView: BaseView {
-    lazy var paddingLabel = BasePaddingLabel.init(padding: UIEdgeInsets(top: 3, left: 6, bottom: 3, right: 6)).then {
+    lazy var paddingLabel = BasePaddingLabel.init(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)).then {
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 3
     }
