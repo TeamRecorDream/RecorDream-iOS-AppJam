@@ -134,7 +134,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         //MARK: - 드래그 했다가 마우스를 뗄 때 메서드
         scrollView.setContentOffset(CGPoint(x: 204.0 * CGFloat(recorDreamView.cellIndex) + 10 * CGFloat(recorDreamView.cellIndex), y: scrollView.contentInset.top), animated: true)
     }
-    
+
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         //MARK: - 드래그 끝까지 끌다가 끝냈을 때 호출되는 메서드
         scrollView.setContentOffset(CGPoint(x: 204.0 * CGFloat(recorDreamView.cellIndex) + 10 * CGFloat(recorDreamView.cellIndex), y: scrollView.contentInset.top), animated: true)
@@ -143,15 +143,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
         for i in 0..<dreamCards.count {
-            //TODO: - 아카이브 용으로 주석을 남겨두긴 했는데 . . 마지막까지 문제가 없다면 삭제하겠습니다
-//            let a = CGFloat(55 + 204 * i + 20 * i) - 102
-//            let b = CGFloat(Int(a) + 264 + 20) + 102
-            let a = CGFloat(55 + 204 * i + 20 * (i > 1 ? i - 1 : 0)) - 102 + 20
-            let b = CGFloat(a + 264 + (i == 0 ? 0 : 20)) + 20
+            let a = CGFloat( 55 * i + 144 * i )
+            let b = CGFloat(Int(a) + 132 + 55)
             if x > a && x < b {
-                print("x 위치 : \(x)")
                 recorDreamView.cellIndex = i
-                print(recorDreamView.cellIndex )
                 recorDreamView.carouselCollectionView.performBatchUpdates(nil)
             }
         }

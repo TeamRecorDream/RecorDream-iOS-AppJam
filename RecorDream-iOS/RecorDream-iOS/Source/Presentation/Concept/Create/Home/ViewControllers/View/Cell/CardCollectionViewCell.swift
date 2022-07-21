@@ -109,7 +109,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     func setHashtagStackView(genres:[Int], textColorNum: Int){
         if genres.count > 0 {
             genres.forEach { index in
-                print(index)
                 let hashtagView = HashtagView()
                 hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", textColorNum: textColorNum, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
                 hashtagStackView.addArrangedSubview(hashtagView)
