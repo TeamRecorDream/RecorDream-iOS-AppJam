@@ -130,6 +130,7 @@
 		F6F14AC12888947B0065D291 /* ShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14AC02888947B0065D291 /* ShareService.swift */; };
 		F6F14AC9288918E50065D291 /* mockStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14AC7288918E50065D291 /* mockStorageViewController.swift */; };
 		F6F14ACA288918E50065D291 /* mockStorageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6F14AC8288918E50065D291 /* mockStorageViewController.xib */; };
+		F6F14ACC288939660065D291 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6F14ACB288939660065D291 /* Splash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,6 +240,7 @@
 		F6F14AC02888947B0065D291 /* ShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareService.swift; sourceTree = "<group>"; };
 		F6F14AC7288918E50065D291 /* mockStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockStorageViewController.swift; sourceTree = "<group>"; };
 		F6F14AC8288918E50065D291 /* mockStorageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = mockStorageViewController.xib; sourceTree = "<group>"; };
+		F6F14ACB288939660065D291 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +498,7 @@
 		F613C7D9287564EC005CB133 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F6F14ACB288939660065D291 /* Splash.storyboard */,
 				F62CDF29288302C900E5B19C /* Concept */,
 				F613C7FD2876D314005CB133 /* Common */,
 				F62CDF2A288302D900E5B19C /* TabBar */,
@@ -907,6 +910,7 @@
 				F6D3945D287D41BF004A7DBB /* Pretendard-Black.otf in Resources */,
 				F613C7C028756181005CB133 /* Assets.xcassets in Resources */,
 				F6D39465287D41BF004A7DBB /* Pretendard-ExtraLight.otf in Resources */,
+				F6F14ACC288939660065D291 /* Splash.storyboard in Resources */,
 				F6F14ACA288918E50065D291 /* mockStorageViewController.xib in Resources */,
 				1444570A2887AF980023E090 /* TabPagerContentCollectionViewCell.xib in Resources */,
 				F6F14A782886CAEF0065D291 /* dummySearchResultNone.json in Resources */,
@@ -1156,10 +1160,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RecorDream-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1185,10 +1190,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RecorDream-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
