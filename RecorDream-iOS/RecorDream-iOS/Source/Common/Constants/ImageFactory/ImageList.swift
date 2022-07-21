@@ -34,6 +34,9 @@ enum ImageList: String, CaseIterable {
     case icnToggleOn = "toggle_on"
     case icnTabBarBackGround = "navibar_bg"
     case icnRecord = "navibar_btn_record"
+    case icnReplay = "icn_repaly"
+    case icnStop = "icn_stop"
+    case icnDocPlay = "icn_doc_paly"
     
     // MARK: - main card
     case mainCardColorRed = "home_main_card_red"

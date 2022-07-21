@@ -12,7 +12,20 @@
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
 		14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E152880782300CCE8A0 /* TimeSettingViewController.swift */; };
 		14243E182880782300CCE8A0 /* TimeSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E162880782300CCE8A0 /* TimeSettingViewController.xib */; };
+		144456FA2887A1A00023E090 /* TabPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144456F92887A1A00023E090 /* TabPagerView.swift */; };
+		144456FC2887A1B00023E090 /* TabPagerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144456FB2887A1B00023E090 /* TabPagerView.xib */; };
+		144456FF2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144456FD2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.swift */; };
+		144457002887A3CC0023E090 /* TabPagerTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144456FE2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.xib */; };
+		144457062887AEE10023E090 /* TabPagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144457052887AEE10023E090 /* TabPagerDelegate.swift */; };
+		144457092887AF980023E090 /* TabPagerContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144457072887AF980023E090 /* TabPagerContentCollectionViewCell.swift */; };
+		1444570A2887AF980023E090 /* TabPagerContentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144457082887AF980023E090 /* TabPagerContentCollectionViewCell.xib */; };
+		1444570D28888C760023E090 /* RecordDetailBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1444570B28888C760023E090 /* RecordDetailBottomSheetViewController.swift */; };
+		1444570E28888C760023E090 /* RecordDetailBottomSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1444570C28888C760023E090 /* RecordDetailBottomSheetViewController.xib */; };
 		144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */; };
+		144A1C7F2886E8C600598121 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */; };
+		144A1C802886E8C600598121 /* RecordDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */; };
+		144A1C8328871EF600598121 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144A1C8128871EF600598121 /* GenreCollectionViewCell.swift */; };
+		144A1C8428871EF600598121 /* GenreCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */; };
 		14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */; };
 		2322D07428813D5F00DC5553 /* GenreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07328813D5F00DC5553 /* GenreType.swift */; };
 		2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D07528814A9000DC5553 /* RecorDreamColorType.swift */; };
@@ -26,6 +39,10 @@
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
 		232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */; };
 		232D0E49287DEC380063D725 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E48287DEC380063D725 /* HashtagView.swift */; };
+		233D3C3C288527E000553605 /* RecordDateBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3B288527E000553605 /* RecordDateBarView.swift */; };
+		233D3C3E28852DE800553605 /* RecordVoiceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */; };
+		233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */; };
+		23450D6A2887D5A400A8FB70 /* DateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23450D692887D5A400A8FB70 /* DateModalViewController.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
@@ -121,7 +138,20 @@
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
 		14243E152880782300CCE8A0 /* TimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingViewController.swift; sourceTree = "<group>"; };
 		14243E162880782300CCE8A0 /* TimeSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSettingViewController.xib; sourceTree = "<group>"; };
+		144456F92887A1A00023E090 /* TabPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerView.swift; sourceTree = "<group>"; };
+		144456FB2887A1B00023E090 /* TabPagerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabPagerView.xib; sourceTree = "<group>"; };
+		144456FD2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		144456FE2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabPagerTitleCollectionViewCell.xib; sourceTree = "<group>"; };
+		144457052887AEE10023E090 /* TabPagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerDelegate.swift; sourceTree = "<group>"; };
+		144457072887AF980023E090 /* TabPagerContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPagerContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		144457082887AF980023E090 /* TabPagerContentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabPagerContentCollectionViewCell.xib; sourceTree = "<group>"; };
+		1444570B28888C760023E090 /* RecordDetailBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailBottomSheetViewController.swift; sourceTree = "<group>"; };
+		1444570C28888C760023E090 /* RecordDetailBottomSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailBottomSheetViewController.xib; sourceTree = "<group>"; };
 		144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingDelegate.swift; sourceTree = "<group>"; };
+		144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
+		144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordDetailViewController.xib; sourceTree = "<group>"; };
+		144A1C8128871EF600598121 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreCollectionViewCell.xib; sourceTree = "<group>"; };
 		14D0E18528812AEF006EC6D8 /* CustomTimeSettingPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimeSettingPickerView.swift; sourceTree = "<group>"; };
 		2322D07328813D5F00DC5553 /* GenreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreType.swift; sourceTree = "<group>"; };
 		2322D07528814A9000DC5553 /* RecorDreamColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamColorType.swift; sourceTree = "<group>"; };
@@ -135,6 +165,10 @@
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
 		232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		232D0E48287DEC380063D725 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
+		233D3C3B288527E000553605 /* RecordDateBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDateBarView.swift; sourceTree = "<group>"; };
+		233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVoiceBarView.swift; sourceTree = "<group>"; };
+		233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		23450D692887D5A400A8FB70 /* DateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModalViewController.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,8 +267,11 @@
 			isa = PBXGroup;
 			children = (
 				14243E0D287FB7F100CCE8A0 /* View */,
+				144A1C8128871EF600598121 /* GenreCollectionViewCell.swift */,
 				14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */,
 				14243E152880782300CCE8A0 /* TimeSettingViewController.swift */,
+				144A1C7D2886E8C600598121 /* RecordDetailViewController.swift */,
+				1444570B28888C760023E090 /* RecordDetailBottomSheetViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,9 +279,13 @@
 		14243E0D287FB7F100CCE8A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				144456F82887A17E0023E090 /* TabPager */,
 				1432143C2883EC6500C27BD7 /* Custom */,
 				14243E162880782300CCE8A0 /* TimeSettingViewController.xib */,
 				14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */,
+				144A1C7E2886E8C600598121 /* RecordDetailViewController.xib */,
+				144A1C8228871EF600598121 /* GenreCollectionViewCell.xib */,
+				1444570C28888C760023E090 /* RecordDetailBottomSheetViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -256,6 +297,19 @@
 				14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		144456F82887A17E0023E090 /* TabPager */ = {
+			isa = PBXGroup;
+			children = (
+				144456F92887A1A00023E090 /* TabPagerView.swift */,
+				144456FB2887A1B00023E090 /* TabPagerView.xib */,
+				144456FD2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.swift */,
+				144456FE2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.xib */,
+				144457072887AF980023E090 /* TabPagerContentCollectionViewCell.swift */,
+				144457082887AF980023E090 /* TabPagerContentCollectionViewCell.xib */,
+			);
+			path = TabPager;
 			sourceTree = "<group>";
 		};
 		2322D0802883EE7F00DC5553 /* Record */ = {
@@ -271,6 +325,7 @@
 			children = (
 				2322D0822883EEE200DC5553 /* View */,
 				2322D08D2883F37100DC5553 /* RecordViewController.swift */,
+				23450D692887D5A400A8FB70 /* DateModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -278,6 +333,9 @@
 		2322D0822883EEE200DC5553 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				233D3C3F2885A0CD00553605 /* Cell */,
+				233D3C3B288527E000553605 /* RecordDateBarView.swift */,
+				233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +356,14 @@
 			isa = PBXGroup;
 			children = (
 				232D0E3F287D8F480063D725 /* CardCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		233D3C3F2885A0CD00553605 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -422,6 +488,7 @@
 			children = (
 				2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */,
 				144A1C7B2886DBD000598121 /* TimeSettingDelegate.swift */,
+				144457052887AEE10023E090 /* TabPagerDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -815,10 +882,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				144A1C802886E8C600598121 /* RecordDetailViewController.xib in Resources */,
+				144A1C8428871EF600598121 /* GenreCollectionViewCell.xib in Resources */,
 				2322D08A2883EFB100DC5553 /* RecordHeaderView.xib in Resources */,
 				F613C7D2287563FF005CB133 /* Images.xcassets in Resources */,
+				1444570E28888C760023E090 /* RecordDetailBottomSheetViewController.xib in Resources */,
 				F6D39463287D41BF004A7DBB /* Pretendard-Medium.otf in Resources */,
 				F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */,
+				144456FC2887A1B00023E090 /* TabPagerView.xib in Resources */,
 				14243E11287FB81400CCE8A0 /* MyPageViewController.xib in Resources */,
 				14243E182880782300CCE8A0 /* TimeSettingViewController.xib in Resources */,
 				F6D39467287D41BF004A7DBB /* Pretendard-SemiBold.otf in Resources */,
@@ -827,6 +898,7 @@
 				F6F14A68288584E70065D291 /* SearchResultTableViewCell.xib in Resources */,
 				F6F14AB528872D290065D291 /* FilterCollectionViewCell.xib in Resources */,
 				F6F14AB128872B390065D291 /* ListCollectionViewCell.xib in Resources */,
+				144457002887A3CC0023E090 /* TabPagerTitleCollectionViewCell.xib in Resources */,
 				F613C7CF287563E8005CB133 /* Colors.xcassets in Resources */,
 				F62CDF3628830B9100E5B19C /* SampleViewController.xib in Resources */,
 				F6D3945B287D41BF004A7DBB /* Pretendard-Thin.otf in Resources */,
@@ -836,6 +908,7 @@
 				F613C7C028756181005CB133 /* Assets.xcassets in Resources */,
 				F6D39465287D41BF004A7DBB /* Pretendard-ExtraLight.otf in Resources */,
 				F6F14ACA288918E50065D291 /* mockStorageViewController.xib in Resources */,
+				1444570A2887AF980023E090 /* TabPagerContentCollectionViewCell.xib in Resources */,
 				F6F14A782886CAEF0065D291 /* dummySearchResultNone.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -869,8 +942,10 @@
 				F6F14AB428872D290065D291 /* FilterCollectionViewCell.swift in Sources */,
 				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
+				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
 				F6F14AA0288720900065D291 /* StorageView.swift in Sources */,
+				144457092887AF980023E090 /* TabPagerContentCollectionViewCell.swift in Sources */,
 				F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */,
 				2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */,
 				F6F14ABF2888927B0065D291 /* ShareEndPoint.swift in Sources */,
@@ -879,10 +954,13 @@
 				F6F14AA3288721AB0065D291 /* FilterCollectionHeaderView.swift in Sources */,
 				F6F14ABB2887E4FB0065D291 /* StorageView+CompositionalLayout.swift in Sources */,
 				F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */,
+				144457062887AEE10023E090 /* TabPagerDelegate.swift in Sources */,
+				144A1C8328871EF600598121 /* GenreCollectionViewCell.swift in Sources */,
 				14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */,
 				F62CDF2C288304F400E5B19C /* TabBarController.swift in Sources */,
 				F6F14AA5288721D90065D291 /* GallaryCollectionViewCell.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
+				144456FA2887A1A00023E090 /* TabPagerView.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
 				F6F14A5E28854F980065D291 /* SearchView.swift in Sources */,
@@ -891,7 +969,9 @@
 				F6D39470287D6927004A7DBB /* TypoStyle+.swift in Sources */,
 				F6D3947C287D7560004A7DBB /* ImageList.swift in Sources */,
 				F6D39473287D69C2004A7DBB /* TypoStyle.swift in Sources */,
+				233D3C3E28852DE800553605 /* RecordVoiceBarView.swift in Sources */,
 				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
+				1444570D28888C760023E090 /* RecordDetailBottomSheetViewController.swift in Sources */,
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
 				F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */,
@@ -902,6 +982,7 @@
 				F6F14AC9288918E50065D291 /* mockStorageViewController.swift in Sources */,
 				F6F14AB72887DCCF0065D291 /* BasePaddingLabel.swift in Sources */,
 				14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */,
+				144A1C7F2886E8C600598121 /* RecordDetailViewController.swift in Sources */,
 				F6F14A8F2886F5DC0065D291 /* APIError.swift in Sources */,
 				232D0E39287D86C20063D725 /* HeaderView.swift in Sources */,
 				F6F14AB028872B390065D291 /* ListCollectionViewCell.swift in Sources */,
@@ -920,12 +1001,15 @@
 				2322D07A288153E900DC5553 /* EmotionType.swift in Sources */,
 				F6F14A9D28871E740065D291 /* StorageResultNone.swift in Sources */,
 				F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */,
+				233D3C3C288527E000553605 /* RecordDateBarView.swift in Sources */,
 				F6D39477287D6F31004A7DBB /* ColorType+.swift in Sources */,
 				F6F14AA9288721F80065D291 /* StorageHeaderView.swift in Sources */,
 				232D0E40287D8F480063D725 /* CardCollectionViewCell.swift in Sources */,
 				F6D3947F287D76F2004A7DBB /* ImageList+.swift in Sources */,
+				23450D6A2887D5A400A8FB70 /* DateModalViewController.swift in Sources */,
 				232D0E49287DEC380063D725 /* HashtagView.swift in Sources */,
 				F6F14A5C28854F730065D291 /* SearchViewController.swift in Sources */,
+				144456FF2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
