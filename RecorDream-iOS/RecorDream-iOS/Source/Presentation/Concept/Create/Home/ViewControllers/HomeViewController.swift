@@ -117,11 +117,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
-//        if indexPath.item > 0 {
-//            cell.update(plusAlpha: true, updateConst: true)
-//            cell.setCardView(dream: dreamCards[indexPath.item])
-//            cell.setHashtagStackView(genres: dreamCards[indexPath.item].genre, textColorNum: dreamCards[indexPath.item].dreamColor)
-//        }
+        
         if indexPath.item > 0 {
             cell.update(plusAlpha: true, updateConst: true)
         }

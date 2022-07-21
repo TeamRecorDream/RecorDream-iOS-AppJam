@@ -8,12 +8,10 @@
 import Foundation
 
 protocol Requestable: AnyObject {
-//    func request<T: Decodable>(_ request: NetworkRequest) async throws -> T?
     func request(_ request: NetworkRequest) async throws -> [Record]
 }
 
 final class APIManager: Requestable {
-//    func request<T>(_ request: NetworkRequest) async throws -> T? where T : Decodable {
     func request(_ request: NetworkRequest) async throws -> [Record] {
         guard let encodedURL = request.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL)
@@ -25,13 +23,7 @@ final class APIManager: Requestable {
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<500) ~= httpResponse.statusCode
         else { throw APIError.serverError }
-//
-//        let httpResponse = response as? HTTPURLResponse
-//
-//        if let jsonResponse = String(data: data, encoding: String.Encoding.utf8) {
-//            print("JSON String: (\(jsonResponse)")
-//        }
-        
+
         let decodedData = try JSONDecoder().decode(Record.self, from: data)
         
         if decodedData.success {
