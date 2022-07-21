@@ -68,9 +68,10 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
         
         cardStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(28)
+//            make.top.equalToSuperview().offset(28)
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().inset(22)
+            make.bottom.equalToSuperview().inset(156.adjustedHeight)
         }
         
         cardStackView.setCustomSpacing(12, after: contentLabel)
@@ -137,7 +138,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         hashtagStackView.subviews.forEach({
             $0.removeFromSuperview()
-        })
+        }) // 계속 덮어씌우고 있었던것. . .
         self.update(plusAlpha: true, updateConst: true)
     }
     
@@ -148,11 +149,17 @@ class CardCollectionViewCell: UICollectionViewCell {
             self.mainEmojiImage.snp.updateConstraints { make in
                 make.width.height.equalTo(38)
             }
+            self.cardStackView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().inset(140.adjustedHeight)
+            }
             contentLabel.font = TypoStyle.subtitle1.font
             dateLabel.font = TypoStyle.subtitle6.font
         } else {
             self.mainEmojiImage.snp.updateConstraints { make in
                 make.width.height.equalTo(48)
+            }
+            self.cardStackView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().inset(156.adjustedHeight)
             }
             contentLabel.font = TypoStyle.title1.font
             dateLabel.font = TypoStyle.subtitle1.font
