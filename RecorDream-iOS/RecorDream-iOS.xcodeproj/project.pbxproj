@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142058FC2888E8FE009511B2 /* Sicilian_Breeze.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 142058FB2888E8FE009511B2 /* Sicilian_Breeze.mp3 */; };
 		14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */; };
 		14243E11287FB81400CCE8A0 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */; };
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
@@ -119,7 +118,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142058FB2888E8FE009511B2 /* Sicilian_Breeze.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sicilian_Breeze.mp3; sourceTree = "<group>"; };
 		14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
@@ -306,8 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				233D3C3F2885A0CD00553605 /* Cell */,
-				2322D0872883EFA000DC5553 /* RecordHeaderView.swift */,
-				2322D0892883EFB100DC5553 /* RecordHeaderView.xib */,
 				233D3C3B288527E000553605 /* RecordDateBarView.swift */,
 				233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */,
 			);
@@ -390,7 +386,6 @@
 		F613C7CA287563A5005CB133 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				142058FB2888E8FE009511B2 /* Sicilian_Breeze.mp3 */,
 				F613C7CD287563D4005CB133 /* Fonts */,
 				F613C7BF28756181005CB133 /* Assets.xcassets */,
 				F613C7CE287563E8005CB133 /* Colors.xcassets */,
@@ -819,7 +814,6 @@
 				F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */,
 				144456FC2887A1B00023E090 /* TabPagerView.xib in Resources */,
 				14243E11287FB81400CCE8A0 /* MyPageViewController.xib in Resources */,
-				142058FC2888E8FE009511B2 /* Sicilian_Breeze.mp3 in Resources */,
 				14243E182880782300CCE8A0 /* TimeSettingViewController.xib in Resources */,
 				F6D39467287D41BF004A7DBB /* Pretendard-SemiBold.otf in Resources */,
 				F6F14A7C2886CC210065D291 /* dummySearchResultExist.json in Resources */,
