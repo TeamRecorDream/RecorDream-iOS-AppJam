@@ -17,11 +17,17 @@ class HomeViewController: BaseViewController {
     private let backgroundImage = UIImageView().then {
         $0.image = UIImage(named: ImageList.mainBackground.name)
     }
+    let dreamManager: HomeServiceable = DreamService(apiService: APIManager(), environment: .development)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupConstraints()
         setRecorDreamView() // TODO: - 꿈 기록 여부에 따라 view 바꾸기
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getDreamCard()
     }
     
     override func setHierarchy() {
@@ -60,5 +66,25 @@ class HomeViewController: BaseViewController {
         }
         
         recorDreamView.setUserNameView(name: "소진 하이", isEmpty: false) // TODO: - user name 넣기
+    }
+}
+
+extension HomeViewController {
+    func getDreamCard() {
+        print("...")
+        Task {
+            do {
+                print("!!@!@")
+                let dreams = try await dreamManager.getRecorDreamCard()
+                
+                    print("넘어왔나...?")
+                    print(dreams)
+                
+            } catch APIError.serverError {
+                print("server error")
+            } catch APIError.clientError(message: "하 씨") {
+                print("??")
+            }
+        }
     }
 }
