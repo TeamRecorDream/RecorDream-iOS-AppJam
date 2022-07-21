@@ -50,9 +50,9 @@ extension TabBarController: Presentable {
     
     @objc
     private func presentRecordView() {
-        let recordViewController = SampleViewController.instanceFromNib()
+        let recordViewController = RecordViewController()
         recordViewController.modalPresentationStyle = .fullScreen
-        self.present(recordViewController, animated: true)
+        self.present(recordViewController, animated: false)
     }
     
     private func setTabBarItems() {
