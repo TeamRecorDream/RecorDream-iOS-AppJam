@@ -7,8 +7,7 @@
 
 import UIKit
 
-protocol NavigationBarDelegate {
-    // MARK: - 기록하기 / 상세보기 뷰에서 쓰일 custom navigation bar에 사용되는 프로토콜
+protocol NavigationBarDelegate: AnyObject {
     func navigationBackButtonDidTap()
     func navigationMoreButtonDidTap()
 }
