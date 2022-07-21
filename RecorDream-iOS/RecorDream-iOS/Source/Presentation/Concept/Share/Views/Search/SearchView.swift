@@ -7,9 +7,6 @@
 
 import UIKit
 
-import SnapKit
-import Then
-
 final class SearchView: BaseView {
     // MARK: - Properties
     let navigationBarView = RecordHeaderView().then {
@@ -26,7 +23,7 @@ final class SearchView: BaseView {
         $0.backgroundColor = ColorType.lightBlue02.color
         $0.font = TypoStyle.title2.font
         $0.keyboardAppearance = .dark
-        $0.returnKeyType = .done    // TODO: - 뷰컨에서 완료버튼 누르면 키보드 내려가고, 검색 결과에 해당하는 셀 보여줌
+        $0.returnKeyType = .done
         $0.makeRoundedWithBorder(radius: 8, borderColor: ColorType.white04.color.cgColor)
         $0.textColor = ColorType.white01.color
     }
@@ -51,7 +48,7 @@ final class SearchView: BaseView {
         $0.showsVerticalScrollIndicator = false
     }
     
-    // MARK: - Functions
+    // MARK: - Render
     override func setupView() {
         self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage, searchResultTableView)
     }

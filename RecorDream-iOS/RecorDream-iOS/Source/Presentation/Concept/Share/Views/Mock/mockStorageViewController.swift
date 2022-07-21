@@ -1,20 +1,20 @@
 //
-//  ShareViewController.swift
+//  mockStorageViewController.swift
 //  RecorDream-iOS
 //
-//  Created by 정은희 on 2022/07/12.
+//  Created by 정은희 on 2022/07/21.
 //
 
 import UIKit
 
-class ShareViewController: BaseViewController {
+class mockStorageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
 
     /*
     // MARK: - Navigation
