@@ -6,17 +6,39 @@
 //
 
 import UIKit
+import UserNotifications
 
 import IQKeyboardManagerSwift
+import Firebase
+import FirebaseMessaging
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         sleep(UInt32(0.4))
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.enableAutoToolbar = false
+        
+        FirebaseApp.configure()
+        
+        requestAuthorization(application)
+        
+        //FCM 현재 등록 토큰 확인하기
+        Messaging.messaging().token{ token, error in
+            if let error = error {
+                print("EEEOR Token : \(error.localizedDescription)")
+            }else if let token = token {
+                print("FCM Token \(token)")
+            }
+        }
+        
         return true
     }
     
@@ -41,3 +63,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.list, .badge, .sound])
+    }
+    
+    private func requestAuthorization(_ application: UIApplication){
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) {_, error in
+            print("ERROR, Request Notifications Authorization: \(String(describing: error))")
+        }
+        application.registerForRemoteNotifications()
+    }
+}

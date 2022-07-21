@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1419CB462889315C003CBCC4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1419CB452889315C003CBCC4 /* SnapKit */; };
+		1419CB4B288935CC003CBCC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1419CB4A288935CC003CBCC4 /* GoogleService-Info.plist */; };
+		1419CB4E28893608003CBCC4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1419CB4D28893608003CBCC4 /* FirebaseAnalytics */; };
+		1419CB5028893608003CBCC4 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1419CB4F28893608003CBCC4 /* FirebaseAnalyticsSwift */; };
+		1419CB5228893608003CBCC4 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 1419CB5128893608003CBCC4 /* FirebaseMessaging */; };
 		14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */; };
 		14243E11287FB81400CCE8A0 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */; };
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
@@ -52,7 +57,6 @@
 		F613C7D8287564D2005CB133 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7D7287564D2005CB133 /* Constant.swift */; };
 		F613C7F328756A61005CB133 /* HeeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F228756A61005CB133 /* HeeKit */; };
 		F613C7F628756A98005CB133 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F528756A98005CB133 /* IQKeyboardManagerSwift */; };
-		F613C7F928756AA8005CB133 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7F828756AA8005CB133 /* SnapKit-Dynamic */; };
 		F613C7FC28756AB7005CB133 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F613C7FB28756AB7005CB133 /* Then */; };
 		F613C7FF2876D336005CB133 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7FE2876D336005CB133 /* BaseViewController.swift */; };
 		F613C8012876D356005CB133 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C8002876D356005CB133 /* BaseView.swift */; };
@@ -134,6 +138,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1419CB472889335D003CBCC4 /* RecorDream-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RecorDream-iOS.entitlements"; sourceTree = "<group>"; };
+		1419CB4A288935CC003CBCC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
@@ -248,9 +254,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1419CB5028893608003CBCC4 /* FirebaseAnalyticsSwift in Frameworks */,
 				F613C7F328756A61005CB133 /* HeeKit in Frameworks */,
+				1419CB5228893608003CBCC4 /* FirebaseMessaging in Frameworks */,
+				1419CB462889315C003CBCC4 /* SnapKit in Frameworks */,
 				F613C7F628756A98005CB133 /* IQKeyboardManagerSwift in Frameworks */,
-				F613C7F928756AA8005CB133 /* SnapKit-Dynamic in Frameworks */,
+				1419CB4E28893608003CBCC4 /* FirebaseAnalytics in Frameworks */,
 				F613C7FC28756AB7005CB133 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,9 +417,11 @@
 		F613C7B52875617E005CB133 /* RecorDream-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				1419CB472889335D003CBCC4 /* RecorDream-iOS.entitlements */,
 				F613C7CA287563A5005CB133 /* Resource */,
 				F613C7CB287563A9005CB133 /* Source */,
 				F613C7C428756181005CB133 /* Info.plist */,
+				1419CB4A288935CC003CBCC4 /* GoogleService-Info.plist */,
 			);
 			path = "RecorDream-iOS";
 			sourceTree = "<group>";
@@ -813,8 +824,11 @@
 			packageProductDependencies = (
 				F613C7F228756A61005CB133 /* HeeKit */,
 				F613C7F528756A98005CB133 /* IQKeyboardManagerSwift */,
-				F613C7F828756AA8005CB133 /* SnapKit-Dynamic */,
 				F613C7FB28756AB7005CB133 /* Then */,
+				1419CB452889315C003CBCC4 /* SnapKit */,
+				1419CB4D28893608003CBCC4 /* FirebaseAnalytics */,
+				1419CB4F28893608003CBCC4 /* FirebaseAnalyticsSwift */,
+				1419CB5128893608003CBCC4 /* FirebaseMessaging */,
 			);
 			productName = "RecorDream-iOS";
 			productReference = F613C7B32875617E005CB133 /* RecorDream-iOS.app */;
@@ -867,8 +881,9 @@
 			packageReferences = (
 				F613C7F128756A61005CB133 /* XCRemoteSwiftPackageReference "HeeKit" */,
 				F613C7F428756A98005CB133 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
-				F613C7F728756AA8005CB133 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F613C7FA28756AB7005CB133 /* XCRemoteSwiftPackageReference "Then" */,
+				1419CB442889315C003CBCC4 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1419CB4C28893608003CBCC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F613C7B42875617E005CB133 /* Products */;
 			projectDirPath = "";
@@ -898,6 +913,7 @@
 				F6D39467287D41BF004A7DBB /* Pretendard-SemiBold.otf in Resources */,
 				F6F14A7C2886CC210065D291 /* dummySearchResultExist.json in Resources */,
 				F6D39461287D41BF004A7DBB /* Pretendard-ExtraBold.otf in Resources */,
+				1419CB4B288935CC003CBCC4 /* GoogleService-Info.plist in Resources */,
 				F6F14A68288584E70065D291 /* SearchResultTableViewCell.xib in Resources */,
 				F6F14AB528872D290065D291 /* FilterCollectionViewCell.xib in Resources */,
 				F6F14AB128872B390065D291 /* ListCollectionViewCell.xib in Resources */,
@@ -1154,6 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RecorDream-iOS/RecorDream-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 272QNH7NKN;
@@ -1171,7 +1188,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.recordream.corp.RecorDream-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.recordream.corp.RecorDream-iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1184,6 +1201,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RecorDream-iOS/RecorDream-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 272QNH7NKN;
@@ -1201,7 +1219,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.recordream.corp.RecorDream-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.recordream.corp.RecorDream-iOS-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1276,6 +1294,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1419CB442889315C003CBCC4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		1419CB4C28893608003CBCC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		F613C7F128756A61005CB133 /* XCRemoteSwiftPackageReference "HeeKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/EunHee-Jeong/HeeKit.git";
@@ -1292,14 +1326,6 @@
 				kind = branch;
 			};
 		};
-		F613C7F728756AA8005CB133 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		F613C7FA28756AB7005CB133 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
@@ -1311,6 +1337,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1419CB452889315C003CBCC4 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1419CB442889315C003CBCC4 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1419CB4D28893608003CBCC4 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1419CB4C28893608003CBCC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1419CB4F28893608003CBCC4 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1419CB4C28893608003CBCC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		1419CB5128893608003CBCC4 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1419CB4C28893608003CBCC4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		F613C7F228756A61005CB133 /* HeeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F613C7F128756A61005CB133 /* XCRemoteSwiftPackageReference "HeeKit" */;
@@ -1320,11 +1366,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F613C7F428756A98005CB133 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
-		};
-		F613C7F828756AA8005CB133 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F613C7F728756AA8005CB133 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		F613C7FB28756AB7005CB133 /* Then */ = {
 			isa = XCSwiftPackageProductDependency;

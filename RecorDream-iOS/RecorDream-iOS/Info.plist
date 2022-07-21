@@ -23,8 +23,6 @@
 		<string>Pretendard-Bold.otf</string>
 		<string>Pretendard-Black.otf</string>
 	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
