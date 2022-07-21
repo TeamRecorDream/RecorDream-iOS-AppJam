@@ -8,19 +8,19 @@
 import Foundation
 
 protocol ShareServiceable {
-    func getSearchingKeyword(keyword: String) async throws -> [SearchResult]?
+    func getSearchingKeyword(keyword: String) async throws -> [SearchResponse]?
 }
 
 struct ShareService: ShareServiceable {
-    private let apiService: Requestable
+    private let apiService: ShareRequestable
     private let environment: APIEnvironment
     
-    init(apiService: Requestable, environment: APIEnvironment) {
+    init(apiService: ShareRequestable, environment: APIEnvironment) {
         self.apiService = apiService
         self.environment = environment
     }
     
-    func getSearchingKeyword(keyword: String) async throws -> [SearchResult]? {
+    func getSearchingKeyword(keyword: String) async throws -> [SearchResponse]? {
         let request = ShareEndPoint
             .getSearchingKeyword(keyword: keyword)
             .sendRequest(environment: environment)
