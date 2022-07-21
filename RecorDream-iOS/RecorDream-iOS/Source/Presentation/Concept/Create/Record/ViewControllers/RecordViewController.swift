@@ -417,7 +417,6 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     func navigationBackButtonDidTap() {
         let tabBarController = TabBarController()
         navigationController?.pushViewController(tabBarController, animated: true)
-        //이거 왜 안됨??
     }
     
     func navigationMoreButtonDidTap() {}
