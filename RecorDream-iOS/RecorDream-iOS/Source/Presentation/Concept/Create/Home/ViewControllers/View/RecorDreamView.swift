@@ -45,11 +45,6 @@ class RecorDreamView: BaseView {
         $0.showsHorizontalScrollIndicator = false
     }
     
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setDelegate()
-//    }
-    
     override func setupView() {
         super.setupView()
         addSubviews(userNameView, carouselCollectionView)
@@ -64,7 +59,7 @@ class RecorDreamView: BaseView {
         }
         
         carouselCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(userNameView.snp.bottom).offset(42)
+            make.top.equalTo(userNameView.snp.bottom).offset(42.adjustedHeight)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(TypeConst.itemSize.height)
         }

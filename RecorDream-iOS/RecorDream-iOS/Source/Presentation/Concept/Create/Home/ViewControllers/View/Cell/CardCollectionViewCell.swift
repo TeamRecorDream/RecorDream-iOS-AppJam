@@ -77,7 +77,8 @@ class CardCollectionViewCell: UICollectionViewCell {
         cardStackView.setCustomSpacing(12, after: contentLabel)
         
         mainEmojiImage.snp.makeConstraints { make in
-            make.width.height.equalTo(48)
+            make.width.equalTo(48.adjustedWidth)
+            make.height.equalTo(48.adjustedHeight)
             make.leading.equalToSuperview()
             make.top.equalToSuperview()
         }
@@ -109,7 +110,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                 hashtagStackView.addArrangedSubview(hashtagView)
                 
                 hashtagView.snp.makeConstraints { make in
-                    make.height.equalTo(24)
+                    make.height.equalTo(24.adjustedHeight)
                 }
             }
         } else if !genres.contains(10) {
@@ -119,7 +120,7 @@ class CardCollectionViewCell: UICollectionViewCell {
             hashtagStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
-                make.height.equalTo(24)
+                make.height.equalTo(24.adjustedHeight)
             }
         } else {
             assert(genres.count >= 0 , "The number of genres must be 0 or more")
@@ -147,7 +148,8 @@ class CardCollectionViewCell: UICollectionViewCell {
     
         if updateConst {
             self.mainEmojiImage.snp.updateConstraints { make in
-                make.width.height.equalTo(38)
+                make.width.equalTo(38.adjustedWidth)
+                make.height.equalTo(38.adjustedHeight)
             }
             self.cardStackView.snp.updateConstraints { make in
                 make.bottom.equalToSuperview().inset(140.adjustedHeight)
@@ -156,7 +158,8 @@ class CardCollectionViewCell: UICollectionViewCell {
             dateLabel.font = TypoStyle.subtitle6.font
         } else {
             self.mainEmojiImage.snp.updateConstraints { make in
-                make.width.height.equalTo(48)
+                make.width.equalTo(48.adjustedWidth)
+                make.height.equalTo(48.adjustedHeight)
             }
             self.cardStackView.snp.updateConstraints { make in
                 make.bottom.equalToSuperview().inset(156.adjustedHeight)
