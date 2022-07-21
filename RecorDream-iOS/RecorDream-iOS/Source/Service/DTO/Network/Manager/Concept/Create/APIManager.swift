@@ -25,7 +25,6 @@ final class APIManager: Requestable {
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<500) ~= httpResponse.statusCode
         else { throw APIError.serverError }
-        // 걸렀음
 //
 //        let httpResponse = response as? HTTPURLResponse
 //
@@ -35,11 +34,7 @@ final class APIManager: Requestable {
         
         let decodedData = try JSONDecoder().decode(Record.self, from: data)
         
-//        print("plz")
-        print(decodedData)
-        
         if decodedData.success {
-//            print(decodedData.data)
             return [decodedData]
         } else {
             throw APIError.clientError(message: decodedData.message)

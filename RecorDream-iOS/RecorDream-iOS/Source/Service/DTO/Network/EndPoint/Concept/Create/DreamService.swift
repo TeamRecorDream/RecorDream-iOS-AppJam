@@ -24,6 +24,6 @@ struct DreamService: HomeServiceable {
         let request = DreamEndPoint
             .getRecorDreamCard
             .sendRequest(environment: environment)
-        return try await self.apiService.request(request) as! [Record] // 여기
+        return try await self.apiService.request(request)
     }
 }
