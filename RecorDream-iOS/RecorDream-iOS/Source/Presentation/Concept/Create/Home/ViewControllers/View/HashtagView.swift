@@ -55,10 +55,10 @@ class HashtagView: BaseView {
         }
     }
     
-    func setLabelText(text: String, textColor: String, textBackgroundColor: String, textTypo: UIFont) {
+    func setLabelText(text: String, textColorNum: Int, textBackgroundColor: String, textTypo: UIFont) {
         paddingLabel.backgroundColor = UIColor(named: textBackgroundColor)
         paddingLabel.text = text
-        paddingLabel.textColor = UIColor(named: textColor)
+        paddingLabel.textColor = UIColor(named: Constant.TextColor.IntType(textColorNum).title)
         paddingLabel.font = textTypo
     }
     
