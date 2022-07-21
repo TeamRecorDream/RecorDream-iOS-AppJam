@@ -20,6 +20,7 @@ extension EndPoint {
         var headers: [String: String] = [:]
         headers["Content-Type"] = "application/json"
         headers["accesstoken"] = environment.token
+        headers["userId"] = "1"
         
         return NetworkRequest(url: setURL(from: environment),
                               httpMethod: method,

@@ -15,7 +15,7 @@ final class SearchFooterTableViewCell: UITableViewHeaderFooterView, Presentable 
         $0.image = ImageList.rdLogoGrey.image
     }
     
-    // MARK: - Functions
+    // MARK: - Render
     func setupView() {
         self.contentView.addSubview(logoImageView)
     }

@@ -1,5 +1,5 @@
 //
-//  SearchResultExsit.swift
+//  SearchResult.swift
 //  RecorDream-iOS
 //
 //  Created by 정은희 on 2022/07/19.
@@ -7,10 +7,17 @@
 
 import UIKit
 
-struct SearchResultExsit: Codable {
+struct SearchResponse: Codable {
+    let status: Int
+    let success: Bool
+    let message: String
+    let data: [SearchResult]?
+}
+
+struct SearchResult: Codable {
     let recordsCount: Int
-    let records: [SearchExist]?
-    
+    var records: [SearchExist]?
+
     enum CodingKeys: String, CodingKey {
         case recordsCount = "records_count"
         case records
@@ -24,7 +31,7 @@ struct SearchExist: Codable {
     let date: String
     let title: String
     let genreNum: [GenreNumber]?
-    
+
     enum CodingKeys: String, CodingKey {
         case recordID = "_id"
         case dreamColor = "dream_color"

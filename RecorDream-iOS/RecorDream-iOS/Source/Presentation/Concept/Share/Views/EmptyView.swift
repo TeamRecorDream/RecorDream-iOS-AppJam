@@ -11,8 +11,7 @@ import SnapKit
 import Then
 
 extension UITableView {
-    func setEmptyView(message: String) {
-        // MARK: - Properties
+    func searchEmptyView(message: String) {
         let emptyView = UIView().then {
             $0.frame = CGRect(
                 x: self.center.x,
