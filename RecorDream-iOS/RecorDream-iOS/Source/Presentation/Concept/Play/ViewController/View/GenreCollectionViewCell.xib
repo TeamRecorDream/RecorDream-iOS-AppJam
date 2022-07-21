@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GenreCollectionViewCell" id="gTV-IL-0wX" customClass="GenreCollectionViewCell" customModule="RecorDream_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="102" height="24"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="102" height="24"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# 가족/친구" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ce2-yc-86u">
+                        <rect key="frame" x="4" y="4" width="94" height="16"/>
+                        <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
+                        <color key="textColor" name="sub_green01"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="white01"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ce2-yc-86u" secondAttribute="trailing" constant="4" id="HoK-Yx-h7a"/>
+                <constraint firstAttribute="bottom" secondItem="ce2-yc-86u" secondAttribute="bottom" constant="4" id="ZTu-bB-8Dv"/>
+                <constraint firstItem="ce2-yc-86u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="oJV-CE-cTI"/>
+                <constraint firstItem="ce2-yc-86u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="soE-mt-v9d"/>
+            </constraints>
+            <size key="customSize" width="102" height="24"/>
+            <connections>
+                <outlet property="genreLabel" destination="ce2-yc-86u" id="od8-Qk-AgF"/>
+            </connections>
+            <point key="canvasLocation" x="165.21739130434784" y="109.82142857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="sub_green01">
+            <color red="0.14900000393390656" green="0.75700002908706665" blue="0.47499999403953552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white01">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

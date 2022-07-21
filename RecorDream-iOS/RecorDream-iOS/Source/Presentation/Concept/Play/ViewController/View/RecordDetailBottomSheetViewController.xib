@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.otf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordDetailBottomSheetViewController" customModule="RecorDream_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomSheetHeight" destination="aIh-47-J04" id="E58-OT-niq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iig-4L-45L">
+                    <rect key="frame" x="0.0" y="542" width="375" height="270"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4aQ-7t-DT2">
+                            <rect key="frame" x="0.0" y="22" width="375" height="169"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1e6-4z-4u2">
+                                    <rect key="frame" x="163" y="0.0" width="49" height="29"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="공유하기">
+                                        <color key="titleColor" name="white01"/>
+                                    </state>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jl1-7R-CGx">
+                                    <rect key="frame" x="0.0" y="49" width="375" height="1"/>
+                                    <color key="backgroundColor" name="light_blue02"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="x4g-Df-buW"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hef-pJ-6Xz">
+                                    <rect key="frame" x="163" y="70" width="49" height="29"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="수정하기">
+                                        <color key="titleColor" name="white01"/>
+                                    </state>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdu-wP-goO">
+                                    <rect key="frame" x="0.0" y="119" width="375" height="1"/>
+                                    <color key="backgroundColor" name="light_blue02"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="pC8-Rk-EwU"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFx-F3-6BM">
+                                    <rect key="frame" x="163" y="140" width="49" height="29"/>
+                                    <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="14"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="삭제하기">
+                                        <color key="titleColor" name="white01"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Wdu-wP-goO" secondAttribute="trailing" id="NrR-Gx-daZ"/>
+                                <constraint firstItem="Wdu-wP-goO" firstAttribute="leading" secondItem="4aQ-7t-DT2" secondAttribute="leading" id="VhO-ER-Fqf"/>
+                                <constraint firstItem="jl1-7R-CGx" firstAttribute="leading" secondItem="4aQ-7t-DT2" secondAttribute="leading" id="fkE-Jn-yk0"/>
+                                <constraint firstAttribute="trailing" secondItem="jl1-7R-CGx" secondAttribute="trailing" id="lKK-hM-1oJ"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="dark_blue02"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="4aQ-7t-DT2" secondAttribute="trailing" id="I0K-h9-niR"/>
+                        <constraint firstItem="4aQ-7t-DT2" firstAttribute="top" secondItem="Iig-4L-45L" secondAttribute="top" constant="22" id="WnZ-cu-faZ"/>
+                        <constraint firstAttribute="height" constant="270" id="aIh-47-J04"/>
+                        <constraint firstItem="4aQ-7t-DT2" firstAttribute="leading" secondItem="Iig-4L-45L" secondAttribute="leading" id="iuh-Zv-WcE"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.0" green="0.0040000001900000002" blue="0.09799999744" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Iig-4L-45L" secondAttribute="trailing" id="6xT-aS-BGB"/>
+                <constraint firstAttribute="bottom" secondItem="Iig-4L-45L" secondAttribute="bottom" id="81Q-QK-CHK"/>
+                <constraint firstItem="Iig-4L-45L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dyc-b8-bKS"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="88.669950738916256"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="dark_blue02">
+            <color red="0.097999997437000275" green="0.10199999809265137" blue="0.18799999356269836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light_blue02">
+            <color red="0.79600000381469727" green="0.83499997854232788" blue="0.88200002908706665" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white01">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
