@@ -17,7 +17,7 @@ class HomeViewController: BaseViewController {
     private let backgroundImage = UIImageView().then {
         $0.image = UIImage(named: ImageList.mainBackground.name)
     }
-    let dreamManager: HomeServiceable = DreamService(apiService: APIManager(), environment: .development)
+    let dreamManager: HomeServiceable = DreamService(apiService: CreateAPIManager(), environment: .development)
     var dreamCards: [RecordElement] = []{
         didSet {
             recorDreamView.carouselCollectionView.reloadData()
@@ -104,12 +104,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var width = TypeConst.smallItemSize.width
-        var height = TypeConst.smallItemSize.height
+        var width = TypeConst.smallItemSize.width.adjustedWidth
+        var height = TypeConst.smallItemSize.height.adjustedHeight
 
         if indexPath.item == recorDreamView.cellIndex {
-            width = TypeConst.itemSize.width
-            height = TypeConst.itemSize.height
+            width = TypeConst.itemSize.width.adjustedWidth
+            height = TypeConst.itemSize.height.adjustedHeight
         }
 
         return CGSize(width: width, height: height)
@@ -150,7 +150,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 recorDreamView.carouselCollectionView.performBatchUpdates(nil, completion: { _ in
                     self.recorDreamView.carouselCollectionView.reloadData()
                 })
-                // cell size 가 Batch로 바뀌는데 ,batch는 크기만 관여. data는 관여하지 않음. reloadData는 delegate 함수가 동작됨. perform은 크기만 관여해서 update문이 실행이 안됐던것임
             }
         }
     

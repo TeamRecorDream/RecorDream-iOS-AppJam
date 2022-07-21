@@ -11,7 +11,7 @@ protocol Requestable: AnyObject {
     func request(_ request: NetworkRequest) async throws -> [Record]
 }
 
-final class APIManager: Requestable {
+final class CreateAPIManager: Requestable {
     func request(_ request: NetworkRequest) async throws -> [Record] {
         guard let encodedURL = request.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL)

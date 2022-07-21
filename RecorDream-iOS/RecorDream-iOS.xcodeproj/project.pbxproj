@@ -100,9 +100,8 @@
 		F6F14A7E2886CC570065D291 /* SearchResultDummyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */; };
 		F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A882886F47F0065D291 /* HTTPMethod.swift */; };
 		F6F14A8B2886F4D20065D291 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */; };
-		F6F14A8D2886F5A60065D291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8C2886F5A60065D291 /* APIManager.swift */; };
+		F6F14A8D2886F5A60065D291 /* CreateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8C2886F5A60065D291 /* CreateAPIManager.swift */; };
 		F6F14A8F2886F5DC0065D291 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8E2886F5DC0065D291 /* APIError.swift */; };
-		F6F14A912886F6120065D291 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A902886F6120065D291 /* BaseModel.swift */; };
 		F6F14A932886F7910065D291 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A922886F7910065D291 /* APIEnvironment.swift */; };
 		F6F14A992886FB230065D291 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A982886FB230065D291 /* EndPoint.swift */; };
 /* End PBXBuildFile section */
@@ -184,9 +183,8 @@
 		F6F14A7D2886CC570065D291 /* SearchResultDummyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultDummyModel.swift; sourceTree = "<group>"; };
 		F6F14A882886F47F0065D291 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		F6F14A8C2886F5A60065D291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6F14A8C2886F5A60065D291 /* CreateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPIManager.swift; sourceTree = "<group>"; };
 		F6F14A8E2886F5DC0065D291 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		F6F14A902886F6120065D291 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F6F14A922886F7910065D291 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		F6F14A982886FB230065D291 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,7 +307,7 @@
 		2342268328892B150065E8A2 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				F6F14A8C2886F5A60065D291 /* APIManager.swift */,
+				F6F14A8C2886F5A60065D291 /* CreateAPIManager.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -652,7 +650,6 @@
 				F6F14A882886F47F0065D291 /* HTTPMethod.swift */,
 				F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */,
 				F6F14A8E2886F5DC0065D291 /* APIError.swift */,
-				F6F14A902886F6120065D291 /* BaseModel.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -838,7 +835,6 @@
 			files = (
 				F6D3944D287D4164004A7DBB /* ShareViewController.swift in Sources */,
 				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
-				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
@@ -865,7 +861,7 @@
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
 				F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */,
-				F6F14A8D2886F5A60065D291 /* APIManager.swift in Sources */,
+				F6F14A8D2886F5A60065D291 /* CreateAPIManager.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F6F14A732886A18F0065D291 /* SearchResultNone.swift in Sources */,
 				F6F14A932886F7910065D291 /* APIEnvironment.swift in Sources */,
