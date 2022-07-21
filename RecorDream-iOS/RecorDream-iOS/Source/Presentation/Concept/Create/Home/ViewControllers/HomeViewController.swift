@@ -117,12 +117,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.reuseIdentifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
-        
-        if indexPath.item > 0 {
-            cell.update(plusAlpha: true, updateConst: true)
-        }
+  
         cell.setCardView(dream: dreamCards[indexPath.item])
         cell.setHashtagStackView(genres: dreamCards[indexPath.item].genre, textColorNum: dreamCards[indexPath.item].dreamColor)
+        
+        if indexPath.item == recorDreamView.cellIndex {
+            cell.update(plusAlpha: false, updateConst: false)
+        } else {
+            cell.update(plusAlpha: true, updateConst: true)
+        }
+
         return cell
     }
     
@@ -143,21 +147,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let b = CGFloat(Int(a) + 132 + 55)
             if x > a && x < b {
                 recorDreamView.cellIndex = i
-                recorDreamView.carouselCollectionView.performBatchUpdates(nil)
+                recorDreamView.carouselCollectionView.performBatchUpdates(nil, completion: { _ in
+                    self.recorDreamView.carouselCollectionView.reloadData()
+                })
+                // cell size 가 Batch로 바뀌는데 ,batch는 크기만 관여. data는 관여하지 않음. reloadData는 delegate 함수가 동작됨. perform은 크기만 관여해서 update문이 실행이 안됐던것임
             }
-        }
-        
-        let indexPath = IndexPath(item: Int(recorDreamView.cellIndex), section: 0)
-        if let cell = recorDreamView.carouselCollectionView.cellForItem(at: indexPath) as? CardCollectionViewCell {
-            cell.update(plusAlpha: false, updateConst: false)
-        }
-        
-        if Int(recorDreamView.cellIndex) != recorDreamView.previousIndex {
-            let preIndexPath = IndexPath(item: recorDreamView.previousIndex, section: 0)
-            if let preCell = recorDreamView.carouselCollectionView.cellForItem(at: preIndexPath) as? CardCollectionViewCell {
-                preCell.update(plusAlpha: true, updateConst: false)
-            }
-            recorDreamView.previousIndex = indexPath.item
         }
     
     }

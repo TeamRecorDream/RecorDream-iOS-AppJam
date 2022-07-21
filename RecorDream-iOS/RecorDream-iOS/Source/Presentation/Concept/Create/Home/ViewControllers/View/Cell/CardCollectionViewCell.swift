@@ -135,6 +135,9 @@ class CardCollectionViewCell: UICollectionViewCell {
     //MARK: - prepare function
     override func prepareForReuse() {
         super.prepareForReuse()
+        hashtagStackView.subviews.forEach({
+            $0.removeFromSuperview()
+        })
         self.update(plusAlpha: true, updateConst: true)
     }
     
