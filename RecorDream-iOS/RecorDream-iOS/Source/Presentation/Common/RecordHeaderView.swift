@@ -14,8 +14,14 @@ class RecordHeaderView: BaseView {
     // MARK: - Properties
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var underLineView: UIView!
     @IBOutlet weak var moreButton: UIButton!
     var delegate: NavigationBarDelegate?
+    var isHiddenUnderLine: Bool = false {
+        didSet {
+            self.underLineView.isHidden = isHiddenUnderLine
+        }
+    }
     
     override func setupView() {
         guard let headerView = UINib(nibName: "RecordHeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView else { return }

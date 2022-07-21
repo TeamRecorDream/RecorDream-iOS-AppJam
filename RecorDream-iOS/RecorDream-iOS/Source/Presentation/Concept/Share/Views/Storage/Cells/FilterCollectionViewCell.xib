@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterCollectionViewCell" customModule="RecorDream_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US4-EV-MvP">
+                        <rect key="frame" x="0.0" y="1" width="50" height="48"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="emoji_sad"/>
+                        <connections>
+                            <action selector="FilterButtonDidTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bPN-UC-L1S"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="US4-EV-MvP" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Jzd-4E-JHO"/>
+                <constraint firstItem="US4-EV-MvP" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:1" id="pRG-sb-gag"/>
+                <constraint firstItem="US4-EV-MvP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xy7-KI-Igj"/>
+            </constraints>
+            <connections>
+                <outlet property="filterButton" destination="US4-EV-MvP" id="VIs-gu-zRO"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="emoji_sad" width="48" height="48"/>
+    </resources>
+</document>

@@ -10,33 +10,8 @@ import UIKit
 import SnapKit
 import Then
 
-class BasePaddingLabel: UILabel {
-    var padding = UIEdgeInsets(top: 3.0, left: 6.0, bottom: 3.0, right: 6.0)
-
-    convenience init(padding: UIEdgeInsets) {
-        self.init()
-        self.padding = padding
-    }
-
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: padding))
-    }
-
-    override var intrinsicContentSize: CGSize {
-        var contentSize = super.intrinsicContentSize
-        contentSize.height += padding.top + padding.bottom
-        contentSize.width += padding.left + padding.right
-
-        return contentSize
-    }
-    
-    func setPadding(padding: UIEdgeInsets) {
-        self.padding = padding
-    }
-}
-
 class HashtagView: BaseView {
-    lazy var paddingLabel = BasePaddingLabel().then {
+    lazy var paddingLabel = BasePaddingLabel.init(padding: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)).then {
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 3
     }

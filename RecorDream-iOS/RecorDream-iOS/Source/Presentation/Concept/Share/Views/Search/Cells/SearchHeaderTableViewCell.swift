@@ -17,7 +17,7 @@ final class SearchHeaderTableViewCell: UITableViewHeaderFooterView, Presentable 
         $0.sizeToFit()
     }
     
-    // MARK: - Functions
+    // MARK: - Render
     func setupView() {
         self.contentView.addSubview(recordCountLabel)
     }
