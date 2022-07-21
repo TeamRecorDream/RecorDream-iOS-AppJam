@@ -12,10 +12,10 @@ protocol HomeServiceable {
 }
 
 struct DreamService: HomeServiceable {
-    private let apiService: Requestable
+    private let apiService: CreateRequestable
     private let environment: APIEnvironment
     
-    init(apiService: Requestable, environment: APIEnvironment) {
+    init(apiService: CreateRequestable, environment: APIEnvironment) {
         self.apiService = apiService
         self.environment = environment
     }

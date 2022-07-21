@@ -12,7 +12,7 @@ class SearchViewController: BaseViewController {
     private let searchView = SearchView()
     private var searchedCount: Int = 0
     private var searchedLists: [SearchExist] = []
-    private let searchManager: ShareServiceable = ShareService(apiService: APIManager(), environment: .development)
+    private let searchManager: ShareServiceable = ShareService(apiService: ShareAPIManager(), environment: .development)
 //    private var listDataSource: UITableViewDiffableDataSource<Search, Exist>!
 //    private var listSnapShot: NSDiffableDataSourceSnapshot<Search, Exist>!
 //    private var existSample = SearchResultExsit.existSampleData
