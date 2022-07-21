@@ -50,15 +50,20 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jxO-pP-1ah">
                                                                 <rect key="frame" x="0.0" y="17.666666666666671" width="74.666666666666671" height="32"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyj-s9-ASp">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyj-s9-ASp">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="Iyj-s9-ASp" secondAttribute="height" multiplier="1:1" id="IGs-Gc-DDe"/>
                                                                             <constraint firstAttribute="height" constant="32" id="J8b-71-7Ux"/>
                                                                         </constraints>
-                                                                        <color key="tintColor" name="white01"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" image="icn_doc_play"/>
+                                                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="Button" image="icn_doc_play">
+                                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="didTapAudioPlayButton:" destination="U6E-Hd-ivU" eventType="touchUpInside" id="vkB-gH-FgG"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9y-WU-VG3">
                                                                         <rect key="frame" x="35" y="0.0" width="39.666666666666657" height="32"/>
@@ -73,7 +78,7 @@
                                                                 <color key="progressTintColor" name="sub_purple01"/>
                                                                 <color key="trackTintColor" name="black02"/>
                                                             </progressView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-Bj-8uA">
+                                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-Bj-8uA">
                                                                 <rect key="frame" x="316" y="17.666666666666671" width="32" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="C3o-Bj-8uA" secondAttribute="height" multiplier="1:1" id="5FY-2x-ED3"/>
@@ -81,6 +86,9 @@
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="icn_replay" title=""/>
+                                                                <connections>
+                                                                    <action selector="didTapAudioReplayButton:" destination="U6E-Hd-ivU" eventType="touchUpInside" id="ae8-3I-tLf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -159,9 +167,13 @@
                 <constraint firstAttribute="trailing" secondItem="tQ2-DD-lVu" secondAttribute="trailing" id="rdU-l5-ysz"/>
             </constraints>
             <connections>
+                <outlet property="audioPlayButton" destination="Iyj-s9-ASp" id="Zuw-Cq-Dv5"/>
+                <outlet property="audioPlayProgressView" destination="2wh-M2-tfC" id="f4r-Ju-ZNp"/>
                 <outlet property="audioPlayStackViewHeight" destination="fsY-Ht-DEl" id="zRX-d6-n18"/>
                 <outlet property="audioPlayView" destination="21I-5c-prf" id="aex-16-NGD"/>
+                <outlet property="audioReplayButton" destination="C3o-Bj-8uA" id="AXZ-XE-TOW"/>
                 <outlet property="contentTextView" destination="Ydq-XA-plW" id="an8-Aj-FiE"/>
+                <outlet property="cuttentTimeLabel" destination="F9y-WU-VG3" id="Iak-7B-V7u"/>
                 <outlet property="middleBarView" destination="eNJ-8E-PvJ" id="ZMA-Ed-9jj"/>
             </connections>
             <point key="canvasLocation" x="131.19999999999999" y="75.369458128078819"/>
