@@ -68,6 +68,7 @@
 		F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF31288307C800E5B19C /* TabBarItem.swift */; };
 		F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF3328830B9100E5B19C /* SampleViewController.swift */; };
 		F62CDF3628830B9100E5B19C /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62CDF3428830B9100E5B19C /* SampleViewController.xib */; };
+		F695166D288A479B000F88D7 /* mockStorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695166C288A479B000F88D7 /* mockStorageModel.swift */; };
 		F6D3944D287D4164004A7DBB /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3944C287D4164004A7DBB /* StorageViewController.swift */; };
 		F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
 		F6D39458287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
@@ -198,6 +199,7 @@
 		F62CDF31288307C800E5B19C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		F62CDF3328830B9100E5B19C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		F62CDF3428830B9100E5B19C /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		F695166C288A479B000F88D7 /* mockStorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mockStorageModel.swift; path = ../../../../../../../../../../../Downloads/mockStorageModel.swift; sourceTree = "<group>"; };
 		F6D3944C287D4164004A7DBB /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F6D3944F287D41BE004A7DBB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -694,7 +696,6 @@
 		F6F14A5F28857D970065D291 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F6F14AC6288918C20065D291 /* Mock */,
 				F6F14A6028857DB50065D291 /* Cells */,
 				F6F14A5B28854F730065D291 /* SearchViewController.swift */,
 				F6F14A5D28854F980065D291 /* SearchView.swift */,
@@ -835,13 +836,7 @@
 			children = (
 				F6F14AC7288918E50065D291 /* mockStorageViewController.swift */,
 				F6F14AC8288918E50065D291 /* mockStorageViewController.xib */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
-		F6F14AC6288918C20065D291 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
+				F695166C288A479B000F88D7 /* mockStorageModel.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1001,6 +996,8 @@
 				F6F14A9B28871E480065D291 /* StorageResultExist.swift in Sources */,
 				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
 				F6F14AB428872D290065D291 /* FilterCollectionViewCell.swift in Sources */,
+				F695166D288A479B000F88D7 /* mockStorageModel.swift in Sources */,
+				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,

@@ -59,7 +59,7 @@ extension TabBarController: Presentable {
         tabs = [
             UINavigationController(rootViewController: HomeViewController()),
             UINavigationController(rootViewController: emptyViewController),
-            UINavigationController(rootViewController: emptyViewController)
+            UINavigationController(rootViewController: mockStorageViewController.instanceFromNib())
         ]
         TabBarItem.allCases.forEach {
             tabs[$0.rawValue].tabBarItem = $0.asTabBarItem()
