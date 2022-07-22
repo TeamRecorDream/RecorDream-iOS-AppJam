@@ -27,7 +27,7 @@ extension APIEnvironment {
         }
     }
     
-    var token: String {
-        return ""   // TODO: - 윤휘 토큰 발급 받으면 넣어주기!
+    static var token: String {
+        return ""   // TODO: - 실행 시 토큰 넣어주기
     }
 }

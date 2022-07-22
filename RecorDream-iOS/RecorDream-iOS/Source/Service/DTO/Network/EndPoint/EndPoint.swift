@@ -19,7 +19,7 @@ extension EndPoint {
     func sendRequest(environment: APIEnvironment) -> NetworkRequest {
         var headers: [String: String] = [:]
         headers["Content-Type"] = "application/json"
-        headers["accesstoken"] = environment.token
+        headers["accesstoken"] = APIEnvironment.token
         headers["userId"] = "1"
         
         return NetworkRequest(url: setURL(from: environment),

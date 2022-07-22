@@ -9,17 +9,29 @@ import UIKit
 
 class RecordDetailViewController: BaseViewController {
     @IBOutlet weak var genreCollectionView: UICollectionView!
+    @IBOutlet weak var tabPagerView: TabPagerView!
     @IBOutlet weak var emotionImage: UIImageView!
+    @IBOutlet weak var cardView: UIImageView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     private var headerView = RecordHeaderView()
     //TODO: - 서버 연결 시 사용할 프로퍼티
     private var genres = [8, 4, 1]
     private var dreamColor = 1
     private var emotion = 2
+    private var recordTitle = ""
+    private var recordDate = ""
+    var recordID: String? //TODO: - 화면 전환 시 기록 고유 번호 할당해주기
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestRecordDetail()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configureView()
         configureGenreView()
         configureHeaderView()
@@ -27,6 +39,8 @@ class RecordDetailViewController: BaseViewController {
     
     private func configureView(){
         self.emotionImage.image = UIImage(named: Constant.Emotion.IntType(emotion).title)
+        self.titleLabel.text = recordTitle
+        self.dateLabel.text = recordDate
     }
     
     private func configureHeaderView(){
@@ -96,5 +110,31 @@ extension  RecordDetailViewController: NavigationBarDelegate {
     
     func navigationBackButtonDidTap() {
         
+    }
+}
+
+//MARK: - Network
+extension RecordDetailViewController {
+    private func requestRecordDetail() {
+        recordID = "62d7bd159669f53b6c72a8e3" //TODO: - 임시 기록 고유 번호
+        guard let recordID = recordID else { return }
+        RecordDetailService.shared.getRecordDetial(recordID: recordID, completionHandler: { [weak self] recordDetail in
+            guard let self = self else { return }
+            print("111")
+            guard let recordDetail = recordDetail as? RecordDetailModel else { return }
+            self.emotion = recordDetail.emotion
+            self.dreamColor = recordDetail.dream_color
+            self.genres = recordDetail.genre
+            guard let content = recordDetail.content else {return}
+            guard let note = recordDetail.note else {return}
+            let contents = [content, note]
+            self.tabPagerView.contents = contents
+            
+            DispatchQueue.main.async {
+                self.titleLabel.text = recordDetail.title
+                self.dateLabel.text = recordDetail.date
+                self.cardView.image = UIImage(named: Constant.DetailBackgroundColor.IntType(self.dreamColor).title)
+            }
+        })
     }
 }

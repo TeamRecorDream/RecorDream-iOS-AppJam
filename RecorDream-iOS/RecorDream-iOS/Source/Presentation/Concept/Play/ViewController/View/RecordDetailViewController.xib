@@ -19,8 +19,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordDetailViewController" customModule="RecorDream_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="cardView" destination="baA-Fe-sjy" id="dV8-2X-VwT"/>
+                <outlet property="dateLabel" destination="QUH-MY-XZr" id="FqB-z9-cNf"/>
                 <outlet property="emotionImage" destination="8gS-GA-Uyw" id="ZTS-cF-xdl"/>
                 <outlet property="genreCollectionView" destination="GSK-GM-LM7" id="upt-TB-JfW"/>
+                <outlet property="tabPagerView" destination="SQs-ud-1r7" id="oKy-7W-o9R"/>
+                <outlet property="titleLabel" destination="fuu-Ln-qeD" id="xiN-wy-Kit"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

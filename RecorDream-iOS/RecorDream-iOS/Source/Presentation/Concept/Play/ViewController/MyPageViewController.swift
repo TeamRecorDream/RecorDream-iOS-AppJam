@@ -17,12 +17,27 @@ class MyPageViewController: BaseViewController {
     @IBOutlet weak var timeSettingLabel: UILabel!
     @IBOutlet weak var timeSettingButton: UIButton!
     @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailLabel: UILabel!
     
     private var headerView = RecordHeaderView()
+    private var userInformation: UserInformationModel? {
+        didSet{
+            DispatchQueue.main.async {
+                guard let userInformation = self.userInformation else { return }
+                self.userNameTextField.text = userInformation.nickname
+                self.emailLabel.text = userInformation.email
+                self.dreamAlarmButton.isRequestData = true
+                self.dreamAlarmButton.isOn = userInformation.is_active
+                self.timeSettingButton.setTitle(userInformation.is_active ? userInformation.time : "", for: .normal)
+                self.timeSettingLabel.textColor = userInformation.is_active ? ColorType.white01.color : ColorType.white03.color
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        requestUserInformation()
         popMypageView()
         configureView()
     }
@@ -43,22 +58,17 @@ class MyPageViewController: BaseViewController {
     }
     
     private func configureDreamAlarmButton(){
-        //TODO: - 서버 연결 시 dreamAlarmButton.isOn에 값 할당할 예정
-        dreamAlarmButton.isOn = false
-        if !dreamAlarmButton.isOn {
-            self.timeSettingButton.setTitle("", for: .normal)
-            self.timeSettingLabel.textColor = ColorType.white03.color
-        }
-        
         dreamAlarmButton.completion = { [weak self] isOn in
             guard let self = self else { return }
             
             if isOn {
                 self.presentTimeSettingView()
-                return
+            } else {
+                self.timeSettingButton.setTitle("", for: .normal)
+                self.timeSettingLabel.textColor = ColorType.white03.color
+                
             }
-            self.timeSettingButton.setTitle("", for: .normal)
-            self.timeSettingLabel.textColor = ColorType.white03.color
+            MyPageService.shared.PutUserToggle(isOn: self.dreamAlarmButton.isOn)
         }
     }
     
@@ -105,18 +115,41 @@ class MyPageViewController: BaseViewController {
 //MARK: - Extension
 extension MyPageViewController: TimeSettingDelegate {
     func timeSettingDidSelectTime(meridiem: String, hour: String, minute: String) {
-        timeSettingButton.setTitle("\(meridiem) \(hour):\(minute)", for: .normal)
+        let timeString = "\(meridiem) \(hour):\(minute)"
+        
+        if self.timeSettingButton.titleLabel?.text == "" {
+            print("isEmpty")
+            MyPageService.shared.postNotice(time: timeString)
+        } else {
+            print("isNotEmpty")
+            MyPageService.shared.putNotice(time: timeString)
+        }
+        
+        timeSettingButton.setTitle(timeString, for: .normal)
         self.timeSettingLabel.textColor = ColorType.white01.color
     }
 }
 
 extension MyPageViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if let userName = self.userNameTextField.text,
-            userName.isEmpty {
+        guard let userName = self.userNameTextField.text else { return false }
+        if userName.isEmpty && userName.count > 8 {
             return false
         }
         self.userNameTextField.resignFirstResponder()
+        
+        MyPageService.shared.putUserNickname(nickname: userName)
         return true
+    }
+}
+
+
+//MARK: - Network
+extension MyPageViewController {
+    private func requestUserInformation() {
+        MyPageService.shared.getUserInformation(completionHandler: { [weak self] data in
+            guard let data = data as? UserInformationModel else { return }
+            self?.userInformation = data
+        })
     }
 }
