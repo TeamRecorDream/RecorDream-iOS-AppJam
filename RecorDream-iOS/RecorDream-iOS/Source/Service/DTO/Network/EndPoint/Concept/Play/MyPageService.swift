@@ -9,6 +9,7 @@ import Foundation
 
 class MyPageService {
     static let shared = MyPageService()
+    var noticeID: String = "62daff1229ae5450bb4f92e4"
     
     func getUserInformation(completionHandler: @escaping (Any) -> Void) {
         let token = APIEnvironment.token
@@ -102,7 +103,7 @@ class MyPageService {
                (200..<500) ~= response.statusCode {
                 print("Response Status : \(response.statusCode)")
                 
-                guard let responseData = try? JSONDecoder().decode(BaseModel<UserInformationModel>.self, from: data) else {
+                guard let responseData = try? JSONDecoder().decode(ResponseNotDataModel.self, from: data) else {
                     print("Error: JSON data parsing failed")
                     return
                 }
@@ -131,7 +132,7 @@ class MyPageService {
             print(error.localizedDescription)
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) {[weak self] data, response, error in
             
             if let data = data,
                let response = response as? HTTPURLResponse,
@@ -143,6 +144,8 @@ class MyPageService {
                     return
                 }
                 if responseData.success {
+                    //self?.noticeID = responseData.data?._id
+                    //print("\(responseData.data?._id)")
                 } else {
                     print("Error: JSON data parsing failed")
                 }
@@ -154,7 +157,8 @@ class MyPageService {
     }
     
     func putNotice(time: String) {
-        let url = URL(string: "http://13.125.138.47:8000/notice")!
+        print("noticeID \(self.noticeID)")
+        let url = URL(string: "http://13.125.138.47:8000/notice/\(self.noticeID)")!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -174,7 +178,7 @@ class MyPageService {
                (200..<500) ~= response.statusCode {
                 print("Response Status : \(response.statusCode)")
                 
-                guard let responseData = try? JSONDecoder().decode(BaseModel<NoticeModel>.self, from: data) else {
+                guard let responseData = try? JSONDecoder().decode(BaseModel<NoticeModel?>.self, from: data) else {
                     print("Error: JSON data parsing failed")
                     return
                 }
