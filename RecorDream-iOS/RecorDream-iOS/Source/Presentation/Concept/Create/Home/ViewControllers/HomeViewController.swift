@@ -147,6 +147,15 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        
+        print(dreamCards[indexPath.item].id)
+        let recordDetailViewController = RecordDetailViewController.instanceFromNib()
+        recordDetailViewController.recordID = dreamCards[indexPath.item].id
+        self.navigationController?.pushViewController(recordDetailViewController, animated: true)
+        return true
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //MARK: - 드래그 했다가 마우스를 뗄 때 메서드
         scrollView.setContentOffset(CGPoint(x: 204.0 * CGFloat(recorDreamView.cellIndex) + 10 * CGFloat(recorDreamView.cellIndex), y: scrollView.contentInset.top), animated: true)

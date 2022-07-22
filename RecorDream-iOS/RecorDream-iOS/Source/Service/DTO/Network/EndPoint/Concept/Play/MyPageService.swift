@@ -9,7 +9,7 @@ import Foundation
 
 class MyPageService {
     static let shared = MyPageService()
-    var noticeID: String?
+    var noticeID: String = "62daff1229ae5450bb4f92e4"
     
     func getUserInformation(completionHandler: @escaping (Any) -> Void) {
         let token = APIEnvironment.token
@@ -144,8 +144,8 @@ class MyPageService {
                     return
                 }
                 if responseData.success {
-                    self?.noticeID = responseData.data?._id
-                    print("\(responseData.data?._id)")
+                    //self?.noticeID = responseData.data?._id
+                    //print("\(responseData.data?._id)")
                 } else {
                     print("Error: JSON data parsing failed")
                 }

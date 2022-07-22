@@ -28,6 +28,7 @@ class RecordDetailViewController: BaseViewController {
         super.viewDidLoad()
         
         requestRecordDetail()
+        popMypageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,17 @@ class RecordDetailViewController: BaseViewController {
         genreCollectionView.dataSource = self
         genreCollectionView.delegate = self
         genreCollectionView.register(GenreCollectionViewCell.nib(), forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
+    }
+    
+    //MARK: - Action
+    private func popMypageView() {
+        self.headerView.backButton.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    private func backButtonDidClicked() {
+        print("backBtn")
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -116,7 +128,6 @@ extension  RecordDetailViewController: NavigationBarDelegate {
 //MARK: - Network
 extension RecordDetailViewController {
     private func requestRecordDetail() {
-        recordID = "62d7bd159669f53b6c72a8e3" //TODO: - 임시 기록 고유 번호
         guard let recordID = recordID else { return }
         RecordDetailService.shared.getRecordDetial(recordID: recordID, completionHandler: { [weak self] recordDetail in
             guard let self = self else { return }
