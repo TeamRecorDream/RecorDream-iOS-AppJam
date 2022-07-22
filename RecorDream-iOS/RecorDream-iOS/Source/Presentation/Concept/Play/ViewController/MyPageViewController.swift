@@ -23,6 +23,7 @@ class MyPageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        popMypageView()
         configureView()
     }
     
@@ -72,6 +73,15 @@ class MyPageViewController: BaseViewController {
     }
     
     //MARK: - Action
+    private func popMypageView() {
+        self.headerView.backButton.addTarget(self, action: #selector(backButtonDidClicked), for: .touchUpInside)
+    }
+    
+    @objc
+    private func backButtonDidClicked() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     private func presentTimeSettingView() {
         let timeSettingViewController = TimeSettingViewController.instanceFromNib()
         timeSettingViewController.modalPresentationStyle = .overFullScreen

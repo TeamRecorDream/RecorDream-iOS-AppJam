@@ -39,9 +39,7 @@ extension StorageViewController {
         let searchViewController = SearchViewController.instanceFromNib()
         searchViewController.modalPresentationStyle = .overFullScreen
         searchViewController.modalTransitionStyle = .crossDissolve
-        self.present(searchViewController, animated: false) { [weak self] in
-            self?.storageView.navigationBarView.isHidden = true
-        }
+        self.present(searchViewController, animated: false)
     }
 }
 

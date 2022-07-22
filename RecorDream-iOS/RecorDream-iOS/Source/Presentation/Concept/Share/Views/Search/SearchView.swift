@@ -62,6 +62,7 @@ final class SearchView: BaseView {
     // MARK: - Render
     override func setupView() {
         self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage, searchResultLabel, searchResultImage)
+        self.navigationBarView.bringSubviewToFront(navigationBarView.backButton)
     }
     override func setupConstraint() {
         self.navigationBarView.snp.makeConstraints { make in

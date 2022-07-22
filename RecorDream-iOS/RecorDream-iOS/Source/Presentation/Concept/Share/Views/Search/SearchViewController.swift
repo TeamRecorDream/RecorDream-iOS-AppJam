@@ -42,7 +42,7 @@ extension SearchViewController {
     }
     @objc
     private func backToStorageView() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
     func getSearchingKeyword(keyword: String) {
         Task {
