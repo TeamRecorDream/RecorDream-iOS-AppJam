@@ -11,10 +11,11 @@ final class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var emojiIcon: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var hashTagView: HashtagView!
+    @IBOutlet weak var detailButton: UIButton!
     
-    // MARK: - @IBAction Properties
-    @IBAction func touchUpToDetailButton(_ sender: UIButton) {
-        // TODO: - 상세보기 뷰로 연결
+    func setFilterIcon(data: ListCellDesign) {
+        emojiIcon.image = UIImage(named: data.emotion)
+        dateLabel.text = data.date
+        descriptionLabel.text = data.description
     }
 }

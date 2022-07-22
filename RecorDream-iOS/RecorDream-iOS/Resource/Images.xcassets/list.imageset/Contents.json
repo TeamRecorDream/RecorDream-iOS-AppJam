@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "emoji_all.png",
+      "filename" : "list.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "emoji_all@2x.png",
+      "filename" : "list@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "emoji_all@3x.png",
+      "filename" : "list@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

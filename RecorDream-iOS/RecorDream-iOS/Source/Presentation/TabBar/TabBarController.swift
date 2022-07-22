@@ -31,6 +31,7 @@ final class TabBarController: UITabBarController {
         setTabBarItems()
         setTabBarAppearance()
         setTabBarFrame()
+        setTargets()
     }
 }
 
@@ -48,6 +49,12 @@ extension TabBarController: Presentable {
         }
     }
     
+    private func setTargets() {
+        self.recordButton.addTarget(self,
+                                    action: #selector(presentRecordView),
+                                    for: .touchUpInside)
+    }
+    
     @objc
     private func presentRecordView() {
         let recordViewController = RecordViewController()
@@ -59,7 +66,7 @@ extension TabBarController: Presentable {
         tabs = [
             UINavigationController(rootViewController: HomeViewController()),
             UINavigationController(rootViewController: emptyViewController),
-            UINavigationController(rootViewController: emptyViewController)
+            UINavigationController(rootViewController: mockStorageViewController.instanceFromNib())
         ]
         TabBarItem.allCases.forEach {
             tabs[$0.rawValue].tabBarItem = $0.asTabBarItem()

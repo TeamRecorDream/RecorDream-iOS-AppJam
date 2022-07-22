@@ -42,9 +42,7 @@ extension SearchViewController {
     }
     @objc
     private func backToStorageView() {
-        self.dismiss(animated: true) { [weak self] in
-            self?.navigationController?.popToRootViewController(animated: false)
-        }
+        self.navigationController?.popViewController(animated: true)
     }
     func getSearchingKeyword(keyword: String) {
         Task {
@@ -62,6 +60,8 @@ extension SearchViewController: UITextFieldDelegate, UITableViewDataSource {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .done {
             getSearchingKeyword(keyword: textField.text ?? "")
+            searchView.searchResultLabel.isHidden = false
+            searchView.searchResultImage.isHidden = false
             return true
         }
         else {
