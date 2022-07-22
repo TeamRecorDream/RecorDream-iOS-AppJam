@@ -9,9 +9,11 @@ import Foundation
  
 protocol HomeServiceable {
     func getRecorDreamCard() async throws -> [Record]
+//    func postRecorDream() async throws -> DreamBaseModel
 }
 
 struct DreamService: HomeServiceable {
+    
     private let apiService: CreateRequestable
     private let environment: APIEnvironment
     
@@ -24,6 +26,13 @@ struct DreamService: HomeServiceable {
         let request = DreamEndPoint
             .getRecorDreamCard
             .sendRequest(environment: environment)
+        print("request: \(request)")
         return try await self.apiService.request(request)
     }
+    
+//    func postRecorDream() async throws -> DreamBaseModel {
+//        print("hello")
+//    }
+//
+    
 }

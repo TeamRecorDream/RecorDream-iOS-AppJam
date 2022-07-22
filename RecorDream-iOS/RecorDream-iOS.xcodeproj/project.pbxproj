@@ -39,6 +39,8 @@
 		2322D08A2883EFB100DC5553 /* RecordHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2322D0892883EFB100DC5553 /* RecordHeaderView.xib */; };
 		2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08D2883F37100DC5553 /* RecordViewController.swift */; };
 		2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */; };
+		2326F241288A66C30079BD45 /* CreateRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F240288A66C30079BD45 /* CreateRecordModel.swift */; };
+		2326F243288A6B050079BD45 /* DreamBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F242288A6B050079BD45 /* DreamBaseModel.swift */; };
 		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
 		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
@@ -170,6 +172,8 @@
 		2322D0892883EFB100DC5553 /* RecordHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordHeaderView.xib; sourceTree = "<group>"; };
 		2322D08D2883F37100DC5553 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
+		2326F240288A66C30079BD45 /* CreateRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordModel.swift; sourceTree = "<group>"; };
+		2326F242288A6B050079BD45 /* DreamBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamBaseModel.swift; sourceTree = "<group>"; };
 		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
@@ -332,6 +336,7 @@
 		2322D0802883EE7F00DC5553 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				2326F23F288A66AD0079BD45 /* Model */,
 				2322D0812883EED900DC5553 /* ViewControllers */,
 			);
 			path = Record;
@@ -355,6 +360,14 @@
 				233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2326F23F288A66AD0079BD45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2326F240288A66C30079BD45 /* CreateRecordModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		232D0E37287D86850063D725 /* View */ = {
@@ -785,6 +798,7 @@
 			children = (
 				23450D6B288865B700A8FB70 /* DreamService.swift */,
 				23450D6D288866C300A8FB70 /* DreamEndPoint.swift */,
+				2326F242288A6B050079BD45 /* DreamBaseModel.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -1017,6 +1031,7 @@
 				144457062887AEE10023E090 /* TabPagerDelegate.swift in Sources */,
 				144A1C8328871EF600598121 /* GenreCollectionViewCell.swift in Sources */,
 				14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */,
+				2326F241288A66C30079BD45 /* CreateRecordModel.swift in Sources */,
 				F62CDF2C288304F400E5B19C /* TabBarController.swift in Sources */,
 				F6F14AA5288721D90065D291 /* GallaryCollectionViewCell.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
@@ -1025,6 +1040,7 @@
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				23450D6C288865B800A8FB70 /* DreamService.swift in Sources */,
 				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
+				2326F243288A6B050079BD45 /* DreamBaseModel.swift in Sources */,
 				F6F14A5E28854F980065D291 /* SearchView.swift in Sources */,
 				144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */,
 				2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */,
