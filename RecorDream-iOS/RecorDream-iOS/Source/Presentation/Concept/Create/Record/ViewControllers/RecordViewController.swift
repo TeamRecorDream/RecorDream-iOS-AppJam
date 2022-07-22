@@ -31,7 +31,7 @@ class GenreTapGestureRecognizer: UITapGestureRecognizer {
 }
 
 enum CreateRecordConst {
-    static var todayDate = Date()
+    static var todayDate:Date = Date()
     static var emotionNum: Int?
     static var dreamColorNum: Int?
     static var isTouchedIndex: [Int] = []
@@ -272,15 +272,9 @@ class RecordViewController: BaseViewController {
                       let content = contentTextView.text,
                       let note = noteTextView.text else { return }
                 
-                print("title:\(title)")
-                print("content:\(content)")
-                print("note:\(note)")
-                print(CreateRecordConst.todayDate)
+                let date: String = CreateRecordConst.todayDate.toString()
                 
-                //장르는 빈배열이나 null
-//                let record = CreateRecord(title: title, date: CreateRecordConst.todayDate, genre: CreateRecordConst.isTouchedIndex, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
-//
-                let record = CreateRecord(title: title, date: CreateRecordConst.todayDate, content: content, emotion: CreateRecordConst.emotionNum, dreamColor: CreateRecordConst.dreamColorNum, genre: CreateRecordConst.isTouchedIndex, note: note, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
+                let record = CreateRecord(title: title, date: date, content: content, emotion: CreateRecordConst.emotionNum, dreamColor: CreateRecordConst.dreamColorNum, genre: CreateRecordConst.isTouchedIndex, note: note, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
                 
                 postRecord(record: record)
             } else {
@@ -457,7 +451,6 @@ extension RecordViewController: UIGestureRecognizerDelegate {
         let modalVC = DateModalViewController()
         modalVC.dateClosure = { date in
             CreateRecordConst.todayDate = date
-            print("CreateRecordConst.todayDate : \(CreateRecordConst.todayDate)")
             self.dateView.setRecordDateLabel(date: date)
         }
         modalVC.modalPresentationStyle = .custom
@@ -492,7 +485,6 @@ extension RecordViewController: UIGestureRecognizerDelegate {
         } else {
             print("error")
         }
-        print(CreateRecordConst.isTouchedIndex)
     }
 }
 
@@ -555,3 +547,13 @@ extension RecordViewController {
         }
     }
 }
+
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        return dateFormatter.string(from: self)
+    }
+}
+

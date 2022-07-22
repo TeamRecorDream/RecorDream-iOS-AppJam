@@ -9,7 +9,7 @@ import Foundation
 
 struct CreateRecord: Codable {
     let title: String
-    let date: Date
+    let date: String
     let content: String?
     let emotion: Int?
     let dreamColor: Int?

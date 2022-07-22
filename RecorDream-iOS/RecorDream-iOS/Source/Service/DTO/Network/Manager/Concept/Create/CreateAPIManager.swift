@@ -18,8 +18,6 @@ final class CreateAPIManager: CreateRequestable {
         guard let encodedURL = request.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL)
         else { throw APIError.urlEncodingError }
-        // 요청 보냄
-        print(encodedURL)
         
         let (data, response) = try await URLSession.shared.data(for: request.createURLRequest(with: url))
         guard let httpResponse = response as? HTTPURLResponse,
@@ -27,9 +25,7 @@ final class CreateAPIManager: CreateRequestable {
         else { throw APIError.serverError }
         print("httpResponse.statusCode: \(httpResponse.statusCode)")
 
-        print("decodedData")
         let decodedData = try JSONDecoder().decode(Record.self, from: data)
-        print("decodedData: \(decodedData)")
         
         if decodedData.success {
             return [decodedData]
@@ -39,8 +35,7 @@ final class CreateAPIManager: CreateRequestable {
     }
     
     func postRequest(record: CreateRecord) {
-//        let test = CreateRecord(title: "오늘은 7월 20일", date: Date(), content: "살려줘", emotion: 2, dreamColor: 3, genre: [2], note: "hi", voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
-//
+
         let url = URL(string: "http://13.125.138.47:8000/record")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
