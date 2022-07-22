@@ -17,6 +17,7 @@
 		1423B8C0288A667C004E4E5B /* RecordDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8BF288A667C004E4E5B /* RecordDetailService.swift */; };
 		1423B8C2288A6ACF004E4E5B /* RecordDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8C1288A6ACF004E4E5B /* RecordDetailModel.swift */; };
 		1423B8C4288B247F004E4E5B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8C3288B247F004E4E5B /* BaseModel.swift */; };
+		1423B8C6288B3106004E4E5B /* ResponseNotDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8C5288B3106004E4E5B /* ResponseNotDataModel.swift */; };
 		14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */; };
 		14243E11287FB81400CCE8A0 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */; };
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
@@ -159,6 +160,7 @@
 		1423B8BF288A667C004E4E5B /* RecordDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailService.swift; sourceTree = "<group>"; };
 		1423B8C1288A6ACF004E4E5B /* RecordDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailModel.swift; sourceTree = "<group>"; };
 		1423B8C3288B247F004E4E5B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		1423B8C5288B3106004E4E5B /* ResponseNotDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseNotDataModel.swift; sourceTree = "<group>"; };
 		14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				1423B8BB288A244C004E4E5B /* UserNickname.swift */,
 				1423B8BD288A3310004E4E5B /* NoticeModel.swift */,
 				1423B8C1288A6ACF004E4E5B /* RecordDetailModel.swift */,
+				1423B8C5288B3106004E4E5B /* ResponseNotDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1110,6 +1113,7 @@
 				F6D3946D287D68D4004A7DBB /* ColorType.swift in Sources */,
 				14D0E18628812AEF006EC6D8 /* CustomTimeSettingPickerView.swift in Sources */,
 				F6F14A8B2886F4D20065D291 /* NetworkRequest.swift in Sources */,
+				1423B8C6288B3106004E4E5B /* ResponseNotDataModel.swift in Sources */,
 				2322D07A288153E900DC5553 /* EmotionType.swift in Sources */,
 				F6F14A9D28871E740065D291 /* StorageResultNone.swift in Sources */,
 				F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */,

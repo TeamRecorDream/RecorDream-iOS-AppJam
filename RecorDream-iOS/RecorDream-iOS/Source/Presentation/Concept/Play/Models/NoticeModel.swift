@@ -8,5 +8,5 @@
 import Foundation
 
 struct NoticeModel: Codable {
-    let noticeId: String
+    let _id: String
 }
