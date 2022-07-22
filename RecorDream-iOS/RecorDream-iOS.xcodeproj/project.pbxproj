@@ -70,7 +70,8 @@
 		F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF31288307C800E5B19C /* TabBarItem.swift */; };
 		F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF3328830B9100E5B19C /* SampleViewController.swift */; };
 		F62CDF3628830B9100E5B19C /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62CDF3428830B9100E5B19C /* SampleViewController.xib */; };
-		F695166D288A479B000F88D7 /* mockStorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695166C288A479B000F88D7 /* mockStorageModel.swift */; };
+		F695166D288A479B000F88D7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		F695166F288AC2E9000F88D7 /* mockStorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695166E288AC2E8000F88D7 /* mockStorageModel.swift */; };
 		F6D3944D287D4164004A7DBB /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3944C287D4164004A7DBB /* StorageViewController.swift */; };
 		F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
 		F6D39458287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
@@ -203,7 +204,7 @@
 		F62CDF31288307C800E5B19C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		F62CDF3328830B9100E5B19C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		F62CDF3428830B9100E5B19C /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
-		F695166C288A479B000F88D7 /* mockStorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = mockStorageModel.swift; path = ../../../../../../../../../../../Downloads/mockStorageModel.swift; sourceTree = "<group>"; };
+		F695166E288AC2E8000F88D7 /* mockStorageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockStorageModel.swift; sourceTree = "<group>"; };
 		F6D3944C287D4164004A7DBB /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F6D3944F287D41BE004A7DBB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -848,9 +849,9 @@
 		F6F14AC5288918B90065D291 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				F695166E288AC2E8000F88D7 /* mockStorageModel.swift */,
 				F6F14AC7288918E50065D291 /* mockStorageViewController.swift */,
 				F6F14AC8288918E50065D291 /* mockStorageViewController.xib */,
-				F695166C288A479B000F88D7 /* mockStorageModel.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -1010,8 +1011,7 @@
 				F6F14A9B28871E480065D291 /* StorageResultExist.swift in Sources */,
 				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
 				F6F14AB428872D290065D291 /* FilterCollectionViewCell.swift in Sources */,
-				F695166D288A479B000F88D7 /* mockStorageModel.swift in Sources */,
-				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
+				F695166D288A479B000F88D7 /* (null) in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
@@ -1065,6 +1065,7 @@
 				F6F14A762886CA950065D291 /* MockParser.swift in Sources */,
 				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
 				F6F14A67288584E70065D291 /* SearchResultTableViewCell.swift in Sources */,
+				F695166F288AC2E9000F88D7 /* mockStorageModel.swift in Sources */,
 				F6F14A6A2885857F0065D291 /* EmptyView.swift in Sources */,
 				F6F14A712886A17F0065D291 /* SearchResult.swift in Sources */,
 				F6F14AC12888947B0065D291 /* ShareService.swift in Sources */,
