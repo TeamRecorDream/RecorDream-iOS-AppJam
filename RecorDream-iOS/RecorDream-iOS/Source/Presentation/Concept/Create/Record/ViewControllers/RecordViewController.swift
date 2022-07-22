@@ -578,13 +578,8 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
                 print("isSelected - ")
                 if indexPath.item == CreateRecordConst.emotionNum {
                     print("안녕")
-//                    cell.isSelected = true
                     cell.updateRecordBarImage(reset: false)
-//                    cell.recordBarImageView.alpha = 1
-//                    cell.testFunc()
-//                    cell.isSelected.toggle()
                 }
-                //끄... ~~실행~~
             } else {
                 print("isisisisisisisis")
             }
