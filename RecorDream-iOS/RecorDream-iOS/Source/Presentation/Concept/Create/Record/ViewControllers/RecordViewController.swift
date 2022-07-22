@@ -205,6 +205,8 @@ class RecordViewController: BaseViewController {
             contentTextView.text = "내용이당 ㅋㅋ"
             noteTextView.text = "노트내용이다 ㅋㅋ"
             CreateRecordConst.emotionNum = 4
+            CreateRecordConst.dreamColorNum = 3
+            CreateRecordConst.isTouchedIndex = [3]
             contentLable.isHidden = true
             setTitleTextField()
         }
@@ -318,9 +320,23 @@ class RecordViewController: BaseViewController {
                 
                 let date: String = CreateRecordConst.todayDate.toString()
                 
+                print("---------------")
+                print(title)
+                print(content)
+                print(note)
+                print(CreateRecordConst.emotionNum)
+                print(CreateRecordConst.dreamColorNum)
+                print(CreateRecordConst.isTouchedIndex)
+                print(note)
+                print("---------------")
+                
                 let record = CreateRecord(title: title, date: date, content: content, emotion: CreateRecordConst.emotionNum, dreamColor: CreateRecordConst.dreamColorNum, genre: CreateRecordConst.isTouchedIndex, note: note, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
                 
-                postRecord(record: record)
+                guard let emotionNum = CreateRecordConst.emotionNum,
+                      let dreamNum = CreateRecordConst.dreamColorNum else { return }
+                let recordPut = PatchRecord(title: title, date: date, content: content, emotion: emotionNum, dreamColor: dreamNum, genre: CreateRecordConst.isTouchedIndex, note: note)
+                
+                isCreateView ? postRecord(record: record) : putRecord(record: recordPut, id: "sojin")
             } else {
                 // MARK: - 저장 불가능 상태
                 UIView.animate(withDuration: 1.25, delay: 0.01, options: .curveEaseIn, animations: {
@@ -640,6 +656,16 @@ extension RecordViewController {
         Task {
             do {
                 try await createManager.postRequest(record: record)
+            } catch {
+                print("실패")
+            }
+        }
+    }
+    
+    func putRecord(record: PatchRecord, id: String) {
+        Task {
+            do {
+                try await createManager.putRequset(record: record, id: id)
             } catch {
                 print("실패")
             }
