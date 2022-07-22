@@ -36,7 +36,7 @@ enum CreateRecordConst {
     static var dreamColorNum: Int?
     static var isTouchedIndex: [Int] = []
     static var genreIndex: [Int] = []
-    
+    static var recordId: String?
 }
 
 class RecordViewController: BaseViewController {
@@ -172,6 +172,16 @@ class RecordViewController: BaseViewController {
     var emotionSelectedArray = [false, false, false, false, false, false]
 //    var reviseRecordInfo = [] // 서버에서 받아올 값. 모델이랑 매칭해주어야 함
     var recordDetailData: RecordDetailModel?
+    var detailRecordId: String? {
+        didSet {
+            DispatchQueue.main.async {
+                self.navigationDetailView(id: self.detailRecordId ?? "")
+            }
+        }
+    }
+    
+    var recordIdClosure: ((String) -> ())?
+    
 
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -197,6 +207,12 @@ class RecordViewController: BaseViewController {
     // MARK: - Functions
     private func setHeaderView() {
         headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
+    }
+    
+    private func navigationDetailView(id: String) {
+        let detailVC = RecordDetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.recordID = id
     }
     
     private func setEditView() {
@@ -345,6 +361,9 @@ class RecordViewController: BaseViewController {
 //                print("isCreateView: \(isCreateView)")
 //                isCreateView ? postRecord(record: record) : putRecord(record: recordPut, id: id)
                 postRecord(record: record)
+//
+                let tabVC = TabBarController()
+                navigationController?.pushViewController(tabVC, animated: true)
             } else {
                 // MARK: - 저장 불가능 상태
                 UIView.animate(withDuration: 1.25, delay: 0.01, options: .curveEaseIn, animations: {
@@ -666,10 +685,13 @@ extension RecordViewController {
 //    }
 //    
     func postRecord(record: CreateRecord) {
-        createManager.postRequest(record: record, completionHandler: { [weak self] data in
+        createManager.postRequest(record: record, completionHandler: { [self] data in
             guard let data = data as? DreamBaseModel else { return }
-            print("postRecord")
-            print(data)
+//            guard let data = data.data?.id as? DataClass else { return }
+            guard let recordDataId = data.data?.id as? String else { return }
+            CreateRecordConst.recordId = data.data?.id
+//            print("postRecord: \(CreateRecordConst.recordId)")
+//            recordIdClosure?(CreateRecordConst.recordId ?? "")
         })
     }
     

@@ -24,6 +24,7 @@ class RecordDetailViewController: BaseViewController {
     private var recordDate = ""
     var recordID: String? //TODO: - 화면 전환 시 기록 고유 번호 할당해주기
     var recordDetailData: RecordDetailModel?
+//    var completionHandler: ((String) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,6 +137,8 @@ extension RecordDetailViewController {
             print("111")
             guard let recordDetail = recordDetail as? RecordDetailModel else { return }
             self.recordDetailData = recordDetail
+            
+//            self.completionHandler?(CreateRecordConst.recordId ?? "")
             
             self.emotion = recordDetail.emotion
             self.dreamColor = recordDetail.dream_color
