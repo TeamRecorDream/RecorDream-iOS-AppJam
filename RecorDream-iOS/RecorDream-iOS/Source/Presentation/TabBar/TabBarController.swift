@@ -31,6 +31,7 @@ final class TabBarController: UITabBarController {
         setTabBarItems()
         setTabBarAppearance()
         setTabBarFrame()
+        setTargets()
     }
 }
 
@@ -46,6 +47,12 @@ extension TabBarController: Presentable {
             $0.centerX.equalToSuperview()
             $0.centerY.equalTo(tabBar.snp.top)
         }
+    }
+    
+    private func setTargets() {
+        self.recordButton.addTarget(self,
+                                    action: #selector(presentRecordView),
+                                    for: .touchUpInside)
     }
     
     @objc
