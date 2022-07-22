@@ -14,6 +14,7 @@ class TabPagerView: UIView {
     @IBOutlet weak var indicatorLeading: NSLayoutConstraint!
     private let titles = ["나의 꿈 기록", "노트"]
     var delegate: TabPagerDelegate?
+    var contents: [String]? //0번 꿈 기록, 1번 노트
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +67,7 @@ extension TabPagerView: UICollectionViewDataSource {
             return cell
         }
         if let cell = cell as? TabPagerContentCollectionViewCell {
-            cell.configureCell(isHidden: indexPath.row == 0 ? false : true)
+            cell.configureCell(isHidden: indexPath.row == 0 ? false : true, contents: contents)
             return cell
         }
         

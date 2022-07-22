@@ -25,11 +25,16 @@ class CustomSwitchButton: UIButton {
         didSet {
             self.barView?.backgroundColor = isOn ? onTintColor : offTintColor
             self.circleCenter = isOn ? frame.width - (circleHorizontalMargin + (circleSize/2)) : circleHorizontalMargin + (circleSize/2)
-            
             configureAnimation()
-            self.completion(isOn)
+            
+            if !isRequestData {
+                self.completion(isOn)
+                return
+            }
+            isRequestData = false
         }
     }
+    var isRequestData: Bool = false
     var completion: ((_ isOn: Bool) -> Void) = { isOn in }
     
     

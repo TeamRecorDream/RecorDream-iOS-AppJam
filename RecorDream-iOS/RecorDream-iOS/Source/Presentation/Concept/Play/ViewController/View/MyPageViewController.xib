@@ -23,6 +23,7 @@
             <connections>
                 <outlet property="dreamAlarmButton" destination="fUm-t9-x8o" id="N2D-GA-b1r"/>
                 <outlet property="dropOutButton" destination="KLp-ao-h3v" id="xSZ-Zt-2NC"/>
+                <outlet property="emailLabel" destination="9fw-Hh-X8s" id="Mzb-HC-65G"/>
                 <outlet property="timeSettingButton" destination="pBV-qc-uVm" id="or9-gI-x3R"/>
                 <outlet property="timeSettingLabel" destination="Xly-3e-DYV" id="Qss-zC-tAB"/>
                 <outlet property="userNameTextField" destination="PQ3-e0-zF8" id="gAF-Dd-CW3"/>

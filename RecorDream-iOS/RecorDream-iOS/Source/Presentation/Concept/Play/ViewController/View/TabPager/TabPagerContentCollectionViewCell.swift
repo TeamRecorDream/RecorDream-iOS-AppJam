@@ -40,6 +40,16 @@ class TabPagerContentCollectionViewCell: UICollectionViewCell {
         configureAudioPlay()
     }
     
+    
+    func configureCell(isHidden: Bool, contents: [String]?) {
+        audioPlayStackViewHeight.constant = isHidden ? 0 : self.frame.height / 5
+        audioPlayView.isHidden = isHidden
+        middleBarView.isHidden = isHidden
+        
+        guard let contents = contents else {return}
+        self.contentTextView.text = isHidden ? contents.last : contents.first
+    }
+    
     deinit {
         progressTimer = nil
     }
@@ -47,12 +57,6 @@ class TabPagerContentCollectionViewCell: UICollectionViewCell {
 
 //MARK: - AudioPlay
 extension TabPagerContentCollectionViewCell {
-    func configureCell(isHidden: Bool) {
-        audioPlayStackViewHeight.constant = isHidden ? 0 : self.frame.height / 5
-        audioPlayView.isHidden = isHidden
-        middleBarView.isHidden = isHidden
-    }
-    
     private func configureAudioPlay() {
         audioFile = Bundle.main.url(forResource: "Sicilian_Breeze", withExtension: "mp3")
         audioPlayButton.setImage(ImageList.icnStop.image, for: .selected)
