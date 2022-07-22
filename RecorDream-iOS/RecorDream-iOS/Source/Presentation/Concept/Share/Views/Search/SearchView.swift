@@ -99,7 +99,8 @@ final class SearchView: BaseView {
         self.searchResultImage.snp.makeConstraints { make in
             make.width.equalTo(375.adjustedWidth)
             make.top.equalTo(searchResultLabel.snp.bottom).offset(27)
-            make.leading.trailing.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
     }
 }
