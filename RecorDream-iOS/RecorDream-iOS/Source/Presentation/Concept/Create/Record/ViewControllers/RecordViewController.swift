@@ -21,7 +21,7 @@ enum CollectionViewConst {
 }
 
 class GenreTapGestureRecognizer: UITapGestureRecognizer {
-    var index: Int?
+    var index: Int = 0
     var hashtagView: HashtagView?
     var isTouched: Bool? = false
     
@@ -157,6 +157,8 @@ class RecordViewController: BaseViewController {
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
     }
+    
+    static var isTouchedIndex: [Int] = []
 
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -445,20 +447,26 @@ extension RecordViewController: UIGestureRecognizerDelegate {
         view.calculateIsTouchCount(addCount: isTouched)
         let count = view.touchedCount()
         
-        if isTouched && count >= 4 {
+        if isTouched && count >= 4 { // MARK: - 터치된 것 뺌
             sender.setIsTouched()
             view.calculateIsTouchCount(addCount: !isTouched)
+            RecordViewController.isTouchedIndex = RecordViewController.isTouchedIndex.filter {
+                $0 != sender.index
+            }
             noticeLabel.isHidden = false
-        } else if isTouched && count <= 3 {
+        } else if isTouched && count <= 3 { // MARK: - 터치됨
             view.setSelectedRecordLabel()
+            RecordViewController.isTouchedIndex.append(sender.index)
             noticeLabel.isHidden = true
-        } else if !isTouched {
+        } else if !isTouched { // MARK: - 터치 안된 상태
             view.resetSelectedRecordLabel()
+            RecordViewController.isTouchedIndex = RecordViewController.isTouchedIndex.filter {
+                $0 != sender.index
+            }
             noticeLabel.isHidden = true
         } else {
             print("error")
         }
-        
     }
 }
 
