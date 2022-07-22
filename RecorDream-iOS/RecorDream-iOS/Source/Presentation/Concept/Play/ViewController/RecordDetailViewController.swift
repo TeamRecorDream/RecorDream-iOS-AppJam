@@ -23,6 +23,7 @@ class RecordDetailViewController: BaseViewController {
     private var recordTitle = ""
     private var recordDate = ""
     var recordID: String? //TODO: - 화면 전환 시 기록 고유 번호 할당해주기
+    var recordDetailData: RecordDetailModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +115,7 @@ extension  RecordDetailViewController: NavigationBarDelegate {
     func navigationMoreButtonDidTap() {
         let recordDetailBottomSheet = RecordDetailBottomSheetViewController.instanceFromNib()
         recordDetailBottomSheet.modalPresentationStyle = .overFullScreen
+        recordDetailBottomSheet.recordDetailData = recordDetailData
         
         self.present(recordDetailBottomSheet, animated: false) {
             recordDetailBottomSheet.showBottomSheet()
@@ -133,6 +135,8 @@ extension RecordDetailViewController {
             guard let self = self else { return }
             print("111")
             guard let recordDetail = recordDetail as? RecordDetailModel else { return }
+            self.recordDetailData = recordDetail
+            
             self.emotion = recordDetail.emotion
             self.dreamColor = recordDetail.dream_color
             self.genres = recordDetail.genre
@@ -146,6 +150,8 @@ extension RecordDetailViewController {
                 self.dateLabel.text = recordDetail.date
                 self.cardView.image = UIImage(named: Constant.DetailBackgroundColor.IntType(self.dreamColor).title)
             }
+            
+            
         })
     }
 }

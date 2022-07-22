@@ -9,6 +9,7 @@ import UIKit
 
 class RecordDetailBottomSheetViewController: BaseViewController {
     @IBOutlet weak var bottomSheetHeight: NSLayoutConstraint!
+    var recordDetailData: RecordDetailModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,17 @@ class RecordDetailBottomSheetViewController: BaseViewController {
         if let touch = touches.first, self.view == touch.view {
             hideBottomSheet()
         }
+    }
+    
+    @IBAction func EditButtonTapped(_ sender: Any) {
+        print("수정하기")
+        let editRecordViewController = RecordViewController()
+        editRecordViewController.recordDetailData = recordDetailData
+        editRecordViewController.modalPresentationStyle = .overFullScreen
+        editRecordViewController.modalTransitionStyle = .crossDissolve
+        editRecordViewController.isCreateView = false
+        
+        present(editRecordViewController, animated: true)
     }
     
     @IBAction func shareButtonDidTapped(_ sender: UIButton) {

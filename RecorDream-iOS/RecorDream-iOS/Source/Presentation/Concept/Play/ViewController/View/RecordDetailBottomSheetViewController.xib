@@ -55,6 +55,9 @@
                                     <state key="normal" title="수정하기">
                                         <color key="titleColor" name="white01"/>
                                     </state>
+                                    <connections>
+                                        <action selector="EditButtonTapped:" destination="-1" eventType="touchUpInside" id="vcz-Rf-tJL"/>
+                                    </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdu-wP-goO">
                                     <rect key="frame" x="0.0" y="119" width="375" height="1"/>

@@ -170,6 +170,7 @@ class RecordViewController: BaseViewController {
     var isCreateView: Bool = true
     var emotionSelectedArray = [false, false, false, false, false, false]
 //    var reviseRecordInfo = [] // 서버에서 받아올 값. 모델이랑 매칭해주어야 함
+    var recordDetailData: RecordDetailModel?
 
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -188,7 +189,8 @@ class RecordViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         resetStatus()
-        setReviseView()
+        setEditView()
+        setBackground()
     }
     
     // MARK: - Functions
@@ -196,20 +198,26 @@ class RecordViewController: BaseViewController {
         headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
     }
     
-    private func setReviseView() {
+    private func setEditView() {
+        print("----------------------")
+        print(recordDetailData)
         if !isCreateView { //MARK: - 수정하기 뷰인경우
-            //날짜, 제목 , 내용 , 감정, 꿈색상, 장르, 노트
             headerView.headerLabel.text = "수정하기"
-            dateView.recordDateLabel.text = "2022-07-24"
-            titleTextField.text = "소진이당 ㅋㅋ"
-            contentTextView.text = "내용이당 ㅋㅋ"
-            noteTextView.text = "노트내용이다 ㅋㅋ"
-            CreateRecordConst.emotionNum = 4
-            CreateRecordConst.dreamColorNum = 3
-            CreateRecordConst.isTouchedIndex = [3]
+            dateView.recordDateLabel.text = recordDetailData?.date
+            titleTextField.text = recordDetailData?.title
+            contentTextView.text = recordDetailData?.content
+            noteTextView.text = recordDetailData?.note
+            CreateRecordConst.todayDate = Date()
+            CreateRecordConst.emotionNum = recordDetailData?.emotion
+            CreateRecordConst.dreamColorNum = recordDetailData?.dream_color
+            CreateRecordConst.isTouchedIndex = recordDetailData?.genre ?? [3]
             contentLable.isHidden = true
             setTitleTextField()
         }
+    }
+    
+    private func setBackground() {
+        view.backgroundColor = ColorType.darkBlue01.color
     }
     
     private func setDelegate() {
@@ -333,10 +341,12 @@ class RecordViewController: BaseViewController {
                 let record = CreateRecord(title: title, date: date, content: content, emotion: CreateRecordConst.emotionNum, dreamColor: CreateRecordConst.dreamColorNum, genre: CreateRecordConst.isTouchedIndex, note: note, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
                 
                 guard let emotionNum = CreateRecordConst.emotionNum,
-                      let dreamNum = CreateRecordConst.dreamColorNum else { return }
+                      let dreamNum = CreateRecordConst.dreamColorNum,
+                      let id = recordDetailData?._id else { return }
+                
                 let recordPut = PatchRecord(title: title, date: date, content: content, emotion: emotionNum, dreamColor: dreamNum, genre: CreateRecordConst.isTouchedIndex, note: note)
                 
-                isCreateView ? postRecord(record: record) : putRecord(record: recordPut, id: "sojin")
+                isCreateView ? postRecord(record: record) : putRecord(record: recordPut, id: id)
             } else {
                 // MARK: - 저장 불가능 상태
                 UIView.animate(withDuration: 1.25, delay: 0.01, options: .curveEaseIn, animations: {
