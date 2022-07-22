@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "home_card_pink.png",
+      "filename" : "gallery_card-2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "home_card_pink@2x.png",
+      "filename" : "gallery_card@2x-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "home_card_pink@3x.png",
+      "filename" : "gallery_card@3x-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

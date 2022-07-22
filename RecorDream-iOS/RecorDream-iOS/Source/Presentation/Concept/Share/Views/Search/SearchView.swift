@@ -61,6 +61,7 @@ final class SearchView: BaseView {
     
     // MARK: - Render
     override func setupView() {
+        self.backgroundColor = ColorType.darkBlue01.color
         self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage, searchResultLabel, searchResultImage)
         self.navigationBarView.bringSubviewToFront(navigationBarView.backButton)
     }

@@ -156,14 +156,14 @@
                         <color key="titleColor" name="light_blue01"/>
                     </state>
                 </button>
-                <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="12345678" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ3-e0-zF8">
-                    <rect key="frame" x="158.5" y="238" width="97" height="25"/>
+                <textField opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="드리미" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQ3-e0-zF8">
+                    <rect key="frame" x="181" y="238" width="52" height="25"/>
                     <color key="textColor" name="white01"/>
                     <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSP-J9-Vfd">
-                    <rect key="frame" x="255.5" y="238" width="24" height="24"/>
+                    <rect key="frame" x="233" y="238" width="24" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="fSP-J9-Vfd" secondAttribute="height" multiplier="1:1" id="dFH-9W-QpT"/>
                         <constraint firstAttribute="height" constant="24" id="eEJ-dC-sgD"/>

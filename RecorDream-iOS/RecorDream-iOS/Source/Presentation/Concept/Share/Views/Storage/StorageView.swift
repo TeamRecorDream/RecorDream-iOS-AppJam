@@ -34,6 +34,7 @@ final class StorageView: BaseView {
     }
     
     override func setupView() {
+        self.backgroundColor = ColorType.darkBlue01.color
         self.addSubviews(navigationBarView, filterCollectionView, storageHeaderView, storageCollectionView)
         
         self.filterCollectionView.collectionViewLayout = makeFilterCaseLayout()

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "home_card_green.png",
+      "filename" : "gallery_card.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "home_card_green@2x.png",
+      "filename" : "gallery_card@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "home_card_green@3x.png",
+      "filename" : "gallery_card@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

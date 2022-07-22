@@ -60,7 +60,7 @@
                     <rect key="frame" x="0.0" y="84" width="414" height="112"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 감정" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa9-F1-kUC">
-                            <rect key="frame" x="16" y="16" width="45" height="15"/>
+                            <rect key="frame" x="16" y="16" width="44.5" height="15"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="15" id="QGx-q6-5QY"/>
                             </constraints>
@@ -94,8 +94,8 @@
                         <constraint firstItem="pa9-F1-kUC" firstAttribute="leading" secondItem="PE6-9c-Xil" secondAttribute="leading" constant="16" id="hVG-Kk-dQc"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 감정" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-ku-bEd">
-                    <rect key="frame" x="16" y="212" width="45" height="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4개의 기록" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ra9-ku-bEd">
+                    <rect key="frame" x="16" y="212" width="52.5" height="14.5"/>
                     <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="12"/>
                     <color key="textColor" name="white01"/>
                     <nil key="highlightedColor"/>
@@ -123,52 +123,45 @@
                         <constraint firstAttribute="height" constant="38" id="xee-0d-uNK"/>
                     </constraints>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-qF-Hro">
-                    <rect key="frame" x="16" y="256" width="382" height="456"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="NJg-qF-Hro">
+                    <rect key="frame" x="16" y="251" width="382" height="427"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="qUW-lK-gmc" userLabel="FirstLine">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="208"/>
+                            <rect key="frame" x="19.5" y="0.0" width="343" height="208"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_card_green" translatesAutoresizingMaskIntoConstraints="NO" id="yOh-Cn-JGy">
-                                    <rect key="frame" x="0.0" y="0.0" width="185.5" height="208"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery_card" translatesAutoresizingMaskIntoConstraints="NO" id="yOh-Cn-JGy">
+                                    <rect key="frame" x="0.0" y="0.0" width="166" height="208"/>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_card_green" translatesAutoresizingMaskIntoConstraints="NO" id="ysN-vP-fev">
-                                    <rect key="frame" x="196.5" y="0.0" width="185.5" height="208"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery_card-2" translatesAutoresizingMaskIntoConstraints="NO" id="ysN-vP-fev">
+                                    <rect key="frame" x="177" y="0.0" width="166" height="208"/>
                                 </imageView>
                             </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="208" id="dCD-bw-DVS"/>
-                            </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="0Hn-PL-miA" userLabel="SecondLine">
-                            <rect key="frame" x="0.0" y="248" width="382" height="208"/>
+                            <rect key="frame" x="19.5" y="219" width="343" height="208"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_card_pink" translatesAutoresizingMaskIntoConstraints="NO" id="dfd-qD-akF">
-                                    <rect key="frame" x="0.0" y="0.0" width="185.5" height="208"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery_card-1" translatesAutoresizingMaskIntoConstraints="NO" id="dfd-qD-akF">
+                                    <rect key="frame" x="0.0" y="0.0" width="166" height="208"/>
                                 </imageView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_card_green" translatesAutoresizingMaskIntoConstraints="NO" id="xVc-fK-aoD">
-                                    <rect key="frame" x="196.5" y="0.0" width="185.5" height="208"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gallery_card-3" translatesAutoresizingMaskIntoConstraints="NO" id="xVc-fK-aoD">
+                                    <rect key="frame" x="177" y="0.0" width="166" height="208"/>
                                 </imageView>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="208" id="kFf-sw-zwp"/>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="208" id="uSd-YA-5rY"/>
                             </constraints>
                         </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="456" id="TD7-wf-4Qs"/>
-                    </constraints>
                 </stackView>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="I0l-M1-Rpc">
-                    <rect key="frame" x="16" y="712" width="382" height="87"/>
+                    <rect key="frame" x="16" y="678" width="382" height="87"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="87" id="A3l-KU-ZcT"/>
                     </constraints>
                 </tableView>
                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" translatesAutoresizingMaskIntoConstraints="NO" id="KGa-3M-oy4">
-                    <rect key="frame" x="0.0" y="238" width="414" height="220"/>
+                    <rect key="frame" x="0.0" y="238" width="414" height="535"/>
                 </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -176,7 +169,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="I0l-M1-Rpc" secondAttribute="trailing" constant="16" id="0cf-1z-Zwv"/>
                 <constraint firstItem="NJg-qF-Hro" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0nu-AM-uvN"/>
-                <constraint firstItem="NJg-qF-Hro" firstAttribute="top" secondItem="8uA-vi-JQt" secondAttribute="bottom" constant="18" id="45Q-bV-cjX"/>
+                <constraint firstItem="NJg-qF-Hro" firstAttribute="top" secondItem="8uA-vi-JQt" secondAttribute="bottom" constant="13" id="45Q-bV-cjX"/>
                 <constraint firstItem="bUQ-bn-mTf" firstAttribute="centerY" secondItem="t68-op-crN" secondAttribute="centerY" id="7td-Py-n3t"/>
                 <constraint firstItem="KGa-3M-oy4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8A6-7L-lIy"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KGa-3M-oy4" secondAttribute="trailing" id="Bdc-RK-IAo"/>
@@ -202,13 +195,15 @@
         </view>
     </objects>
     <resources>
-        <image name="home_card_green" width="264" height="392"/>
-        <image name="home_card_pink" width="264" height="392"/>
+        <image name="gallery_card" width="166" height="208"/>
+        <image name="gallery_card-1" width="166" height="208"/>
+        <image name="gallery_card-2" width="166" height="208"/>
+        <image name="gallery_card-3" width="166" height="208"/>
         <image name="icn_gallery_on" width="55" height="24"/>
         <image name="icn_list_on" width="46" height="24"/>
         <image name="icn_mypage" width="24" height="24"/>
         <image name="icn_search" width="24" height="24"/>
-        <image name="list" width="344" height="220"/>
+        <image name="list" width="344" height="535"/>
         <image name="rd_rogo_purple" width="130" height="16"/>
         <namedColor name="dark_blue01">
             <color red="0.0" green="0.0040000001899898052" blue="0.097999997437000275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
