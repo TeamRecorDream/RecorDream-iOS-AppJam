@@ -50,7 +50,7 @@ class RecordDetailViewController: BaseViewController {
         self.headerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview().offset(50)
-            make.height.equalTo(70.adjustedHeight)
+            make.height.equalTo(67.adjustedHeight)
         }
         self.headerView.setHeaderView(HiddenMoreBtn: false, headerLabelText: "기록 상세보기")
         self.headerView.isHiddenUnderLine = true
@@ -132,7 +132,6 @@ extension RecordDetailViewController {
         guard let recordID = recordID else { return }
         RecordDetailService.shared.getRecordDetial(recordID: recordID, completionHandler: { [weak self] recordDetail in
             guard let self = self else { return }
-            print("111")
             guard let recordDetail = recordDetail as? RecordDetailModel else { return }
             self.emotion = recordDetail.emotion
             self.dreamColor = recordDetail.dream_color
@@ -141,10 +140,7 @@ extension RecordDetailViewController {
             guard let note = recordDetail.note else {return}
             let contents = [content, note]
             self.tabPagerView.contents = contents
-            
             DispatchQueue.main.async {
-                
-                print("333\(recordDetail.title)")
                 self.titleLabel.text = recordDetail.title
                 self.dateLabel.text = recordDetail.date
                 self.cardView.image = UIImage(named: Constant.DetailBackgroundColor.IntType(self.dreamColor).title)
