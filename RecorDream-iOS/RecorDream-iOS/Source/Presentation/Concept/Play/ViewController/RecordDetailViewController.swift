@@ -29,6 +29,7 @@ class RecordDetailViewController: BaseViewController {
         
         requestRecordDetail()
         popMypageView()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,7 +132,6 @@ extension RecordDetailViewController {
         guard let recordID = recordID else { return }
         RecordDetailService.shared.getRecordDetial(recordID: recordID, completionHandler: { [weak self] recordDetail in
             guard let self = self else { return }
-            print("111")
             guard let recordDetail = recordDetail as? RecordDetailModel else { return }
             self.emotion = recordDetail.emotion
             self.dreamColor = recordDetail.dream_color
@@ -140,7 +140,6 @@ extension RecordDetailViewController {
             guard let note = recordDetail.note else {return}
             let contents = [content, note]
             self.tabPagerView.contents = contents
-            
             DispatchQueue.main.async {
                 self.titleLabel.text = recordDetail.title
                 self.dateLabel.text = recordDetail.date

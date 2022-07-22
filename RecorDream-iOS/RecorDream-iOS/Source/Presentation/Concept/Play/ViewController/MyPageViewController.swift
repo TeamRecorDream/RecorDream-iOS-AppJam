@@ -40,6 +40,7 @@ class MyPageViewController: BaseViewController {
         requestUserInformation()
         popMypageView()
         configureView()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     //MARK: - Configure
