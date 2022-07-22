@@ -32,14 +32,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="490"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rd_rogo_grey" translatesAutoresizingMaskIntoConstraints="NO" id="EUH-Bi-7Mw">
-                                        <rect key="frame" x="135" y="452" width="144" height="20"/>
+                                        <rect key="frame" x="135" y="445" width="144" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="EUH-Bi-7Mw" secondAttribute="height" multiplier="36:5" id="744-hw-Gmy"/>
                                             <constraint firstAttribute="height" constant="20" id="aG5-yu-DVT"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="mzz-oF-ShE">
-                                        <rect key="frame" x="23" y="10" width="368" height="86"/>
+                                        <rect key="frame" x="23" y="15" width="368" height="86"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21I-5c-prf">
                                                 <rect key="frame" x="0.0" y="0.0" width="368" height="67"/>
@@ -48,7 +48,7 @@
                                                         <rect key="frame" x="10" y="0.0" width="348" height="67"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="jxO-pP-1ah">
-                                                                <rect key="frame" x="0.0" y="17.666666666666671" width="74.666666666666671" height="32"/>
+                                                                <rect key="frame" x="0.0" y="17.666666666666664" width="74.666666666666671" height="32"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyj-s9-ASp">
                                                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -79,7 +79,7 @@
                                                                 <color key="trackTintColor" name="black02"/>
                                                             </progressView>
                                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-Bj-8uA">
-                                                                <rect key="frame" x="316" y="17.666666666666671" width="32" height="32"/>
+                                                                <rect key="frame" x="316" y="17.666666666666664" width="32" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="C3o-Bj-8uA" secondAttribute="height" multiplier="1:1" id="5FY-2x-ED3"/>
                                                                     <constraint firstAttribute="height" constant="32" id="g2J-Cv-B54"/>
@@ -123,7 +123,7 @@
                                         </constraints>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ydq-XA-plW">
-                                        <rect key="frame" x="23" y="114" width="368" height="328"/>
+                                        <rect key="frame" x="23" y="119" width="368" height="316"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">우리 학교 앞에 떡볶이집이 하나있음 그래서 군것질이나 할 겸 그 가게에 갔는데 메뉴들이 엄청 맛있어보였음. 막 호떡, 핫도그, 떡볶이, 오뎅 뭐가 많았는데 갑자기 내가 식욕이 터지는거임. 분식집 아줌마는 여유롭게 스몰토크 하면서 핫도그 튀기고 있고. 초조한 시간과 지금이라도 버리고 타야되나? </string>
                                         <color key="textColor" name="white01"/>
@@ -134,12 +134,12 @@
                                 <color key="backgroundColor" name="dark_blue01"/>
                                 <constraints>
                                     <constraint firstItem="EUH-Bi-7Mw" firstAttribute="top" secondItem="Ydq-XA-plW" secondAttribute="bottom" constant="10" id="BXI-Gq-RvJ"/>
-                                    <constraint firstItem="mzz-oF-ShE" firstAttribute="top" secondItem="0UV-2Q-tdF" secondAttribute="top" constant="10" id="FMg-89-OB4"/>
+                                    <constraint firstItem="mzz-oF-ShE" firstAttribute="top" secondItem="0UV-2Q-tdF" secondAttribute="top" constant="15" id="FMg-89-OB4"/>
                                     <constraint firstItem="Ydq-XA-plW" firstAttribute="trailing" secondItem="mzz-oF-ShE" secondAttribute="trailing" id="Hda-37-am1"/>
                                     <constraint firstItem="Ydq-XA-plW" firstAttribute="leading" secondItem="mzz-oF-ShE" secondAttribute="leading" id="Jv4-WW-xRX"/>
                                     <constraint firstAttribute="trailing" secondItem="mzz-oF-ShE" secondAttribute="trailing" constant="23" id="LeY-ov-8Sf"/>
                                     <constraint firstItem="mzz-oF-ShE" firstAttribute="leading" secondItem="0UV-2Q-tdF" secondAttribute="leading" constant="23" id="N2Y-hO-kWI"/>
-                                    <constraint firstAttribute="bottom" secondItem="EUH-Bi-7Mw" secondAttribute="bottom" constant="18" id="XZ8-wt-v0z"/>
+                                    <constraint firstAttribute="bottom" secondItem="EUH-Bi-7Mw" secondAttribute="bottom" constant="25" id="XZ8-wt-v0z"/>
                                     <constraint firstItem="Ydq-XA-plW" firstAttribute="top" secondItem="mzz-oF-ShE" secondAttribute="bottom" constant="18" id="g2j-7o-Q8j"/>
                                     <constraint firstItem="EUH-Bi-7Mw" firstAttribute="centerX" secondItem="0UV-2Q-tdF" secondAttribute="centerX" id="msh-Zk-sg4"/>
                                 </constraints>

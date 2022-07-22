@@ -29,6 +29,7 @@ class RecordDetailViewController: BaseViewController {
         
         requestRecordDetail()
         popMypageView()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +50,7 @@ class RecordDetailViewController: BaseViewController {
         self.headerView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview().offset(50)
-            make.height.equalTo(67.adjustedHeight)
+            make.height.equalTo(70.adjustedHeight)
         }
         self.headerView.setHeaderView(HiddenMoreBtn: false, headerLabelText: "기록 상세보기")
         self.headerView.isHiddenUnderLine = true
@@ -142,6 +143,8 @@ extension RecordDetailViewController {
             self.tabPagerView.contents = contents
             
             DispatchQueue.main.async {
+                
+                print("333\(recordDetail.title)")
                 self.titleLabel.text = recordDetail.title
                 self.dateLabel.text = recordDetail.date
                 self.cardView.image = UIImage(named: Constant.DetailBackgroundColor.IntType(self.dreamColor).title)
