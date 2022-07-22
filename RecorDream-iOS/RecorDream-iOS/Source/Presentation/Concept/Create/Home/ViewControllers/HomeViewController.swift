@@ -9,7 +9,8 @@ import UIKit
 
 import SnapKit
 import Then
-
+// 기록 저장 수정
+// 보관함 감정x
 class HomeViewController: BaseViewController {
     private let headerView = HeaderView()
     private let homeUserNameView = UserNameView()
@@ -72,7 +73,7 @@ class HomeViewController: BaseViewController {
             make.leading.trailing.bottom.equalToSuperview()
         }
         
-        recorDreamView.setUserNameView(name: "소진 하이", isEmpty: false) // TODO: - user name 넣기
+        recorDreamView.setUserNameView(name: "드리미", isEmpty: false) // TODO: - user name 넣기
     }
     
     func setDelegate() {

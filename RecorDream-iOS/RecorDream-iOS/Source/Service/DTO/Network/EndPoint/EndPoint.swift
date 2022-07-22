@@ -14,7 +14,8 @@ protocol EndPoint {
     func setURL(from environment: APIEnvironment) -> String
     func sendRequest(environment: APIEnvironment) -> NetworkRequest
 }
-
+// 카드 생성
+// 수정
 extension EndPoint {
     func sendRequest(environment: APIEnvironment) -> NetworkRequest {
         var headers: [String: String] = [:]
