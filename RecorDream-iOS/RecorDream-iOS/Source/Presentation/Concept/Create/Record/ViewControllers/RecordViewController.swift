@@ -31,10 +31,11 @@ class GenreTapGestureRecognizer: UITapGestureRecognizer {
 }
 
 enum CreateRecordConst {
-    static var todayDate:Date = Date()
+    static var todayDate: Date = Date()
     static var emotionNum: Int?
     static var dreamColorNum: Int?
     static var isTouchedIndex: [Int] = []
+    static var genreIndex: [Int] = []
 }
 
 class RecordViewController: BaseViewController {
@@ -166,6 +167,9 @@ class RecordViewController: BaseViewController {
     }
     
     let createManager = CreateAPIManager()
+    var isCreateView: Bool = true
+    var emotionSelectedArray = [false, false, false, false, false, false]
+//    var reviseRecordInfo = [] // 서버에서 받아올 값. 모델이랑 매칭해주어야 함
 
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -176,16 +180,34 @@ class RecordViewController: BaseViewController {
         setupConstraint()
         setHeaderView()
         setHashtagView()
+        //CreateRecordConst.isCreateView == true면 기록하기 뷰, 아니면 수정하기 뷰임,
+        // 수정하기 뷰인 경우 emotion , dream color , textfield, textview 모든것을 서버에서 넘어온 값으로 넣어주어야함
+        // static var 에 넣어주기 . 그리고 수정하기 뷰인 경우에만 그 값을 가져와서 사용하도록
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         resetStatus()
+        setReviseView()
     }
     
     // MARK: - Functions
     private func setHeaderView() {
         headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
+    }
+    
+    private func setReviseView() {
+        if !isCreateView { //MARK: - 수정하기 뷰인경우
+            //날짜, 제목 , 내용 , 감정, 꿈색상, 장르, 노트
+            headerView.headerLabel.text = "수정하기"
+            dateView.recordDateLabel.text = "2022-07-24"
+            titleTextField.text = "소진이당 ㅋㅋ"
+            contentTextView.text = "내용이당 ㅋㅋ"
+            noteTextView.text = "노트내용이다 ㅋㅋ"
+            CreateRecordConst.emotionNum = 4
+            contentLable.isHidden = true
+            setTitleTextField()
+        }
     }
     
     private func setDelegate() {
@@ -222,6 +244,22 @@ class RecordViewController: BaseViewController {
             let hashtagView = HashtagView()
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
         
+            if !isCreateView {
+                print("sethashtagview")
+//                CreateRecordConst.genreIndex.append(1)
+//                CreateRecordConst.genreIndex.append(2)
+                print(CreateRecordConst.genreIndex)
+                for selectedIndex in CreateRecordConst.genreIndex {
+                    print(selectedIndex)
+                    if selectedIndex == index {
+                        print("selectedIndex == index")
+                        hashtagView.setSelectedRecordLabel()
+                    } else {
+                        hashtagView.resetSelectedRecordLabel()
+                    }
+                }
+            }
+            
             let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreViewDidTap))
             genreTapGesture.index = index
             genreTapGesture.hashtagView = hashtagView
@@ -238,6 +276,15 @@ class RecordViewController: BaseViewController {
         for index in 5..<Constant.Genre.genreTitles.count - 1 {
             let hashtagView = HashtagView()
             hashtagView.setRecordLabel(text: "# \(Constant.Genre.genreTitles[index])")
+            
+//            if !isCreateView {
+//                print("sethashtagview")
+//                for selectedIndex in genreIndex {
+//                    if selectedIndex == index {
+//                        hashtagView.setSelectedRecordLabel()
+//                    }
+//                }
+//            }
 
             let genreTapGesture = GenreTapGestureRecognizer(target: self, action: #selector(genreViewDidTap))
             genreTapGesture.index = index
@@ -258,15 +305,7 @@ class RecordViewController: BaseViewController {
     }
     
     @objc func textFieldDidChange() {
-        if let title = titleTextField.text {
-            if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                // MARK: - 저장 가능 상태
-                saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
-            } else {
-                // MARK: - 저장 불가능 상태
-                saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
-            }
-        }
+        setTitleTextField()
     }
     
     @objc func saveButtonDidTap() {
@@ -289,6 +328,22 @@ class RecordViewController: BaseViewController {
                 }, completion: {_ in
                     self.toastMessageView.removeFromSuperview()
                 })
+            }
+        }
+    }
+    
+    func setTitleTextField() {
+        if let title = titleTextField.text {
+            print("title : \(title)")
+            print(title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                // MARK: - 저장 가능 상태
+                print("저장 가능 상태")
+                saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
+            } else {
+                // MARK: - 저장 불가능 상태
+                print("저장 불가능 상태")
+                saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
             }
         }
     }
@@ -502,6 +557,22 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == emotionCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
+            if !isCreateView {
+//                cell.isSelected = false
+                print("isSelected - ")
+                if indexPath.item == CreateRecordConst.emotionNum {
+                    print("안녕")
+//                    cell.isSelected = true
+                    cell.updateRecordBarImage(reset: false)
+//                    cell.recordBarImageView.alpha = 1
+//                    cell.testFunc()
+//                    cell.isSelected.toggle()
+                }
+                //끄... ~~실행~~
+            } else {
+                print("isisisisisisisis")
+            }
+//            cell.recordBarImageView.alpha = 1
             cell.setRecordBarImage(imageName: Constant.Emotion.IntType(indexPath.item + 1).title)
             return cell
         } else if collectionView == dreamColorCollectionView {
@@ -512,13 +583,36 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
         return UICollectionViewCell()
     }
     
+    //index 구했는데 어찌해야할지 모르겠음. - 1
+//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+//        emotionSelectedArray.enumerated().forEach {
+//            emotionSelectedArray[$0.offset] = false
+//        }
+//        self.emotionSelectedArray[indexPath.item] = true
+//
+//        return true
+//    }
+//
+    //안됨. - 2
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //add here
+        if !isCreateView {
+            let selectedIndexPath = IndexPath(item: 0, section: 4)
+            emotionCollectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: [])
+        }
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return }
+//        cell.updateRecordBarImage(reset: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: - 서버통신시 index 넣어주기 
         if collectionView == emotionCollectionView {
             CreateRecordConst.emotionNum = indexPath.item + 1
+//            emotionCollectionView.reloadData()
         } else if collectionView == dreamColorCollectionView {
             CreateRecordConst.dreamColorNum = chipColorList[indexPath.item][1] as? Int
         }
+        
     }
 }
 
