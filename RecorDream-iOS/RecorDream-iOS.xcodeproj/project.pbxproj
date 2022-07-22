@@ -16,6 +16,7 @@
 		1423B8BE288A3310004E4E5B /* NoticeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8BD288A3310004E4E5B /* NoticeModel.swift */; };
 		1423B8C0288A667C004E4E5B /* RecordDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8BF288A667C004E4E5B /* RecordDetailService.swift */; };
 		1423B8C2288A6ACF004E4E5B /* RecordDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8C1288A6ACF004E4E5B /* RecordDetailModel.swift */; };
+		1423B8C4288B247F004E4E5B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423B8C3288B247F004E4E5B /* BaseModel.swift */; };
 		14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */; };
 		14243E11287FB81400CCE8A0 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */; };
 		14243E13287FD0FF00CCE8A0 /* CustomSwitchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */; };
@@ -157,6 +158,7 @@
 		1423B8BD288A3310004E4E5B /* NoticeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeModel.swift; sourceTree = "<group>"; };
 		1423B8BF288A667C004E4E5B /* RecordDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailService.swift; sourceTree = "<group>"; };
 		1423B8C1288A6ACF004E4E5B /* RecordDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailModel.swift; sourceTree = "<group>"; };
+		1423B8C3288B247F004E4E5B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		14243E0E287FB81400CCE8A0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		14243E0F287FB81400CCE8A0 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		14243E12287FD0FF00CCE8A0 /* CustomSwitchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitchButton.swift; sourceTree = "<group>"; };
@@ -795,6 +797,7 @@
 				F6F14A882886F47F0065D291 /* HTTPMethod.swift */,
 				F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */,
 				F6F14A8E2886F5DC0065D291 /* APIError.swift */,
+				1423B8C3288B247F004E4E5B /* BaseModel.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1038,7 +1041,6 @@
 				1423B8C2288A6ACF004E4E5B /* RecordDetailModel.swift in Sources */,
 				F6F14A6E28867B340065D291 /* SearchViewModel.swift in Sources */,
 				F6F14AB428872D290065D291 /* FilterCollectionViewCell.swift in Sources */,
-				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				1423B8BE288A3310004E4E5B /* NoticeModel.swift in Sources */,
 				F695166D288A479B000F88D7 /* (null) in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
@@ -1080,6 +1082,7 @@
 				F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */,
 				1444570D28888C760023E090 /* RecordDetailBottomSheetViewController.swift in Sources */,
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
+				1423B8C4288B247F004E4E5B /* BaseModel.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
 				F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */,
 				F6F14A8D2886F5A60065D291 /* CreateAPIManager.swift in Sources */,
@@ -1264,7 +1267,7 @@
 				CODE_SIGN_ENTITLEMENTS = "RecorDream-iOS/RecorDream-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 272QNH7NKN;
+				DEVELOPMENT_TEAM = ZQV4ZDQNW5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RecorDream-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1295,7 +1298,7 @@
 				CODE_SIGN_ENTITLEMENTS = "RecorDream-iOS/RecorDream-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 272QNH7NKN;
+				DEVELOPMENT_TEAM = ZQV4ZDQNW5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RecorDream-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
