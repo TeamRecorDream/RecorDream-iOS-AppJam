@@ -22,7 +22,7 @@ extension Constant {
     }
     
     enum TextColor {
-        static let textColorTitles = ["sub_dark01", "sub_green01", "sub_blue01", "sub_orange01", "sub_purple01", "sub_pink01", "sub_red01"]
+        static let textColorTitles = ["dark_blue03", "sub_green01", "sub_blue01", "sub_orange01", "sub_purple01", "sub_pink01", "sub_red01"]
         
         case IntType(Int)
         

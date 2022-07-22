@@ -1,18 +1,18 @@
 //
-//  APIManager.swift
+//  ShareAPIManager.swift
 //  RecorDream-iOS
 //
-//  Created by 정은희 on 2022/07/19.
+//  Created by Sojin Lee on 2022/07/22.
 //
 
 import Foundation
 
-protocol Requestable: AnyObject {
-    func request<T: Decodable>(_ request: NetworkRequest) async throws -> T?
+protocol ShareRequestable: AnyObject {
+    func request(_ request: NetworkRequest) async throws -> [SearchResponse]
 }
 
-final class APIManager: Requestable {
-    func request<T>(_ request: NetworkRequest) async throws -> T? where T : Decodable {
+final class ShareAPIManager: ShareRequestable {
+    func request(_ request: NetworkRequest) async throws -> [SearchResponse] {
         guard let encodedURL = request.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURL)
         else { throw APIError.urlEncodingError }
@@ -21,10 +21,11 @@ final class APIManager: Requestable {
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<500) ~= httpResponse.statusCode
         else { throw APIError.serverError }
+
+        let decodedData = try JSONDecoder().decode(SearchResponse.self, from: data)
         
-        let decodedData = try JSONDecoder().decode(BaseModel<T>.self, from: data)
         if decodedData.success {
-            return decodedData.data
+            return [decodedData]
         } else {
             throw APIError.clientError(message: decodedData.message)
         }

@@ -21,13 +21,20 @@ enum CollectionViewConst {
 }
 
 class GenreTapGestureRecognizer: UITapGestureRecognizer {
-    var index: Int?
+    var index: Int = 0
     var hashtagView: HashtagView?
     var isTouched: Bool? = false
     
     func setIsTouched() {
         self.isTouched?.toggle()
     }
+}
+
+enum CreateRecordConst {
+    static var todayDate:Date = Date()
+    static var emotionNum: Int?
+    static var dreamColorNum: Int?
+    static var isTouchedIndex: [Int] = []
 }
 
 class RecordViewController: BaseViewController {
@@ -157,6 +164,8 @@ class RecordViewController: BaseViewController {
     private let saveButton = UIButton().then {
         $0.setImage(ImageList.icnSaveOff.image, for: .normal)
     }
+    
+    let createManager = CreateAPIManager()
 
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -171,7 +180,7 @@ class RecordViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        resetTextStatus()
+        resetStatus()
     }
     
     // MARK: - Functions
@@ -197,12 +206,14 @@ class RecordViewController: BaseViewController {
     internal override func setTargets() {
         titleTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
+        headerView.backButton.addTarget(self, action: #selector(dismissButtonClicked), for: .touchUpInside)
     }
     
-    private func resetTextStatus() {
+    private func resetStatus() {
         titleTextField.text?.removeAll()
         noteTextView.text?.removeAll()
         contentTextView.text?.removeAll()
+        dateView.setRecordDateLabel(date: Date())
     }
     
     private func setHashtagView() {
@@ -242,6 +253,10 @@ class RecordViewController: BaseViewController {
         }
     }
     
+    @objc func dismissButtonClicked() {
+        self.dismiss(animated: true)
+    }
+    
     @objc func textFieldDidChange() {
         if let title = titleTextField.text {
             if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -258,6 +273,15 @@ class RecordViewController: BaseViewController {
         if let title = titleTextField.text {
             if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 // MARK: - 저장 가능 상태
+                guard let title = titleTextField.text,
+                      let content = contentTextView.text,
+                      let note = noteTextView.text else { return }
+                
+                let date: String = CreateRecordConst.todayDate.toString()
+                
+                let record = CreateRecord(title: title, date: date, content: content, emotion: CreateRecordConst.emotionNum, dreamColor: CreateRecordConst.dreamColorNum, genre: CreateRecordConst.isTouchedIndex, note: note, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
+                
+                postRecord(record: record)
             } else {
                 // MARK: - 저장 불가능 상태
                 UIView.animate(withDuration: 1.25, delay: 0.01, options: .curveEaseIn, animations: {
@@ -415,7 +439,8 @@ extension RecordViewController: Presentable, NavigationBarDelegate {
     }
     
     func navigationBackButtonDidTap() {
-        print("backBtnTap")
+        let tabBarController = TabBarController()
+        navigationController?.pushViewController(tabBarController, animated: true)
     }
     
     func navigationMoreButtonDidTap() {}
@@ -430,6 +455,7 @@ extension RecordViewController: UIGestureRecognizerDelegate {
     @objc func dateViewDidTap(sender: UITapGestureRecognizer) {
         let modalVC = DateModalViewController()
         modalVC.dateClosure = { date in
+            CreateRecordConst.todayDate = date
             self.dateView.setRecordDateLabel(date: date)
         }
         modalVC.modalPresentationStyle = .custom
@@ -444,20 +470,26 @@ extension RecordViewController: UIGestureRecognizerDelegate {
         view.calculateIsTouchCount(addCount: isTouched)
         let count = view.touchedCount()
         
-        if isTouched && count >= 4 {
+        if isTouched && count >= 4 { // MARK: - 터치된 것 뺌
             sender.setIsTouched()
             view.calculateIsTouchCount(addCount: !isTouched)
+            CreateRecordConst.isTouchedIndex = CreateRecordConst.isTouchedIndex.filter {
+                $0 != sender.index
+            }
             noticeLabel.isHidden = false
-        } else if isTouched && count <= 3 {
+        } else if isTouched && count <= 3 { // MARK: - 터치됨
             view.setSelectedRecordLabel()
+            CreateRecordConst.isTouchedIndex.append(sender.index)
             noticeLabel.isHidden = true
-        } else if !isTouched {
+        } else if !isTouched { // MARK: - 터치 안된 상태
             view.resetSelectedRecordLabel()
+            CreateRecordConst.isTouchedIndex = CreateRecordConst.isTouchedIndex.filter {
+                $0 != sender.index
+            }
             noticeLabel.isHidden = true
         } else {
             print("error")
         }
-        
     }
 }
 
@@ -483,10 +515,9 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: - 서버통신시 index 넣어주기 
         if collectionView == emotionCollectionView {
-            print("emotionCell :\(indexPath.item + 1)")
+            CreateRecordConst.emotionNum = indexPath.item + 1
         } else if collectionView == dreamColorCollectionView {
-            print("dreamColorCell :\(indexPath.item)")
-            print("dreamColorIndex : \(chipColorList[indexPath.item][1])")
+            CreateRecordConst.dreamColorNum = chipColorList[indexPath.item][1] as? Int
         }
     }
 }
@@ -507,6 +538,27 @@ extension UILabel {
     func setLabel(){
         self.font = TypoStyle.title2.font
         self.tintColor = ColorType.white01.color
+    }
+}
+
+extension RecordViewController {
+    func postRecord(record: CreateRecord) {
+        Task {
+            do {
+                try await createManager.postRequest(record: record)
+            } catch {
+                print("실패")
+            }
+        }
+    }
+}
+
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        return dateFormatter.string(from: self)
     }
 }
 

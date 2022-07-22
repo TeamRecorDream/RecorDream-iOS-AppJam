@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,22 +17,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" alpha="0.34999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US4-EV-MvP">
-                        <rect key="frame" x="0.0" y="1" width="50" height="48"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US4-EV-MvP">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" name="white04"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                         <state key="normal" image="emoji_sad"/>
-                        <connections>
-                            <action selector="FilterButtonDidTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bPN-UC-L1S"/>
-                        </connections>
                     </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="US4-EV-MvP" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Jzd-4E-JHO"/>
+                <constraint firstAttribute="bottom" secondItem="US4-EV-MvP" secondAttribute="bottom" id="LLY-Ye-Agw"/>
+                <constraint firstItem="US4-EV-MvP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WgF-Dg-fyB"/>
+                <constraint firstItem="US4-EV-MvP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jdV-b1-Xcf"/>
                 <constraint firstItem="US4-EV-MvP" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="1:1" id="pRG-sb-gag"/>
-                <constraint firstItem="US4-EV-MvP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xy7-KI-Igj"/>
+                <constraint firstAttribute="trailing" secondItem="US4-EV-MvP" secondAttribute="trailing" id="y5P-Q2-Kch"/>
             </constraints>
             <connections>
                 <outlet property="filterButton" destination="US4-EV-MvP" id="VIs-gu-zRO"/>
@@ -41,5 +41,8 @@
     </objects>
     <resources>
         <image name="emoji_sad" width="48" height="48"/>
+        <namedColor name="white04">
+            <color red="1" green="1" blue="1" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

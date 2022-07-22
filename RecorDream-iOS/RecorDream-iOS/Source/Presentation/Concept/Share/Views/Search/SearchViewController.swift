@@ -12,7 +12,7 @@ class SearchViewController: BaseViewController {
     private let searchView = SearchView()
     private var searchedCount: Int = 0
     private var searchedLists: [SearchExist] = []
-    private let searchManager: ShareServiceable = ShareService(apiService: APIManager(), environment: .development)
+    private let searchManager: ShareServiceable = ShareService(apiService: ShareAPIManager(), environment: .development)
 //    private var listDataSource: UITableViewDiffableDataSource<Search, Exist>!
 //    private var listSnapShot: NSDiffableDataSourceSnapshot<Search, Exist>!
 //    private var existSample = SearchResultExsit.existSampleData
@@ -42,9 +42,7 @@ extension SearchViewController {
     }
     @objc
     private func backToStorageView() {
-        self.dismiss(animated: true) { [weak self] in
-            self?.navigationController?.popToRootViewController(animated: false)
-        }
+        self.dismiss(animated: true)
     }
     func getSearchingKeyword(keyword: String) {
         Task {
@@ -62,6 +60,8 @@ extension SearchViewController: UITextFieldDelegate, UITableViewDataSource {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .done {
             getSearchingKeyword(keyword: textField.text ?? "")
+            searchView.searchResultLabel.isHidden = false
+            searchView.searchResultImage.isHidden = false
             return true
         }
         else {

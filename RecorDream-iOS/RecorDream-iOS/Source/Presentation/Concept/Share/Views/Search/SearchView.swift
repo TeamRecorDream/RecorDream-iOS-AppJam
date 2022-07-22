@@ -47,10 +47,22 @@ final class SearchView: BaseView {
         $0.scrollsToTop = true
         $0.showsVerticalScrollIndicator = false
     }
+    // MARK: - mock
+    let searchResultLabel = UILabel().then {
+        $0.font = TypoStyle.title2.font
+        $0.text = "2개의 기록"
+        $0.textColor = ColorType.white01.color
+        $0.isHidden = true
+    }
+    let searchResultImage = UIImageView().then {
+        $0.image = UIImage(named: "list")
+        $0.isHidden = true
+    }
     
     // MARK: - Render
     override func setupView() {
-        self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage, searchResultTableView)
+        self.addSubviews(navigationBarView, searchInputLabel, searchTextField, searchImage, searchResultLabel, searchResultImage)
+        self.navigationBarView.bringSubviewToFront(navigationBarView.backButton)
     }
     override func setupConstraint() {
         self.navigationBarView.snp.makeConstraints { make in
@@ -74,11 +86,22 @@ final class SearchView: BaseView {
             make.centerY.equalTo(searchTextField)
             make.leading.equalToSuperview().offset(30)
         }
-        self.searchResultTableView.snp.makeConstraints { make in
+//        self.searchResultTableView.snp.makeConstraints { make in
+//            make.width.equalTo(375.adjustedWidth)
+//            make.height.equalTo(588.adjustedHeight)
+//            make.top.equalTo(searchTextField.snp.bottom)
+//            make.leading.bottom.equalToSuperview()
+//        }
+        // MARK: - mock
+        self.searchResultLabel.snp.makeConstraints { make in
+            make.top.equalTo(searchTextField.snp.bottom).offset(60)
+            make.leading.trailing.equalToSuperview().offset(16)
+        }
+        self.searchResultImage.snp.makeConstraints { make in
             make.width.equalTo(375.adjustedWidth)
-            make.height.equalTo(588.adjustedHeight)
-            make.top.equalTo(searchTextField.snp.bottom)
-            make.leading.bottom.equalToSuperview()
+            make.top.equalTo(searchResultLabel.snp.bottom).offset(27)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
     }
 }

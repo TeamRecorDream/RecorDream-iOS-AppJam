@@ -11,14 +11,7 @@ final class FilterCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
     @IBOutlet weak var filterButton: UIButton!
     
-    override var isSelected: Bool {
-        didSet {
-            if isSelected { filterButton?.alpha = 1 }
-            else { filterButton?.alpha = 0.35 }
-        }
-    }
-    
-    // MARK: - @IBAction Properties
-    @IBAction func FilterButtonDidTapped(_ sender: UIButton) {
+    func setFilterIcon(data: FilterIconList) {
+        filterButton.imageView?.image = UIImage(named: data.emotion)
     }
 }

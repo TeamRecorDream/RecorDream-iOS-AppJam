@@ -48,7 +48,7 @@ final class StorageView: BaseView {
         self.navigationBarView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(72.adjustedHeight)
-            make.top.equalToSuperview().offset(50)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
         }
         self.filterCollectionView.snp.makeConstraints { make in

@@ -45,6 +45,8 @@
 		2322D08A2883EFB100DC5553 /* RecordHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2322D0892883EFB100DC5553 /* RecordHeaderView.xib */; };
 		2322D08E2883F37100DC5553 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08D2883F37100DC5553 /* RecordViewController.swift */; };
 		2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */; };
+		2326F241288A66C30079BD45 /* CreateRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F240288A66C30079BD45 /* CreateRecordModel.swift */; };
+		2326F243288A6B050079BD45 /* DreamBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F242288A6B050079BD45 /* DreamBaseModel.swift */; };
 		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
 		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
@@ -54,7 +56,11 @@
 		233D3C3E28852DE800553605 /* RecordVoiceBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */; };
 		233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */; };
 		23450D6A2887D5A400A8FB70 /* DateModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23450D692887D5A400A8FB70 /* DateModalViewController.swift */; };
+		23450D6C288865B800A8FB70 /* DreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23450D6B288865B700A8FB70 /* DreamService.swift */; };
+		23450D6E288866C300A8FB70 /* DreamEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23450D6D288866C300A8FB70 /* DreamEndPoint.swift */; };
+		23450D712888766D00A8FB70 /* HomeRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23450D702888766D00A8FB70 /* HomeRecordModel.swift */; };
 		23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23695C71287C2A3B00B479A2 /* HomeViewController.swift */; };
+		23B36A412889E5E7001EE7E3 /* ShareAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B36A402889E5E7001EE7E3 /* ShareAPIManager.swift */; };
 		F613C7B72875617E005CB133 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B62875617E005CB133 /* AppDelegate.swift */; };
 		F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F613C7B82875617E005CB133 /* SceneDelegate.swift */; };
 		F613C7C028756181005CB133 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F613C7BF28756181005CB133 /* Assets.xcassets */; };
@@ -70,6 +76,8 @@
 		F62CDF32288307C800E5B19C /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF31288307C800E5B19C /* TabBarItem.swift */; };
 		F62CDF3528830B9100E5B19C /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62CDF3328830B9100E5B19C /* SampleViewController.swift */; };
 		F62CDF3628830B9100E5B19C /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F62CDF3428830B9100E5B19C /* SampleViewController.xib */; };
+		F695166D288A479B000F88D7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		F695166F288AC2E9000F88D7 /* mockStorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F695166E288AC2E8000F88D7 /* mockStorageModel.swift */; };
 		F6D3944D287D4164004A7DBB /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D3944C287D4164004A7DBB /* StorageViewController.swift */; };
 		F6D39457287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
 		F6D39458287D41BF004A7DBB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */; };
@@ -118,9 +126,8 @@
 		F6F14A7C2886CC210065D291 /* dummySearchResultExist.json in Resources */ = {isa = PBXBuildFile; fileRef = F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */; };
 		F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A882886F47F0065D291 /* HTTPMethod.swift */; };
 		F6F14A8B2886F4D20065D291 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */; };
-		F6F14A8D2886F5A60065D291 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8C2886F5A60065D291 /* APIManager.swift */; };
+		F6F14A8D2886F5A60065D291 /* CreateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8C2886F5A60065D291 /* CreateAPIManager.swift */; };
 		F6F14A8F2886F5DC0065D291 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A8E2886F5DC0065D291 /* APIError.swift */; };
-		F6F14A912886F6120065D291 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A902886F6120065D291 /* BaseModel.swift */; };
 		F6F14A932886F7910065D291 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A922886F7910065D291 /* APIEnvironment.swift */; };
 		F6F14A992886FB230065D291 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A982886FB230065D291 /* EndPoint.swift */; };
 		F6F14A9B28871E480065D291 /* StorageResultExist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F14A9A28871E470065D291 /* StorageResultExist.swift */; };
@@ -179,6 +186,8 @@
 		2322D0892883EFB100DC5553 /* RecordHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordHeaderView.xib; sourceTree = "<group>"; };
 		2322D08D2883F37100DC5553 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
+		2326F240288A66C30079BD45 /* CreateRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordModel.swift; sourceTree = "<group>"; };
+		2326F242288A6B050079BD45 /* DreamBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamBaseModel.swift; sourceTree = "<group>"; };
 		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
@@ -188,7 +197,11 @@
 		233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVoiceBarView.swift; sourceTree = "<group>"; };
 		233D3C402885A0EF00553605 /* RecordBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBarCollectionViewCell.swift; sourceTree = "<group>"; };
 		23450D692887D5A400A8FB70 /* DateModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModalViewController.swift; sourceTree = "<group>"; };
+		23450D6B288865B700A8FB70 /* DreamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamService.swift; sourceTree = "<group>"; };
+		23450D6D288866C300A8FB70 /* DreamEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamEndPoint.swift; sourceTree = "<group>"; };
+		23450D702888766D00A8FB70 /* HomeRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecordModel.swift; sourceTree = "<group>"; };
 		23695C71287C2A3B00B479A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		23B36A402889E5E7001EE7E3 /* ShareAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareAPIManager.swift; sourceTree = "<group>"; };
 		F613C7B32875617E005CB133 /* RecorDream-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RecorDream-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F613C7B62875617E005CB133 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F613C7B82875617E005CB133 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +216,7 @@
 		F62CDF31288307C800E5B19C /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		F62CDF3328830B9100E5B19C /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		F62CDF3428830B9100E5B19C /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
+		F695166E288AC2E8000F88D7 /* mockStorageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockStorageModel.swift; sourceTree = "<group>"; };
 		F6D3944C287D4164004A7DBB /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		F6D3944E287D41BE004A7DBB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		F6D3944F287D41BE004A7DBB /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -236,9 +250,8 @@
 		F6F14A7B2886CC210065D291 /* dummySearchResultExist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummySearchResultExist.json; sourceTree = "<group>"; };
 		F6F14A882886F47F0065D291 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		F6F14A8C2886F5A60065D291 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6F14A8C2886F5A60065D291 /* CreateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPIManager.swift; sourceTree = "<group>"; };
 		F6F14A8E2886F5DC0065D291 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		F6F14A902886F6120065D291 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F6F14A922886F7910065D291 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		F6F14A982886FB230065D291 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		F6F14A9A28871E470065D291 /* StorageResultExist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageResultExist.swift; sourceTree = "<group>"; };
@@ -349,6 +362,7 @@
 		2322D0802883EE7F00DC5553 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				2326F23F288A66AD0079BD45 /* Model */,
 				2322D0812883EED900DC5553 /* ViewControllers */,
 			);
 			path = Record;
@@ -372,6 +386,14 @@
 				233D3C3D28852DE800553605 /* RecordVoiceBarView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2326F23F288A66AD0079BD45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2326F240288A66C30079BD45 /* CreateRecordModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		232D0E37287D86850063D725 /* View */ = {
@@ -402,9 +424,35 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		2342268228892B090065E8A2 /* Concept */ = {
+			isa = PBXGroup;
+			children = (
+				23B36A3F2889E5D7001EE7E3 /* Share */,
+				2342268328892B150065E8A2 /* Create */,
+			);
+			path = Concept;
+			sourceTree = "<group>";
+		};
+		2342268328892B150065E8A2 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				F6F14A8C2886F5A60065D291 /* CreateAPIManager.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		23450D6F2888760100A8FB70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23450D702888766D00A8FB70 /* HomeRecordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		23695C6E287C29E500B479A2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				23450D6F2888760100A8FB70 /* Model */,
 				23695C70287C2A2000B479A2 /* ViewControllers */,
 			);
 			path = Home;
@@ -417,6 +465,14 @@
 				23695C71287C2A3B00B479A2 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		23B36A3F2889E5D7001EE7E3 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				23B36A402889E5E7001EE7E3 /* ShareAPIManager.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 		F613C7AA2875617E005CB133 = {
@@ -678,7 +734,6 @@
 		F6F14A5F28857D970065D291 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F6F14AC6288918C20065D291 /* Mock */,
 				F6F14A6028857DB50065D291 /* Cells */,
 				F6F14A5B28854F730065D291 /* SearchViewController.swift */,
 				F6F14A5D28854F980065D291 /* SearchView.swift */,
@@ -736,11 +791,10 @@
 		F6F14A862886F3E10065D291 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				2342268228892B090065E8A2 /* Concept */,
 				F6F14A882886F47F0065D291 /* HTTPMethod.swift */,
 				F6F14A8A2886F4D20065D291 /* NetworkRequest.swift */,
-				F6F14A8C2886F5A60065D291 /* APIManager.swift */,
 				F6F14A8E2886F5DC0065D291 /* APIError.swift */,
-				F6F14A902886F6120065D291 /* BaseModel.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -768,6 +822,9 @@
 		F6F14A952886FAD40065D291 /* Create */ = {
 			isa = PBXGroup;
 			children = (
+				23450D6B288865B700A8FB70 /* DreamService.swift */,
+				23450D6D288866C300A8FB70 /* DreamEndPoint.swift */,
+				2326F242288A6B050079BD45 /* DreamBaseModel.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -818,15 +875,9 @@
 		F6F14AC5288918B90065D291 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				F695166E288AC2E8000F88D7 /* mockStorageModel.swift */,
 				F6F14AC7288918E50065D291 /* mockStorageViewController.swift */,
 				F6F14AC8288918E50065D291 /* mockStorageViewController.xib */,
-			);
-			path = Mock;
-			sourceTree = "<group>";
-		};
-		F6F14AC6288918C20065D291 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -989,6 +1040,7 @@
 				F6F14AB428872D290065D291 /* FilterCollectionViewCell.swift in Sources */,
 				F6F14A912886F6120065D291 /* BaseModel.swift in Sources */,
 				1423B8BE288A3310004E4E5B /* NoticeModel.swift in Sources */,
+				F695166D288A479B000F88D7 /* (null) in Sources */,
 				2322D07428813D5F00DC5553 /* GenreType.swift in Sources */,
 				233D3C412885A0EF00553605 /* RecordBarCollectionViewCell.swift in Sources */,
 				F6F14A64288584930065D291 /* SearchFooterTableViewCell.swift in Sources */,
@@ -1007,13 +1059,17 @@
 				144A1C8328871EF600598121 /* GenreCollectionViewCell.swift in Sources */,
 				14243E172880782300CCE8A0 /* TimeSettingViewController.swift in Sources */,
 				1423B8C0288A667C004E4E5B /* RecordDetailService.swift in Sources */,
+				2326F241288A66C30079BD45 /* CreateRecordModel.swift in Sources */,
 				F62CDF2C288304F400E5B19C /* TabBarController.swift in Sources */,
 				F6F14AA5288721D90065D291 /* GallaryCollectionViewCell.swift in Sources */,
 				F613C7B92875617E005CB133 /* SceneDelegate.swift in Sources */,
+				23450D6E288866C300A8FB70 /* DreamEndPoint.swift in Sources */,
 				144456FA2887A1A00023E090 /* TabPagerView.swift in Sources */,
 				1423B8BC288A244C004E4E5B /* UserNickname.swift in Sources */,
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
+				23450D6C288865B800A8FB70 /* DreamService.swift in Sources */,
 				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
+				2326F243288A6B050079BD45 /* DreamBaseModel.swift in Sources */,
 				F6F14A5E28854F980065D291 /* SearchView.swift in Sources */,
 				144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */,
 				2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */,
@@ -1026,13 +1082,14 @@
 				232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */,
 				F6F14A62288584810065D291 /* SearchHeaderTableViewCell.swift in Sources */,
 				F6F14A892886F47F0065D291 /* HTTPMethod.swift in Sources */,
-				F6F14A8D2886F5A60065D291 /* APIManager.swift in Sources */,
+				F6F14A8D2886F5A60065D291 /* CreateAPIManager.swift in Sources */,
 				F613C8012876D356005CB133 /* BaseView.swift in Sources */,
 				F6F14A932886F7910065D291 /* APIEnvironment.swift in Sources */,
 				F613C7D8287564D2005CB133 /* Constant.swift in Sources */,
 				F6F14AC9288918E50065D291 /* mockStorageViewController.swift in Sources */,
 				F6F14AB72887DCCF0065D291 /* BasePaddingLabel.swift in Sources */,
 				14243E10287FB81400CCE8A0 /* MyPageViewController.swift in Sources */,
+				23450D712888766D00A8FB70 /* HomeRecordModel.swift in Sources */,
 				144A1C7F2886E8C600598121 /* RecordDetailViewController.swift in Sources */,
 				F6F14A8F2886F5DC0065D291 /* APIError.swift in Sources */,
 				232D0E39287D86C20063D725 /* HeaderView.swift in Sources */,
@@ -1040,6 +1097,7 @@
 				F6F14A762886CA950065D291 /* MockParser.swift in Sources */,
 				23695C72287C2A3B00B479A2 /* HomeViewController.swift in Sources */,
 				F6F14A67288584E70065D291 /* SearchResultTableViewCell.swift in Sources */,
+				F695166F288AC2E9000F88D7 /* mockStorageModel.swift in Sources */,
 				F6F14A6A2885857F0065D291 /* EmptyView.swift in Sources */,
 				F6F14A712886A17F0065D291 /* SearchResult.swift in Sources */,
 				F6F14AC12888947B0065D291 /* ShareService.swift in Sources */,
@@ -1062,6 +1120,7 @@
 				232D0E49287DEC380063D725 /* HashtagView.swift in Sources */,
 				F6F14A5C28854F730065D291 /* SearchViewController.swift in Sources */,
 				144456FF2887A3CC0023E090 /* TabPagerTitleCollectionViewCell.swift in Sources */,
+				23B36A412889E5E7001EE7E3 /* ShareAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

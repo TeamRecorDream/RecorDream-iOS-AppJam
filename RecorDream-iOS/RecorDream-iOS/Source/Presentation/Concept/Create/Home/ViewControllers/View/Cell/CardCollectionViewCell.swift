@@ -51,13 +51,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setCardView(
-            imageName: Constant.BackgroundColor.IntType(1).title,
-            emojiName: Constant.Emotion.IntType(3).title,
-            date: "2022/07/13(수)",
-            contentText: "안녕하세요 반가워요 잘있어요 다시 만나요")
         setupConstraints()
-        setHashtagStackView(genres: [1,2], textColor: Constant.TextColor.IntType(1).title)
     }
     
     func setupView() {
@@ -74,15 +68,17 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
         
         cardStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(28)
+//            make.top.equalToSuperview().offset(28)
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().inset(22)
+            make.bottom.equalToSuperview().inset(156.adjustedHeight)
         }
         
         cardStackView.setCustomSpacing(12, after: contentLabel)
         
         mainEmojiImage.snp.makeConstraints { make in
-            make.width.height.equalTo(48)
+            make.width.equalTo(48.adjustedWidth)
+            make.height.equalTo(48.adjustedHeight)
             make.leading.equalToSuperview()
             make.top.equalToSuperview()
         }
@@ -98,37 +94,38 @@ class CardCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - 카드뷰의 색상 및 label을 결정짓는 함수
-    func setCardView(imageName: String, emojiName: String, date: String, contentText: String) {
-        backgroundImage.image = UIImage(named: imageName)
-        mainEmojiImage.image = UIImage(named: emojiName)
-        dateLabel.text = date
-        contentLabel.text = contentText
+    func setCardView(dream: RecordElement) {
+        backgroundImage.image = UIImage(named: Constant.BackgroundColor.IntType(dream.dreamColor).title)
+        mainEmojiImage.image = UIImage(named: Constant.Emotion.IntType(dream.emotion).title)
+        dateLabel.text = dream.date
+        contentLabel.text = dream.title
     }
     
     // MARK: - 장르 뷰 생성하는 함수
-    func setHashtagStackView(genres:[Int], textColor: String){
-        if genres.count > 0 {
+    func setHashtagStackView(genres:[Int], textColorNum: Int){
+        if genres.count > 0 && !genres.contains(10) {
             genres.forEach { index in
                 let hashtagView = HashtagView()
-                hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", textColor: textColor, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
+                hashtagView.setLabelText(text: "#\(Constant.Genre.IntType(index).title)", textColorNum: textColorNum, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
                 hashtagStackView.addArrangedSubview(hashtagView)
                 
                 hashtagView.snp.makeConstraints { make in
-                    make.height.equalTo(24)
+                    make.height.equalTo(24.adjustedHeight)
                 }
             }
-        } else if genres.count == 0 {
+        } else if !genres.contains(10) {
             let hashtagView = HashtagView()
-            hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", textColor: ColorType.darkBlue03.name, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
+            hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", textColorNum: 0, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
             
             hashtagStackView.addArrangedSubview(hashtagView)
             
             hashtagView.snp.makeConstraints { make in
-                make.height.equalTo(24)
+                make.height.equalTo(24.adjustedHeight)
             }
         } else {
             assert(genres.count >= 0 , "The number of genres must be 0 or more")
         }
+        
         cardStackView.addArrangedSubview(hashtagStackView)
         
         hashtagStackView.snp.makeConstraints { make in
@@ -140,21 +137,32 @@ class CardCollectionViewCell: UICollectionViewCell {
     //MARK: - prepare function
     override func prepareForReuse() {
         super.prepareForReuse()
+        hashtagStackView.subviews.forEach({
+            $0.removeFromSuperview()
+        }) // 계속 덮어씌우고 있었던것. . .
         self.update(plusAlpha: true, updateConst: true)
     }
     
-    func update(plusAlpha: Bool , updateConst: Bool){
+    func update(plusAlpha: Bool , updateConst: Bool) {
         self.cardView.alpha = plusAlpha ? 0.6 : 1
     
         if updateConst {
             self.mainEmojiImage.snp.updateConstraints { make in
-                make.height.width.equalTo(38)
+                make.width.equalTo(38.adjustedWidth)
+                make.height.equalTo(38.adjustedHeight)
+            }
+            self.cardStackView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().inset(140.adjustedHeight)
             }
             contentLabel.font = TypoStyle.subtitle1.font
             dateLabel.font = TypoStyle.subtitle6.font
         } else {
             self.mainEmojiImage.snp.updateConstraints { make in
-                make.height.width.equalTo(48)
+                make.width.equalTo(48.adjustedWidth)
+                make.height.equalTo(48.adjustedHeight)
+            }
+            self.cardStackView.snp.updateConstraints { make in
+                make.bottom.equalToSuperview().inset(156.adjustedHeight)
             }
             contentLabel.font = TypoStyle.title1.font
             dateLabel.font = TypoStyle.subtitle1.font
