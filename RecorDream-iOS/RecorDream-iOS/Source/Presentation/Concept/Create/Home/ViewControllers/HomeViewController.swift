@@ -26,6 +26,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         setupConstraints()
         setDelegate()
         setRecorDreamView() // TODO: - 꿈 기록 여부에 따라 view 바꾸기
@@ -63,7 +64,7 @@ class HomeViewController: BaseViewController {
         homeUserNameView.setUserNameView(name: "소진", isEmpty: true) // TODO: - user name 넣기
     }
     
-    func setRecorDreamView(){
+    func setRecorDreamView() {
         view.addSubview(recorDreamView)
         
         recorDreamView.snp.makeConstraints { make in
@@ -77,6 +78,22 @@ class HomeViewController: BaseViewController {
     func setDelegate() {
         recorDreamView.carouselCollectionView.delegate = self
         recorDreamView.carouselCollectionView.dataSource = self
+    }
+    
+    private func setupView() {
+        self.headerView.searchButton.addTarget(self, action: #selector(pushSearchView), for: .touchUpInside)
+        self.headerView.profileButton.addTarget(self, action: #selector(pushMypageView), for: .touchUpInside)
+    }
+    
+    @objc
+    private func pushSearchView() {
+        let searchViewController = SearchViewController.instanceFromNib()
+        self.navigationController?.pushViewController(searchViewController, animated: false)
+    }
+    
+    @objc private func pushMypageView() {
+        let mypageViewController = MyPageViewController.instanceFromNib()
+        self.navigationController?.pushViewController(mypageViewController, animated: false)
     }
 }
 

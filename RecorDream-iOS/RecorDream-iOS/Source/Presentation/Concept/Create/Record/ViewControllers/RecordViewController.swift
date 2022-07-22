@@ -197,6 +197,7 @@ class RecordViewController: BaseViewController {
     internal override func setTargets() {
         titleTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         saveButton.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
+        headerView.backButton.addTarget(self, action: #selector(dismissButtonClicked), for: .touchUpInside)
     }
     
     private func resetTextStatus() {
@@ -240,6 +241,10 @@ class RecordViewController: BaseViewController {
                 make.height.equalTo(30.adjustedHeight)
             }
         }
+    }
+    
+    @objc func dismissButtonClicked() {
+        self.dismiss(animated: true)
     }
     
     @objc func textFieldDidChange() {
