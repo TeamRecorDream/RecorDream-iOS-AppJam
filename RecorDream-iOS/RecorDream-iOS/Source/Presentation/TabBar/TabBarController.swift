@@ -58,8 +58,7 @@ extension TabBarController: Presentable {
     @objc
     private func presentRecordView() {
         let recordViewController = RecordViewController()
-        recordViewController.modalPresentationStyle = .fullScreen
-        self.present(recordViewController, animated: false)
+        navigationController?.pushViewController(recordViewController, animated: false)
     }
     
     private func setTabBarItems() {

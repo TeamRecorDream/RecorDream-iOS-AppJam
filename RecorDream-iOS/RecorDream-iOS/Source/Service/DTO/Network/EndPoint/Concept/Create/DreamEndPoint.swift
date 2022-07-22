@@ -9,7 +9,7 @@ import Foundation
 
 enum DreamEndPoint {
     case getRecorDreamCard
-//    case postRecorDream(userId: Int, date: Date, title: String, writer: String)
+    case postRecorDream(recordData: CreateRecord)
 //    case patchRecorDream(recordId: String)
 }
 
@@ -18,6 +18,8 @@ extension DreamEndPoint: EndPoint {
         switch self {
         case .getRecorDreamCard:
             return .GET
+        case .postRecorDream(recordData: _):
+            return .POST
         }
     }
     
@@ -25,6 +27,8 @@ extension DreamEndPoint: EndPoint {
         switch self {
         case .getRecorDreamCard:
             return nil
+        case .postRecorDream(recordData: let recordData):
+            return try! JSONSerialization.data(withJSONObject: recordData) //TODO: - 강제 형변환함
         }
     }
     
@@ -32,6 +36,8 @@ extension DreamEndPoint: EndPoint {
         let baseURL = environment.baseURL
         switch self {
         case .getRecorDreamCard:
+            return "\(baseURL)/record"
+        case .postRecorDream(recordData: _):
             return "\(baseURL)/record"
         }
     }
