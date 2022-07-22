@@ -10,6 +10,7 @@ import Foundation
 protocol CreateRequestable: AnyObject {
     func request(_ request: NetworkRequest) async throws -> [Record]
     func postRequest(record: CreateRecord)
+    func putRequset(record: PatchRecord, id: String)
 }
 
 final class CreateAPIManager: CreateRequestable {
@@ -35,7 +36,6 @@ final class CreateAPIManager: CreateRequestable {
     }
     
     func postRequest(record: CreateRecord) {
-
         let url = URL(string: "http://13.125.138.47:8000/record")
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -56,6 +56,40 @@ final class CreateAPIManager: CreateRequestable {
                     print("json decode error")
                     return
                 }
+                if responseData.success {
+                    print(responseData.success)
+                } else {
+                    print("실패")
+                }
+            } else {
+                print("Error")
+            }
+        }
+        task.resume()
+    }
+    
+    func putRequset(record: PatchRecord, id: String) {
+        let url = URL(string: "http://13.125.138.47:8000/record/62d7bc6f9669f53b6c72a8d7")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "PATCH"
+        
+        guard let uploadData = try? JSONEncoder().encode(record)
+            else { return }
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("1", forHTTPHeaderField: "userId")
+        print("putRequset")
+        
+        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+            if let data = data,
+                let response = response as? HTTPURLResponse,
+               (200..<500) ~= response.statusCode {
+                print("response: \(response.statusCode)")
+                
+                guard let responseData = try? JSONDecoder().decode(DreamBaseModel.self, from: data) else {
+                    print("json decode error")
+                    return
+                }
+                print("responseData: \(responseData)")
                 if responseData.success {
                     print(responseData.success)
                 } else {

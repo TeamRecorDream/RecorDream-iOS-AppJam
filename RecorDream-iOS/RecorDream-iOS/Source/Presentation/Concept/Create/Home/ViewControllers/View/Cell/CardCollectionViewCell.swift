@@ -68,10 +68,10 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
         
         cardStackView.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(28)
+            make.top.equalToSuperview().offset(28)
             make.leading.equalToSuperview().offset(22)
             make.trailing.equalToSuperview().inset(22)
-            make.bottom.equalToSuperview().inset(156.adjustedHeight)
+//            make.bottom.equalToSuperview().inset(156.adjustedHeight)
         }
         
         cardStackView.setCustomSpacing(12, after: contentLabel)
@@ -113,7 +113,7 @@ class CardCollectionViewCell: UICollectionViewCell {
                     make.height.equalTo(24.adjustedHeight)
                 }
             }
-        } else if !genres.contains(10) {
+        } else if genres.contains(10) {
             let hashtagView = HashtagView()
             hashtagView.setLabelText(text: "# 아직 설정되지 않았어요.", textColorNum: 0, textBackgroundColor: ColorType.white01.name, textTypo: TypoStyle.subtitle3.font)
             
@@ -139,7 +139,7 @@ class CardCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         hashtagStackView.subviews.forEach({
             $0.removeFromSuperview()
-        }) // 계속 덮어씌우고 있었던것. . .
+        })
         self.update(plusAlpha: true, updateConst: true)
     }
     
@@ -151,9 +151,9 @@ class CardCollectionViewCell: UICollectionViewCell {
                 make.width.equalTo(38.adjustedWidth)
                 make.height.equalTo(38.adjustedHeight)
             }
-            self.cardStackView.snp.updateConstraints { make in
-                make.bottom.equalToSuperview().inset(140.adjustedHeight)
-            }
+//            self.cardStackView.snp.updateConstraints { make in
+//                make.bottom.equalToSuperview().inset(140.adjustedHeight)
+//            }
             contentLabel.font = TypoStyle.subtitle1.font
             dateLabel.font = TypoStyle.subtitle6.font
         } else {
@@ -161,9 +161,9 @@ class CardCollectionViewCell: UICollectionViewCell {
                 make.width.equalTo(48.adjustedWidth)
                 make.height.equalTo(48.adjustedHeight)
             }
-            self.cardStackView.snp.updateConstraints { make in
-                make.bottom.equalToSuperview().inset(156.adjustedHeight)
-            }
+//            self.cardStackView.snp.updateConstraints { make in
+//                make.bottom.equalToSuperview().inset(156.adjustedHeight)
+//            }
             contentLabel.font = TypoStyle.title1.font
             dateLabel.font = TypoStyle.subtitle1.font
         }

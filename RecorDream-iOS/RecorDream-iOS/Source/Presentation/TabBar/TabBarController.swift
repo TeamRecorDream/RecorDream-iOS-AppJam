@@ -59,6 +59,7 @@ extension TabBarController: Presentable {
     private func presentRecordView() {
         let recordViewController = RecordViewController()
         navigationController?.pushViewController(recordViewController, animated: false)
+        recordViewController.isCreateView = false
     }
     
     private func setTabBarItems() {

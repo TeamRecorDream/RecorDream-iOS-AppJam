@@ -62,7 +62,7 @@ class HomeViewController: BaseViewController {
             make.centerY.equalToSuperview()
         }
         
-        homeUserNameView.setUserNameView(name: "소진", isEmpty: true) // TODO: - user name 넣기
+        homeUserNameView.setUserNameView(name: "드리미", isEmpty: true) // TODO: - user name 넣기
     }
     
     func setRecorDreamView() {

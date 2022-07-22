@@ -24,5 +24,3 @@ struct CreateRecord: Codable {
         case genre, note, voice, writer
     }
 }
-
-// title, date, voice, writer

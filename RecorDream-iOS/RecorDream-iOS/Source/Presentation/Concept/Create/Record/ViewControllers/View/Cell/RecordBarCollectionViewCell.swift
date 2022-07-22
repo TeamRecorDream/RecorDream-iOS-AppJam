@@ -11,7 +11,7 @@ import SnapKit
 import Then
 
 class RecordBarCollectionViewCell: UICollectionViewCell {
-    let recordBarImageView = UIImageView().then {
+    var recordBarImageView = UIImageView().then {
         $0.alpha = 0.35
     }
     
@@ -26,16 +26,37 @@ class RecordBarCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setupView()
         setupConstraints()
+        
     }
     
-    override var isSelected: Bool{
-        didSet {
-            if isSelected {
-                recordBarImageView.alpha = 1
-            } else {
-                recordBarImageView.alpha = 0.35
-            }
+//    override var isSelected: Bool{
+//        didSet {
+//            if isSelected {
+//                recordBarImageView.alpha = 1
+//            } else {
+//                recordBarImageView.alpha = 0.35
+//            }
+//        }
+//    }
+//
+    override var isSelected: Bool {
+        willSet {
+            self.setSelected(newValue)
         }
+    }
+    
+    private func setSelected(_ selected: Bool) {
+        if selected {
+            recordBarImageView.alpha = 1
+        } else {
+            recordBarImageView.alpha = 0.35
+        }
+    }
+    
+    override func prepareForReuse() {
+//        super.prepareForReuse()
+        self.isSelected = false
+        print("살려주세요")
     }
     
     private func setupView() {
@@ -56,5 +77,14 @@ class RecordBarCollectionViewCell: UICollectionViewCell {
     
     func setRecordBarImage(imageName: String) {
         recordBarImageView.image = UIImage(named: imageName)
+    }
+    
+    func updateRecordBarImage(reset: Bool ) {
+        self.recordBarImageView.alpha = reset ? 0.35 : 1
+    }
+    
+    func testFunc() {
+        self.recordBarImageView.alpha = 1
+        print("아 슈밸 왜안돼 ㅠㅠ")
     }
 }
