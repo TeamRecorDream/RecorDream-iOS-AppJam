@@ -41,6 +41,7 @@
 		2322D090288458BE00DC5553 /* NavigationBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */; };
 		2326F241288A66C30079BD45 /* CreateRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F240288A66C30079BD45 /* CreateRecordModel.swift */; };
 		2326F243288A6B050079BD45 /* DreamBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F242288A6B050079BD45 /* DreamBaseModel.swift */; };
+		2326F245288B33190079BD45 /* PutRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2326F244288B33190079BD45 /* PutRecordModel.swift */; };
 		232D0E39287D86C20063D725 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E38287D86C20063D725 /* HeaderView.swift */; };
 		232D0E3B287D88E60063D725 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3A287D88E60063D725 /* UserNameView.swift */; };
 		232D0E3D287D893E0063D725 /* RecorDreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232D0E3C287D893E0063D725 /* RecorDreamView.swift */; };
@@ -176,6 +177,7 @@
 		2322D08F288458BE00DC5553 /* NavigationBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDelegate.swift; sourceTree = "<group>"; };
 		2326F240288A66C30079BD45 /* CreateRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordModel.swift; sourceTree = "<group>"; };
 		2326F242288A6B050079BD45 /* DreamBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamBaseModel.swift; sourceTree = "<group>"; };
+		2326F244288B33190079BD45 /* PutRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutRecordModel.swift; sourceTree = "<group>"; };
 		232D0E38287D86C20063D725 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		232D0E3A287D88E60063D725 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		232D0E3C287D893E0063D725 /* RecorDreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorDreamView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				2326F240288A66C30079BD45 /* CreateRecordModel.swift */,
+				2326F244288B33190079BD45 /* PutRecordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1037,6 +1040,7 @@
 				F6D3946A287D4B5E004A7DBB /* FontType.swift in Sources */,
 				23450D6C288865B800A8FB70 /* DreamService.swift in Sources */,
 				2322D07628814A9000DC5553 /* RecorDreamColorType.swift in Sources */,
+				2326F245288B33190079BD45 /* PutRecordModel.swift in Sources */,
 				2326F243288A6B050079BD45 /* DreamBaseModel.swift in Sources */,
 				F6F14A5E28854F980065D291 /* SearchView.swift in Sources */,
 				144A1C7C2886DBD000598121 /* TimeSettingDelegate.swift in Sources */,
