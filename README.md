@@ -1,28 +1,34 @@
 # RecorDream 💿<img src="./Asset/로고.png" align=left width=100>
-
 > 기상 직후의 꿈 기록과 관리를 돕는 Dream Archiving Service <br>
-
 <br />
+
+> 30th THE SOPT AppJam <br/>
+> 프로젝트 기간: 22.07.02 ~ 22.07.23
+
+<br>
 
 ## About
 
-> 무의식의 기억을 놓치고 싶지 않은 당신을 위한 꿈 기록 서비스 <br>
-> **레코드림**으로 쉽고 재미있게 꿈을 기록해보세요 ! 😉
+>> 무의식의 기억을 놓치고 싶지 않은 당신을 위한 꿈 기록 서비스 <br>
+>> **레코드림**으로 쉽고 재미있게 꿈을 기록해보세요 ! 😉
 
 
 <img width="1363" img src = "./Asset/브랜딩.png">
 
 <br />
 
+
 ## 🍎 RecorDream iOS Developers
 
 <img src="https://user-images.githubusercontent.com/70689381/179389399-b546c0dd-e65f-4ade-9f35-9b2dda6a72fd.JPG" width = 650>
 
-|<img src="./Asset/소진.png" width=200>|<img src="./Asset/은희.jpeg" width=200>|<img src="./Asset/윤휘.jpeg" width=200>|
+| `Create` | `Share` | `Play` |
 |:--:|:--:|:--:|
+|<img src="./Asset/소진.png" width=200>|<img src="./Asset/은희.jpeg" width=200>|<img src="./Asset/윤휘.jpeg" width=200>|
 |**소진**|**은희**|**윤휘**|
 |[@513sojin](https://github.com/513sojin)|[@EunHee-Jeong](https://github.com/EunHee-Jeong)|[@88yhtserof](https://github.com/88yhtserof)|
-
+|`Record View` <br> `Home View` <br> `Reusable Component`|`Custom Tabbar` <br> `Storage View` <br> `Search View`|`Remote Notification` <br> `Detail View` <br> `Mypage View`|
+| `Custom UI` | `Project Setting` | `FCM Setting` |
 
 
 <br />
@@ -107,14 +113,13 @@ RecorDream-iOS
  │   │        └── ViewControllers
  │   │   └── Share
  │   │        └── Models
- │   │        └── Views
- │   │        └── ViewModels
+ │   │        └── ViewControllers
  │   └── Service
  │       └── DTO
  │            └── Network
- │            └── Foundation
- │       └── Mock
- │            └── Parser
+ │              └── EndPoint
+ │              └── Manager
+ │       └── Mock 
  └── RecorDreamTests
  
 HeeKit
@@ -123,5 +128,6 @@ HeeKit
  │           └── Protocol
  │           └── Extensions
  ├── Tests
+ │     │
  └──   └── HeeKitTests
 ```
