@@ -139,7 +139,7 @@ extension RecordDetailViewController {
             self.recordDetailData = recordDetail
             
 //            self.completionHandler?(CreateRecordConst.recordId ?? "")
-            
+            print("\(recordDetail.emotion)")
             self.emotion = recordDetail.emotion
             self.dreamColor = recordDetail.dream_color
             self.genres = recordDetail.genre
