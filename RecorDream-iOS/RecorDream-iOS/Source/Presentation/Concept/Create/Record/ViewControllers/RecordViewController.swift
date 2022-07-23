@@ -36,6 +36,7 @@ enum CreateRecordConst {
     static var dreamColorNum: Int?
     static var isTouchedIndex: [Int] = []
     static var genreIndex: [Int] = []
+    static var recordId: String?
 }
 
 class RecordViewController: BaseViewController {
@@ -170,6 +171,17 @@ class RecordViewController: BaseViewController {
     var isCreateView: Bool = true
     var emotionSelectedArray = [false, false, false, false, false, false]
 //    var reviseRecordInfo = [] // 서버에서 받아올 값. 모델이랑 매칭해주어야 함
+    var recordDetailData: RecordDetailModel?
+    var detailRecordId: String? {
+        didSet {
+            DispatchQueue.main.async {
+                self.navigationDetailView(id: self.detailRecordId ?? "")
+            }
+        }
+    }
+    
+    var recordIdClosure: ((String) -> ())?
+    
 
     // MARK: - life cycle
     override func viewDidLoad() {
@@ -188,7 +200,8 @@ class RecordViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         resetStatus()
-        setReviseView()
+        setEditView()
+        setBackground()
     }
     
     // MARK: - Functions
@@ -196,20 +209,32 @@ class RecordViewController: BaseViewController {
         headerView.setHeaderView(HiddenMoreBtn: true, headerLabelText: "기록하기")
     }
     
-    private func setReviseView() {
+    private func navigationDetailView(id: String) {
+        let detailVC = RecordDetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
+        detailVC.recordID = id
+    }
+    
+    private func setEditView() {
+        print("----------------------")
+        print(recordDetailData)
         if !isCreateView { //MARK: - 수정하기 뷰인경우
-            //날짜, 제목 , 내용 , 감정, 꿈색상, 장르, 노트
             headerView.headerLabel.text = "수정하기"
-            dateView.recordDateLabel.text = "2022-07-24"
-            titleTextField.text = "소진이당 ㅋㅋ"
-            contentTextView.text = "내용이당 ㅋㅋ"
-            noteTextView.text = "노트내용이다 ㅋㅋ"
-            CreateRecordConst.emotionNum = 4
-            CreateRecordConst.dreamColorNum = 3
-            CreateRecordConst.isTouchedIndex = [3]
+            dateView.recordDateLabel.text = recordDetailData?.date
+            titleTextField.text = recordDetailData?.title
+            contentTextView.text = recordDetailData?.content
+            noteTextView.text = recordDetailData?.note
+            CreateRecordConst.todayDate = Date()
+            CreateRecordConst.emotionNum = recordDetailData?.emotion
+            CreateRecordConst.dreamColorNum = recordDetailData?.dream_color
+            CreateRecordConst.isTouchedIndex = recordDetailData?.genre ?? [3]
             contentLable.isHidden = true
             setTitleTextField()
         }
+    }
+    
+    private func setBackground() {
+        view.backgroundColor = ColorType.darkBlue01.color
     }
     
     private func setDelegate() {
@@ -311,32 +336,34 @@ class RecordViewController: BaseViewController {
     }
     
     @objc func saveButtonDidTap() {
+        print("saveButtonDidTap")
         if let title = titleTextField.text {
             if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 // MARK: - 저장 가능 상태
+                print("hoihihihihi")
                 guard let title = titleTextField.text,
                       let content = contentTextView.text,
                       let note = noteTextView.text else { return }
                 
                 let date: String = CreateRecordConst.todayDate.toString()
                 
-                print("---------------")
-                print(title)
-                print(content)
-                print(note)
-                print(CreateRecordConst.emotionNum)
-                print(CreateRecordConst.dreamColorNum)
-                print(CreateRecordConst.isTouchedIndex)
-                print(note)
-                print("---------------")
-                
                 let record = CreateRecord(title: title, date: date, content: content, emotion: CreateRecordConst.emotionNum, dreamColor: CreateRecordConst.dreamColorNum, genre: CreateRecordConst.isTouchedIndex, note: note, voice: "62cdb868c3032f2b7af76531", writer: "62c9cf068094605c781a2fb9")
                 
-                guard let emotionNum = CreateRecordConst.emotionNum,
-                      let dreamNum = CreateRecordConst.dreamColorNum else { return }
-                let recordPut = PatchRecord(title: title, date: date, content: content, emotion: emotionNum, dreamColor: dreamNum, genre: CreateRecordConst.isTouchedIndex, note: note)
+                print("record: \(record)")
                 
-                isCreateView ? postRecord(record: record) : putRecord(record: recordPut, id: "sojin")
+//                guard let emotionNum = CreateRecordConst.emotionNum,
+//                      let dreamNum = CreateRecordConst.dreamColorNum,
+//                      let id = recordDetailData?._id else { return }
+//
+//                let recordPut = PatchRecord(title: title, date: date, content: content, emotion: emotionNum, dreamColor: dreamNum, genre: CreateRecordConst.isTouchedIndex, note: note)
+//                print("recordPut: \(recordPut)")
+//
+//                print("isCreateView: \(isCreateView)")
+//                isCreateView ? postRecord(record: record) : putRecord(record: recordPut, id: id)
+                postRecord(record: record)
+//
+                let tabVC = TabBarController()
+                navigationController?.pushViewController(tabVC, animated: true)
             } else {
                 // MARK: - 저장 불가능 상태
                 UIView.animate(withDuration: 1.25, delay: 0.01, options: .curveEaseIn, animations: {
@@ -350,15 +377,11 @@ class RecordViewController: BaseViewController {
     
     func setTitleTextField() {
         if let title = titleTextField.text {
-            print("title : \(title)")
-            print(title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             if !title.isEmpty && !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 // MARK: - 저장 가능 상태
-                print("저장 가능 상태")
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOn.name), for: .normal)
             } else {
                 // MARK: - 저장 불가능 상태
-                print("저장 불가능 상태")
                 saveButton.setImage(UIImage(named: ImageList.icnSaveOff.name), for: .normal)
             }
         }
@@ -574,8 +597,6 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
         if collectionView == emotionCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecordBarCollectionViewCell.reuseIdentifier, for: indexPath) as? RecordBarCollectionViewCell else { return UICollectionViewCell() }
             if !isCreateView {
-//                cell.isSelected = false
-                print("isSelected - ")
                 if indexPath.item == CreateRecordConst.emotionNum {
                     print("안녕")
                     cell.updateRecordBarImage(reset: false)
@@ -583,7 +604,6 @@ extension RecordViewController: UICollectionViewDataSource, UICollectionViewDele
             } else {
                 print("isisisisisisisis")
             }
-//            cell.recordBarImageView.alpha = 1
             cell.setRecordBarImage(imageName: Constant.Emotion.IntType(indexPath.item + 1).title)
             return cell
         } else if collectionView == dreamColorCollectionView {
@@ -647,14 +667,32 @@ extension UILabel {
 }
 
 extension RecordViewController {
+//    func postRecord(record: CreateRecord) {
+//        Task {
+//            do {
+//                let recordData = try await createManager.postRequest(record: record)
+//            } catch {
+//                print("실패")
+//            }
+//        }
+//    }
+//
+//    private func requestUserInformation() {
+//        MyPageService.shared.getUserInformation(completionHandler: { [weak self] data in
+//            guard let data = data as? UserInformationModel else { return }
+//            self?.userInformation = data
+//        })
+//    }
+//    
     func postRecord(record: CreateRecord) {
-        Task {
-            do {
-                try await createManager.postRequest(record: record)
-            } catch {
-                print("실패")
-            }
-        }
+        createManager.postRequest(record: record, completionHandler: { [self] data in
+            guard let data = data as? DreamBaseModel else { return }
+//            guard let data = data.data?.id as? DataClass else { return }
+            guard let recordDataId = data.data?.id as? String else { return }
+            CreateRecordConst.recordId = data.data?.id
+//            print("postRecord: \(CreateRecordConst.recordId)")
+//            recordIdClosure?(CreateRecordConst.recordId ?? "")
+        })
     }
     
     func putRecord(record: PatchRecord, id: String) {

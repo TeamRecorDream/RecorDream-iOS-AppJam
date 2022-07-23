@@ -9,7 +9,8 @@ import Foundation
 
 protocol CreateRequestable: AnyObject {
     func request(_ request: NetworkRequest) async throws -> [Record]
-    func postRequest(record: CreateRecord)
+//    func postRequest(record: CreateRecord) async throws -> DreamBaseModel
+    func postRequest(record: CreateRecord, completionHandler: @escaping (Any) -> Void)
     func putRequset(record: PatchRecord, id: String)
 }
 
@@ -24,7 +25,6 @@ final class CreateAPIManager: CreateRequestable {
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<500) ~= httpResponse.statusCode
         else { throw APIError.serverError }
-        print("httpResponse.statusCode: \(httpResponse.statusCode)")
 
         let decodedData = try JSONDecoder().decode(Record.self, from: data)
         
@@ -35,8 +35,44 @@ final class CreateAPIManager: CreateRequestable {
         }
     }
     
-    func postRequest(record: CreateRecord) {
+//    func postRequest(record: CreateRecord) async throws -> DreamBaseModel {
+//        let url = URL(string: "http://13.125.138.47:8000/record")
+//        var request = URLRequest(url: url!)
+//        request.httpMethod = "POST"
+//
+//        guard let uploadData = try? JSONEncoder().encode(record)
+//            else { throw APIError.urlEncodingError }
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("1", forHTTPHeaderField: "userId")
+//
+//        let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
+//            if let data = data,
+//                let response = response as? HTTPURLResponse,
+//               (200..<500) ~= response.statusCode {
+//                print("response: \(response.statusCode)")
+//
+//                guard let responseData = try? JSONDecoder().decode(DreamBaseModel.self, from: data) else {
+//                    print("json decode error")
+//                    throw APIError.clientError(message: "client error")
+//                }
+//                if responseData.success {
+//                    print(responseData.success)
+//                    return [responseData]
+//                } else {
+//                    print("실패")
+//                    throw APIError.clientError(message: decodedData.message)
+//                }
+//            } else {
+//                print("Error")
+//                throw APIError.clientError(message: decodedData.message)
+//            }
+//        }
+//        task.resume()
+//    }
+
+    func postRequest(record: CreateRecord, completionHandler: @escaping (Any) -> Void) {
         let url = URL(string: "http://13.125.138.47:8000/record")
+        print(url)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         
@@ -46,11 +82,10 @@ final class CreateAPIManager: CreateRequestable {
         request.addValue("1", forHTTPHeaderField: "userId")
         
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { data, response, error in
-            
             if let data = data,
                 let response = response as? HTTPURLResponse,
                (200..<500) ~= response.statusCode {
-                print("response: \(response.statusCode)")
+                print("response - post: \(response.statusCode)")
                 
                 guard let responseData = try? JSONDecoder().decode(DreamBaseModel.self, from: data) else {
                     print("json decode error")
@@ -58,6 +93,7 @@ final class CreateAPIManager: CreateRequestable {
                 }
                 if responseData.success {
                     print(responseData.success)
+                    completionHandler(responseData)
                 } else {
                     print("실패")
                 }
