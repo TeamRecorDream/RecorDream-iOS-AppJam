@@ -141,18 +141,27 @@ extension RecordDetailViewController {
 //            self.completionHandler?(CreateRecordConst.recordId ?? "")
             print("\(recordDetail.emotion)")
             //self.emotion = recordDetail.emotion
-            self.dreamColor = recordDetail.dream_color
-            self.genres = recordDetail.genre
-            guard let content = recordDetail.content else {return}
-            guard let note = recordDetail.note else {return}
-            let contents = [content, note]
-            self.tabPagerView.contents = contents
+//            self.dreamColor = recordDetail.dream_color
+//            self.genres = recordDetail.genre
+//            guard let content = recordDetail.content else {return}
+//            guard let note = recordDetail.note else {return}
+//            let contents = [content, note]
+//            self.tabPagerView.contents = contents
             DispatchQueue.main.async {
+                self.dreamColor = recordDetail.dream_color
+                self.genres = recordDetail.genre
+                self.genreCollectionView.reloadData()
+                
+                guard let content = recordDetail.content else {return}
+                guard let note = recordDetail.note else {return}
+                let contents = [content, note]
+                self.tabPagerView.contents = contents
+                self.tabPagerView.contentCollectionView.reloadData()
+                
                 self.emotionImage.image = UIImage(named: Constant.Emotion.IntType(recordDetail.emotion).title)
                 self.titleLabel.text = recordDetail.title
                 self.dateLabel.text = recordDetail.date
                 self.cardView.image = UIImage(named: Constant.DetailBackgroundColor.IntType(self.dreamColor).title)
-                self.genreCollectionView.reloadData()
             }
             
             
