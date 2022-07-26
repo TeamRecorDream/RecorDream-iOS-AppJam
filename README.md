@@ -3,17 +3,14 @@
 <br />
 
 > 30th THE SOPT AppJam <br/>
-> 프로젝트 기간: 22.07.02 ~ 22.07.23
+> 프로젝트 기간: 22.07.09 ~ 22.07.23
 
 <br>
 
 ## About
 
->> 무의식의 기억을 놓치고 싶지 않은 당신을 위한 꿈 기록 서비스 <br>
->> **레코드림**으로 쉽고 재미있게 꿈을 기록해보세요 ! 😉
+<img src="https://user-images.githubusercontent.com/70689381/180933545-05ce0c70-2cde-42fb-b508-a5f663a821c3.jpeg" width=1000>
 
-
-<img width="1363" img src = "./Asset/브랜딩.png">
 
 <br />
 
