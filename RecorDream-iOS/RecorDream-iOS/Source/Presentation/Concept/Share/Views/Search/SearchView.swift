@@ -50,7 +50,7 @@ final class SearchView: BaseView {
     // MARK: - mock
     let searchResultLabel = UILabel().then {
         $0.font = TypoStyle.title2.font
-        $0.text = "2개의 기록"
+        $0.text = "8개의 기록"
         $0.textColor = ColorType.white01.color
         $0.isHidden = true
     }
